@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { Wrapper, Textarea, StyledLayout } from "@wcj/tools-react-components";
-import styled, { createGlobalStyle } from "styled-components";
+import { useState } from 'react';
+import { Wrapper, Textarea, StyledLayout, CopyButton } from '@wcj/tools-react-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export interface ResultProps {
   title?: string;
@@ -27,7 +27,7 @@ const InputFile = styled.input`
 `;
 
 export default function ImageToBase64() {
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState('');
   const handleChange = (evn: React.ChangeEvent<HTMLInputElement>) => {
     const files = (evn.target as HTMLInputElement).files || [];
     const file = files[0];
@@ -51,7 +51,7 @@ export default function ImageToBase64() {
         <InputFile type="file" accept="image/*" onChange={handleChange} />
         {result && <Image src={result} />}
       </StyledLayout>
-      <StyledLayout title="Result">
+      <StyledLayout title="Result" extra={<CopyButton value={result} />}>
         <Textarea defaultValue={result} readOnly />
       </StyledLayout>
     </Wrapper>

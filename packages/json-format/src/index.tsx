@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { Wrapper, Textarea, StyledLayout } from "@wcj/tools-react-components";
-import styled, { createGlobalStyle } from "styled-components";
+import { useState } from 'react';
+import { Wrapper, Textarea, StyledLayout, CopyButton } from '@wcj/tools-react-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export interface ResultProps {
   title?: string;
@@ -27,17 +27,19 @@ const InputFile = styled.input`
 `;
 
 export default function ImageToBase64() {
-  const [result, setResult] = useState("");
-  const [error, setError] = useState("");
+  const [value, setValue] = useState('');
+  const [result, setResult] = useState('');
+  const [error, setError] = useState('');
   const handleChange = (evn: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const value = (evn.target as HTMLTextAreaElement).value || "";
-    if (value) {
+    const str = (evn.target as HTMLTextAreaElement).value || '';
+    if (str) {
       try {
-        const obj = JSON.parse(value);
+        setValue(str);
+        const obj = JSON.parse(str);
         setResult(JSON.stringify(obj, null, 3));
-        setError("");
+        setError('');
       } catch (error) {
-        let message = "Unknown Error";
+        let message = 'Unknown Error';
         if (error instanceof Error) message = error.message;
         setError(message);
       }
@@ -46,15 +48,11 @@ export default function ImageToBase64() {
   return (
     <Wrapper>
       <GlobalStyle />
-      <StyledLayout title="Input JSON String">
+      <StyledLayout title="Input JSON String" extra={<CopyButton value={value} />}>
         <Textarea spellCheck={false} onChange={handleChange} />
       </StyledLayout>
-      <StyledLayout title="Result">
-        <Textarea
-          style={error ? { color: "red" } : {}}
-          defaultValue={error || result}
-          readOnly
-        />
+      <StyledLayout title="Result" extra={<CopyButton value={error || result} />}>
+        <Textarea style={error ? { color: 'red' } : {}} defaultValue={error || result} readOnly />
       </StyledLayout>
     </Wrapper>
   );

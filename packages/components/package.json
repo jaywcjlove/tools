@@ -16,6 +16,7 @@
   "author": "Kenny Wong <wowohoo@qq.com>",
   "license": "MIT",
   "dependencies": {
+    "@uiw/copy-to-clipboard": "^1.0.12",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
