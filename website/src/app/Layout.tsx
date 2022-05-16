@@ -17,6 +17,7 @@ export default function Layout() {
           </header>
           <nav>
             <NavLink to="/"> URL Encode </NavLink>
+            <NavLink to="/json-format"> JSON Format </NavLink>
             <NavLink to="/text-case"> Text Case </NavLink>
             <NavLink to="/image-to-base64"> Image to Base64 </NavLink>
             <div></div>
