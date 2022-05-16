@@ -19,6 +19,7 @@ export default function Layout() {
             <NavLink to="/"> URL Encode </NavLink>
             <NavLink to="/text-case"> Text Case </NavLink>
             <NavLink to="/image-to-base64"> Image to Base64 </NavLink>
+            <div></div>
             <a
               href="https://uiwjs.github.io/npm-unpkg/"
               target="_blank"
