@@ -15,10 +15,7 @@ jobs:
 
       - run: npm install
 
-      - run: npm run build:components
-      - run: npm run build:image-to-base64
-      - run: npm run build:url-encode
-      - run: npm run build:text-case
+      - run: npm run build
       - run: npm run doc
 
       - name: Deploy Website

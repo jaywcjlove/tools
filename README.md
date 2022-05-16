@@ -2,6 +2,16 @@
 
 Some useful tools for developers.
 
+## Development
+
+```bash
+npm install              # Install dependencies
+npm install --workspaces # Install sub packages dependencies
+
+npm run build            # Build packages
+npm run start
+```
+
 ## Contributors
 
 As always, thanks to our amazing contributors!
