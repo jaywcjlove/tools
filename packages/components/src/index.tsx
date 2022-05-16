@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components';
 import copyTextToClipboard from '@uiw/copy-to-clipboard';
 import { CopyIcon } from './Icon';
 
+export * from './Document';
+
 export const Wrapper = styled.main`
   padding: 25px;
   width: 100%;
