@@ -2,11 +2,11 @@ import { PropsWithChildren, useState } from "react";
 import styled from "styled-components";
 
 export const Wrapper = styled.main`
-  padding: 15px;
+  padding: 25px;
   width: 100%;
   min-height: 100%;
   display: flex;
-  gap: 12px;
+  gap: 25px;
 `;
 
 export type TextareaProps = React.DetailedHTMLProps<

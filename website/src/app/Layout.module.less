@@ -24,6 +24,8 @@
       gap: 5px;
       border-top: 1px solid var(--color-border-muted);
       padding-top: 10px;
+      max-height: calc(100vh - 41px);
+      overflow: auto;
     }
     nav a {
       padding: 5px 6px;
@@ -34,9 +36,16 @@
       transition: all 0.3s;
       border-radius: 3px;
       text-decoration: none;
+      justify-content: space-between;
       &:hover,
       &[aria-current="page"] {
         background-color: var(--color-neutral-muted);
+        svg {
+          opacity: 0.7;
+        }
+      }
+      svg {
+        opacity: 0.2;
       }
     }
   }

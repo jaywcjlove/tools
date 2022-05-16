@@ -4,6 +4,7 @@
   "scripts": {
     "build": "lerna exec --scope @wcj/* -- tsbb build",
     "⬇️⬇️⬇️⬇️⬇️ package ⬇️⬇️⬇️⬇️⬇️": "▼▼▼▼▼ package ▼▼▼▼▼",
+    "build:image-to-base64": "npm run-script build --workspace @wcj/tools-react-image-to-base64",
     "build:url-encode": "npm run-script build --workspace @wcj/tools-react-url-encode",
     "build:text-case": "npm run-script build --workspace @wcj/tools-react-text-case",
     "build:components": "npm run-script build --workspace @wcj/tools-react-components",
