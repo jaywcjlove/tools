@@ -63,7 +63,7 @@ export default function TextCase() {
   return (
     <Wrapper>
       <GlobalStyle />
-      <StyledLayout title="Input" extra={<CopyButton value={value} />}>
+      <StyledLayout title="Input" extra={value && <CopyButton value={value} />}>
         <Textarea
           spellCheck={false}
           value={value}
@@ -72,25 +72,25 @@ export default function TextCase() {
       </StyledLayout>
       <StyledLayout title="Result">
         <div style={{ height: '100%' }}>
-          <Result title="Camel Case" extra={<CopyButton value={camelCase} />}>
+          <Result title="Camel Case" extra={camelCase && <CopyButton value={camelCase} />}>
             {camelCase}
           </Result>
-          <Result title="Pascal Case" extra={<CopyButton value={pascalCase} />}>
+          <Result title="Pascal Case" extra={pascalCase && <CopyButton value={pascalCase} />}>
             {pascalCase}
           </Result>
-          <Result title="Snake Case" extra={<CopyButton value={snakeCase} />}>
+          <Result title="Snake Case" extra={snakeCase && <CopyButton value={snakeCase} />}>
             {snakeCase}
           </Result>
-          <Result title="Kebab Case" extra={<CopyButton value={kebabCase} />}>
+          <Result title="Kebab Case" extra={kebabCase && <CopyButton value={kebabCase} />}>
             {kebabCase}
           </Result>
-          <Result title="Title Case" extra={<CopyButton value={titleCase} />}>
+          <Result title="Title Case" extra={titleCase && <CopyButton value={titleCase} />}>
             {titleCase}
           </Result>
-          <Result title="Swap Case" extra={<CopyButton value={swapCaseStr} />}>
+          <Result title="Swap Case" extra={swapCaseStr && <CopyButton value={swapCaseStr} />}>
             {swapCaseStr}
           </Result>
-          <Result title="Path Case" extra={<CopyButton value={pathCase} />}>
+          <Result title="Path Case" extra={pathCase && <CopyButton value={pathCase} />}>
             {pathCase}
           </Result>
         </div>

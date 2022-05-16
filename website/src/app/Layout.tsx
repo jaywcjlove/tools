@@ -4,6 +4,7 @@ import '@wcj/dark-mode';
 import { NavLink, Outlet } from 'react-router-dom';
 import styles from './Layout.module.less';
 import { ReactComponent as ShareIcon } from '../assets/share.svg';
+import { ReactComponent as LogoIcon } from '../assets/logo.svg';
 
 export default function Layout() {
   return (
@@ -12,7 +13,10 @@ export default function Layout() {
       <div className={styles.warpper}>
         <aside>
           <header>
-            <h1>Web Tools</h1>
+            <h1>
+              <LogoIcon width={21} />
+              <span>Web Tools</span>
+            </h1>
             <dark-mode permanent></dark-mode>
           </header>
           <nav>

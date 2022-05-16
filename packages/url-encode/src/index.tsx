@@ -16,7 +16,7 @@ export default function URLEncode() {
   };
   return (
     <Wrapper>
-      <StyledLayout title="URL" extra={<CopyButton value={url} />}>
+      <StyledLayout title="URL" extra={url && <CopyButton value={url} />}>
         <Textarea
           spellCheck={false}
           value={url}
@@ -24,7 +24,7 @@ export default function URLEncode() {
           onInput={(evn) => handleInput((evn.target as HTMLTextAreaElement).value)}
         />
       </StyledLayout>
-      <StyledLayout title="Encoded URL" extra={<CopyButton value={encodedUrl} />}>
+      <StyledLayout title="Encoded URL" extra={encodedUrl && <CopyButton value={encodedUrl} />}>
         <Textarea
           spellCheck={false}
           value={encodedUrl}

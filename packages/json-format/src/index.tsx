@@ -45,14 +45,15 @@ export default function ImageToBase64() {
       }
     }
   };
+  const resultOrError = error || result;
   return (
     <Wrapper>
       <GlobalStyle />
-      <StyledLayout title="Input JSON String" extra={<CopyButton value={value} />}>
+      <StyledLayout title="Input JSON String" extra={value && <CopyButton value={value} />}>
         <Textarea spellCheck={false} onChange={handleChange} />
       </StyledLayout>
-      <StyledLayout title="Result" extra={<CopyButton value={error || result} />}>
-        <Textarea style={error ? { color: 'red' } : {}} defaultValue={error || result} readOnly />
+      <StyledLayout title="Result" extra={resultOrError && <CopyButton value={resultOrError} />}>
+        <Textarea style={error ? { color: 'red' } : {}} defaultValue={resultOrError} readOnly />
       </StyledLayout>
     </Wrapper>
   );

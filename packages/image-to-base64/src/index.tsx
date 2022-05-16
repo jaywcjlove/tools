@@ -51,7 +51,7 @@ export default function ImageToBase64() {
         <InputFile type="file" accept="image/*" onChange={handleChange} />
         {result && <Image src={result} />}
       </StyledLayout>
-      <StyledLayout title="Result" extra={<CopyButton value={result} />}>
+      <StyledLayout title="Result" extra={result && <CopyButton value={result} />}>
         <Textarea defaultValue={result} readOnly />
       </StyledLayout>
     </Wrapper>
