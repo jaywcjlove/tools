@@ -1,0 +1,43 @@
+{
+  "name": "tools",
+  "private": true,
+  "scripts": {
+    "⬇️⬇️⬇️⬇️⬇️ package ⬇️⬇️⬇️⬇️⬇️": "▼▼▼▼▼ package ▼▼▼▼▼",
+    "build:url-encode": "npm run-script build --workspace @wcj/react-url-encode",
+    "build:text-case": "npm run-script build --workspace @wcj/react-text-case",
+    "doc": "npm run-script build --workspace website",
+    "start": "npm run-script start --workspace website",
+    "⬆️⬆️⬆️⬆️⬆️ package ⬆️⬆️⬆️⬆️⬆️": "▲▲▲▲▲ package ▲▲▲▲▲",
+    "prepare": "husky install",
+    "version": "lerna version --exact --force-publish --no-push --no-git-tag-version",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "clean": "lerna clean --yes"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaywcjlove/tools.git"
+  },
+  "keywords": [],
+  "author": "jaywcjlove",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "workspaces": [
+    "packages/**",
+    "website"
+  ],
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,less,md,json}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "compile-less-cli": "~1.8.11",
+    "husky": "~7.0.4",
+    "lerna": "~4.0.0",
+    "lint-staged": "~12.3.4",
+    "prettier": "~2.6.0",
+    "tsbb": "~3.7.0"
+  }
+}
