@@ -1,5 +1,5 @@
 {
-  "name": "@wcj/react-text-case",
+  "name": "@wcj/tools-react-text-case",
   "version": "1.0.0",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",

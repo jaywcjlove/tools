@@ -1,5 +1,5 @@
 {
-  "name": "@wcj/react-url-encode",
+  "name": "@wcj/tools-react-url-encode",
   "version": "1.0.0",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",

@@ -3,8 +3,9 @@
   "private": true,
   "scripts": {
     "⬇️⬇️⬇️⬇️⬇️ package ⬇️⬇️⬇️⬇️⬇️": "▼▼▼▼▼ package ▼▼▼▼▼",
-    "build:url-encode": "npm run-script build --workspace @wcj/react-url-encode",
-    "build:text-case": "npm run-script build --workspace @wcj/react-text-case",
+    "build:url-encode": "npm run-script build --workspace @wcj/tools-react-url-encode",
+    "build:text-case": "npm run-script build --workspace @wcj/tools-react-text-case",
+    "build:components": "npm run-script build --workspace @wcj/tools-react-components",
     "doc": "npm run-script build --workspace website",
     "start": "npm run-script start --workspace website",
     "⬆️⬆️⬆️⬆️⬆️ package ⬆️⬆️⬆️⬆️⬆️": "▲▲▲▲▲ package ▲▲▲▲▲",
