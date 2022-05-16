@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
-import UrlEncode from "@wcj/react-url-encode";
-import TextCase from "@wcj/react-text-case";
+import UrlEncode from "@wcj/tools-react-text-case";
+import TextCase from "@wcj/tools-react-text-case";
 
 export default function App() {
   return (
