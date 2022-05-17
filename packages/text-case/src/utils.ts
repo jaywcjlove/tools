@@ -35,3 +35,7 @@ export const swapCase = (str: string = '') =>
   [...str].map((c) => (c === c.toLowerCase() ? c.toUpperCase() : c.toLowerCase())).join('');
 
 export const toPathCase = (str: string = '') => str.replace(/\s/g, '/');
+
+export const toUpperCase = (str: string = '') => str.toLocaleUpperCase();
+export const toLowerCase = (str: string = '') => str.toLocaleLowerCase();
+export const toDotCase = (str: string = '') => str.replace(/(-|_|\s|\+|\/)+/g, '.');

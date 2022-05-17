@@ -1,6 +1,17 @@
 import { useState } from 'react';
 import { Wrapper, Textarea, StyledLayout, CopyButton, ResultCode } from '@wcj/tools-react-components';
-import { toCamelCase, toPascalCase, toSnakeCase, toKebabCase, toTitleCase, toPathCase, swapCase } from './utils';
+import {
+  toCamelCase,
+  toPascalCase,
+  toSnakeCase,
+  toKebabCase,
+  toTitleCase,
+  toUpperCase,
+  toDotCase,
+  toLowerCase,
+  toPathCase,
+  swapCase,
+} from './utils';
 
 function handle(fun: (val?: string) => string | undefined, value: string = '') {
   return value
@@ -19,6 +30,9 @@ export default function TextCase() {
   const titleCase = handle(toTitleCase, value);
   const swapCaseStr = handle(swapCase, value);
   const pathCase = handle(toPathCase, value);
+  const upperCase = handle(toUpperCase, value);
+  const lowerCase = handle(toLowerCase, value);
+  const dotCase = handle(toDotCase, value);
   return (
     <Wrapper>
       <StyledLayout title="Input" extra={value && <CopyButton value={value} />}>
@@ -50,6 +64,15 @@ export default function TextCase() {
           </ResultCode>
           <ResultCode title="Path Case" extra={pathCase && <CopyButton value={pathCase} />}>
             {pathCase}
+          </ResultCode>
+          <ResultCode title="Upper Case" extra={upperCase && <CopyButton value={upperCase} />}>
+            {upperCase}
+          </ResultCode>
+          <ResultCode title="Lower Case" extra={lowerCase && <CopyButton value={lowerCase} />}>
+            {lowerCase}
+          </ResultCode>
+          <ResultCode title="Dot Case" extra={dotCase && <CopyButton value={dotCase} />}>
+            {dotCase}
           </ResultCode>
         </div>
       </StyledLayout>

@@ -14,7 +14,7 @@ const Code = styled.pre`
   border-color: var(--color-border-result-code);
   border-width: 1px;
   border-style: solid;
-  padding: 15px;
+  padding: 10px 15px;
   border-radius: 6px;
   font-size: 14px;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
