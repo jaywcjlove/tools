@@ -5,7 +5,7 @@
   },
   {
     "href": "/url-encode",
-    "label": "URL Encode"
+    "label": "URL Encoder/Decoder"
   },
   {
     "href": "/json-format",
@@ -34,6 +34,10 @@
   {
     "href": "/markdown-to-html",
     "label": "Markdown To HTML"
+  },
+  {
+    "href": "/html-escape",
+    "label": "HTML Escape/Unescape"
   },
   {
     "divider": true

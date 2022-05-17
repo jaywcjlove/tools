@@ -9,6 +9,7 @@ import Hash from '@wcj/tools-react-hash';
 import GeneratePassword from '@wcj/tools-react-generate-password';
 import HtmlToMarkdown from '@wcj/tools-react-html-to-markdown';
 import MarkdownToHtml from '@wcj/tools-react-markdown-to-html';
+import HTMLEscape from '@wcj/tools-react-html-escape';
 import Layout from './app/Layout';
 import { NoMatch } from './app/NoMatch';
 import Home from './app/Home';
@@ -29,7 +30,7 @@ export let routes: RouteObject[] = [
       {
         path: '/url-encode',
         element: (
-          <DocumentTitle title="URL Encode - Web Tools">
+          <DocumentTitle title="URL Encoder/Decoder - Web Tools">
             <UrlEncode />
           </DocumentTitle>
         ),
@@ -87,6 +88,14 @@ export let routes: RouteObject[] = [
         element: (
           <DocumentTitle title="Markdown To HTML - Web Tools">
             <MarkdownToHtml />
+          </DocumentTitle>
+        ),
+      },
+      {
+        path: '/html-escape',
+        element: (
+          <DocumentTitle title="HTML Escape/Unescape - Web Tools">
+            <HTMLEscape />
           </DocumentTitle>
         ),
       },
