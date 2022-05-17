@@ -24,6 +24,10 @@
     "children": "Generate Password"
   },
   {
+    "href": "/html-to-markdown",
+    "children": "HTML To Markdown"
+  },
+  {
     "divider": true
   },
   {

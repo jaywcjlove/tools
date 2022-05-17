@@ -7,6 +7,7 @@ import ImageToBase64 from '@wcj/tools-react-image-to-base64';
 import JSONFormat from '@wcj/tools-react-json-format';
 import Hash from '@wcj/tools-react-hash';
 import GeneratePassword from '@wcj/tools-react-generate-password';
+import HtmlToMarkdown from '@wcj/tools-react-html-to-markdown';
 import Layout from './app/Layout';
 import { NoMatch } from './app/NoMatch';
 
@@ -60,6 +61,14 @@ export let routes: RouteObject[] = [
         element: (
           <DocumentTitle title="Generate Password - Web Tools">
             <GeneratePassword />
+          </DocumentTitle>
+        ),
+      },
+      {
+        path: '/html-to-markdown',
+        element: (
+          <DocumentTitle title="HTML To Markdown - Web Tools">
+            <HtmlToMarkdown />
           </DocumentTitle>
         ),
       },
