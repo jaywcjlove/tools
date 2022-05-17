@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
@@ -27,14 +27,19 @@ const Title = styled.div`
   justify-content: space-between;
 `;
 
-export interface ResultProps {
+export type TextareaProps = React.DetailedHTMLProps<
+  React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+  HTMLTextAreaElement
+>;
+
+export interface ResultProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   title?: string;
   className?: string;
   extra?: React.ReactNode;
 }
 
 export const ResultCode: React.FC<PropsWithChildren<ResultProps>> = (props) => (
-  <div className={props.className}>
+  <div className={props.className} {...props}>
     <GlobalStyle />
     <Title>
       <span>{props.title}</span>

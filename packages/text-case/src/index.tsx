@@ -13,6 +13,8 @@ import {
   swapCase,
 } from './utils';
 
+export * from './utils';
+
 function handle(fun: (val?: string) => string | undefined, value: string = '') {
   return value
     .split('\n')

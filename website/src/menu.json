@@ -44,6 +44,10 @@
     "label": "Base64 Encoder/Decoder"
   },
   {
+    "href": "/qrcode-generator",
+    "label": "QRCode Generator"
+  },
+  {
     "divider": true
   },
   {

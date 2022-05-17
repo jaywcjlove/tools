@@ -11,6 +11,7 @@ import HtmlToMarkdown from '@wcj/tools-react-html-to-markdown';
 import MarkdownToHtml from '@wcj/tools-react-markdown-to-html';
 import HTMLEscape from '@wcj/tools-react-html-escape';
 import Base64Encoder from '@wcj/tools-react-base64-encoder';
+import QRCodeGenerator from '@wcj/tools-react-qrcode-generator';
 import Layout from './app/Layout';
 import { NoMatch } from './app/NoMatch';
 import Home from './app/Home';
@@ -105,6 +106,16 @@ export let routes: RouteObject[] = [
         element: (
           <DocumentTitle title="Base64 Encoder/Decoder - Web Tools">
             <Base64Encoder />
+          </DocumentTitle>
+        ),
+      },
+      {
+        // "href": "/qrcode-generator",
+        // "label": "QRCode Generator"
+        path: '/qrcode-generator',
+        element: (
+          <DocumentTitle title="QRCode Generator - Web Tools">
+            <QRCodeGenerator />
           </DocumentTitle>
         ),
       },
