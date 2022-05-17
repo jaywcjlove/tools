@@ -47,9 +47,65 @@
     "divider": true
   },
   {
-    "href": "https://uiwjs.github.io/npm-unpkg/",
-    "about": "A web application to view npm package files, Based on unpkg.",
-    "label": "NPM Unpkg"
+    "href": "https://badgen.net/",
+    "open-source": "https://github.com/badgen/badgen.net",
+    "about": "Fast badge generating service",
+    "label": "Badgen"
+  },
+  {
+    "href": "https://codesandbox.io",
+    "open-source": "https://github.com/codesandbox/codesandbox-client",
+    "about": "An online IDE for rapid web development",
+    "label": "CodeSandbox"
+  },
+  {
+    "href": "https://codeimg.io/",
+    "about": "Create and share beautiful images of your source code.",
+    "label": "Codeimg.io"
+  },
+  {
+    "href": "https://chalk.ist/",
+    "open-source": "https://github.com/Idered/chalk.ist",
+    "about": "Create beautiful images of your source code",
+    "label": "Chalk.ist"
+  },
+  {
+    "href": "https://codepen.io",
+    "about": "Online Code Editor and Front End Web Developer Community",
+    "label": "CodePen"
+  },
+  {
+    "href": "https://excalidraw.com/",
+    "open-source": "https://github.com/excalidraw/excalidraw",
+    "about": "Virtual whiteboard for sketching hand-drawn like diagrams",
+    "label": "Excalidraw"
+  },
+  {
+    "href": "https://buttons.github.io",
+    "open-source": "https://github.com/ntkme/github-buttons",
+    "about": "Unofficial github:buttons.",
+    "label": "Github Buttons"
+  },
+  {
+    "href": "https://ihateregex.io/",
+    "open-source": "https://github.com/aykutkardas/regexlearn.com",
+    "about": "The Regex Cheat Sheet",
+    "label": "iHateRegex"
+  },
+  {
+    "href": "https://jsfiddle.net",
+    "about": "Test your JavaScript, CSS, HTML or CoffeeScript online with JSFiddle code editor.",
+    "label": "JSFiddle"
+  },
+  {
+    "href": "https://jsbin.com",
+    "about": "Collaborative JavaScript Debugging.",
+    "label": "JS Bin"
+  },
+  {
+    "href": "https://jshint.com",
+    "about": "A JavaScript Code Quality Tool.",
+    "label": "JSHint"
   },
   {
     "href": "https://uiwjs.github.io/json-viewer/",
@@ -62,19 +118,10 @@
     "label": "Keycode Info"
   },
   {
-    "href": "https://uiwjs.github.io/ui-color/",
-    "about": "Converting HEX & RGB colors to UIColor/NSColor/Color for both Objective C & Swift.",
-    "label": "UI Color"
-  },
-  {
-    "href": "https://jaywcjlove.github.io/nginx-editor/",
-    "about": "Nginx language for Monaco Editor.",
-    "label": "Nginx Editor"
-  },
-  {
-    "href": "https://uiwjs.github.io/react-run-web/",
-    "about": "Online Code Editor for Rapid Web Development.",
-    "label": "Run Web"
+    "href": "https://regexlearn.com/",
+    "open-source": "https://github.com/aykutkardas/regexlearn.com",
+    "about": "Learn RegEx step by step, from zero to advanced.",
+    "label": "Learn RegEx"
   },
   {
     "href": "https://jaywcjlove.github.io/logo/",
@@ -82,19 +129,20 @@
     "label": "Logo Asset"
   },
   {
-    "href": "https://jaywcjlove.github.io/regexp-example/",
-    "about": "正则表达式实例搜集，通过实例来学习正则表达式。",
-    "label": "Regexp Example"
+    "href": "https://npmview.vercel.app",
+    "open-source": "https://github.com/pd4d10/npmview",
+    "about": "A web application to view npm package files",
+    "label": "NPM View"
   },
   {
-    "href": "https://unpkg.com/svgedit@7.1.3/dist/editor/index.html",
-    "about": "Powerful SVG-Editor for your browser",
-    "label": "SVG Edit"
+    "href": "https://uiwjs.github.io/npm-unpkg/",
+    "about": "A web application to view npm package files, Based on unpkg.",
+    "label": "NPM Unpkg"
   },
   {
-    "href": "https://yqnn.github.io/svg-path-editor/",
-    "about": "Online editor to create and manipulate SVG paths",
-    "label": "SVG Path Editor"
+    "href": "https://jaywcjlove.github.io/nginx-editor/",
+    "about": "Nginx language for Monaco Editor.",
+    "label": "Nginx Editor"
   },
   {
     "href": "https://www.pixelartcss.com/",
@@ -103,50 +151,20 @@
     "label": "Pixel Art to CSS"
   },
   {
-    "href": "https://chalk.ist/",
-    "open-source": "https://github.com/Idered/chalk.ist",
-    "about": "Create beautiful images of your source code",
-    "label": "Chalk.ist"
+    "href": "https://playcode.io",
+    "about": "Javascript Playground",
+    "label": "PlayCode"
   },
   {
-    "href": "https://pengfeiw.github.io/minicode/react-paint",
-    "open-source": "https://github.com/pengfeiw/react-paint",
-    "about": "Microsoft Paint realized with reactjs.",
-    "label": "React Paint"
+    "href": "https://app.quicktype.io",
+    "open-source": "https://github.com/quicktype/quicktype",
+    "about": "Generate types and converters from JSON, Schema, and GraphQL",
+    "label": "Quicktype"
   },
   {
-    "href": "https://codeimg.io/",
-    "about": "Create and share beautiful images of your source code.",
-    "label": "Codeimg.io"
-  },
-  {
-    "href": "https://ray.so/",
-    "about": "Create beautiful images of your code",
-    "label": "Ray.so"
-  },
-  {
-    "href": "https://excalidraw.com/",
-    "open-source": "https://github.com/excalidraw/excalidraw",
-    "about": "Virtual whiteboard for sketching hand-drawn like diagrams",
-    "label": "Excalidraw"
-  },
-  {
-    "href": "https://regex-vis.com/",
-    "open-source": "https://github.com/Bowen7/regex-vis",
-    "about": "Regex visualizer & editor",
-    "label": "Regex-Vis"
-  },
-  {
-    "href": "https://regexlearn.com/",
-    "open-source": "https://github.com/aykutkardas/regexlearn.com",
-    "about": "Learn RegEx step by step, from zero to advanced.",
-    "label": "Learn RegEx"
-  },
-  {
-    "href": "https://ihateregex.io/",
-    "open-source": "https://github.com/aykutkardas/regexlearn.com",
-    "about": "The Regex Cheat Sheet",
-    "label": "iHateRegex"
+    "href": "https://jaywcjlove.github.io/regexp-example/",
+    "about": "正则表达式实例搜集，通过实例来学习正则表达式。",
+    "label": "Regexp Example"
   },
   {
     "href": "https://jex.im/regulex/",
@@ -161,6 +179,11 @@
     "label": "Regex101"
   },
   {
+    "href": "https://uiwjs.github.io/react-run-web/",
+    "about": "Online Code Editor for Rapid Web Development.",
+    "label": "Run Web"
+  },
+  {
     "href": "https://rubular.com/",
     "open-source": "https://github.com/firasdib/Regex101",
     "about": "a Ruby regular expression editor",
@@ -173,22 +196,48 @@
     "label": "Regex101"
   },
   {
+    "href": "https://regex-vis.com/",
+    "open-source": "https://github.com/Bowen7/regex-vis",
+    "about": "Regex visualizer & editor",
+    "label": "Regex-Vis"
+  },
+  {
+    "href": "https://pengfeiw.github.io/minicode/react-paint",
+    "open-source": "https://github.com/pengfeiw/react-paint",
+    "about": "Microsoft Paint realized with reactjs.",
+    "label": "React Paint"
+  },
+  {
+    "href": "https://runkit.com",
+    "open-source": "https://github.com/quicktype/quicktype",
+    "about": "Node prototyping",
+    "label": "RunKit"
+  },
+  {
+    "href": "https://ray.so/",
+    "about": "Create beautiful images of your code",
+    "label": "Ray.so"
+  },
+  {
+    "href": "https://unpkg.com/svgedit@7.1.3/dist/editor/index.html",
+    "about": "Powerful SVG-Editor for your browser",
+    "label": "SVG Edit"
+  },
+  {
+    "href": "https://yqnn.github.io/svg-path-editor/",
+    "about": "Online editor to create and manipulate SVG paths",
+    "label": "SVG Path Editor"
+  },
+  {
     "href": "https://shields.io/",
     "open-source": "https://github.com/badges/shields",
     "about": "Concise, consistent, and legible badges in SVG and raster format",
     "label": "Shields.io"
   },
   {
-    "href": "https://badgen.net/",
-    "open-source": "https://github.com/badgen/badgen.net",
-    "about": "Fast badge generating service",
-    "label": "Badgen"
-  },
-  {
-    "href": "https://buttons.github.io",
-    "open-source": "https://github.com/ntkme/github-buttons",
-    "about": "Unofficial github:buttons.",
-    "label": "Github Buttons"
+    "href": "https://stackblitz.com",
+    "about": "Instant Dev Environments",
+    "label": "StackBlitz"
   },
   {
     "href": "https://skillicons.dev/",
@@ -197,47 +246,8 @@
     "label": "Skill Icons"
   },
   {
-    "href": "https://npmview.vercel.app",
-    "open-source": "https://github.com/pd4d10/npmview",
-    "about": "A web application to view npm package files",
-    "label": "npmview"
-  },
-  {
-    "href": "https://codepen.io",
-    "about": "Online Code Editor and Front End Web Developer Community",
-    "label": "CodePen"
-  },
-  {
-    "href": "https://stackblitz.com",
-    "about": "Instant Dev Environments",
-    "label": "StackBlitz"
-  },
-  {
-    "href": "https://jsfiddle.net",
-    "about": "Test your JavaScript, CSS, HTML or CoffeeScript online with JSFiddle code editor.",
-    "label": "JSFiddle"
-  },
-  {
-    "href": "https://jsbin.com",
-    "about": "Collaborative JavaScript Debugging.",
-    "label": "JS Bin"
-  },
-  {
-    "href": "https://codesandbox.io",
-    "open-source": "https://github.com/codesandbox/codesandbox-client",
-    "about": "An online IDE for rapid web development",
-    "label": "CodeSandbox"
-  },
-  {
-    "href": "https://app.quicktype.io",
-    "open-source": "https://github.com/quicktype/quicktype",
-    "about": "Generate types and converters from JSON, Schema, and GraphQL",
-    "label": "quicktype"
-  },
-  {
-    "href": "https://runkit.com",
-    "open-source": "https://github.com/quicktype/quicktype",
-    "about": "Node prototyping",
-    "label": "RunKit"
+    "href": "https://uiwjs.github.io/ui-color/",
+    "about": "Converting HEX & RGB colors to UIColor/NSColor/Color for both Objective C & Swift.",
+    "label": "UI Color"
   }
 ]
