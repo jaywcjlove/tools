@@ -2,10 +2,11 @@ import { useState } from 'react';
 import { Wrapper, Textarea, StyledLayout, CopyButton } from '@wcj/tools-react-components';
 import { htmlToMarkdown } from './utils';
 
-export default function URLEncode() {
+export default function Html2Markdown() {
   const [html, setHtml] = useState<string>();
   const [markdown, setMarkdown] = useState<string>();
   const handleInput = (value: string = '') => {
+    setHtml(value);
     setMarkdown(htmlToMarkdown(value));
   };
   return (

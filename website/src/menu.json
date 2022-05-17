@@ -28,6 +28,10 @@
     "children": "HTML To Markdown"
   },
   {
+    "href": "/markdown-to-html",
+    "children": "Markdown To HTML"
+  },
+  {
     "divider": true
   },
   {
@@ -69,5 +73,15 @@
     "href": "https://uiwjs.github.io/regexp-example/",
     "target": "_blank",
     "children": "Regexp Example"
+  },
+  {
+    "href": "https://unpkg.com/svgedit@7.1.3/dist/editor/index.html",
+    "target": "_blank",
+    "children": "SVG Edit"
+  },
+  {
+    "href": "https://yqnn.github.io/svg-path-editor/",
+    "target": "_blank",
+    "children": "SVG Path Editor"
   }
 ]

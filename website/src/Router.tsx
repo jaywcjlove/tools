@@ -8,6 +8,7 @@ import JSONFormat from '@wcj/tools-react-json-format';
 import Hash from '@wcj/tools-react-hash';
 import GeneratePassword from '@wcj/tools-react-generate-password';
 import HtmlToMarkdown from '@wcj/tools-react-html-to-markdown';
+import MarkdownToHtml from '@wcj/tools-react-markdown-to-html';
 import Layout from './app/Layout';
 import { NoMatch } from './app/NoMatch';
 
@@ -69,6 +70,14 @@ export let routes: RouteObject[] = [
         element: (
           <DocumentTitle title="HTML To Markdown - Web Tools">
             <HtmlToMarkdown />
+          </DocumentTitle>
+        ),
+      },
+      {
+        path: '/markdown-to-html',
+        element: (
+          <DocumentTitle title="Markdown To HTML - Web Tools">
+            <MarkdownToHtml />
           </DocumentTitle>
         ),
       },
