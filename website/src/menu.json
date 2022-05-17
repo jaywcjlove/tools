@@ -40,6 +40,10 @@
     "label": "HTML Escape/Unescape"
   },
   {
+    "href": "/base64-encoder",
+    "label": "Base64 Encoder/Decoder"
+  },
+  {
     "divider": true
   },
   {

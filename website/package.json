@@ -27,6 +27,7 @@
     "@wcj/tools-react-html-to-markdown": "1.0.0",
     "@wcj/tools-react-markdown-to-html": "1.0.0",
     "@wcj/tools-react-html-escape": "1.0.0",
+    "@wcj/tools-react-base64-encoder": "1.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "~6.3.0",
