@@ -20,6 +20,10 @@
     "children": "Hash"
   },
   {
+    "href": "/generate-password",
+    "children": "Generate Password"
+  },
+  {
     "divider": true
   },
   {

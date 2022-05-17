@@ -19,19 +19,22 @@
     "@uiw/react-copy-to-clipboard": "~4.21.0",
     "@uiw/react-github-corners": "~1.5.3",
     "@wcj/dark-mode": "^1.0.14",
-    "@wcj/tools-react-json-format": "1.0.0",
+    "@wcj/tools-react-generate-password": "1.0.0",
+    "@wcj/tools-react-hash": "1.0.0",
     "@wcj/tools-react-image-to-base64": "1.0.0",
+    "@wcj/tools-react-json-format": "1.0.0",
     "@wcj/tools-react-text-case": "1.0.0",
     "@wcj/tools-react-url-encode": "1.0.0",
-    "@wcj/tools-react-hash": "1.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-router-dom": "~6.3.0"
+    "react-router-dom": "~6.3.0",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@kkt/less-modules": "~7.1.1",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.3",
+    "@types/styled-components": "^5.1.25",
     "kkt": "~7.1.5"
   },
   "eslintConfig": {

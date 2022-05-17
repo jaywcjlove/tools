@@ -1,10 +1,9 @@
-import { PropsWithChildren, useState } from 'react';
-import styled, { css } from 'styled-components';
-import copyTextToClipboard from '@uiw/copy-to-clipboard';
-import { CopyIcon } from './Icon';
+import { PropsWithChildren } from 'react';
+import styled from 'styled-components';
 
 export * from './Document';
 export * from './Result';
+export * from './Button';
 
 export const Wrapper = styled.main`
   padding: 25px;
@@ -27,7 +26,7 @@ export const Textarea = styled.textarea<TextareaProps>`
   width: 100%;
 `;
 
-export interface LayoutProps {
+export interface LayoutProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   title?: string;
   className?: string;
   extra?: React.ReactNode;
@@ -51,13 +50,13 @@ export const Extra = styled.div`
   display: flex;
 `;
 
-export const Layout: React.FC<PropsWithChildren<LayoutProps>> = (props) => (
-  <div className={props.className}>
+export const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({ title, extra, children, ...other }) => (
+  <div {...other}>
     <Title>
-      <span> {props.title} </span>
-      <Extra>{props.extra}</Extra>
+      <span> {title} </span>
+      <Extra>{extra}</Extra>
     </Title>
-    <Context>{props.children}</Context>
+    <Context>{children}</Context>
   </div>
 );
 
@@ -68,45 +67,3 @@ export const StyledLayout = styled(Layout)`
   flex: 1;
   justify-content: space-around;
 `;
-
-const Button = styled.button<ButtonProps>`
-  border: 0;
-  padding: 4px 6px;
-  cursor: pointer;
-  border-radius: 4px;
-  display: flex;
-  ${(props) =>
-    props.success &&
-    css`
-      background: #28a745;
-      color: white;
-    `}
-`;
-
-export interface ButtonProps
-  extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-  ref?: any;
-  success?: boolean;
-}
-
-export const CopyButton: React.FC<PropsWithChildren<ButtonProps>> = ({ children, ...other }) => {
-  const [success, setSuccess] = useState(false);
-  const [child, setChild] = useState('Copy');
-  function handleClick(evn: React.MouseEvent<HTMLButtonElement>) {
-    copyTextToClipboard(`${other.value}`, (isCopy) => {
-      setSuccess(true);
-      setChild('Copied!');
-      const timer = setTimeout(() => {
-        setSuccess(false);
-        setChild('Copy');
-        clearTimeout(timer);
-      }, 2000);
-    });
-  }
-  return (
-    <Button {...other} success={success} onClick={handleClick}>
-      <CopyIcon style={{ marginRight: 2 }} />
-      <span>{child}</span>
-    </Button>
-  );
-};
