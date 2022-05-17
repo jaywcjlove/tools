@@ -1,47 +1,6 @@
-import { useState, PropsWithChildren } from 'react';
-import { Wrapper, Textarea, StyledLayout, CopyButton } from '@wcj/tools-react-components';
-import styled, { createGlobalStyle } from 'styled-components';
+import { useState } from 'react';
+import { Wrapper, Textarea, StyledLayout, CopyButton, ResultCode } from '@wcj/tools-react-components';
 import { toCamelCase, toPascalCase, toSnakeCase, toKebabCase, toTitleCase, toPathCase, swapCase } from './utils';
-
-export interface ResultProps {
-  title?: string;
-  className?: string;
-  extra?: React.ReactNode;
-}
-
-const GlobalStyle = createGlobalStyle`
-  [data-color-mode*='dark'], [data-color-mode*='dark'] body {
-    --color-border-text-case: #30363d;
-  }
-  [data-color-mode*='light'], [data-color-mode*='light'] body {
-    --color-border-text-case: #d0d7de;
-  }
-`;
-
-const Code = styled.pre`
-  border-color: var(--color-border-text-case);
-  border-width: 1px;
-  border-style: solid;
-  padding: 15px;
-  border-radius: 6px;
-  font-size: 14px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
-`;
-
-export const Title = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-export const Result: React.FC<PropsWithChildren<ResultProps>> = (props) => (
-  <div className={props.className}>
-    <Title>
-      <span>{props.title}</span>
-      {props.extra}
-    </Title>
-    <Code>{props.children}</Code>
-  </div>
-);
 
 function handle(fun: (val?: string) => string | undefined, value: string = '') {
   return value
@@ -62,7 +21,6 @@ export default function TextCase() {
   const pathCase = handle(toPathCase, value);
   return (
     <Wrapper>
-      <GlobalStyle />
       <StyledLayout title="Input" extra={value && <CopyButton value={value} />}>
         <Textarea
           spellCheck={false}
@@ -72,27 +30,27 @@ export default function TextCase() {
       </StyledLayout>
       <StyledLayout title="Result">
         <div style={{ height: '100%' }}>
-          <Result title="Camel Case" extra={camelCase && <CopyButton value={camelCase} />}>
+          <ResultCode title="Camel Case" extra={camelCase && <CopyButton value={camelCase} />}>
             {camelCase}
-          </Result>
-          <Result title="Pascal Case" extra={pascalCase && <CopyButton value={pascalCase} />}>
+          </ResultCode>
+          <ResultCode title="Pascal Case" extra={pascalCase && <CopyButton value={pascalCase} />}>
             {pascalCase}
-          </Result>
-          <Result title="Snake Case" extra={snakeCase && <CopyButton value={snakeCase} />}>
+          </ResultCode>
+          <ResultCode title="Snake Case" extra={snakeCase && <CopyButton value={snakeCase} />}>
             {snakeCase}
-          </Result>
-          <Result title="Kebab Case" extra={kebabCase && <CopyButton value={kebabCase} />}>
+          </ResultCode>
+          <ResultCode title="Kebab Case" extra={kebabCase && <CopyButton value={kebabCase} />}>
             {kebabCase}
-          </Result>
-          <Result title="Title Case" extra={titleCase && <CopyButton value={titleCase} />}>
+          </ResultCode>
+          <ResultCode title="Title Case" extra={titleCase && <CopyButton value={titleCase} />}>
             {titleCase}
-          </Result>
-          <Result title="Swap Case" extra={swapCaseStr && <CopyButton value={swapCaseStr} />}>
+          </ResultCode>
+          <ResultCode title="Swap Case" extra={swapCaseStr && <CopyButton value={swapCaseStr} />}>
             {swapCaseStr}
-          </Result>
-          <Result title="Path Case" extra={pathCase && <CopyButton value={pathCase} />}>
+          </ResultCode>
+          <ResultCode title="Path Case" extra={pathCase && <CopyButton value={pathCase} />}>
             {pathCase}
-          </Result>
+          </ResultCode>
         </div>
       </StyledLayout>
     </Wrapper>

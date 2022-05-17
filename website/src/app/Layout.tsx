@@ -5,6 +5,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 import styles from './Layout.module.less';
 import { ReactComponent as ShareIcon } from '../assets/share.svg';
 import { ReactComponent as LogoIcon } from '../assets/logo.svg';
+import menus from '../menu.json';
 
 export default function Layout() {
   return (
@@ -20,43 +21,25 @@ export default function Layout() {
             <dark-mode permanent></dark-mode>
           </header>
           <nav>
-            <NavLink to="/"> URL Encode </NavLink>
-            <NavLink to="/json-format"> JSON Format </NavLink>
-            <NavLink to="/text-case"> Text Case </NavLink>
-            <NavLink to="/image-to-base64"> Image to Base64 </NavLink>
-            <div className={styles.divider}></div>
-            <a href="https://uiwjs.github.io/npm-unpkg/" target="_blank" rel="noreferrer">
-              <span>NPM Unpkg</span>
-              <ShareIcon height={18} />
-            </a>
-            <a href="https://uiwjs.github.io/json-viewer/" target="_blank" rel="noreferrer">
-              <span>JSON Viewer</span>
-              <ShareIcon height={18} />
-            </a>
-            <a href="https://uiwjs.github.io/keycode-info/" target="_blank" rel="noreferrer">
-              <span>Keycode Info</span>
-              <ShareIcon height={18} />
-            </a>
-            <a href="https://uiwjs.github.io/ui-color/" target="_blank" rel="noreferrer">
-              <span>UI Color</span>
-              <ShareIcon height={18} />
-            </a>
-            <a href="https://jaywcjlove.github.io/nginx-editor/" target="_blank" rel="noreferrer">
-              <span>Nginx Editor</span>
-              <ShareIcon height={18} />
-            </a>
-            <a href="https://uiwjs.github.io/react-run-web/" target="_blank" rel="noreferrer">
-              <span>Run Web</span>
-              <ShareIcon height={18} />
-            </a>
-            <a href="https://jaywcjlove.github.io/logo/" target="_blank" rel="noreferrer">
-              <span>Logo Asset</span>
-              <ShareIcon height={18} />
-            </a>
-            <a href="https://jaywcjlove.github.io/regexp-example/" target="_blank" rel="noreferrer">
-              <span>Regexp Example</span>
-              <ShareIcon height={18} />
-            </a>
+            {menus.map((item, idx) => {
+              if (item.divider) {
+                return <div key={idx} className={styles.divider}></div>;
+              }
+              if (/https?:/.test(item.href || '')) {
+                return (
+                  <a key={idx} href={item.href} target="_blank" rel="noreferrer">
+                    <span>{item.children}</span>
+                    <ShareIcon height={18} />
+                  </a>
+                );
+              }
+              return (
+                <NavLink key={idx} to={item.href || ''}>
+                  {' '}
+                  {item.children}
+                </NavLink>
+              );
+            })}
           </nav>
         </aside>
         <article>
