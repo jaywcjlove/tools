@@ -1,6 +1,10 @@
 [
   {
     "href": "/",
+    "children": "Home"
+  },
+  {
+    "href": "/url-encode",
     "children": "URL Encode"
   },
   {
@@ -37,51 +41,101 @@
   {
     "href": "https://uiwjs.github.io/npm-unpkg/",
     "target": "_blank",
+    "about": "A web application to view npm package files, Based on unpkg.",
     "children": "NPM Unpkg"
   },
   {
     "href": "https://uiwjs.github.io/json-viewer/",
     "target": "_blank",
+    "about": "Online JSON Viewer, JSON Beautifier to beautify and tree view of JSON data ",
     "children": "JSON Viewer"
   },
   {
     "href": "https://uiwjs.github.io/keycode-info/",
     "target": "_blank",
+    "about": "A simple web page that responds to the pressed key and returns information about the JavaScript'on-key press' key.",
     "children": "Keycode Info"
   },
   {
     "href": "https://uiwjs.github.io/ui-color/",
     "target": "_blank",
+    "about": "Converting HEX & RGB colors to UIColor/NSColor/Color for both Objective C & Swift.",
     "children": "UI Color"
   },
   {
-    "href": "https://uiwjs.github.io/nginx-editor/",
+    "href": "https://jaywcjlove.github.io/nginx-editor/",
     "target": "_blank",
+    "about": "Nginx language for Monaco Editor.",
     "children": "Nginx Editor"
   },
   {
     "href": "https://uiwjs.github.io/react-run-web/",
     "target": "_blank",
+    "about": "Online Code Editor for Rapid Web Development.",
     "children": "Run Web"
   },
   {
     "href": "https://jaywcjlove.github.io/logo/",
     "target": "_blank",
+    "about": "website logo asset",
     "children": "Logo Asset"
   },
   {
-    "href": "https://uiwjs.github.io/regexp-example/",
+    "href": "https://jaywcjlove.github.io/regexp-example/",
     "target": "_blank",
+    "about": "正则表达式实例搜集，通过实例来学习正则表达式。",
     "children": "Regexp Example"
   },
   {
     "href": "https://unpkg.com/svgedit@7.1.3/dist/editor/index.html",
     "target": "_blank",
+    "about": "Powerful SVG-Editor for your browser",
     "children": "SVG Edit"
   },
   {
     "href": "https://yqnn.github.io/svg-path-editor/",
     "target": "_blank",
+    "about": "Online editor to create and manipulate SVG paths",
     "children": "SVG Path Editor"
+  },
+  {
+    "href": "https://www.pixelartcss.com/",
+    "open-source": "https://github.com/jvalen/pixel-art-react",
+    "target": "_blank",
+    "about": "Pixel art animation and drawing web app powered by React",
+    "children": "Pixel Art to CSS"
+  },
+  {
+    "href": "https://chalk.ist/",
+    "open-source": "https://github.com/Idered/chalk.ist",
+    "target": "_blank",
+    "about": "Create beautiful images of your source code",
+    "children": "Chalk.ist"
+  },
+  {
+    "href": "https://pengfeiw.github.io/minicode/react-paint",
+    "open-source": "https://github.com/pengfeiw/react-paint",
+    "target": "_blank",
+    "about": "Microsoft Paint realized with reactjs.",
+    "children": "React Paint"
+  },
+  {
+    "href": "https://codeimg.io/",
+    "target": "_blank",
+    "about": "Create and share beautiful images of your source code.",
+    "children": "Codeimg.io"
+  },
+  {
+    "href": "https://ray.so/",
+    "target": "_blank",
+    "about": "Create beautiful images of your code",
+    "children": "Ray.so"
+  },
+  {
+    "href": "https://excalidraw.com/",
+    "open-source": "https://github.com/excalidraw/excalidraw",
+    "target": "_blank",
+    "about": "Virtual whiteboard for sketching hand-drawn like diagrams",
+    "children": "Excalidraw"
   }
 ]

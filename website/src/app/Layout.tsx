@@ -1,7 +1,7 @@
-import GitHubCorners from '@uiw/react-github-corners';
 import { Fragment } from 'react';
+import GitHubCorners from '@uiw/react-github-corners';
 import '@wcj/dark-mode';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import styles from './Layout.module.less';
 import { ReactComponent as ShareIcon } from '../assets/share.svg';
 import { ReactComponent as LogoIcon } from '../assets/logo.svg';
@@ -15,8 +15,10 @@ export default function Layout() {
         <aside>
           <header>
             <h1>
-              <LogoIcon width={21} />
-              <span>Web Tools</span>
+              <Link to="/">
+                <LogoIcon width={21} />
+                <span>Web Tools</span>
+              </Link>
             </h1>
             <dark-mode permanent></dark-mode>
           </header>

@@ -11,6 +11,7 @@ import HtmlToMarkdown from '@wcj/tools-react-html-to-markdown';
 import MarkdownToHtml from '@wcj/tools-react-markdown-to-html';
 import Layout from './app/Layout';
 import { NoMatch } from './app/NoMatch';
+import Home from './app/Home';
 
 export let routes: RouteObject[] = [
   {
@@ -19,6 +20,14 @@ export let routes: RouteObject[] = [
     children: [
       {
         index: true,
+        element: (
+          <DocumentTitle title="Home - Web Tools">
+            <Home />
+          </DocumentTitle>
+        ),
+      },
+      {
+        path: '/url-encode',
         element: (
           <DocumentTitle title="URL Encode - Web Tools">
             <UrlEncode />
