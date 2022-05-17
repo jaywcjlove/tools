@@ -46,7 +46,7 @@ export default function Home() {
         {tools.map((item, key) => {
           return (
             <Link key={key} to={item.href!}>
-              {item.children}
+              {item.label}
             </Link>
           );
         })}
@@ -56,7 +56,7 @@ export default function Home() {
         {thirdParty.map((item, key) => {
           return (
             <a key={key} href={item.href!} target="_blank" rel="noreferrer">
-              <span>{item.children}</span>
+              <span>{item.label}</span>
               <span className="detail">{item.about}</span>
             </a>
           );

@@ -30,15 +30,14 @@ export default function Layout() {
               if (/https?:/.test(item.href || '')) {
                 return (
                   <a key={idx} href={item.href} target="_blank" rel="noreferrer">
-                    <span>{item.children}</span>
+                    <span>{item.label}</span>
                     <ShareIcon height={18} />
                   </a>
                 );
               }
               return (
                 <NavLink key={idx} to={item.href || ''}>
-                  {' '}
-                  {item.children}
+                  {item.label}
                 </NavLink>
               );
             })}

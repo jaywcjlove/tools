@@ -1,141 +1,235 @@
 [
   {
     "href": "/",
-    "children": "Home"
+    "label": "Home"
   },
   {
     "href": "/url-encode",
-    "children": "URL Encode"
+    "label": "URL Encode"
   },
   {
     "href": "/json-format",
-    "children": "JSON Format"
+    "label": "JSON Format"
   },
   {
     "href": "/text-case",
-    "children": "Text Case"
+    "label": "Text Case"
   },
   {
     "href": "/image-to-base64",
-    "children": "Image to Base64"
+    "label": "Image to Base64"
   },
   {
     "href": "/hash",
-    "children": "Hash"
+    "label": "Hash"
   },
   {
     "href": "/generate-password",
-    "children": "Generate Password"
+    "label": "Generate Password"
   },
   {
     "href": "/html-to-markdown",
-    "children": "HTML To Markdown"
+    "label": "HTML To Markdown"
   },
   {
     "href": "/markdown-to-html",
-    "children": "Markdown To HTML"
+    "label": "Markdown To HTML"
   },
   {
     "divider": true
   },
   {
     "href": "https://uiwjs.github.io/npm-unpkg/",
-    "target": "_blank",
     "about": "A web application to view npm package files, Based on unpkg.",
-    "children": "NPM Unpkg"
+    "label": "NPM Unpkg"
   },
   {
     "href": "https://uiwjs.github.io/json-viewer/",
-    "target": "_blank",
     "about": "Online JSON Viewer, JSON Beautifier to beautify and tree view of JSON data ",
-    "children": "JSON Viewer"
+    "label": "JSON Viewer"
   },
   {
     "href": "https://uiwjs.github.io/keycode-info/",
-    "target": "_blank",
     "about": "A simple web page that responds to the pressed key and returns information about the JavaScript'on-key press' key.",
-    "children": "Keycode Info"
+    "label": "Keycode Info"
   },
   {
     "href": "https://uiwjs.github.io/ui-color/",
-    "target": "_blank",
     "about": "Converting HEX & RGB colors to UIColor/NSColor/Color for both Objective C & Swift.",
-    "children": "UI Color"
+    "label": "UI Color"
   },
   {
     "href": "https://jaywcjlove.github.io/nginx-editor/",
-    "target": "_blank",
     "about": "Nginx language for Monaco Editor.",
-    "children": "Nginx Editor"
+    "label": "Nginx Editor"
   },
   {
     "href": "https://uiwjs.github.io/react-run-web/",
-    "target": "_blank",
     "about": "Online Code Editor for Rapid Web Development.",
-    "children": "Run Web"
+    "label": "Run Web"
   },
   {
     "href": "https://jaywcjlove.github.io/logo/",
-    "target": "_blank",
     "about": "website logo asset",
-    "children": "Logo Asset"
+    "label": "Logo Asset"
   },
   {
     "href": "https://jaywcjlove.github.io/regexp-example/",
-    "target": "_blank",
     "about": "正则表达式实例搜集，通过实例来学习正则表达式。",
-    "children": "Regexp Example"
+    "label": "Regexp Example"
   },
   {
     "href": "https://unpkg.com/svgedit@7.1.3/dist/editor/index.html",
-    "target": "_blank",
     "about": "Powerful SVG-Editor for your browser",
-    "children": "SVG Edit"
+    "label": "SVG Edit"
   },
   {
     "href": "https://yqnn.github.io/svg-path-editor/",
-    "target": "_blank",
     "about": "Online editor to create and manipulate SVG paths",
-    "children": "SVG Path Editor"
+    "label": "SVG Path Editor"
   },
   {
     "href": "https://www.pixelartcss.com/",
     "open-source": "https://github.com/jvalen/pixel-art-react",
-    "target": "_blank",
     "about": "Pixel art animation and drawing web app powered by React",
-    "children": "Pixel Art to CSS"
+    "label": "Pixel Art to CSS"
   },
   {
     "href": "https://chalk.ist/",
     "open-source": "https://github.com/Idered/chalk.ist",
-    "target": "_blank",
     "about": "Create beautiful images of your source code",
-    "children": "Chalk.ist"
+    "label": "Chalk.ist"
   },
   {
     "href": "https://pengfeiw.github.io/minicode/react-paint",
     "open-source": "https://github.com/pengfeiw/react-paint",
-    "target": "_blank",
     "about": "Microsoft Paint realized with reactjs.",
-    "children": "React Paint"
+    "label": "React Paint"
   },
   {
     "href": "https://codeimg.io/",
-    "target": "_blank",
     "about": "Create and share beautiful images of your source code.",
-    "children": "Codeimg.io"
+    "label": "Codeimg.io"
   },
   {
     "href": "https://ray.so/",
-    "target": "_blank",
     "about": "Create beautiful images of your code",
-    "children": "Ray.so"
+    "label": "Ray.so"
   },
   {
     "href": "https://excalidraw.com/",
     "open-source": "https://github.com/excalidraw/excalidraw",
-    "target": "_blank",
     "about": "Virtual whiteboard for sketching hand-drawn like diagrams",
-    "children": "Excalidraw"
+    "label": "Excalidraw"
+  },
+  {
+    "href": "https://regex-vis.com/",
+    "open-source": "https://github.com/Bowen7/regex-vis",
+    "about": "Regex visualizer & editor",
+    "label": "Regex-Vis"
+  },
+  {
+    "href": "https://regexlearn.com/",
+    "open-source": "https://github.com/aykutkardas/regexlearn.com",
+    "about": "Learn RegEx step by step, from zero to advanced.",
+    "label": "Learn RegEx"
+  },
+  {
+    "href": "https://ihateregex.io/",
+    "open-source": "https://github.com/aykutkardas/regexlearn.com",
+    "about": "The Regex Cheat Sheet",
+    "label": "iHateRegex"
+  },
+  {
+    "href": "https://jex.im/regulex/",
+    "open-source": "https://github.com/CJex/regulex",
+    "about": "Regular Expression Excited!",
+    "label": "Regulex"
+  },
+  {
+    "href": "https://regex101.com/",
+    "open-source": "https://github.com/firasdib/Regex101",
+    "about": "build, test, and debug regex",
+    "label": "Regex101"
+  },
+  {
+    "href": "https://rubular.com/",
+    "open-source": "https://github.com/firasdib/Regex101",
+    "about": "a Ruby regular expression editor",
+    "label": "Rubular"
+  },
+  {
+    "href": "http://regexr.com/",
+    "open-source": "https://github.com/gskinner/regexr",
+    "about": "RegExr is a HTML/JS based tool for creating, testing, and learning about Regular Expressions.",
+    "label": "Regex101"
+  },
+  {
+    "href": "https://shields.io/",
+    "open-source": "https://github.com/badges/shields",
+    "about": "Concise, consistent, and legible badges in SVG and raster format",
+    "label": "Shields.io"
+  },
+  {
+    "href": "https://badgen.net/",
+    "open-source": "https://github.com/badgen/badgen.net",
+    "about": "Fast badge generating service",
+    "label": "Badgen"
+  },
+  {
+    "href": "https://buttons.github.io",
+    "open-source": "https://github.com/ntkme/github-buttons",
+    "about": "Unofficial github:buttons.",
+    "label": "Github Buttons"
+  },
+  {
+    "href": "https://skillicons.dev/",
+    "open-source": "https://github.com/tandpfun/skill-icons",
+    "about": "Showcase your skills on your Github readme or resumé with ease",
+    "label": "Skill Icons"
+  },
+  {
+    "href": "https://npmview.vercel.app",
+    "open-source": "https://github.com/pd4d10/npmview",
+    "about": "A web application to view npm package files",
+    "label": "npmview"
+  },
+  {
+    "href": "https://codepen.io",
+    "about": "Online Code Editor and Front End Web Developer Community",
+    "label": "CodePen"
+  },
+  {
+    "href": "https://stackblitz.com",
+    "about": "Instant Dev Environments",
+    "label": "StackBlitz"
+  },
+  {
+    "href": "https://jsfiddle.net",
+    "about": "Test your JavaScript, CSS, HTML or CoffeeScript online with JSFiddle code editor.",
+    "label": "JSFiddle"
+  },
+  {
+    "href": "https://jsbin.com",
+    "about": "Collaborative JavaScript Debugging.",
+    "label": "JS Bin"
+  },
+  {
+    "href": "https://codesandbox.io",
+    "open-source": "https://github.com/codesandbox/codesandbox-client",
+    "about": "An online IDE for rapid web development",
+    "label": "CodeSandbox"
+  },
+  {
+    "href": "https://app.quicktype.io",
+    "open-source": "https://github.com/quicktype/quicktype",
+    "about": "Generate types and converters from JSON, Schema, and GraphQL",
+    "label": "quicktype"
+  },
+  {
+    "href": "https://runkit.com",
+    "open-source": "https://github.com/quicktype/quicktype",
+    "about": "Node prototyping",
+    "label": "RunKit"
   }
 ]
