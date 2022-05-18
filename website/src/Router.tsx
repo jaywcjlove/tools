@@ -27,6 +27,15 @@ export let routes: RouteObject[] = [
         index: true,
         element: (
           <React.Suspense fallback={<Loading />}>
+            {/** @ts-ignore */}
+            <HomePage />
+          </React.Suspense>
+        ),
+      },
+      {
+        index: true,
+        element: (
+          <React.Suspense fallback={<Loading />}>
             <DocumentTitle title="Home - Web Tools">
               <HomePage />
             </DocumentTitle>
