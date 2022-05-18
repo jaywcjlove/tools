@@ -25,6 +25,7 @@ const Code = styled.pre`
 const Title = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export type TextareaProps = React.DetailedHTMLProps<
@@ -32,19 +33,26 @@ export type TextareaProps = React.DetailedHTMLProps<
   HTMLTextAreaElement
 >;
 
-export interface ResultProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  title?: string;
+export interface ResultProps
+  extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'title'> {
+  title?: JSX.Element;
   className?: string;
   extra?: React.ReactNode;
 }
 
-export const ResultCode: React.FC<PropsWithChildren<ResultProps>> = (props) => (
-  <div className={props.className} {...props}>
+export const ResultCode: React.FC<PropsWithChildren<ResultProps>> = ({
+  className,
+  children,
+  title,
+  extra,
+  ...other
+}) => (
+  <div className={className} {...other}>
     <GlobalStyle />
     <Title>
-      <span>{props.title}</span>
-      {props.extra}
+      <span>{title}</span>
+      {extra}
     </Title>
-    <Code>{props.children}</Code>
+    <Code>{children}</Code>
   </div>
 );

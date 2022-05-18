@@ -29,6 +29,7 @@
     "@wcj/tools-react-html-escape": "1.0.0",
     "@wcj/tools-react-base64-encoder": "1.0.0",
     "@wcj/tools-react-qrcode-generator": "1.0.0",
+    "@wcj/tools-react-chinese-pinyin-conversion": "1.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "~6.3.0",

@@ -48,6 +48,10 @@
     "label": "QRCode Generator"
   },
   {
+    "href": "/chinese-pinyin-conversion",
+    "label": "Chinese Pinyin Conversion"
+  },
+  {
     "divider": true
   },
   {

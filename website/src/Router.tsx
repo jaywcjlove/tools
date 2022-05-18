@@ -17,6 +17,7 @@ const MarkdownToHtml = React.lazy(() => import('@wcj/tools-react-markdown-to-htm
 const HTMLEscape = React.lazy(() => import('@wcj/tools-react-html-escape'));
 const Base64Encoder = React.lazy(() => import('@wcj/tools-react-base64-encoder'));
 const QRCodeGenerator = React.lazy(() => import('@wcj/tools-react-qrcode-generator'));
+const ChinesePinyinConversion = React.lazy(() => import('@wcj/tools-react-chinese-pinyin-conversion'));
 
 export let routes: RouteObject[] = [
   {
@@ -148,6 +149,16 @@ export let routes: RouteObject[] = [
           <React.Suspense fallback={<Loading />}>
             <DocumentTitle title="QRCode Generator - Web Tools">
               <QRCodeGenerator />
+            </DocumentTitle>
+          </React.Suspense>
+        ),
+      },
+      {
+        path: '/chinese-pinyin-conversion',
+        element: (
+          <React.Suspense fallback={<Loading />}>
+            <DocumentTitle title="Chinese Pinyin Conversion - Web Tools">
+              <ChinesePinyinConversion />
             </DocumentTitle>
           </React.Suspense>
         ),

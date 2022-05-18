@@ -24,7 +24,9 @@ export const ButtonBase = styled.button<ButtonProps>`
   padding: 4px 6px;
   cursor: pointer;
   border-radius: 4px;
-  display: flex;
+  & > * {
+    vertical-align: middle;
+  }
   ${(props) =>
     props.success &&
     css`
