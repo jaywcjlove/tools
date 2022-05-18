@@ -36,7 +36,7 @@ const MenuItem = styled.div`
   }
 `;
 
-export default function Home() {
+export default function HomePage() {
   const tools = menus.filter((item) => !/^https?:/i.test(item.href || '') && !item.divider && item.href !== '/');
   const thirdParty = menus.filter((item) => /^https?:/i.test(item.href || ''));
   return (

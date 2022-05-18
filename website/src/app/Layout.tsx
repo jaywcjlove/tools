@@ -2,12 +2,22 @@ import { Fragment } from 'react';
 import GitHubCorners from '@uiw/react-github-corners';
 import '@wcj/dark-mode';
 import { Link, NavLink, Outlet } from 'react-router-dom';
+import styled from 'styled-components';
 import styles from './Layout.module.less';
 import { ReactComponent as ShareIcon } from '../assets/share.svg';
 import { ReactComponent as LogoIcon } from '../assets/logo.svg';
 import menus from '../menu.json';
 
+const Sup = styled.sup`
+  position: absolute;
+  font-weight: normal;
+  font-size: 12px;
+  margin-top: -4px;
+`;
+
 export default function Layout() {
+  // @ts-ignore
+  const version = VERSION;
   return (
     <Fragment>
       <GitHubCorners size={36} href="https://github.com/jaywcjlove/tools" />
@@ -17,7 +27,9 @@ export default function Layout() {
             <h1>
               <Link to="/">
                 <LogoIcon width={21} />
-                <span>Web Tools</span>
+                <span>
+                  Web Tools<Sup>{version}</Sup>
+                </span>
               </Link>
             </h1>
             <dark-mode permanent></dark-mode>
