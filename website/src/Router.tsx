@@ -23,6 +23,7 @@ const Loadable =
 
 // @ts-ignore
 const HomePage = Loadable(lazy(() => import('./app/Home')));
+// @ts-ignore
 const UrlEncode = Loadable(lazy(() => import('@wcj/tools-react-url-encode')));
 const TextCase = Loadable(lazy(() => import('@wcj/tools-react-text-case')));
 const JSONFormat = Loadable(lazy(() => import('@wcj/tools-react-json-format')));
