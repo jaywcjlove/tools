@@ -189,6 +189,7 @@
       "label": "UI Color"
     }
   },
+  "loading": "加载中...",
   "tools": "工具",
   "ThirdPartyTools": "第三方工具",
   "EncodedURL": "编码 URL"

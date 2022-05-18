@@ -189,6 +189,7 @@
       "label": "UI Color"
     }
   },
+  "loading": "Loading...",
   "tools": "Tools",
   "ThirdPartyTools": "Third-Party Tools",
   "EncodedURL": "Encoded URL"
