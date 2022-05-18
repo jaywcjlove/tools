@@ -9,6 +9,16 @@ export default (conf: Configuration, env: 'development' | 'production', options:
   conf.plugins!.push(
     new webpack.DefinePlugin({
       VERSION: JSON.stringify(pkg.version),
+      /**
+       * path where resources get loaded from, or a function
+       * returning a path:
+       * function(lngs, namespaces) { return customPath; }
+       * the returned path will interpolate lng, ns if provided like giving a static path
+       * the function might return a promise
+       * returning falsy will abort the download
+       * https://github.com/i18next/i18next-http-backend#backend-options
+       */
+      LOADPATH: env === 'production' ? '/tools' : '',
     }),
   );
   if (env === 'production') {

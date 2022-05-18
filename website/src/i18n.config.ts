@@ -3,6 +3,9 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import Backend from 'i18next-http-backend';
 
+// @ts-ignore
+const loadPath = LOADPATH;
+
 i18n
   .use(Backend)
   .use(LanguageDetector)
@@ -13,6 +16,9 @@ i18n
     debug: true,
     interpolation: {
       escapeValue: false, // react already safes from xss
+    },
+    backend: {
+      loadPath: `${loadPath}/locales/{{lng}}/{{ns}}.json`,
     },
   });
 
