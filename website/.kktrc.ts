@@ -18,7 +18,7 @@ export default (conf: Configuration, env: 'development' | 'production', options:
        * returning falsy will abort the download
        * https://github.com/i18next/i18next-http-backend#backend-options
        */
-      LOADPATH: JSON.stringify(env === 'production' ? '/tools/' : '/'),
+      LOADPATH: JSON.stringify(env === 'production' ? '/tools' : ''),
     }),
   );
   if (env === 'production') {
