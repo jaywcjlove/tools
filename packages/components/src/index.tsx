@@ -4,6 +4,8 @@ import styled from 'styled-components';
 export * from './Document';
 export * from './Result';
 export * from './Button';
+export * from './CodeLineCopy';
+export * from './Spacing';
 
 export const Wrapper = styled.main`
   padding: 25px;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Wrapper, Textarea, StyledLayout, CopyButton, Button } from '@wcj/tools-react-components';
+import { Wrapper, StyledLayout, CodeLineCopy, Button, Spacing } from '@wcj/tools-react-components';
 import styled from 'styled-components';
 
 const Input = styled.input`
@@ -67,42 +67,67 @@ function generatePassword(
 export default function GeneratePassword() {
   const [range, setRange] = useState<number>(12);
   const [lowerCase, setLowerCase] = useState<boolean>(true);
+  const [history, setHistory] = useState<string[]>([]);
   const [upperCase, setUpperCase] = useState<boolean>(true);
   const [numeric, setNumeric] = useState<boolean>(true);
   const [special, setSpecial] = useState<boolean>(true);
   const [result, setResult] = useState<string>();
+  const addHistory = (str: string) => {
+    const data = [...history];
+    data.unshift(str);
+    setHistory(data.slice(0, 20));
+  };
   useEffect(() => {
-    setResult(generatePassword(range, lowerCase, upperCase, numeric, special));
+    const password = generatePassword(range, lowerCase, upperCase, numeric, special);
+    addHistory(password);
+    setResult(password);
   }, [range, lowerCase, upperCase, numeric, special]);
+
   return (
     <Wrapper>
       <StyledLayout title="Setting">
-        <InputRange range={range} onChange={(evn) => setRange(Number((evn.target as HTMLInputElement).value))} />
-        <Label>
-          <Input type="checkbox" checked={lowerCase} onChange={(evn) => setLowerCase(evn.target.checked)} />
-          Lower Case Letter(a..z)
-        </Label>
-        <Label>
-          <Input type="checkbox" checked={upperCase} onChange={(evn) => setUpperCase(evn.target.checked)} />
-          Upper Case Letter(A..Z)
-        </Label>
-        <Label>
-          <Input type="checkbox" checked={numeric} onChange={(evn) => setNumeric(evn.target.checked)} />
-          Number (0..9)
-        </Label>
-        <Label>
-          <Input type="checkbox" checked={special} onChange={(evn) => setSpecial(evn.target.checked)} />
-          Special characters
-        </Label>
+        <InputRange
+          style={{ maxWidth: 630 }}
+          range={range}
+          onChange={(evn) => setRange(Number((evn.target as HTMLInputElement).value))}
+        />
+        <Spacing style={{ paddingTop: 10 }}>
+          <Label>
+            <Input type="checkbox" checked={lowerCase} onChange={(evn) => setLowerCase(evn.target.checked)} />
+            Lower Case Letter(a..z)
+          </Label>
+          <Label>
+            <Input type="checkbox" checked={upperCase} onChange={(evn) => setUpperCase(evn.target.checked)} />
+            Upper Case Letter(A..Z)
+          </Label>
+          <Label>
+            <Input type="checkbox" checked={numeric} onChange={(evn) => setNumeric(evn.target.checked)} />
+            Number (0..9)
+          </Label>
+          <Label>
+            <Input type="checkbox" checked={special} onChange={(evn) => setSpecial(evn.target.checked)} />
+            Special characters
+          </Label>
+        </Spacing>
         <Button
           style={{ marginTop: 10 }}
-          onClick={() => setResult(generatePassword(range, lowerCase, upperCase, numeric, special))}
+          onClick={() => {
+            const password = generatePassword(range, lowerCase, upperCase, numeric, special);
+            addHistory(password);
+            setResult(password);
+          }}
         >
           Generate Password
         </Button>
-      </StyledLayout>
-      <StyledLayout title="Result" extra={result && <CopyButton value={result} />}>
-        <Textarea spellCheck={false} value={result} readOnly />
+        <Spacing style={{ paddingTop: 10 }}>
+          {history.map((password, key) => {
+            return (
+              <CodeLineCopy label={`${key + 1}`} key={key}>
+                {password}
+              </CodeLineCopy>
+            );
+          })}
+        </Spacing>
       </StyledLayout>
     </Wrapper>
   );
