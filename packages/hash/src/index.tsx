@@ -1,5 +1,13 @@
 import { useState } from 'react';
-import { Wrapper, Textarea, StyledLayout, CopyButton, ResultCode } from '@wcj/tools-react-components';
+import {
+  Wrapper,
+  Textarea,
+  StyledLayout,
+  CopyButton,
+  ResultCode,
+  Spacing,
+  CodeLineCopy,
+} from '@wcj/tools-react-components';
 import md5 from 'crypto-js/md5';
 import sha224 from 'crypto-js/sha224';
 import sha256 from 'crypto-js/sha256';

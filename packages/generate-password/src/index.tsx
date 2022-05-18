@@ -10,19 +10,22 @@ const Label = styled.label`
   display: flex;
   align-items: center;
   user-select: none;
+  gap: 10px;
 `;
 
 export interface InputRangeProps
   extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
   ref?: any;
   range?: number;
+  extra?: React.ReactNode;
 }
 
 const InputRange: React.FC<React.PropsWithChildren<InputRangeProps>> = (props) => {
   return (
     <Label>
-      <Input type="range" min={8} max={50} style={{ flex: 1 }} {...props} defaultValue={props.range} />
+      <Input type="range" min={8} max={50} style={{ flex: 1 }} {...props} value={props.range} />
       <span>{props.range}</span>
+      {props.extra}
     </Label>
   );
 };
@@ -71,7 +74,6 @@ export default function GeneratePassword() {
   const [upperCase, setUpperCase] = useState<boolean>(true);
   const [numeric, setNumeric] = useState<boolean>(true);
   const [special, setSpecial] = useState<boolean>(true);
-  const [result, setResult] = useState<string>();
   const addHistory = (str: string) => {
     const data = [...history];
     data.unshift(str);
@@ -80,7 +82,6 @@ export default function GeneratePassword() {
   useEffect(() => {
     const password = generatePassword(range, lowerCase, upperCase, numeric, special);
     addHistory(password);
-    setResult(password);
   }, [range, lowerCase, upperCase, numeric, special]);
 
   return (
@@ -89,7 +90,17 @@ export default function GeneratePassword() {
         <InputRange
           style={{ maxWidth: 630 }}
           range={range}
+          value={range}
           onChange={(evn) => setRange(Number((evn.target as HTMLInputElement).value))}
+          extra={
+            <select value={range} onChange={(evn) => setRange(Number(evn.target.value))}>
+              {[...Array(43)].map((_, idx) => (
+                <option value={idx + 8} key={idx}>
+                  {idx + 8}
+                </option>
+              ))}
+            </select>
+          }
         />
         <Spacing style={{ paddingTop: 10 }}>
           <Label>
@@ -114,7 +125,6 @@ export default function GeneratePassword() {
           onClick={() => {
             const password = generatePassword(range, lowerCase, upperCase, numeric, special);
             addHistory(password);
-            setResult(password);
           }}
         >
           Generate Password

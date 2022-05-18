@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Wrapper, Textarea, StyledLayout, CopyButton, ResultCode } from '@wcj/tools-react-components';
+import { Fragment, useState } from 'react';
+import { Wrapper, Textarea, StyledLayout, CopyButton, ResultCode, Button } from '@wcj/tools-react-components';
 import {
   toCamelCase,
   toPascalCase,
@@ -14,6 +14,8 @@ import {
 } from './utils';
 
 export * from './utils';
+
+const sample = `Hello World!\nCamel Case`;
 
 function handle(fun: (val?: string) => string | undefined, value: string = '') {
   return value
@@ -37,7 +39,15 @@ export default function TextCase() {
   const dotCase = handle(toDotCase, value);
   return (
     <Wrapper>
-      <StyledLayout title="Input" extra={value && <CopyButton value={value} />}>
+      <StyledLayout
+        title="Input"
+        extra={
+          <Fragment>
+            <Button onClick={() => setValue(sample)}>Sample</Button>
+            {value && <CopyButton value={value} />}
+          </Fragment>
+        }
+      >
         <Textarea
           spellCheck={false}
           value={value}

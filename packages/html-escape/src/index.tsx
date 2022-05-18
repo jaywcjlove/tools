@@ -1,5 +1,8 @@
-import { useState } from 'react';
-import { Wrapper, Textarea, StyledLayout, CopyButton } from '@wcj/tools-react-components';
+import { Fragment, useState } from 'react';
+import { Wrapper, Textarea, StyledLayout, CopyButton, Button } from '@wcj/tools-react-components';
+
+const sample = `<div>Hello World!</div>`;
+const sampleEscape = `&lt;div&gt;Goodbye World!&lt;/div&gt;`;
 
 function unescapeHandle(str: string = '') {
   return str
@@ -37,7 +40,22 @@ export default function HTMLEscape() {
   };
   return (
     <Wrapper>
-      <StyledLayout title="HTML Unescape" extra={value && <CopyButton value={value} />}>
+      <StyledLayout
+        title="HTML Unescape"
+        extra={
+          <Fragment>
+            {value && <CopyButton value={value} />}
+            <Button
+              onClick={() => {
+                setValue(sample);
+                setEscape(escapeHandle(sample));
+              }}
+            >
+              Sample
+            </Button>
+          </Fragment>
+        }
+      >
         <Textarea
           spellCheck={false}
           value={value}
@@ -46,7 +64,22 @@ export default function HTMLEscape() {
           onInput={(evn) => handleInput((evn.target as HTMLTextAreaElement).value)}
         />
       </StyledLayout>
-      <StyledLayout title="HTML Escape" extra={escape && <CopyButton value={escape} />}>
+      <StyledLayout
+        title="HTML Escape"
+        extra={
+          <Fragment>
+            <Button
+              onClick={() => {
+                setValue(unescapeHandle(sampleEscape));
+                setEscape(sampleEscape);
+              }}
+            >
+              Sample
+            </Button>
+            {escape && <CopyButton value={escape} />}
+          </Fragment>
+        }
+      >
         <Textarea
           spellCheck={false}
           value={escape}

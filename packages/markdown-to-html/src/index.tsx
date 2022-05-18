@@ -1,6 +1,12 @@
 import { Fragment, useCallback, useState } from 'react';
-import { Wrapper, Textarea, StyledLayout, CopyButton } from '@wcj/tools-react-components';
+import { Wrapper, Textarea, StyledLayout, CopyButton, Button } from '@wcj/tools-react-components';
 import { markdownToHTML } from './utils';
+
+const sample = `## Web tool\n\nHello World
+
+\`\`\`css
+body { color: 'red'; }
+\`\`\``;
 
 export default function MarkdownToHTML() {
   const [html, setHtml] = useState<string>();
@@ -11,7 +17,15 @@ export default function MarkdownToHTML() {
     setHtml(markdownToHTML(value));
   };
 
-  const ExtraTool = useCallback(() => <Fragment>{markdown && <CopyButton value={markdown} />}</Fragment>, [markdown]);
+  const ExtraTool = useCallback(
+    () => (
+      <Fragment>
+        <Button onClick={() => handleInput(sample)}>Sample</Button>
+        {markdown && <CopyButton value={markdown} />}
+      </Fragment>
+    ),
+    [markdown],
+  );
 
   return (
     <Wrapper>

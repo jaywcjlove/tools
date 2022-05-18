@@ -27,7 +27,7 @@ export type TextareaProps = React.DetailedHTMLProps<
 
 export interface ResultProps
   extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'title'> {
-  title?: JSX.Element;
+  title?: React.ReactNode;
   className?: string;
   extra?: React.ReactNode;
 }

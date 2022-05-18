@@ -50,6 +50,7 @@ export const Title = styled.div`
 
 export const Extra = styled.div`
   display: flex;
+  gap: 10px;
 `;
 
 export const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({ title, extra, children, ...other }) => (

@@ -30,6 +30,7 @@ const Warpper = styled.div`
 const Content = styled.div`
   flex: 1;
   padding: 6px 8px;
+  word-break: break-all;
 `;
 
 const Label = styled.label`
