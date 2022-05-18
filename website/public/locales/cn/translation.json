@@ -1,0 +1,195 @@
+{
+  "title": "Web 工具",
+  "menu": {
+    "/": {
+      "label": "首页"
+    },
+    "/url-encode": {
+      "label": "URL 编码/解码"
+    },
+    "/json-format": {
+      "label": "JSON 格式化"
+    },
+    "/text-case": {
+      "label": "字母文本转换"
+    },
+    "/image-to-base64": {
+      "label": "图片转换 Base64"
+    },
+    "/hash": {
+      "label": "哈希 Hash"
+    },
+    "/generate-password": {
+      "label": "生成密码"
+    },
+    "/html-to-markdown": {
+      "label": "HTML 转换 Markdown"
+    },
+    "/markdown-to-html": {
+      "label": "Markdown 转换 HTML"
+    },
+    "/html-escape": {
+      "label": "HTML 转义/非转义"
+    },
+    "/base64-encoder": {
+      "label": "Base64 编码器/解码器"
+    },
+    "/qrcode-generator": {
+      "label": "二维码生成器"
+    },
+    "/chinese-pinyin-conversion": {
+      "label": "汉语拼音转换"
+    },
+    "Badgen": {
+      "about": "快速徽章生成服务",
+      "label": "Badgen 徽章"
+    },
+    "CodeSandbox": {
+      "about": "用于快速 Web 开发的在线 IDE",
+      "label": "CodeSandbox"
+    },
+    "Codeimg": {
+      "about": "创建和共享源代码的精美图像。",
+      "label": "Codeimg.io"
+    },
+    "Chalkist": {
+      "about": "为您的源代码创建漂亮的图像",
+      "label": "Chalk.ist"
+    },
+    "CodePen": {
+      "about": "在线代码编辑器和前端 Web 开发人员社区",
+      "label": "CodePen 在线编辑器"
+    },
+    "Excalidraw": {
+      "about": "用于绘制手绘图的虚拟白板",
+      "label": "Excalidraw"
+    },
+    "GithubButtons": {
+      "about": "非官方 github 按钮",
+      "label": "Github Buttons"
+    },
+    "iHateRegex": {
+      "about": "正则表达式备忘单",
+      "label": "iHateRegex"
+    },
+    "JSFiddle": {
+      "about": "使用 JSFiddle 代码编辑器在线测试您的 JavaScript、CSS、HTML 或 CoffeeScript",
+      "label": "JSFiddle"
+    },
+    "JSBin": {
+      "about": "协作 JavaScript 调试。",
+      "label": "JS Bin"
+    },
+    "JSHint": {
+      "about": "JavaScript 代码质量工具",
+      "label": "JSHint"
+    },
+    "JSONViewer": {
+      "about": "在线 JSON Viewer、JSON Beautifier 美化 JSON 数据和树形视图",
+      "label": "JSON Viewer"
+    },
+    "KeycodeInfo": {
+      "about": "简单的网页，响应按下的键并返回有关 JavaScript'on-key press' 键的信息",
+      "label": "Keycode Info"
+    },
+    "LearnRegEx": {
+      "about": "逐步学习 RegEx，从零到高级。",
+      "label": "Learn RegEx"
+    },
+    "LogoAsset": {
+      "about": "网站 logo 资源",
+      "label": "Logo Asset"
+    },
+    "NPMView": {
+      "about": "用于查看 npm 包文件的 Web 应用程序",
+      "label": "NPM View"
+    },
+    "NPMUnpkg": {
+      "about": "一个用于查看 npm 包文件的 Web 应用程序，基于 unpkg",
+      "label": "NPM Unpkg"
+    },
+    "NginxEditor": {
+      "about": "基于 Monaco Editor 的 Nginx 编辑器",
+      "label": "Nginx 配置编辑器"
+    },
+    "PixelArttoCSS": {
+      "about": "像素艺术动画和绘图 Web 应用程序",
+      "label": "Pixel Art to CSS"
+    },
+    "PlayCode": {
+      "about": "Javascript 在线运行",
+      "label": "PlayCode"
+    },
+    "Quicktype": {
+      "about": "从 JSON、Schema 和 GraphQL 生成类型和转换器",
+      "label": "Quicktype"
+    },
+    "RegexpExample": {
+      "about": "正则表达式实例搜集，通过实例来学习正则表达式。",
+      "label": "Regexp Example"
+    },
+    "Regulex": {
+      "about": "正则表达式",
+      "label": "Regulex"
+    },
+    "Regex101": {
+      "about": "构建、测试和调试正则表达式",
+      "label": "Regex101"
+    },
+    "RunWeb": {
+      "about": "用于快速 Web 开发的在线代码编辑器。",
+      "label": "Run Web"
+    },
+    "Rubular": {
+      "about": "一个 Ruby 正则表达式编辑器",
+      "label": "Rubular"
+    },
+    "RegExr": {
+      "about": "用于创建、测试和学习正则表达式。",
+      "label": "RegExr"
+    },
+    "RegexVis": {
+      "about": "正则表达式可视化器和编辑器",
+      "label": "Regex-Vis"
+    },
+    "ReactPaint": {
+      "about": "Microsoft Paint 用 reactjs 实现。",
+      "label": "React Paint"
+    },
+    "RunKit": {
+      "about": "Node 节点原型",
+      "label": "RunKit"
+    },
+    "Rayso": {
+      "about": "为您的代码创建漂亮的图像",
+      "label": "Ray.so"
+    },
+    "SVGEdit": {
+      "about": "适用于您的浏览器的强大 SVG 编辑器",
+      "label": "SVG 编辑器"
+    },
+    "SVGPathEditor": {
+      "about": "用于创建和操作 SVG 路径的在线编辑器",
+      "label": "SVG 路径编辑器"
+    },
+    "Shields": {
+      "about": "SVG 格式的简洁、一致和清晰的徽章",
+      "label": "Shields.io 徽章"
+    },
+    "StackBlitz": {
+      "about": "即时在线开发环境",
+      "label": "StackBlitz"
+    },
+    "SkillIcons": {
+      "about": "在 Github 自述文件或简历中轻松展示您的技能",
+      "label": "Skill Icons"
+    },
+    "UIColor": {
+      "about": "将 HEX 和 RGB 颜色转换为 Objective C 和 Swift 的 UIColor/NSColor/Color。",
+      "label": "UI Color"
+    }
+  },
+  "tools": "工具",
+  "ThirdPartyTools": "第三方工具",
+  "EncodedURL": "编码 URL"
+}

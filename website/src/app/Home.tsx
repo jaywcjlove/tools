@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import menus from '../menu.json';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { useMenus } from '../menus';
 
 const Warpper = styled.div`
   padding: 25px;
@@ -37,11 +38,13 @@ const MenuItem = styled.div`
 `;
 
 export default function HomePage() {
+  const menus = useMenus();
+  const { t } = useTranslation();
   const tools = menus.filter((item) => !/^https?:/i.test(item.href || '') && !item.divider && item.href !== '/');
   const thirdParty = menus.filter((item) => /^https?:/i.test(item.href || ''));
   return (
     <Warpper>
-      <Title>Tools</Title>
+      <Title>{t('tools')}</Title>
       <MenuItem>
         {tools.map((item, key) => {
           return (
@@ -51,7 +54,7 @@ export default function HomePage() {
           );
         })}
       </MenuItem>
-      <Title>Third-Party Tools</Title>
+      <Title>{t('ThirdPartyTools')}</Title>
       <MenuItem>
         {thirdParty.map((item, key) => {
           return (

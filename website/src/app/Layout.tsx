@@ -3,10 +3,12 @@ import GitHubCorners from '@uiw/react-github-corners';
 import '@wcj/dark-mode';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import styles from './Layout.module.less';
 import { ReactComponent as ShareIcon } from '../assets/share.svg';
 import { ReactComponent as LogoIcon } from '../assets/logo.svg';
-import menus from '../menu.json';
+import { useMenus } from '../menus';
+import { TransSelect } from '../components/TransSelect';
 
 const Sup = styled.sup`
   position: absolute;
@@ -15,7 +17,14 @@ const Sup = styled.sup`
   margin-top: -4px;
 `;
 
+const HeaderRight = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 export default function Layout() {
+  const menus = useMenus();
+  const { t } = useTranslation();
   // @ts-ignore
   const version = VERSION;
   return (
@@ -28,11 +37,15 @@ export default function Layout() {
               <Link to="/">
                 <LogoIcon width={21} />
                 <span>
-                  Web Tools<Sup>{version}</Sup>
+                  {t('title')}
+                  <Sup>{version}</Sup>
                 </span>
               </Link>
             </h1>
-            <dark-mode permanent></dark-mode>
+            <HeaderRight>
+              <TransSelect />
+              <dark-mode permanent></dark-mode>
+            </HeaderRight>
           </header>
           <nav>
             {menus.map((item, idx) => {

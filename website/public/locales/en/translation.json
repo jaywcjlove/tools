@@ -1,0 +1,195 @@
+{
+  "title": "Web Tools",
+  "menu": {
+    "/": {
+      "label": "Home"
+    },
+    "/url-encode": {
+      "label": "URL Encoder/Decoder"
+    },
+    "/json-format": {
+      "label": "JSON Format"
+    },
+    "/text-case": {
+      "label": "Text Case"
+    },
+    "/image-to-base64": {
+      "label": "Image to Base64"
+    },
+    "/hash": {
+      "label": "Hash"
+    },
+    "/generate-password": {
+      "label": "Generate Password"
+    },
+    "/html-to-markdown": {
+      "label": "HTML To Markdown"
+    },
+    "/markdown-to-html": {
+      "label": "Markdown To HTML"
+    },
+    "/html-escape": {
+      "label": "HTML Escape/Unescape"
+    },
+    "/base64-encoder": {
+      "label": "Base64 Encoder/Decoder"
+    },
+    "/qrcode-generator": {
+      "label": "QRCode Generator"
+    },
+    "/chinese-pinyin-conversion": {
+      "label": "Chinese Pinyin Conversion"
+    },
+    "Badgen": {
+      "about": "Fast badge generating service",
+      "label": "Badgen"
+    },
+    "CodeSandbox": {
+      "about": "An online IDE for rapid web development",
+      "label": "CodeSandbox"
+    },
+    "Codeimg": {
+      "about": "Create and share beautiful images of your source code.",
+      "label": "Codeimg.io"
+    },
+    "Chalkist": {
+      "about": "Create beautiful images of your source code",
+      "label": "Chalk.ist"
+    },
+    "CodePen": {
+      "about": "Online Code Editor and Front End Web Developer Community",
+      "label": "CodePen"
+    },
+    "Excalidraw": {
+      "about": "Virtual whiteboard for sketching hand-drawn like diagrams",
+      "label": "Excalidraw"
+    },
+    "GithubButtons": {
+      "about": "Unofficial github:buttons.",
+      "label": "Github Buttons"
+    },
+    "iHateRegex": {
+      "about": "The Regex Cheat Sheet",
+      "label": "iHateRegex"
+    },
+    "JSFiddle": {
+      "about": "Test your JavaScript, CSS, HTML or CoffeeScript online with JSFiddle code editor.",
+      "label": "JSFiddle"
+    },
+    "JSBin": {
+      "about": "Collaborative JavaScript Debugging.",
+      "label": "JS Bin"
+    },
+    "JSHint": {
+      "about": "A JavaScript Code Quality Tool.",
+      "label": "JSHint"
+    },
+    "JSONViewer": {
+      "about": "Online JSON Viewer, JSON Beautifier to beautify and tree view of JSON data ",
+      "label": "JSON Viewer"
+    },
+    "KeycodeInfo": {
+      "about": "A simple web page that responds to the pressed key and returns information about the JavaScript'on-key press' key.",
+      "label": "Keycode Info"
+    },
+    "LearnRegEx": {
+      "about": "Learn RegEx step by step, from zero to advanced.",
+      "label": "Learn RegEx"
+    },
+    "LogoAsset": {
+      "about": "website logo asset",
+      "label": "Logo Asset"
+    },
+    "NPMView": {
+      "about": "A web application to view npm package files",
+      "label": "NPM View"
+    },
+    "NPMUnpkg": {
+      "about": "A web application to view npm package files, Based on unpkg.",
+      "label": "NPM Unpkg"
+    },
+    "NginxEditor": {
+      "about": "Nginx language for Monaco Editor.",
+      "label": "Nginx Editor"
+    },
+    "PixelArttoCSS": {
+      "about": "Pixel art animation and drawing web app powered by React",
+      "label": "Pixel Art to CSS"
+    },
+    "PlayCode": {
+      "about": "Javascript Playground",
+      "label": "PlayCode"
+    },
+    "Quicktype": {
+      "about": "Generate types and converters from JSON, Schema, and GraphQL",
+      "label": "Quicktype"
+    },
+    "RegexpExample": {
+      "about": "Collection of regular expression examples, learning regular expressions through examples",
+      "label": "Regexp Example"
+    },
+    "Regulex": {
+      "about": "Regular Expression Excited!",
+      "label": "Regulex"
+    },
+    "Regex101": {
+      "about": "build, test, and debug regex",
+      "label": "Regex101"
+    },
+    "RunWeb": {
+      "about": "Online Code Editor for Rapid Web Development.",
+      "label": "Run Web"
+    },
+    "Rubular": {
+      "about": "a Ruby regular expression editor",
+      "label": "Rubular"
+    },
+    "RegExr": {
+      "about": "RegExr is a HTML/JS based tool for creating, testing, and learning about Regular Expressions.",
+      "label": "RegExr"
+    },
+    "RegexVis": {
+      "about": "Regex visualizer & editor",
+      "label": "Regex-Vis"
+    },
+    "ReactPaint": {
+      "about": "Microsoft Paint realized with reactjs.",
+      "label": "React Paint"
+    },
+    "RunKit": {
+      "about": "Node prototyping",
+      "label": "RunKit"
+    },
+    "Rayso": {
+      "about": "Create beautiful images of your code",
+      "label": "Ray.so"
+    },
+    "SVGEdit": {
+      "about": "Powerful SVG-Editor for your browser",
+      "label": "SVG Edit"
+    },
+    "SVGPathEditor": {
+      "about": "Online editor to create and manipulate SVG paths",
+      "label": "SVG Path Editor"
+    },
+    "Shields": {
+      "about": "Concise, consistent, and legible badges in SVG and raster format",
+      "label": "Shields.io"
+    },
+    "StackBlitz": {
+      "about": "Instant Dev Environments",
+      "label": "StackBlitz"
+    },
+    "SkillIcons": {
+      "about": "Showcase your skills on your Github readme or resumé with ease",
+      "label": "Skill Icons"
+    },
+    "UIColor": {
+      "about": "Converting HEX & RGB colors to UIColor/NSColor/Color for both Objective C & Swift.",
+      "label": "UI Color"
+    }
+  },
+  "tools": "Tools",
+  "ThirdPartyTools": "Third-Party Tools",
+  "EncodedURL": "Encoded URL"
+}

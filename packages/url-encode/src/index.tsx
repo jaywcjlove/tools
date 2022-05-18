@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import { Wrapper, Textarea, StyledLayout, CopyButton } from '@wcj/tools-react-components';
 
-export default function URLEncode() {
+export interface URLEncodeProps {
+  locEncodedURL?: string;
+}
+
+export default function URLEncode(props: URLEncodeProps) {
+  const { locEncodedURL } = props;
   const [url, setUrl] = useState<string>();
   const [encodedUrl, setEncodeUrl] = useState<string>();
   const [type, setType] = useState<'raw' | 'encoded'>('raw');
@@ -24,7 +29,7 @@ export default function URLEncode() {
           onInput={(evn) => handleInput((evn.target as HTMLTextAreaElement).value)}
         />
       </StyledLayout>
-      <StyledLayout title="Encoded URL" extra={encodedUrl && <CopyButton value={encodedUrl} />}>
+      <StyledLayout title={locEncodedURL || 'Encoded URL'} extra={encodedUrl && <CopyButton value={encodedUrl} />}>
         <Textarea
           spellCheck={false}
           value={encodedUrl}

@@ -1,23 +1,41 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import type { RouteObject } from 'react-router-dom';
 import { DocumentTitle } from '@wcj/tools-react-components';
 import Layout from './app/Layout';
 import { NoMatch } from './app/NoMatch';
 import { Loading } from './app/Loading';
 
-const HomePage = React.lazy(() => import('./app/Home'));
-const UrlEncode = React.lazy(() => import('@wcj/tools-react-url-encode'));
-const TextCase = React.lazy(() => import('@wcj/tools-react-text-case'));
-const ImageToBase64 = React.lazy(() => import('@wcj/tools-react-image-to-base64'));
-const JSONFormat = React.lazy(() => import('@wcj/tools-react-json-format'));
-const Hash = React.lazy(() => import('@wcj/tools-react-hash'));
-const GeneratePassword = React.lazy(() => import('@wcj/tools-react-generate-password'));
-const HtmlToMarkdown = React.lazy(() => import('@wcj/tools-react-html-to-markdown'));
-const MarkdownToHtml = React.lazy(() => import('@wcj/tools-react-markdown-to-html'));
-const HTMLEscape = React.lazy(() => import('@wcj/tools-react-html-escape'));
-const Base64Encoder = React.lazy(() => import('@wcj/tools-react-base64-encoder'));
-const QRCodeGenerator = React.lazy(() => import('@wcj/tools-react-qrcode-generator'));
-const ChinesePinyinConversion = React.lazy(() => import('@wcj/tools-react-chinese-pinyin-conversion'));
+interface LoadableProps {
+  title?: string;
+}
+
+const Loadable =
+  (Component: React.LazyExoticComponent<() => JSX.Element>) =>
+  ({ title, ...props }: LoadableProps) => {
+    return (
+      <DocumentTitle title={title}>
+        <Suspense fallback={<Loading />}>
+          <Component />
+        </Suspense>
+      </DocumentTitle>
+    );
+  };
+
+// @ts-ignore
+const HomePage = Loadable(lazy(() => import('./app/Home')));
+const UrlEncode = Loadable(lazy(() => import('@wcj/tools-react-url-encode')));
+const TextCase = Loadable(lazy(() => import('@wcj/tools-react-text-case')));
+const JSONFormat = Loadable(lazy(() => import('@wcj/tools-react-json-format')));
+const ImageToBase64 = Loadable(lazy(() => import('@wcj/tools-react-image-to-base64')));
+
+const Hash = Loadable(lazy(() => import('@wcj/tools-react-hash')));
+const GeneratePassword = Loadable(lazy(() => import('@wcj/tools-react-generate-password')));
+const HtmlToMarkdown = Loadable(lazy(() => import('@wcj/tools-react-html-to-markdown')));
+const MarkdownToHtml = Loadable(lazy(() => import('@wcj/tools-react-markdown-to-html')));
+const HTMLEscape = Loadable(lazy(() => import('@wcj/tools-react-html-escape')));
+const Base64Encoder = Loadable(lazy(() => import('@wcj/tools-react-base64-encoder')));
+const QRCodeGenerator = Loadable(lazy(() => import('@wcj/tools-react-qrcode-generator')));
+const ChinesePinyinConversion = Loadable(lazy(() => import('@wcj/tools-react-chinese-pinyin-conversion')));
 
 export let routes: RouteObject[] = [
   {
@@ -26,142 +44,55 @@ export let routes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: (
-          <React.Suspense fallback={<Loading />}>
-            {/** @ts-ignore */}
-            <HomePage />
-          </React.Suspense>
-        ),
-      },
-      {
-        index: true,
-        element: (
-          <React.Suspense fallback={<Loading />}>
-            <DocumentTitle title="Home - Web Tools">
-              <HomePage />
-            </DocumentTitle>
-          </React.Suspense>
-        ),
+        element: <HomePage title="Home - Web Tools" />,
       },
       {
         path: '/url-encode',
-        element: (
-          <React.Suspense fallback={<Loading />}>
-            <DocumentTitle title="URL Encoder/Decoder - Web Tools">
-              <UrlEncode />
-            </DocumentTitle>
-          </React.Suspense>
-        ),
+        element: <UrlEncode title="URL Encoder/Decoder - Web Tools" />,
       },
       {
         path: '/json-format',
-        element: (
-          <React.Suspense fallback={<Loading />}>
-            <DocumentTitle title="JSON Format - Web Tools">
-              <JSONFormat />
-            </DocumentTitle>
-          </React.Suspense>
-        ),
+        element: <JSONFormat title="JSON Format - Web Tools" />,
       },
       {
         path: '/text-case',
-        element: (
-          <React.Suspense fallback={<Loading />}>
-            <DocumentTitle title="Text Case - Web Tools">
-              <TextCase />
-            </DocumentTitle>
-          </React.Suspense>
-        ),
+        element: <TextCase title="Text Case - Web Tools" />,
       },
       {
         path: '/image-to-base64',
-        element: (
-          <React.Suspense fallback={<Loading />}>
-            <DocumentTitle title="Image To Base64 - Web Tools">
-              <ImageToBase64 />
-            </DocumentTitle>
-          </React.Suspense>
-        ),
+        element: <ImageToBase64 title="Image To Base64 - Web Tools" />,
       },
       {
         path: '/hash',
-        element: (
-          <React.Suspense fallback={<Loading />}>
-            <DocumentTitle title="Hash - Web Tools">
-              <Hash />
-            </DocumentTitle>
-          </React.Suspense>
-        ),
+        element: <Hash title="Hash - Web Tools" />,
       },
       {
         path: '/generate-password',
-        element: (
-          <React.Suspense fallback={<Loading />}>
-            <DocumentTitle title="Generate Password - Web Tools">
-              <GeneratePassword />
-            </DocumentTitle>
-          </React.Suspense>
-        ),
+        element: <GeneratePassword title="Generate Password - Web Tools" />,
       },
       {
         path: '/html-to-markdown',
-        element: (
-          <React.Suspense fallback={<Loading />}>
-            <DocumentTitle title="HTML To Markdown - Web Tools">
-              <HtmlToMarkdown />
-            </DocumentTitle>
-          </React.Suspense>
-        ),
+        element: <HtmlToMarkdown title="HTML To Markdown - Web Tools" />,
       },
       {
         path: '/markdown-to-html',
-        element: (
-          <React.Suspense fallback={<Loading />}>
-            <DocumentTitle title="Markdown To HTML - Web Tools">
-              <MarkdownToHtml />
-            </DocumentTitle>
-          </React.Suspense>
-        ),
+        element: <MarkdownToHtml title="Markdown To HTML - Web Tools" />,
       },
       {
         path: '/html-escape',
-        element: (
-          <React.Suspense fallback={<Loading />}>
-            <DocumentTitle title="HTML Escape/Unescape - Web Tools">
-              <HTMLEscape />
-            </DocumentTitle>
-          </React.Suspense>
-        ),
+        element: <HTMLEscape title="HTML Escape/Unescape - Web Tools" />,
       },
       {
         path: '/base64-encoder',
-        element: (
-          <React.Suspense fallback={<Loading />}>
-            <DocumentTitle title="Base64 Encoder/Decoder - Web Tools">
-              <Base64Encoder />
-            </DocumentTitle>
-          </React.Suspense>
-        ),
+        element: <Base64Encoder title="Base64 Encoder/Decoder - Web Tools" />,
       },
       {
         path: '/qrcode-generator',
-        element: (
-          <React.Suspense fallback={<Loading />}>
-            <DocumentTitle title="QRCode Generator - Web Tools">
-              <QRCodeGenerator />
-            </DocumentTitle>
-          </React.Suspense>
-        ),
+        element: <QRCodeGenerator title="QRCode Generator - Web Tools" />,
       },
       {
         path: '/chinese-pinyin-conversion',
-        element: (
-          <React.Suspense fallback={<Loading />}>
-            <DocumentTitle title="Chinese Pinyin Conversion - Web Tools">
-              <ChinesePinyinConversion />
-            </DocumentTitle>
-          </React.Suspense>
-        ),
+        element: <ChinesePinyinConversion title="Chinese Pinyin Conversion - Web Tools" />,
       },
       { path: '*', element: <NoMatch /> },
     ],
