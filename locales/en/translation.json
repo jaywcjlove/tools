@@ -40,6 +40,9 @@
     "/chinese-pinyin-conversion": {
       "label": "Chinese Pinyin Conversion"
     },
+    "/generate-github-badges": {
+      "label": "Generate Github Badges"
+    },
     "Badgen": {
       "about": "Fast badge generating service",
       "label": "Badgen"
@@ -183,6 +186,10 @@
     "SkillIcons": {
       "about": "Showcase your skills on your Github readme or resumé with ease",
       "label": "Skill Icons"
+    },
+    "StarChart": {
+      "about": "Plot your repository stars over time.",
+      "label": "Star Chart"
     },
     "UIColor": {
       "about": "Converting HEX & RGB colors to UIColor/NSColor/Color for both Objective C & Swift.",
