@@ -84,9 +84,20 @@ export default function GeneratePassword() {
     addHistory(password);
   }, [range, lowerCase, upperCase, numeric, special]);
 
+  useEffect(() => {
+    const data = [...history];
+    {
+      [...Array(5)].map(() => {
+        const password = generatePassword(range, lowerCase, upperCase, numeric, special);
+        data.unshift(password);
+      });
+    }
+    setHistory(data.slice(0, 20));
+  }, []);
+
   return (
     <Wrapper>
-      <StyledLayout title="Setting">
+      <StyledLayout title="Generate Password - Setting">
         <InputRange
           style={{ maxWidth: 630 }}
           range={range}

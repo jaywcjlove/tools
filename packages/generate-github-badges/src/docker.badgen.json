@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://badgen.net/docker/pulls/library/{{:library}}",
+    "label": "pulls (library)"
+  },
+  {
+    "url": "https://badgen.net/docker/stars/library/{{:library}}",
+    "label": "stars (library)"
+  },
+  {
+    "url": "https://badgen.net/docker/size/library/{{:library}}",
+    "label": "size (library)"
+  },
+  {
+    "url": "https://badgen.net/docker/stars/library/{{:library}}?icon=docker&label=stars",
+    "label": "stars (icon & label)"
+  },
+
+  {
+    "url": "https://badgen.net/docker/pulls/{{:user}}/{{:library}}",
+    "label": "pulls (library)"
+  },
+  {
+    "url": "https://badgen.net/docker/stars/{{:user}}/{{:library}}",
+    "label": "stars (library)"
+  },
+  {
+    "url": "https://badgen.net/docker/size/{{:user}}/{{:library}}",
+    "label": "size (library)"
+  },
+  {
+    "url": "https://badgen.net/docker/stars/{{:user}}/{{:library}}?icon=docker&label=stars",
+    "label": "stars (icon & label)"
+  }
+]

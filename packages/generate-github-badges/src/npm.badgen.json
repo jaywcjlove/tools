@@ -1,0 +1,34 @@
+[
+  {
+    "url": "https://badgen.net/npm/v/{{:pkg}}",
+    "label": "version"
+  },
+  {
+    "url": "https://badgen.net/npm/dw/{{:pkg}}",
+    "label": "weekly downloads"
+  },
+  {
+    "url": "https://badgen.net/npm/dm/{{:pkg}}",
+    "label": "monthly downloads"
+  },
+  {
+    "url": "https://badgen.net/npm/dy/{{:pkg}}",
+    "label": "yearly downloads"
+  },
+  {
+    "url": "https://badgen.net/npm/dt/{{:pkg}}",
+    "label": "total downloads"
+  },
+  {
+    "url": "https://badgen.net/npm/license/{{:pkg}}",
+    "label": "license"
+  },
+  {
+    "url": "https://badgen.net/npm/dependents/{{:pkg}}",
+    "label": "dependents"
+  },
+  {
+    "url": "https://badgen.net/npm/types/{{:pkg}}",
+    "label": "types"
+  }
+]

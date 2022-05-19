@@ -1,0 +1,34 @@
+[
+  {
+    "url": "https://img.shields.io/docker/pulls/{{:user}}/{{:library}}",
+    "label": "Docker Pulls"
+  },
+  {
+    "url": "https://img.shields.io/docker/stars/{{:user}}/{{:library}}",
+    "label": "Docker Stars"
+  },
+  {
+    "url": "https://img.shields.io/docker/image-size/{{:user}}/{{:library}}?sort=date",
+    "label": "Docker Image Size (latest by date)"
+  },
+  {
+    "url": "https://img.shields.io/docker/image-size/{{:user}}/{{:library}}?sort=semver",
+    "label": "Docker Image Size (latest semver)"
+  },
+  {
+    "url": "https://img.shields.io/docker/image-size/{{:user}}/{{:library}}",
+    "label": "Docker Image Size"
+  },
+  {
+    "url": "https://img.shields.io/docker/v/{{:user}}/{{:library}}?sort=date",
+    "label": "Docker Image Version (latest by date)"
+  },
+  {
+    "url": "https://img.shields.io/docker/v/{{:user}}/{{:library}}?ort=semver",
+    "label": "Docker Image Version (latest semver)"
+  },
+  {
+    "url": "https://img.shields.io/docker/v/{{:user}}/{{:library}}",
+    "label": "Docker Image Version"
+  }
+]

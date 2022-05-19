@@ -40,6 +40,9 @@
     "/chinese-pinyin-conversion": {
       "label": "汉语拼音转换"
     },
+    "/generate-github-badges": {
+      "label": "生成 Github 徽章"
+    },
     "Badgen": {
       "about": "快速徽章生成服务",
       "label": "Badgen 徽章"
@@ -183,6 +186,10 @@
     "SkillIcons": {
       "about": "在 Github 自述文件或简历中轻松展示您的技能",
       "label": "Skill Icons"
+    },
+    "StarChart": {
+      "about": "随着时间的推移绘制您的 git 存储库星星",
+      "label": "Star Chart"
     },
     "UIColor": {
       "about": "将 HEX 和 RGB 颜色转换为 Objective C 和 Swift 的 UIColor/NSColor/Color。",

@@ -56,6 +56,10 @@ export function useMenus() {
       label: t('menu./chinese-pinyin-conversion.label'),
     },
     {
+      href: '/generate-github-badges',
+      label: t('menu./generate-github-badges.label'),
+    },
+    {
       divider: true,
     },
     {
@@ -255,6 +259,11 @@ export function useMenus() {
       'open-source': 'https://github.com/tandpfun/skill-icons',
       about: t('menu.SkillIcons.about'),
       label: t('menu.SkillIcons.label'),
+    },
+    {
+      href: 'https://starchart.cc/',
+      about: t('menu.StarChart.about'),
+      label: t('menu.StarChart.label'),
     },
     {
       href: 'https://uiwjs.github.io/ui-color/',

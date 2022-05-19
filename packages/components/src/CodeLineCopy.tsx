@@ -16,12 +16,14 @@ const Button = styled.button`
 `;
 
 const Warpper = styled.div`
-  border-color: var(--color-border-result-code);
-  border-width: 1px;
+  border: 1px solid var(--color-border-result-code);
   border-radius: 5px;
-  border-style: solid;
   display: flex;
   min-height: 31px;
+  transition: 0.3s transform;
+  &:hover {
+    transform: scale(1.01);
+  }
   &:hover ${Button} {
     opacity: 1;
   }
@@ -37,7 +39,7 @@ const Label = styled.label`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 5px;
+  padding: 4px 5px;
   border-right: 1px solid var(--color-border-result-code);
   min-width: 32px;
 `;

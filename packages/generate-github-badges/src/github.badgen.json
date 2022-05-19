@@ -1,0 +1,102 @@
+[
+  {
+    "url": "https://badgen.net/github/stars/{{:user}}/{{:repo}}",
+    "label": "Stars"
+  },
+  {
+    "url": "https://badgen.net/github/forks/{{:user}}/{{:repo}}",
+    "label": "Forks"
+  },
+  {
+    "url": "https://badgen.net/github/watchers/{{:user}}/{{:repo}}",
+    "label": "Watchers"
+  },
+  {
+    "url": "https://badgen.net/github/issues/{{:user}}/{{:repo}}",
+    "label": "issues"
+  },
+  {
+    "url": "https://badgen.net/github/open-issues/{{:user}}/{{:repo}}",
+    "label": "open issues"
+  },
+  {
+    "url": "https://badgen.net/github/closed-issues/{{:user}}/{{:repo}}",
+    "label": "closed issues"
+  },
+  {
+    "url": "https://badgen.net/github/prs/{{:user}}/{{:repo}}",
+    "label": "PRs"
+  },
+  {
+    "url": "https://badgen.net/github/open-prs/{{:user}}/{{:repo}}",
+    "label": "open PRs"
+  },
+  {
+    "url": "https://badgen.net/github/closed-prs/{{:user}}/{{:repo}}",
+    "label": "closed PRs"
+  },
+  {
+    "url": "https://badgen.net/github/merged-prs/{{:user}}/{{:repo}}",
+    "label": "merged PRs"
+  },
+  {
+    "url": "https://badgen.net/github/commits/{{:user}}/{{:repo}}",
+    "label": "commits count"
+  },
+  {
+    "url": "https://badgen.net/github/last-commit/{{:user}}/{{:repo}}",
+    "label": "last commit"
+  },
+  {
+    "url": "https://badgen.net/github/branches/{{:user}}/{{:repo}}",
+    "label": "branches"
+  },
+  {
+    "url": "https://badgen.net/github/release/{{:user}}/{{:repo}}",
+    "label": "latest release"
+  },
+  {
+    "url": "https://badgen.net/github/releases/{{:user}}/{{:repo}}",
+    "label": "releases"
+  },
+  {
+    "url": "https://badgen.net/github/tags/{{:user}}/{{:repo}}",
+    "label": "tags"
+  },
+  {
+    "url": "https://badgen.net/github/license/{{:user}}/{{:repo}}",
+    "label": "license"
+  },
+  {
+    "url": "https://badgen.net/github/contributors/{{:user}}/{{:repo}}",
+    "label": "contributors"
+  },
+  {
+    "url": "https://badgen.net/github/assets-dl/{{:user}}/{{:repo}}",
+    "label": "assets downloads for latest release"
+  },
+  {
+    "url": "https://badgen.net/github/dependents-repo/{{:user}}/{{:repo}}",
+    "label": "repository dependents"
+  },
+  {
+    "url": "https://badgen.net/github/dependents-pkg/{{:user}}/{{:repo}}",
+    "label": "package dependents"
+  },
+  {
+    "url": "https://badgen.net/github/release/{{:user}}/{{:repo}}",
+    "label": "Latest Release"
+  },
+  {
+    "url": "https://badgen.net/github/tag/{{:user}}/{{:repo}}",
+    "label": "Latest Tag"
+  },
+  {
+    "url": "https://badgen.net/github/checks/{{:user}}/{{:repo}}",
+    "label": "combined checks (default branch)"
+  },
+  {
+    "url": "https://badgen.net/github/statuses/{{:user}}/{{:repo}}",
+    "label": "combined statuses (default branch)"
+  }
+]

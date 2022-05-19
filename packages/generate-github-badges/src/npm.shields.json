@@ -1,0 +1,38 @@
+[
+  {
+    "url": "https://img.shields.io/bundlephobia/min/{{:pkg}}",
+    "label": "npm bundle size"
+  },
+  {
+    "url": "https://img.shields.io/npm/v/{{:pkg}}",
+    "label": "npm version"
+  },
+  {
+    "url": "https://img.shields.io/npm/types/{{:pkg}}",
+    "label": "npm type definitions"
+  },
+  {
+    "url": "https://img.shields.io/jsdelivr/npm/hy/{{:pkg}}",
+    "label": "jsDelivr hits (npm)(year)"
+  },
+  {
+    "url": "https://img.shields.io/jsdelivr/npm/hm/{{:pkg}}",
+    "label": "jsDelivr hits (npm)(month)"
+  },
+  {
+    "url": "https://img.shields.io/jsdelivr/npm/hw/{{:pkg}}",
+    "label": "jsDelivr hits (npm)(week)"
+  },
+  {
+    "url": "https://img.shields.io/jsdelivr/npm/hd/{{:pkg}}",
+    "label": "jsDelivr hits (npm)(day)"
+  },
+  {
+    "url": "https://img.shields.io/npm/collaborators/{{:pkg}}",
+    "label": "npm collaborators"
+  },
+  {
+    "url": "https://img.shields.io/npm/l/{{:pkg}}",
+    "label": "npm license"
+  }
+]

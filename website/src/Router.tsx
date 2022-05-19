@@ -37,6 +37,8 @@ const HTMLEscape = Loadable(lazy(() => import('@wcj/tools-react-html-escape')));
 const Base64Encoder = Loadable(lazy(() => import('@wcj/tools-react-base64-encoder')));
 const QRCodeGenerator = Loadable(lazy(() => import('@wcj/tools-react-qrcode-generator')));
 const ChinesePinyinConversion = Loadable(lazy(() => import('@wcj/tools-react-chinese-pinyin-conversion')));
+// @ts-ignore
+const GenerateGithubBadges = Loadable(lazy(() => import('@wcj/tools-react-generate-github-badges')));
 
 export let routes: RouteObject[] = [
   {
@@ -94,6 +96,10 @@ export let routes: RouteObject[] = [
       {
         path: '/chinese-pinyin-conversion',
         element: <ChinesePinyinConversion title="Chinese Pinyin Conversion - Web Tools" />,
+      },
+      {
+        path: '/generate-github-badges',
+        element: <GenerateGithubBadges title="Generate Github Badges - Web Tools" />,
       },
       { path: '*', element: <NoMatch /> },
     ],

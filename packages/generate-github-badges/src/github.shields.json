@@ -1,0 +1,90 @@
+[
+  {
+    "url": "https://img.shields.io/github/stars/{{:user}}",
+    "label": "GitHub Org\"s stars"
+  },
+  {
+    "url": "https://img.shields.io/github/followers/{{:user}}",
+    "label": "GitHub Followers"
+  },
+  {
+    "url": "https://img.shields.io/github/sponsors/{{:user}}",
+    "label": "GitHub Sponsors"
+  },
+  {
+    "url": "https://img.shields.io/github/stars/{{:user}}/{{:repo}}",
+    "label": "GitHub Repo Stars"
+  },
+  {
+    "url": "https://img.shields.io/github/forks/{{:user}}/{{:repo}}",
+    "label": "GitHub Repo Forks"
+  },
+  {
+    "url": "https://img.shields.io/github/languages/count/{{:user}}/{{:repo}}",
+    "label": "Github Language Count"
+  },
+  {
+    "url": "https://img.shields.io/github/languages/top/{{:user}}/{{:repo}}",
+    "label": "Github Top Language"
+  },
+  {
+    "url": "https://img.shields.io/github/watchers/{{:user}}/{{:repo}}",
+    "label": "GitHub watchers"
+  },
+  {
+    "url": "https://img.shields.io/github/repo-size/{{:user}}/{{:repo}}",
+    "label": "Github Repo Size"
+  },
+  {
+    "url": "https://img.shields.io/github/languages/code-size/{{:user}}/{{:repo}}",
+    "label": "GitHub code size in bytes"
+  },
+  {
+    "url": "https://img.shields.io/github/discussions/{{:user}}/{{:repo}}",
+    "label": "GitHub Discussions"
+  },
+  {
+    "url": "https://img.shields.io/github/issues/{{:user}}/{{:repo}}",
+    "label": "Github Issues"
+  },
+  {
+    "url": "https://img.shields.io/github/issues-closed/{{:user}}/{{:repo}}",
+    "label": "Github Closed Issues"
+  },
+  {
+    "url": "https://img.shields.io/github/issues-pr/{{:user}}/{{:repo}}",
+    "label": "Github Pull Requests"
+  },
+  {
+    "url": "https://img.shields.io/github/issues-pr-closed/{{:user}}/{{:repo}}",
+    "label": "Github Closed Pull Requests"
+  },
+  {
+    "url": "https://img.shields.io/github/package-json/v/{{:user}}/{{:repo}}",
+    "label": "Github package.json Version"
+  },
+  {
+    "url": "https://img.shields.io/github/contributors/{{:user}}/{{:repo}}",
+    "label": "Github Contributors"
+  },
+  {
+    "url": "https://img.shields.io/github/last-commit/{{:user}}/{{:repo}}",
+    "label": "Github Last Commit"
+  },
+  {
+    "url": "https://img.shields.io/github/commit-activity/w/{{:user}}/{{:repo}}",
+    "label": "Github Commit Activity (Week)"
+  },
+  {
+    "url": "https://img.shields.io/github/commit-activity/y/{{:user}}/{{:repo}}",
+    "label": "Github Commit Activity (Year)"
+  },
+  {
+    "url": "https://img.shields.io/github/v/tag/{{:user}}/{{:repo}}",
+    "label": "GitHub tag (latest by date)"
+  },
+  {
+    "url": "https://img.shields.io/github/license/{{:user}}/{{:repo}}",
+    "label": "GitHub License"
+  }
+]

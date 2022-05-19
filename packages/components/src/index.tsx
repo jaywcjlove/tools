@@ -6,6 +6,7 @@ export * from './Result';
 export * from './Button';
 export * from './CodeLineCopy';
 export * from './Spacing';
+export * from './Input';
 
 export const Wrapper = styled.main`
   padding: 25px;
