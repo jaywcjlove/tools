@@ -43,6 +43,9 @@
     "/generate-github-badges": {
       "label": "生成 Github 徽章"
     },
+    "/toml-to-json": {
+      "label": "TOML 转换 JSON"
+    },
     "Badgen": {
       "about": "快速徽章生成服务",
       "label": "Badgen 徽章"

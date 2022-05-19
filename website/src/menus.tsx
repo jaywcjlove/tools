@@ -60,6 +60,10 @@ export function useMenus() {
       label: t('menu./generate-github-badges.label'),
     },
     {
+      href: '/toml-to-json',
+      label: t('menu./toml-to-json.label'),
+    },
+    {
       divider: true,
     },
     {

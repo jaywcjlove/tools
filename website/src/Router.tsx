@@ -39,6 +39,8 @@ const QRCodeGenerator = Loadable(lazy(() => import('@wcj/tools-react-qrcode-gene
 const ChinesePinyinConversion = Loadable(lazy(() => import('@wcj/tools-react-chinese-pinyin-conversion')));
 // @ts-ignore
 const GenerateGithubBadges = Loadable(lazy(() => import('@wcj/tools-react-generate-github-badges')));
+// @ts-ignore
+const TomlToJSON = Loadable(lazy(() => import('@wcj/tools-react-toml-to-json')));
 
 export let routes: RouteObject[] = [
   {
@@ -100,6 +102,10 @@ export let routes: RouteObject[] = [
       {
         path: '/generate-github-badges',
         element: <GenerateGithubBadges title="Generate Github Badges - Web Tools" />,
+      },
+      {
+        path: '/toml-to-json',
+        element: <TomlToJSON title="Toml To JSON - Web Tools" />,
       },
       { path: '*', element: <NoMatch /> },
     ],

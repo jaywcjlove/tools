@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export * from './Document';
 export * from './Result';
@@ -16,10 +16,10 @@ export const Wrapper = styled.main`
   gap: 25px;
 `;
 
-export type TextareaProps = React.DetailedHTMLProps<
-  React.TextareaHTMLAttributes<HTMLTextAreaElement>,
-  HTMLTextAreaElement
->;
+export interface TextareaProps
+  extends React.DetailedHTMLProps<React.TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> {
+  error?: boolean;
+}
 
 export const Textarea = styled.textarea<TextareaProps>`
   flex: 1;
@@ -27,6 +27,12 @@ export const Textarea = styled.textarea<TextareaProps>`
   border-radius: 6px;
   height: 100%;
   width: 100%;
+  ${(props) =>
+    props.error &&
+    css`
+      color: red;
+      font-weight: bold;
+    `}
 `;
 
 export interface LayoutProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
