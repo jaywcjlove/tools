@@ -43,6 +43,9 @@
     "/generate-github-badges": {
       "label": "Generate Github Badges"
     },
+    "/toml-to-json": {
+      "label": "TOML to JSON"
+    },
     "Badgen": {
       "about": "Fast badge generating service",
       "label": "Badgen"
