@@ -70,6 +70,10 @@
       "about": "Virtual whiteboard for sketching hand-drawn like diagrams",
       "label": "Excalidraw"
     },
+    "easings": {
+      "about": "Easing functions specify the rate of change of a parameter over time.",
+      "label": "Easing Functions Cheat Sheet"
+    },
     "GithubButtons": {
       "about": "Unofficial github:buttons.",
       "label": "Github Buttons"

@@ -274,5 +274,10 @@ export function useMenus() {
       about: t('menu.UIColor.about'),
       label: t('menu.UIColor.label'),
     },
+    {
+      href: 'https://easings.net',
+      about: t('menu.easings.about'),
+      label: t('menu.easings.label'),
+    },
   ];
 }

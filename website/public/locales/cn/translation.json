@@ -197,6 +197,10 @@
     "UIColor": {
       "about": "将 HEX 和 RGB 颜色转换为 Objective C 和 Swift 的 UIColor/NSColor/Color。",
       "label": "UI Color"
+    },
+    "easings": {
+      "about": "缓动函数 自定义参数随时间变化的速率",
+      "label": "缓动函数速查表"
     }
   },
   "loading": "加载中...",
