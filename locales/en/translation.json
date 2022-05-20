@@ -55,6 +55,9 @@
     "/jwt-decoder": {
       "label": "JWT Decoder"
     },
+    "/json-yaml": {
+      "label": "JSON/YAML Converter"
+    },
     "Badgen": {
       "about": "Fast badge generating service",
       "label": "Badgen"
