@@ -19,7 +19,7 @@ export class Bezier {
   }
   draw(ctx: CanvasRenderingContext2D) {
     this.getSides();
-    ctx.fillStyle = '#222';
+    ctx.fillStyle = '#3ca35b';
     ctx.fillRect(this.left, this.top, this.width, this.height);
   }
 }

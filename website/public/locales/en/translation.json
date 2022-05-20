@@ -49,6 +49,9 @@
     "/css-easing-animation": {
       "label": "CSS Easing Animation"
     },
+    "/simple-markdown-editor": {
+      "label": "Simple Markdown Editor"
+    },
     "Badgen": {
       "about": "Fast badge generating service",
       "label": "Badgen"

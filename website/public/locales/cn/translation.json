@@ -49,6 +49,9 @@
     "/css-easing-animation": {
       "label": "CSS 缓动动画工具"
     },
+    "/simple-markdown-editor": {
+      "label": "简单的 Markdown 编辑器"
+    },
     "Badgen": {
       "about": "快速徽章生成服务",
       "label": "Badgen 徽章"

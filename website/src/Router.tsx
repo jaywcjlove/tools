@@ -43,6 +43,8 @@ const GenerateGithubBadges = Loadable(lazy(() => import('@wcj/tools-react-genera
 const TomlToJSON = Loadable(lazy(() => import('@wcj/tools-react-toml-to-json')));
 // @ts-ignore
 const CSSEasingAnimation = Loadable(lazy(() => import('@wcj/tools-react-css-easing-animation')));
+// @ts-ignore
+const SimpleMarkdownEditor = Loadable(lazy(() => import('@wcj/tools-react-simple-markdown-editor')));
 
 export let routes: RouteObject[] = [
   {
@@ -112,6 +114,10 @@ export let routes: RouteObject[] = [
       {
         path: '/css-easing-animation',
         element: <CSSEasingAnimation title="CSS Easing Animation Tool - Web Tools" />,
+      },
+      {
+        path: '/simple-markdown-editor',
+        element: <SimpleMarkdownEditor title="CSS Easing Animation Tool - Web Tools" />,
       },
       { path: '*', element: <NoMatch /> },
     ],
