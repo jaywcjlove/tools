@@ -53,7 +53,7 @@ jobs:
           name: ${{ steps.create_tag.outputs.version }}
           tag: ${{ steps.create_tag.outputs.version }}
           body: |
-            Documentation ${{ steps.changelog.outputs.tag }}: https://raw.githack.com/kktjs/babel-plugin-transform-replace-export-default/${{ steps.changelog.outputs.gh-pages-short-hash }}/index.html  
+            Documentation ${{ steps.changelog.outputs.tag }}: https://raw.githack.com/jaywcjlove/tools/${{ steps.changelog.outputs.gh-pages-short-hash }}/index.html  
             
             Comparing Changes: ${{ steps.changelog.outputs.compareurl }}  
 
