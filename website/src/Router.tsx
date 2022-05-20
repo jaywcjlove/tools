@@ -47,6 +47,8 @@ const CSSEasingAnimation = Loadable(lazy(() => import('@wcj/tools-react-css-easi
 const SimpleMarkdownEditor = Loadable(lazy(() => import('@wcj/tools-react-simple-markdown-editor')));
 // @ts-ignore
 const JWTDecoder = Loadable(lazy(() => import('@wcj/tools-react-jwt-decoder')));
+// @ts-ignore
+const JSON2Yaml = Loadable(lazy(() => import('@wcj/tools-react-json-yaml')));
 
 export let routes: RouteObject[] = [
   {
@@ -124,6 +126,10 @@ export let routes: RouteObject[] = [
       {
         path: '/jwt-decoder',
         element: <JWTDecoder title="JWT Decoder Tool - Web Tools" />,
+      },
+      {
+        path: '/json-yaml',
+        element: <JSON2Yaml title="JSON/YAML Converter Tool - Web Tools" />,
       },
       { path: '*', element: <NoMatch /> },
     ],

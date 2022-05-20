@@ -76,6 +76,10 @@ export function useMenus() {
       label: t('menu./jwt-decoder.label'),
     },
     {
+      href: '/json-yaml',
+      label: t('menu./json-yaml.label'),
+    },
+    {
       divider: true,
     },
     {

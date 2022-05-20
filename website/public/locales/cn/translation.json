@@ -55,6 +55,9 @@
     "/jwt-decoder": {
       "label": "JWT 解码器"
     },
+    "/json-yaml": {
+      "label": "JSON/YAML 转换器"
+    },
     "Badgen": {
       "about": "快速徽章生成服务",
       "label": "Badgen 徽章"
