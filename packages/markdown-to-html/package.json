@@ -1,6 +1,6 @@
 {
   "name": "@wcj/tools-react-markdown-to-html",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
@@ -16,14 +16,14 @@
   "author": "Kenny Wong <wowohoo@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "@wcj/tools-react-components": "^1.0.0",
+    "@wcj/tools-react-components": "1.0.1",
     "rehype": "^12.0.1",
     "rehype-autolink-headings": "^6.1.1",
-    "rehype-slug": "^5.0.1",
     "rehype-format": "^4.0.1",
     "rehype-ignore": "^1.0.1",
-    "rehype-video": "^1.2.2",
+    "rehype-slug": "^5.0.1",
     "rehype-stringify": "^9.0.3",
+    "rehype-video": "^1.2.2",
     "remark-gfm": "^3.0.1",
     "remark-parse": "^10.0.1",
     "remark-rehype": "^10.1.0",

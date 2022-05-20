@@ -1,6 +1,6 @@
 {
   "name": "@wcj/tools-react-toml-to-json",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
@@ -16,8 +16,8 @@
   "author": "Kenny Wong <wowohoo@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "toml": "^3.0.0",
-    "@wcj/tools-react-components": "^1.0.0"
+    "@wcj/tools-react-components": "1.0.1",
+    "toml": "^3.0.0"
   },
   "peerDependencies": {
     "react": ">=16.14.0",
