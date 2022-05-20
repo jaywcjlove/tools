@@ -46,6 +46,9 @@
     "/toml-to-json": {
       "label": "TOML 转换 JSON"
     },
+    "/css-easing-animation": {
+      "label": "CSS 缓动动画工具"
+    },
     "Badgen": {
       "about": "快速徽章生成服务",
       "label": "Badgen 徽章"
