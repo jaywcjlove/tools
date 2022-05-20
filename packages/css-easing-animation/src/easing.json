@@ -1,0 +1,98 @@
+[
+  {
+    "label": "easeInSine",
+    "point": "0.12, 0, 0.39, 0"
+  },
+  {
+    "label": "easeOutSine",
+    "point": "0.61, 1, 0.88, 1"
+  },
+  {
+    "label": "easeInOutSine",
+    "point": "0.37, 0, 0.63, 1"
+  },
+  {
+    "label": "easeInQuad",
+    "point": "0.11, 0, 0.5, 0"
+  },
+  {
+    "label": "easeOutQuad",
+    "point": "0.5, 1, 0.89, 1"
+  },
+  {
+    "label": "easeInOutQuad",
+    "point": "0.45, 0, 0.55, 1"
+  },
+  {
+    "label": "easeInCubic",
+    "point": "0.32, 0, 0.67, 0"
+  },
+  {
+    "label": "easeOutCubic",
+    "point": "0.33, 1, 0.68, 1"
+  },
+  {
+    "label": "easeInOutCubic",
+    "point": "0.65, 0, 0.35, 1"
+  },
+  {
+    "label": "easeInQuart",
+    "point": "0.5, 0, 0.75, 0"
+  },
+  {
+    "label": "easeOutQuart",
+    "point": "0.25, 1, 0.5, 1"
+  },
+  {
+    "label": "easeInOutQuart",
+    "point": "0.76, 0, 0.24, 1"
+  },
+  {
+    "label": "easeInQuint",
+    "point": "0.64, 0, 0.78, 0"
+  },
+  {
+    "label": "easeOutQuint",
+    "point": "0.22, 1, 0.36, 1"
+  },
+  {
+    "label": "easeInOutQuint",
+    "point": "0.83, 0, 0.17, 1"
+  },
+  {
+    "label": "easeInExpo",
+    "point": "0.7, 0, 0.84, 0"
+  },
+  {
+    "label": "easeOutExpo",
+    "point": "0.16, 1, 0.3, 1"
+  },
+  {
+    "label": "easeInOutExpo",
+    "point": "0.87, 0, 0.13, 1"
+  },
+  {
+    "label": "easeInCirc",
+    "point": "0.55, 0, 1, 0.45"
+  },
+  {
+    "label": "easeOutCirc",
+    "point": "0, 0.55, 0.45, 1"
+  },
+  {
+    "label": "easeInOutCirc",
+    "point": "0.85, 0, 0.15, 1"
+  },
+  {
+    "label": "easeInBack",
+    "point": "0.36, 0, 0.66, -0.56"
+  },
+  {
+    "label": "easeOutBack",
+    "point": "0.34, 1.56, 0.64, 1"
+  },
+  {
+    "label": "easeInOutBack",
+    "point": "0.68, -0.6, 0.32, 1.6"
+  }
+]

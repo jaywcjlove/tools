@@ -64,6 +64,10 @@ export function useMenus() {
       label: t('menu./toml-to-json.label'),
     },
     {
+      href: '/css-easing-animation',
+      label: t('menu./css-easing-animation.label'),
+    },
+    {
       divider: true,
     },
     {

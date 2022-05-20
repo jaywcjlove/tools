@@ -46,6 +46,9 @@
     "/toml-to-json": {
       "label": "TOML to JSON"
     },
+    "/css-easing-animation": {
+      "label": "CSS Easing Animation"
+    },
     "Badgen": {
       "about": "Fast badge generating service",
       "label": "Badgen"

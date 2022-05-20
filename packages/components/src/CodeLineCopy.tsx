@@ -44,19 +44,30 @@ const Label = styled.label`
   min-width: 32px;
 `;
 
+export const CodeLineCopyTitle = styled.div`
+  font-weight: bold;
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+  border-bottom: 1px dashed var(--color-border-result-code);
+`;
+
 export interface CodeLineCopyProps {
   label?: React.ReactNode;
+  title?: React.ReactNode;
   blockCopy?: boolean;
+  copyText?: string;
 }
 
 export const CodeLineCopy: React.FC<React.PropsWithChildren<CodeLineCopyProps>> = ({
   blockCopy = true,
+  copyText,
+  title,
   label,
   children,
 }) => {
   const [success, setSuccess] = useState(false);
   function handleClick() {
-    copyTextToClipboard(`${children}`, () => {
+    copyTextToClipboard(`${copyText || children}`, () => {
       setSuccess(true);
       const timer = setTimeout(() => {
         setSuccess(false);
@@ -73,7 +84,10 @@ export const CodeLineCopy: React.FC<React.PropsWithChildren<CodeLineCopyProps>> 
     <Warpper {...props}>
       <GlobalStyle />
       {label && <Label>{label}</Label>}
-      <Content>{children}</Content>
+      <Content>
+        {title && <CodeLineCopyTitle>{title}</CodeLineCopyTitle>}
+        {children}
+      </Content>
       <Button onClick={handleClick} style={success ? { color: '#4caf50' } : {}}>
         {success ? <RightIcon width={19} height={19} /> : <CopyIcon width={19} height={19} />}
       </Button>

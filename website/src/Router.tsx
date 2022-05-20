@@ -41,6 +41,8 @@ const ChinesePinyinConversion = Loadable(lazy(() => import('@wcj/tools-react-chi
 const GenerateGithubBadges = Loadable(lazy(() => import('@wcj/tools-react-generate-github-badges')));
 // @ts-ignore
 const TomlToJSON = Loadable(lazy(() => import('@wcj/tools-react-toml-to-json')));
+// @ts-ignore
+const CSSEasingAnimation = Loadable(lazy(() => import('@wcj/tools-react-css-easing-animation')));
 
 export let routes: RouteObject[] = [
   {
@@ -106,6 +108,10 @@ export let routes: RouteObject[] = [
       {
         path: '/toml-to-json',
         element: <TomlToJSON title="Toml To JSON - Web Tools" />,
+      },
+      {
+        path: '/css-easing-animation',
+        element: <CSSEasingAnimation title="CSS Easing Animation Tool - Web Tools" />,
       },
       { path: '*', element: <NoMatch /> },
     ],
