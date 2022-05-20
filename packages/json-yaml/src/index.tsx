@@ -25,17 +25,26 @@ What It Is:
 
 export default function URLEncode(props: URLEncodeProps) {
   const [value, setValue] = useState<string>();
-  const [encodedUrl, setEncodeUrl] = useState<string>();
-  const handleInput = (val: string = '', type: 'raw' | 'encoded') => {
+  const [yamlStr, setYamlStr] = useState<string>();
+  const [errorStr, setErrorStr] = useState<string>();
+  const [etype, setEtype] = useState<'raw' | 'yaml'>();
+  const handleInput = (val: string = '', type: 'raw' | 'yaml') => {
     try {
       if (type === 'raw') {
+        setEtype('raw');
         setValue(val);
-        setEncodeUrl(stringify(JSON.parse(val)));
-      } else if (type === 'encoded') {
+        setYamlStr(stringify(JSON.parse(val)));
+      } else if (type === 'yaml') {
+        setEtype('yaml');
+        setYamlStr(val);
         setValue(JSON.stringify(parse(val), null, 2));
-        setEncodeUrl(val);
       }
-    } catch (error) {}
+      setErrorStr('');
+    } catch (error) {
+      if (error instanceof Error) {
+        setErrorStr(error.message);
+      }
+    }
   };
   return (
     <Wrapper>
@@ -51,6 +60,7 @@ export default function URLEncode(props: URLEncodeProps) {
         <Textarea
           spellCheck={false}
           value={value}
+          error={!!errorStr && etype === 'raw'}
           onInput={(evn) => handleInput((evn.target as HTMLTextAreaElement).value, 'raw')}
         />
       </StyledLayout>
@@ -58,15 +68,16 @@ export default function URLEncode(props: URLEncodeProps) {
         title={'YAML'}
         extra={
           <Fragment>
-            {encodedUrl && <CopyButton value={encodedUrl} />}
-            <Button onClick={() => handleInput(sampleYAML, 'encoded')}>Sample</Button>
+            {yamlStr && <CopyButton value={yamlStr} />}
+            <Button onClick={() => handleInput(sampleYAML, 'yaml')}>Sample</Button>
           </Fragment>
         }
       >
         <Textarea
           spellCheck={false}
-          value={encodedUrl}
-          onInput={(evn) => handleInput((evn.target as HTMLTextAreaElement).value, 'encoded')}
+          value={yamlStr}
+          error={!!errorStr && etype === 'yaml'}
+          onInput={(evn) => handleInput((evn.target as HTMLTextAreaElement).value, 'yaml')}
         />
       </StyledLayout>
     </Wrapper>
