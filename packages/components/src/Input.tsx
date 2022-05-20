@@ -6,6 +6,7 @@ import { ButtonBase } from './Button';
 const Warpper = styled.div`
   display: flex;
   gap: 10px;
+  align-items: stretch;
 `;
 
 const Input = styled.input`

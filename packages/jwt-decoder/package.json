@@ -1,0 +1,27 @@
+{
+  "name": "@wcj/tools-react-jwt-decoder",
+  "version": "1.0.0",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "scripts": {
+    "build": "tsbb build",
+    "watch": "tsbb watch"
+  },
+  "keywords": [],
+  "files": [
+    "cjs",
+    "esm",
+    "src"
+  ],
+  "author": "Kenny Wong <wowohoo@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@uiw/react-markdown-preview": "^4.0.9",
+    "@wcj/tools-react-components": "^1.0.0",
+    "jwt-decode": "^3.1.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.14.0",
+    "react-dom": ">=16.14.0"
+  }
+}

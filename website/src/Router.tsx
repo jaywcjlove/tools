@@ -45,6 +45,8 @@ const TomlToJSON = Loadable(lazy(() => import('@wcj/tools-react-toml-to-json')))
 const CSSEasingAnimation = Loadable(lazy(() => import('@wcj/tools-react-css-easing-animation')));
 // @ts-ignore
 const SimpleMarkdownEditor = Loadable(lazy(() => import('@wcj/tools-react-simple-markdown-editor')));
+// @ts-ignore
+const JWTDecoder = Loadable(lazy(() => import('@wcj/tools-react-jwt-decoder')));
 
 export let routes: RouteObject[] = [
   {
@@ -93,23 +95,23 @@ export let routes: RouteObject[] = [
       },
       {
         path: '/base64-encoder',
-        element: <Base64Encoder title="Base64 Encoder/Decoder - Web Tools" />,
+        element: <Base64Encoder title="Base64 Encoder/Decoder Tool - Web Tools" />,
       },
       {
         path: '/qrcode-generator',
-        element: <QRCodeGenerator title="QRCode Generator - Web Tools" />,
+        element: <QRCodeGenerator title="QRCode Generator Tool - Web Tools" />,
       },
       {
         path: '/chinese-pinyin-conversion',
-        element: <ChinesePinyinConversion title="Chinese Pinyin Conversion - Web Tools" />,
+        element: <ChinesePinyinConversion title="Chinese Pinyin Conversion Tool - Web Tools" />,
       },
       {
         path: '/generate-github-badges',
-        element: <GenerateGithubBadges title="Generate Github Badges - Web Tools" />,
+        element: <GenerateGithubBadges title="Generate Github Badges Tool - Web Tools" />,
       },
       {
         path: '/toml-to-json',
-        element: <TomlToJSON title="Toml To JSON - Web Tools" />,
+        element: <TomlToJSON title="Toml To JSON Tool - Web Tools" />,
       },
       {
         path: '/css-easing-animation',
@@ -117,7 +119,11 @@ export let routes: RouteObject[] = [
       },
       {
         path: '/simple-markdown-editor',
-        element: <SimpleMarkdownEditor title="CSS Easing Animation Tool - Web Tools" />,
+        element: <SimpleMarkdownEditor title="Simple Markdown Editor Tool - Web Tools" />,
+      },
+      {
+        path: '/jwt-decoder',
+        element: <JWTDecoder title="JWT Decoder Tool - Web Tools" />,
       },
       { path: '*', element: <NoMatch /> },
     ],

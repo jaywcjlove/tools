@@ -56,10 +56,12 @@ export interface CodeLineCopyProps {
   title?: React.ReactNode;
   blockCopy?: boolean;
   copyText?: string;
+  copyBtn?: boolean;
 }
 
 export const CodeLineCopy: React.FC<React.PropsWithChildren<CodeLineCopyProps>> = ({
   blockCopy = true,
+  copyBtn = true,
   copyText,
   title,
   label,
@@ -76,7 +78,7 @@ export const CodeLineCopy: React.FC<React.PropsWithChildren<CodeLineCopyProps>> 
     });
   }
   const props: React.HTMLAttributes<HTMLDivElement> = {};
-  if (blockCopy) {
+  if (blockCopy && copyBtn) {
     props.onClick = handleClick;
     props.style = { cursor: 'pointer' };
   }
@@ -88,9 +90,11 @@ export const CodeLineCopy: React.FC<React.PropsWithChildren<CodeLineCopyProps>> 
         {title && <CodeLineCopyTitle>{title}</CodeLineCopyTitle>}
         {children}
       </Content>
-      <Button onClick={handleClick} style={success ? { color: '#4caf50' } : {}}>
-        {success ? <RightIcon width={19} height={19} /> : <CopyIcon width={19} height={19} />}
-      </Button>
+      {copyBtn && (
+        <Button onClick={handleClick} style={success ? { color: '#4caf50' } : {}}>
+          {success ? <RightIcon width={19} height={19} /> : <CopyIcon width={19} height={19} />}
+        </Button>
+      )}
     </Warpper>
   );
 };

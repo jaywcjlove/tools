@@ -52,6 +52,9 @@
     "/simple-markdown-editor": {
       "label": "简单的 Markdown 编辑器"
     },
+    "/jwt-decoder": {
+      "label": "JWT 解码器"
+    },
     "Badgen": {
       "about": "快速徽章生成服务",
       "label": "Badgen 徽章"

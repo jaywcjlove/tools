@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Wrapper, Textarea, StyledLayout, CopyButton } from '@wcj/tools-react-components';
-import * as Base64 from './Base64';
 
 export default function Base64Encoder() {
   const [url, setUrl] = useState<string>();
@@ -9,9 +8,9 @@ export default function Base64Encoder() {
   const handleInput = (value: string = '') => {
     if (type === 'raw') {
       setUrl(value);
-      setEncodeUrl(Base64.encode(value));
+      setEncodeUrl(window.btoa(value));
     } else if (type === 'encoded') {
-      setUrl(Base64.decode(value));
+      setUrl(window.atob(value));
       setEncodeUrl(value);
     }
   };

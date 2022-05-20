@@ -20,11 +20,6 @@ const Title = styled.div`
   align-items: center;
 `;
 
-export type TextareaProps = React.DetailedHTMLProps<
-  React.TextareaHTMLAttributes<HTMLTextAreaElement>,
-  HTMLTextAreaElement
->;
-
 export interface ResultProps
   extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'title'> {
   title?: React.ReactNode;

@@ -72,6 +72,10 @@ export function useMenus() {
       label: t('menu./simple-markdown-editor.label'),
     },
     {
+      href: '/jwt-decoder',
+      label: t('menu./jwt-decoder.label'),
+    },
+    {
       divider: true,
     },
     {
