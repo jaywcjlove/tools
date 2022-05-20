@@ -52,6 +52,9 @@
     "/simple-markdown-editor": {
       "label": "Simple Markdown Editor"
     },
+    "/jwt-decoder": {
+      "label": "JWT Decoder"
+    },
     "Badgen": {
       "about": "Fast badge generating service",
       "label": "Badgen"
