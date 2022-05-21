@@ -80,6 +80,10 @@ export function useMenus() {
       label: t('menu./json-yaml.label'),
     },
     {
+      href: '/json-xml',
+      label: t('menu./json-xml.label'),
+    },
+    {
       divider: true,
     },
     {

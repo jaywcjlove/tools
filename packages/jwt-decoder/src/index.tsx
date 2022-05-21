@@ -16,7 +16,7 @@ const help = `JWT Decoder is a free online developer tool to decode a JSON Web T
 
 Enter a JSON Web Token you would like to decode in the input field and then click the decode button. The result will be split into \`header\` and \`payload\` in the JSON format accordingly.
 
-The header consists of the algorithm used to encode the signature, such as \`HS256\` which means the token uses \`HMAC-SHA256\` to generate the signature and the token type; for instance \`JWT\`.
+The header consists of the algorithm used to encode the signature, such as \`HS256\` which means the token uses \`HMAC-SHA256\` to generate the signature and the token type; for instance [\`JWT\`](https://jwt.io/).
 
 The payload contains a set of claims as known as data in a token. One of the standard claims is \`iat\` which stands for Issued At. It's a UNIX timestamp referring to the creation date and time of the token.
 

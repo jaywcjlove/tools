@@ -49,6 +49,8 @@ const SimpleMarkdownEditor = Loadable(lazy(() => import('@wcj/tools-react-simple
 const JWTDecoder = Loadable(lazy(() => import('@wcj/tools-react-jwt-decoder')));
 // @ts-ignore
 const JSON2Yaml = Loadable(lazy(() => import('@wcj/tools-react-json-yaml')));
+// @ts-ignore
+const JSON2XML = Loadable(lazy(() => import('@wcj/tools-react-json-xml')));
 
 export let routes: RouteObject[] = [
   {
@@ -130,6 +132,10 @@ export let routes: RouteObject[] = [
       {
         path: '/json-yaml',
         element: <JSON2Yaml title="JSON/YAML Converter Tool - Web Tools" />,
+      },
+      {
+        path: '/json-xml',
+        element: <JSON2XML title="JSON/XML Converter Tool - Web Tools" />,
       },
       { path: '*', element: <NoMatch /> },
     ],
