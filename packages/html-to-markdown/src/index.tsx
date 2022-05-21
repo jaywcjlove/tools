@@ -31,14 +31,14 @@ export default function Html2Markdown() {
         <CodeEditor
           spellCheck={false}
           value={html}
-          height="calc(100vh - 90px)"
+          height="calc(100vh - 87px)"
           extensions={[htmlLang()]}
           onInput={(evn) => handleInput((evn.target as HTMLTextAreaElement).value)}
         />
       </StyledLayout>
       <StyledLayout title="Result Markdown" extra={markdown && <CopyButton value={markdown} />}>
         <CodeEditor
-          height="calc(100vh - 90px)"
+          height="calc(100vh - 87px)"
           extensions={[markdownLang()]}
           spellCheck={false}
           value={markdown}

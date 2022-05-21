@@ -1,5 +1,6 @@
 import { Fragment, useState } from 'react';
-import { Wrapper, Textarea, StyledLayout, CopyButton, Button } from '@wcj/tools-react-components';
+import { Wrapper, StyledLayout, CopyButton, Button, CodeEditor } from '@wcj/tools-react-components';
+import { html } from '@codemirror/lang-html';
 
 const sample = `<div>Hello World!</div>`;
 const sampleEscape = `&lt;div&gt;Goodbye World!&lt;/div&gt;`;
@@ -56,12 +57,18 @@ export default function HTMLEscape() {
           </Fragment>
         }
       >
-        <Textarea
+        <CodeEditor
           spellCheck={false}
           value={value}
+          height="calc(100vh - 87px)"
           placeholder="Example: `<div>`"
           onFocus={() => setType('raw')}
-          onInput={(evn) => handleInput((evn.target as HTMLTextAreaElement).value)}
+          extensions={[html()]}
+          onChange={(val) => {
+            if (type === 'raw') {
+              handleInput(val);
+            }
+          }}
         />
       </StyledLayout>
       <StyledLayout
@@ -80,12 +87,18 @@ export default function HTMLEscape() {
           </Fragment>
         }
       >
-        <Textarea
+        <CodeEditor
           spellCheck={false}
           value={escape}
+          height="calc(100vh - 87px)"
           placeholder="Output: `&lt&#59;div&gt&#59;`"
           onFocus={() => setType('escape')}
-          onInput={(evn) => handleInput((evn.target as HTMLTextAreaElement).value)}
+          extensions={[html()]}
+          onChange={(val) => {
+            if (type === 'escape') {
+              handleInput(val);
+            }
+          }}
         />
       </StyledLayout>
     </Wrapper>

@@ -3,7 +3,7 @@ import CodeMirror, { ReactCodeMirrorRef, ReactCodeMirrorProps, EditorView } from
 
 const borderRadius = EditorView.theme({
   '.cm-scroller, &': {
-    borderRadius: '3px',
+    borderRadius: '6px',
   },
   '&': {
     border: '1px solid var(--color-border-default)',

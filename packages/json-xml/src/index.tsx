@@ -77,7 +77,7 @@ function LeftLayout() {
         value={jsonStr}
         ref={editor}
         readOnly={input !== 'json'}
-        height="calc(100vh - 90px)"
+        height="calc(100vh - 87px)"
         extensions={[json()]}
         onFocus={() => {
           dispatch && dispatch({ input: 'json' });
@@ -131,7 +131,7 @@ function RightLayout() {
         value={xmlStr}
         ref={editor}
         readOnly={input !== 'xml'}
-        height="calc(100vh - 90px)"
+        height="calc(100vh - 87px)"
         extensions={[xml()]}
         onFocus={() => dispatch!({ input: 'xml' })}
         onChange={(val, viewUpdate) => {

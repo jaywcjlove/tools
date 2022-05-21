@@ -67,14 +67,14 @@ export default function TOMLToJSON(props: TOMLToJSONProps) {
         }
       >
         <CodeEditor
-          height="calc(100vh - 90px)"
+          height="calc(100vh - 87px)"
           extensions={[StreamLanguage.define(toml)]}
           value={value}
           onChange={(val) => setValue(val)}
         />
       </StyledLayout>
       <StyledLayout title={'Result JSON'} extra={json && <CopyButton value={json} />}>
-        <CodeEditor height="calc(100vh - 90px)" extensions={[jsonLang()]} readOnly value={json} />
+        <CodeEditor height="calc(100vh - 87px)" extensions={[jsonLang()]} readOnly value={json} />
       </StyledLayout>
       <ErrorLayout>{error}</ErrorLayout>
     </Wrapper>
