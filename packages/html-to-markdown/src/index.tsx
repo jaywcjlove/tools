@@ -1,6 +1,14 @@
-import { useState } from 'react';
-import { Wrapper, Textarea, StyledLayout, CopyButton } from '@wcj/tools-react-components';
+import { useState, Fragment } from 'react';
+import { Wrapper, StyledLayout, CopyButton, Button, CodeEditor } from '@wcj/tools-react-components';
+import { markdown as markdownLang } from '@codemirror/lang-markdown';
+import { html as htmlLang } from '@codemirror/lang-html';
 import { htmlToMarkdown } from './utils';
+
+const sample = `<h2>Web tool</h2>
+<p>Hello World</p>
+<pre><code class="language-css">body { color: 'red'; }
+</code></pre>
+`;
 
 export default function Html2Markdown() {
   const [html, setHtml] = useState<string>();
@@ -11,15 +19,31 @@ export default function Html2Markdown() {
   };
   return (
     <Wrapper>
-      <StyledLayout title="Input HTML" extra={html && <CopyButton value={html} />}>
-        <Textarea
+      <StyledLayout
+        title="Input HTML"
+        extra={
+          <Fragment>
+            {html && <CopyButton value={html} />}
+            <Button onClick={() => handleInput(sample)}>Sample</Button>
+          </Fragment>
+        }
+      >
+        <CodeEditor
           spellCheck={false}
           value={html}
+          height="calc(100vh - 90px)"
+          extensions={[htmlLang()]}
           onInput={(evn) => handleInput((evn.target as HTMLTextAreaElement).value)}
         />
       </StyledLayout>
       <StyledLayout title="Result Markdown" extra={markdown && <CopyButton value={markdown} />}>
-        <Textarea spellCheck={false} value={markdown} readOnly />
+        <CodeEditor
+          height="calc(100vh - 90px)"
+          extensions={[markdownLang()]}
+          spellCheck={false}
+          value={markdown}
+          readOnly
+        />
       </StyledLayout>
     </Wrapper>
   );
