@@ -1,10 +1,11 @@
 import { PropsWithChildren, forwardRef, useImperativeHandle } from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css, CSSProperties } from 'styled-components';
 
 export interface LayoutProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   title?: string;
   className?: string;
   extra?: React.ReactNode;
+  overflow?: CSSProperties['overflow'];
 }
 
 export const Context = styled.div`
@@ -45,5 +46,7 @@ export const StyledLayout = styled(Layout)`
   flex-direction: column;
   justify-content: space-around;
   flex: 1;
-  overflow: hidden;
+  ${(props) => css`
+    overflow: ${props.overflow || 'hidden'};
+  `}
 `;

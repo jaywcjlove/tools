@@ -24,7 +24,7 @@ export default function SimpleMarkdownEditor(props: SimpleMarkdownEditorProps) {
 
   return (
     <Wrapper>
-      <StyledLayout ref={ref} title="Markdown Editor" extra={value && <CopyButton value={value} />}>
+      <StyledLayout overflow="initial" ref={ref} title="Markdown Editor" extra={value && <CopyButton value={value} />}>
         <MDEditor value={value} height={height} onChange={(val) => setValue(val || '')} />
       </StyledLayout>
     </Wrapper>

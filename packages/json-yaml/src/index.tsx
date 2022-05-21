@@ -1,6 +1,9 @@
 import { Fragment, useState } from 'react';
-import { Wrapper, Textarea, StyledLayout, CopyButton, Button } from '@wcj/tools-react-components';
+import { Wrapper, StyledLayout, CopyButton, Button, CodeEditor } from '@wcj/tools-react-components';
 import { parse, stringify } from 'yaml';
+import { json as jsonLang } from '@codemirror/lang-json';
+import { StreamLanguage } from '@codemirror/language';
+import { yaml } from '@codemirror/legacy-modes/mode/yaml';
 
 export interface URLEncodeProps {}
 
@@ -57,10 +60,11 @@ export default function URLEncode(props: URLEncodeProps) {
           </Fragment>
         }
       >
-        <Textarea
+        <CodeEditor
           spellCheck={false}
           value={value}
-          error={!!errorStr && etype === 'raw'}
+          height="calc(100vh - 87px)"
+          extensions={[jsonLang()]}
           onInput={(evn) => handleInput((evn.target as HTMLTextAreaElement).value, 'raw')}
         />
       </StyledLayout>
@@ -73,10 +77,11 @@ export default function URLEncode(props: URLEncodeProps) {
           </Fragment>
         }
       >
-        <Textarea
+        <CodeEditor
           spellCheck={false}
           value={yamlStr}
-          error={!!errorStr && etype === 'yaml'}
+          height="calc(100vh - 87px)"
+          extensions={[StreamLanguage.define(yaml)]}
           onInput={(evn) => handleInput((evn.target as HTMLTextAreaElement).value, 'yaml')}
         />
       </StyledLayout>
