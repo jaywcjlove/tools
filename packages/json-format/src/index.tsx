@@ -1,6 +1,9 @@
-import { useState } from 'react';
-import { Wrapper, Textarea, StyledLayout, CopyButton } from '@wcj/tools-react-components';
+import { useState, Fragment } from 'react';
+import { Wrapper, StyledLayout, CopyButton, CodeEditor, Button, ErrorLayout } from '@wcj/tools-react-components';
 import styled, { createGlobalStyle } from 'styled-components';
+import { json } from '@codemirror/lang-json';
+
+const sample = `{"name": "@wcj/tools-react-components", "version": "1.0.1", "main": "./cjs/index.js", "module": "./esm/index.js", "scripts": {"build": "tsbb build", "watch": "tsbb watch"}, "keywords": [], "files": ["cjs", "esm", "src"], "author": "Kenny Wong <wowohoo@qq.com>", "license": "MIT", "dependencies": {"@uiw/react-codemirror": "^4.7.0", "@uiw/copy-to-clipboard": "^1.0.12", "styled-components": "^5.3.5"}, "devDependencies": {"@types/styled-components": "^5.1.25"}, "peerDependencies": {"react": ">=16.14.0", "react-dom": ">=16.14.0"} }`;
 
 export interface ResultProps {
   title?: string;
@@ -30,8 +33,7 @@ export default function ImageToBase64() {
   const [value, setValue] = useState('');
   const [result, setResult] = useState('');
   const [error, setError] = useState('');
-  const handleChange = (evn: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const str = (evn.target as HTMLTextAreaElement).value || '';
+  const handleChange = (str: string) => {
     if (str) {
       try {
         setValue(str);
@@ -47,14 +49,38 @@ export default function ImageToBase64() {
   };
   const resultOrError = error || result;
   return (
-    <Wrapper>
-      <GlobalStyle />
-      <StyledLayout title="Input JSON String" extra={value && <CopyButton value={value} />}>
-        <Textarea spellCheck={false} onChange={handleChange} />
-      </StyledLayout>
-      <StyledLayout title="Result" extra={resultOrError && <CopyButton value={resultOrError} />}>
-        <Textarea style={error ? { color: 'red' } : {}} defaultValue={resultOrError} readOnly />
-      </StyledLayout>
-    </Wrapper>
+    <Fragment>
+      <Wrapper>
+        <GlobalStyle />
+        <StyledLayout
+          title="Input JSON String"
+          extra={
+            <Fragment>
+              {value && <CopyButton value={value} />}
+              <Button
+                onClick={() => {
+                  setValue(sample);
+                  handleChange(sample);
+                }}
+              >
+                Sample
+              </Button>
+            </Fragment>
+          }
+        >
+          <CodeEditor
+            value={value}
+            height="calc(100vh - 87px)"
+            spellCheck={false}
+            extensions={[json()]}
+            onChange={handleChange}
+          />
+        </StyledLayout>
+        <StyledLayout title="Result" extra={resultOrError && <CopyButton value={resultOrError} />}>
+          <CodeEditor value={result} height="calc(100vh - 87px)" extensions={[json()]} readOnly />
+        </StyledLayout>
+      </Wrapper>
+      <ErrorLayout>{error}</ErrorLayout>
+    </Fragment>
   );
 }

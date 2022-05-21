@@ -23,5 +23,7 @@ export const CodeEditor = forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProps>((
       setTheme((e as any).detail.colorScheme);
     });
   }, []);
-  return <CodeMirror ref={ref} {...props} extensions={[borderRadius, ...extensions]} theme={theme} />;
+  return (
+    <CodeMirror ref={ref} {...props} style={{ padding: 1 }} extensions={[borderRadius, ...extensions]} theme={theme} />
+  );
 });

@@ -45,5 +45,5 @@ export const StyledLayout = styled(Layout)`
   flex-direction: column;
   justify-content: space-around;
   flex: 1;
-  overflow: auto;
+  overflow: hidden;
 `;
