@@ -43,6 +43,7 @@ export const StyledLayout = styled(Layout)`
   font-weight: bold;
   display: flex;
   flex-direction: column;
-  flex: 1;
   justify-content: space-around;
+  flex: 1;
+  overflow: auto;
 `;

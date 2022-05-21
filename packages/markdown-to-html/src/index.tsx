@@ -1,11 +1,15 @@
 import { Fragment, useCallback, useState } from 'react';
-import { Wrapper, Textarea, StyledLayout, CopyButton, Button } from '@wcj/tools-react-components';
+import { Wrapper, StyledLayout, CopyButton, Button, CodeEditor } from '@wcj/tools-react-components';
 import { markdownToHTML } from './utils';
+import { markdown as markdownLang } from '@codemirror/lang-markdown';
+import { html as htmlLang } from '@codemirror/lang-html';
 
 const sample = `## Web tool\n\nHello World
 
 \`\`\`css
-body { color: 'red'; }
+body {
+  color: 'red';
+}
 \`\`\``;
 
 export default function MarkdownToHTML() {
@@ -30,14 +34,17 @@ export default function MarkdownToHTML() {
   return (
     <Wrapper>
       <StyledLayout title="Input Markdown" extra={<ExtraTool />}>
-        <Textarea
+        <CodeEditor
           spellCheck={false}
           value={markdown}
+          height="calc(100vh - 87px)"
+          style={{ flex: 1 }}
+          extensions={[markdownLang()]}
           onInput={(evn) => handleInput((evn.target as HTMLTextAreaElement).value)}
         />
       </StyledLayout>
       <StyledLayout title="Result HTML" extra={html && <CopyButton value={html} />}>
-        <Textarea spellCheck={false} value={html} readOnly />
+        <CodeEditor extensions={[htmlLang()]} height="calc(100vh - 87px)" spellCheck={false} value={html} readOnly />
       </StyledLayout>
     </Wrapper>
   );
