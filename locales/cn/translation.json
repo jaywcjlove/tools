@@ -58,6 +58,9 @@
     "/json-yaml": {
       "label": "JSON/YAML 转换器"
     },
+    "/json-xml": {
+      "label": "JSON/XML 转换器"
+    },
     "Badgen": {
       "about": "快速徽章生成服务",
       "label": "Badgen 徽章"

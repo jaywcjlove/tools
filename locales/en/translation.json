@@ -58,6 +58,9 @@
     "/json-yaml": {
       "label": "JSON/YAML Converter"
     },
+    "/json-xml": {
+      "label": "JSON/XML Converter"
+    },
     "Badgen": {
       "about": "Fast badge generating service",
       "label": "Badgen"
