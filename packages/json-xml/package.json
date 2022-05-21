@@ -18,7 +18,6 @@
   "dependencies": {
     "@codemirror/lang-json": "^0.20.0",
     "@codemirror/lang-xml": "^0.20.0",
-    "@uiw/react-codemirror": "^4.7.0",
     "@wcj/tools-react-components": "1.0.1",
     "fast-xml-parser": "^4.0.7"
   },

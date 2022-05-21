@@ -1,33 +1,21 @@
-import React, { createContext, Fragment, useRef, useContext, useEffect, useReducer, useState } from 'react';
-import { Wrapper, StyledLayout, CopyButton, Button, ErrorLayout } from '@wcj/tools-react-components';
+import React, { createContext, Fragment, useRef, useContext, useReducer } from 'react';
+import { Wrapper, StyledLayout, CopyButton, Button, ErrorLayout, CodeEditor } from '@wcj/tools-react-components';
 import { XMLParser, XMLBuilder, XMLValidator } from 'fast-xml-parser';
-import CodeMirror, { ReactCodeMirrorRef, EditorView } from '@uiw/react-codemirror';
+import { ReactCodeMirrorRef } from '@uiw/react-codemirror';
 import { json } from '@codemirror/lang-json';
 import { xml } from '@codemirror/lang-xml';
 import * as sample from './sample';
 
-const borderRadius = EditorView.theme({
-  '.cm-scroller, &': {
-    borderRadius: '3px',
-  },
-  '&': {
-    border: '1px solid var(--color-border-default)',
-  },
-});
-
 interface ValueContextData extends InitialState {
   dispatch?: React.Dispatch<InitialState>;
 }
-type Theme = 'dark' | 'light';
 interface InitialState {
   xml?: string;
   json?: string;
   error?: string;
-  theme?: Theme;
   input?: 'xml' | 'json';
 }
-const defalutTheme = document.documentElement.getAttribute('data-color-mode') as Theme;
-const ValueContext = createContext<ValueContextData>({ theme: defalutTheme });
+const ValueContext = createContext<ValueContextData>({});
 const useValue = () => {
   return useContext(ValueContext);
 };
@@ -41,13 +29,6 @@ const reducer = (state: InitialState, action: InitialState) => {
 export default function JSONToXML() {
   const [state, dispatch] = useReducer(reducer, { xml: '', json: '' });
 
-  useEffect(() => {
-    const theme = document.documentElement.getAttribute('data-color-mode') as Theme;
-    dispatch!({ theme });
-    document.addEventListener('colorschemechange', (e) => {
-      dispatch!({ theme: (e as any).detail.colorScheme });
-    });
-  }, []);
   return (
     <ValueContext.Provider value={{ ...state, dispatch }}>
       <Wrapper>
@@ -60,7 +41,7 @@ export default function JSONToXML() {
 }
 
 function LeftLayout() {
-  const { json: jsonStr, input, theme, dispatch } = useValue();
+  const { json: jsonStr, input, dispatch } = useValue();
   const editor = useRef<ReactCodeMirrorRef>(null);
   function handleInput(val: string) {
     try {
@@ -70,7 +51,7 @@ function LeftLayout() {
       dispatch!({ input: 'json', json: val, xml: xmlStr, error: '' });
     } catch (err) {
       if (err instanceof Error) {
-        dispatch!({ error: err.message });
+        dispatch!({ error: `JSON: ${err.message}` });
       }
     }
   }
@@ -92,13 +73,12 @@ function LeftLayout() {
         </Fragment>
       }
     >
-      <CodeMirror
+      <CodeEditor
         value={jsonStr}
         ref={editor}
-        theme={theme}
         readOnly={input !== 'json'}
         height="calc(100vh - 90px)"
-        extensions={[json(), borderRadius]}
+        extensions={[json()]}
         onFocus={() => {
           dispatch && dispatch({ input: 'json' });
         }}
@@ -113,12 +93,12 @@ function LeftLayout() {
 }
 
 function RightLayout() {
-  const { xml: xmlStr, input, theme, dispatch } = useValue();
+  const { xml: xmlStr, input, dispatch } = useValue();
   const editor = useRef<ReactCodeMirrorRef>(null);
   const validator = (xml: string = '') => {
     const val = XMLValidator.validate(xml, {});
     if (typeof val !== 'boolean' && val.err) {
-      dispatch!({ error: `${val.err.msg}, line: ${val.err.line}, col: ${val.err.col}` });
+      dispatch!({ error: `XML: ${val.err.msg}, line: ${val.err.line}, col: ${val.err.col}` });
     }
   };
   function handleInput(val: string) {
@@ -147,13 +127,12 @@ function RightLayout() {
         </Fragment>
       }
     >
-      <CodeMirror
+      <CodeEditor
         value={xmlStr}
         ref={editor}
-        theme={theme}
         readOnly={input !== 'xml'}
         height="calc(100vh - 90px)"
-        extensions={[xml(), borderRadius]}
+        extensions={[xml()]}
         onFocus={() => dispatch!({ input: 'xml' })}
         onChange={(val, viewUpdate) => {
           if (input === 'xml') {

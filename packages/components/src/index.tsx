@@ -10,6 +10,7 @@ export * from './StyledLayout';
 export * from './Textarea';
 export * from './utils';
 export * from './ErrorLayout';
+export * from './CodeEditor';
 
 export const Wrapper = styled.main`
   padding: 25px;

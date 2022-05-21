@@ -1,6 +1,9 @@
 import { useState, Fragment, useEffect } from 'react';
-import { Wrapper, Textarea, StyledLayout, CopyButton, Button } from '@wcj/tools-react-components';
+import { Wrapper, ErrorLayout, StyledLayout, CopyButton, Button, CodeEditor } from '@wcj/tools-react-components';
 import TOML from 'toml';
+import { json as jsonLang } from '@codemirror/lang-json';
+import { StreamLanguage } from '@codemirror/language';
+import { toml } from '@codemirror/legacy-modes/mode/toml';
 
 const sample = `# This is a TOML document.
 
@@ -63,15 +66,17 @@ export default function TOMLToJSON(props: TOMLToJSONProps) {
           </Fragment>
         }
       >
-        <Textarea
-          spellCheck={false}
+        <CodeEditor
+          height="calc(100vh - 90px)"
+          extensions={[StreamLanguage.define(toml)]}
           value={value}
-          onInput={(evn) => setValue((evn.target as HTMLTextAreaElement).value)}
+          onChange={(val) => setValue(val)}
         />
       </StyledLayout>
       <StyledLayout title={'Result JSON'} extra={json && <CopyButton value={json} />}>
-        <Textarea spellCheck={false} readOnly error={!!error} value={error || json} />
+        <CodeEditor height="calc(100vh - 90px)" extensions={[jsonLang()]} readOnly value={json} />
       </StyledLayout>
+      <ErrorLayout>{error}</ErrorLayout>
     </Wrapper>
   );
 }
