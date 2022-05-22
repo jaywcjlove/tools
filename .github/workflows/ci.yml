@@ -58,4 +58,16 @@ jobs:
             Comparing Changes: ${{ steps.changelog.outputs.compareurl }}  
 
             ${{ steps.changelog.outputs.changelog }}
-      
+
+            ```bash
+            docker pull wcjiang/tools
+            docker run --name tools6 --rm -d -p 9666:80 wcjiang/tools:${{steps.changelog.outputs.version}}
+            # Or
+            docker run --name tools6 -itd -p 9666:80 wcjiang/tools:${{steps.changelog.outputs.version}}
+            ```
+
+            Visit the following URL in your browser
+
+            ```bash
+            http://localhost:9666/
+            ```
