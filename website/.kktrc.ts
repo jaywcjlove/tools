@@ -24,6 +24,7 @@ export default (conf: Configuration, env: 'development' | 'production', options:
        * https://github.com/i18next/i18next-http-backend#backend-options
        */
       LOADPATH: JSON.stringify(LOADPATH),
+      DEBUG: JSON.stringify(LOADPATH),
     }),
   );
   if (env === 'development') {

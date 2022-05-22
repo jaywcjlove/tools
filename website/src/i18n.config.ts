@@ -6,6 +6,9 @@ import Backend from 'i18next-http-backend';
 // @ts-ignore
 const loadPath = LOADPATH;
 
+// @ts-ignore
+const debug: 'development' | 'production' = DEBUG;
+
 i18n
   .use(Backend)
   .use(LanguageDetector)
@@ -13,7 +16,7 @@ i18n
   .init({
     lng: 'en', // if you're using a language detector, do not define the lng option
     fallbackLng: 'en', // use en if detected lng is not available
-    debug: true,
+    debug: debug === 'development',
     interpolation: {
       escapeValue: false, // react already safes from xss
     },
