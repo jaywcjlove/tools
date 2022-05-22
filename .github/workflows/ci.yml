@@ -86,7 +86,7 @@ jobs:
 
       - name: Build docs image
         if: steps.create_tag.outputs.successful
-        run: docker image build -f docker/Dockerfile -t tools .
+        run: docker image build -t tools .
 
       - name: Tags & Push image
         if: steps.create_tag.outputs.successful

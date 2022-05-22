@@ -7,4 +7,4 @@ RUN cat /etc/nginx/conf.d/default.conf
 
 WORKDIR $APPDIR
 
-ADD ../website/build /usr/share/nginx/html
+ADD ./website/build /usr/share/nginx/html
