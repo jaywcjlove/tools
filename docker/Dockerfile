@@ -1,4 +1,4 @@
-FROM nginx:1.21.6
+FROM nginx:1-alpine
 
 ENV APPDIR /usr/share/nginx/html
 RUN mkdir -p $APPDIR 
