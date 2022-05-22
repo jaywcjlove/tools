@@ -74,3 +74,25 @@ jobs:
             ```bash
             http://localhost:9666/
             ```
+
+      # Create Docker Image
+      - name: Create docker-compliant static resources.
+        if: steps.create_tag.outputs.successful
+        run: npm run docker
+
+      - name: Docker login
+        if: steps.create_tag.outputs.successful
+        run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build docs image
+        if: steps.create_tag.outputs.successful
+        run: docker image build -f docker/Dockerfile -t tools .
+
+      - name: Tags & Push image
+        if: steps.create_tag.outputs.successful
+        run: |
+          echo "outputs.tag - ${{ steps.changelog.outputs.version }}"
+          docker tag tools ${{ secrets.DOCKER_USER }}/tools:${{steps.changelog.outputs.version}}
+          docker tag tools ${{ secrets.DOCKER_USER }}/tools:latest
+          docker push ${{ secrets.DOCKER_USER }}/tools:${{steps.changelog.outputs.version}}
+          docker push ${{ secrets.DOCKER_USER }}/tools:latest
