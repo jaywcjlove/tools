@@ -60,7 +60,10 @@ jobs:
             ${{ steps.changelog.outputs.changelog }}
 
             ```bash
-            docker pull wcjiang/tools
+            docker pull wcjiang/tools:${{steps.changelog.outputs.version}}
+            ```
+
+            ```bash
             docker run --name tools6 --rm -d -p 9666:80 wcjiang/tools:${{steps.changelog.outputs.version}}
             # Or
             docker run --name tools6 -itd -p 9666:80 wcjiang/tools:${{steps.changelog.outputs.version}}
