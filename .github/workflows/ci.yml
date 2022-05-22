@@ -53,6 +53,8 @@ jobs:
           name: ${{ steps.create_tag.outputs.version }}
           tag: ${{ steps.create_tag.outputs.version }}
           body: |
+            [![Docker Image Version (latest by date)](https://img.shields.io/docker/v/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools) [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools) [![Docker Pulls](https://img.shields.io/docker/pulls/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools)
+            
             Documentation ${{ steps.changelog.outputs.tag }}: https://raw.githack.com/jaywcjlove/tools/${{ steps.changelog.outputs.gh-pages-short-hash }}/index.html  
             
             Comparing Changes: ${{ steps.changelog.outputs.compareurl }}  
@@ -64,9 +66,9 @@ jobs:
             ```
 
             ```bash
-            docker run --name tools6 --rm -d -p 9666:80 wcjiang/tools:${{steps.changelog.outputs.version}}
+            docker run --name tools --rm -d -p 9666:80 wcjiang/tools:${{steps.changelog.outputs.version}}
             # Or
-            docker run --name tools6 -itd -p 9666:80 wcjiang/tools:${{steps.changelog.outputs.version}}
+            docker run --name tools -itd -p 9666:80 wcjiang/tools:${{steps.changelog.outputs.version}}
             ```
 
             Visit the following URL in your browser

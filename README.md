@@ -1,6 +1,8 @@
 # Web Tools
 
-Some useful tools for developers.
+[![Docker Image Version (latest by date)](https://img.shields.io/docker/v/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools) [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools) [![Docker Pulls](https://img.shields.io/docker/pulls/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools)
+
+Some useful tools for developers. Online preview: https://jaywcjlove.github.io/tools
 
 [![Web Tools](https://user-images.githubusercontent.com/1680273/169116238-38f9f355-6260-4c1c-b4d5-ec44f330e009.png)](https://jaywcjlove.github.io/tools)
 
@@ -13,9 +15,9 @@ docker pull wcjiang/tools
 ```
 
 ```bash
-docker run --name tools6 --rm -d -p 9666:80 wcjiang/tools:latest
+docker run --name tools --rm -d -p 9666:80 wcjiang/tools:latest
 # Or
-docker run --name tools6 -itd -p 9666:80 wcjiang/tools:latest
+docker run --name tools -itd -p 9666:80 wcjiang/tools:latest
 ```
 
 Visit the following URL in your browser
