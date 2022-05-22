@@ -10,6 +10,7 @@
     "build:components": "npm run-script build --workspace @wcj/tools-react-components",
     "doc": "npm run-script build --workspace website",
     "start": "npm run-script start --workspace website",
+    "docker": "npm run-script build:docker --workspace website",
     "⬆️⬆️⬆️⬆️⬆️ package ⬆️⬆️⬆️⬆️⬆️": "▲▲▲▲▲ package ▲▲▲▲▲",
     "prepare": "husky install",
     "version": "lerna version --exact --force-publish --no-push --no-git-tag-version",

@@ -1,0 +1,36 @@
+name: Docker Build
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  Build:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - run: npm install
+
+      - run: npm run build
+      - run: npm run docker
+
+      - name: Docker login
+        run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build docs image
+        run: docker image build -f docker/Dockerfile -t tools .
+
+      - name: Tags & Push image
+        run: |
+          # Strip git ref prefix from version
+          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+          # Strip "v" prefix from tag name
+          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
+          docker tag tools ${{ secrets.DOCKER_USER }}/tools:$VERSION
+          docker tag tools ${{ secrets.DOCKER_USER }}/tools:latest
+          docker push ${{ secrets.DOCKER_USER }}/tools:$VERSION
+          docker push ${{ secrets.DOCKER_USER }}/tools:latest

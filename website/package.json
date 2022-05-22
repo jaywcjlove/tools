@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "start": "kkt start",
-    "build": "kkt build"
+    "build": "kkt build",
+    "build:docker": "DOCKER=true kkt build"
   },
   "repository": {
     "type": "git",

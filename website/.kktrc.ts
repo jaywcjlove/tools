@@ -4,6 +4,10 @@ import { LoaderConfOptions } from 'kkt';
 import pkg from './package.json';
 
 export default (conf: Configuration, env: 'development' | 'production', options: LoaderConfOptions) => {
+  let LOADPATH = env === 'production' ? '/tools' : '';
+  if (process.env.DOCKER === 'true') {
+    LOADPATH = '';
+  }
   conf = lessModules(conf, env, options);
   // Get the project version.
   conf.plugins!.push(
@@ -18,7 +22,7 @@ export default (conf: Configuration, env: 'development' | 'production', options:
        * returning falsy will abort the download
        * https://github.com/i18next/i18next-http-backend#backend-options
        */
-      LOADPATH: JSON.stringify(env === 'production' ? '/tools' : ''),
+      LOADPATH: JSON.stringify(LOADPATH),
     }),
   );
   if (env === 'production') {
