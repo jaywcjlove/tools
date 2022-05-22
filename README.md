@@ -10,9 +10,18 @@ Some useful tools for developers.
 
 ```bash
 docker pull wcjiang/tools
-docker run --name tools6 --rm -d -p 9066:80 wcjiang/tools:latest
+```
+
+```bash
+docker run --name tools6 --rm -d -p 9666:80 wcjiang/tools:latest
 # Or
-docker run --name tools6 -itd -p 9066:80 wcjiang/tools:latest
+docker run --name tools6 -itd -p 9666:80 wcjiang/tools:latest
+```
+
+Visit the following URL in your browser
+
+```bash
+http://localhost:9666/
 ```
 
 ## Development
