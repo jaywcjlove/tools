@@ -1,6 +1,7 @@
 import webpack, { Configuration } from 'webpack';
 import lessModules from '@kkt/less-modules';
 import { LoaderConfOptions } from 'kkt';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import pkg from './package.json';
 
 export default (conf: Configuration, env: 'development' | 'production', options: LoaderConfOptions) => {
@@ -25,6 +26,9 @@ export default (conf: Configuration, env: 'development' | 'production', options:
       LOADPATH: JSON.stringify(LOADPATH),
     }),
   );
+  if (env === 'development') {
+    conf.plugins!.push(new BundleAnalyzerPlugin());
+  }
   if (env === 'production') {
     conf.output = { ...conf.output, publicPath: './' };
     conf.optimization = {

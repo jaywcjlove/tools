@@ -6,7 +6,8 @@
   "scripts": {
     "start": "kkt start",
     "build": "kkt build",
-    "build:docker": "DOCKER=true kkt build"
+    "build:docker": "DOCKER=true kkt build",
+    "map": "source-map-explorer build/static/js/*.js --html build/result.html"
   },
   "repository": {
     "type": "git",
@@ -52,7 +53,9 @@
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.3",
     "@types/styled-components": "^5.1.25",
-    "kkt": "~7.1.5"
+    "@types/webpack-bundle-analyzer": "^4.4.1",
+    "kkt": "~7.1.5",
+    "webpack-bundle-analyzer": "^4.5.0"
   },
   "eslintConfig": {
     "extends": [
