@@ -1,8 +1,11 @@
 import { Fragment, InputHTMLAttributes, useEffect, useState } from 'react';
 import { Wrapper, Textarea, StyledLayout, CopyButton, ResultCode, Button } from '@wcj/tools-react-components';
 import styled from 'styled-components';
-import pinyin from 'pinyin';
-import { IPinyinStyle } from 'pinyin/lib/declare';
+// @ts-ignore
+import pinyin from 'pinyin/lib/web-pinyin';
+// import { IPinyinStyle } from 'pinyin';
+
+type IPinyinStyle = any;
 
 const sample = `将进酒·君不见 - 李白\n君不见，黄河之水天上来，奔流到海不复回。
 君不见，高堂明镜悲白发，朝如青丝暮成雪。
