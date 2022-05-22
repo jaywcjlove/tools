@@ -33,7 +33,7 @@ export default function Html2Markdown() {
           value={html}
           height="calc(100vh - 87px)"
           extensions={[htmlLang()]}
-          onInput={(evn) => handleInput((evn.target as HTMLTextAreaElement).value)}
+          onChange={(val) => handleInput(val)}
         />
       </StyledLayout>
       <StyledLayout title="Result Markdown" extra={markdown && <CopyButton value={markdown} />}>
