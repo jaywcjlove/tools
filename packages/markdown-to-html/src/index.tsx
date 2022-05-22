@@ -40,7 +40,7 @@ export default function MarkdownToHTML() {
           height="calc(100vh - 87px)"
           style={{ flex: 1 }}
           extensions={[markdownLang()]}
-          onInput={(evn) => handleInput((evn.target as HTMLTextAreaElement).value)}
+          onChange={(value) => handleInput(value)}
         />
       </StyledLayout>
       <StyledLayout title="Result HTML" extra={html && <CopyButton value={html} />}>
