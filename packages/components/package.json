@@ -1,6 +1,6 @@
 {
   "name": "@wcj/tools-react-components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
@@ -16,8 +16,8 @@
   "author": "Kenny Wong <wowohoo@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "@uiw/react-codemirror": "^4.7.0",
     "@uiw/copy-to-clipboard": "^1.0.12",
+    "@uiw/react-codemirror": "^4.7.0",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {

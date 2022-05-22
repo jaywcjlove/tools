@@ -1,6 +1,6 @@
 {
   "name": "@wcj/tools-react-json-xml",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   "dependencies": {
     "@codemirror/lang-json": "^0.20.0",
     "@codemirror/lang-xml": "^0.20.0",
-    "@wcj/tools-react-components": "1.0.1",
+    "@wcj/tools-react-components": "1.0.2",
     "fast-xml-parser": "^4.0.7"
   },
   "peerDependencies": {
