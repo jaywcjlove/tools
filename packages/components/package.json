@@ -1,6 +1,6 @@
 {
   "name": "@wcj/tools-react-components",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
