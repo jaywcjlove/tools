@@ -37,6 +37,7 @@
     ]
   },
   "devDependencies": {
+    "nth-check": "2.0.1",
     "compile-less-cli": "~1.8.11",
     "husky": "~8.0.0",
     "lerna": "~4.0.0",
