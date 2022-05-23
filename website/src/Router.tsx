@@ -62,79 +62,79 @@ export let routes: RouteObject[] = [
         element: <HomePage title="Home - Web Tools" />,
       },
       {
-        path: '/url-encode',
+        path: 'url-encode',
         element: <UrlEncode title="URL Encoder/Decoder - Web Tools" />,
       },
       {
-        path: '/json-format',
+        path: 'json-format',
         element: <JSONFormat title="JSON Format - Web Tools" />,
       },
       {
-        path: '/text-case',
+        path: 'text-case',
         element: <TextCase title="Text Case - Web Tools" />,
       },
       {
-        path: '/image-to-base64',
+        path: 'image-to-base64',
         element: <ImageToBase64 title="Image To Base64 - Web Tools" />,
       },
       {
-        path: '/hash',
+        path: 'hash',
         element: <Hash title="Hash - Web Tools" />,
       },
       {
-        path: '/generate-password',
+        path: 'generate-password',
         element: <GeneratePassword title="Generate Password - Web Tools" />,
       },
       {
-        path: '/html-to-markdown',
+        path: 'html-to-markdown',
         element: <HtmlToMarkdown title="HTML To Markdown - Web Tools" />,
       },
       {
-        path: '/markdown-to-html',
+        path: 'markdown-to-html',
         element: <MarkdownToHtml title="Markdown To HTML - Web Tools" />,
       },
       {
-        path: '/html-escape',
+        path: 'html-escape',
         element: <HTMLEscape title="HTML Escape/Unescape - Web Tools" />,
       },
       {
-        path: '/base64-encoder',
+        path: 'base64-encoder',
         element: <Base64Encoder title="Base64 Encoder/Decoder Tool - Web Tools" />,
       },
       {
-        path: '/qrcode-generator',
+        path: 'qrcode-generator',
         element: <QRCodeGenerator title="QRCode Generator Tool - Web Tools" />,
       },
       {
-        path: '/chinese-pinyin-conversion',
+        path: 'chinese-pinyin-conversion',
         element: <ChinesePinyinConversion title="Chinese Pinyin Conversion Tool - Web Tools" />,
       },
       {
-        path: '/generate-github-badges',
+        path: 'generate-github-badges',
         element: <GenerateGithubBadges title="Generate Github Badges Tool - Web Tools" />,
       },
       {
-        path: '/toml-to-json',
+        path: 'toml-to-json',
         element: <TomlToJSON title="Toml To JSON Tool - Web Tools" />,
       },
       {
-        path: '/css-easing-animation',
+        path: 'css-easing-animation',
         element: <CSSEasingAnimation title="CSS Easing Animation Tool - Web Tools" />,
       },
       {
-        path: '/simple-markdown-editor',
+        path: 'simple-markdown-editor',
         element: <SimpleMarkdownEditor title="Simple Markdown Editor Tool - Web Tools" />,
       },
       {
-        path: '/jwt-decoder',
+        path: 'jwt-decoder',
         element: <JWTDecoder title="JWT Decoder Tool - Web Tools" />,
       },
       {
-        path: '/json-yaml',
+        path: 'json-yaml',
         element: <JSON2Yaml title="JSON/YAML Converter Tool - Web Tools" />,
       },
       {
-        path: '/json-xml',
+        path: 'json-xml',
         element: <JSON2XML title="JSON/XML Converter Tool - Web Tools" />,
       },
       { path: '*', element: <NoMatch /> },

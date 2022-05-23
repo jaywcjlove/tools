@@ -48,7 +48,7 @@ export default function HomePage() {
       <MenuItem>
         {tools.map((item, key) => {
           return (
-            <Link key={key} to={item.href!}>
+            <Link key={key} to={item.href || ''}>
               {item.label}
             </Link>
           );

@@ -14,7 +14,7 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
-    lng: 'en', // if you're using a language detector, do not define the lng option
+    // lng: 'en', // if you're using a language detector, do not define the lng option
     fallbackLng: 'en', // use en if detected lng is not available
     debug: debug === 'development',
     interpolation: {
