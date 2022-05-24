@@ -64,6 +64,9 @@
     "/pdf-to-img": {
       "label": "将 PDF 转换为图片"
     },
+    "/exif-viewer": {
+      "label": "Exif 数据查看器"
+    },
     "Badgen": {
       "about": "快速徽章生成服务",
       "label": "Badgen 徽章"

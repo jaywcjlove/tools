@@ -52,6 +52,7 @@ const JSON2Yaml = Loadable(lazy(() => import('@wcj/tools-react-json-yaml')));
 // @ts-ignore
 const JSON2XML = Loadable(lazy(() => import('@wcj/tools-react-json-xml')));
 const PDFToImg = Loadable(lazy(() => import('@wcj/tools-react-pdf-to-img')));
+const ExifViewer = Loadable(lazy(() => import('@wcj/tools-react-exif-viewer')));
 
 export let routes: RouteObject[] = [
   {
@@ -140,7 +141,11 @@ export let routes: RouteObject[] = [
       },
       {
         path: 'pdf-to-img',
-        element: <PDFToImg title="PDFToImg Tool - Web Tools" />,
+        element: <PDFToImg title="PDF To Image Tool - Web Tools" />,
+      },
+      {
+        path: 'exif-viewer',
+        element: <ExifViewer title="Exif Viewer Tool - Web Tools" />,
       },
       { path: '*', element: <NoMatch /> },
     ],

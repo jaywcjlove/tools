@@ -88,6 +88,10 @@ export function useMenus() {
       label: t('menu./pdf-to-img.label'),
     },
     {
+      href: '/exif-viewer',
+      label: t('menu./exif-viewer.label'),
+    },
+    {
       divider: true,
     },
     {

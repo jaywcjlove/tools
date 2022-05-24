@@ -64,6 +64,9 @@
     "/pdf-to-img": {
       "label": "Convert PDF to Image"
     },
+    "/exif-viewer": {
+      "label": "Exif Viewer"
+    },
     "Badgen": {
       "about": "Fast badge generating service",
       "label": "Badgen"

@@ -40,6 +40,7 @@
     "@wcj/tools-react-text-case": "1.1.0",
     "@wcj/tools-react-toml-to-json": "1.1.0",
     "@wcj/tools-react-url-encode": "1.1.0",
+    "@wcj/tools-react-exif-viewer": "1.1.0",
     "i18next": "^21.8.3",
     "i18next-browser-languagedetector": "^6.1.4",
     "i18next-http-backend": "^1.4.0",
