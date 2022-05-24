@@ -1,6 +1,6 @@
 # Web Tools
 
-[![GitHub Repo Stars](https://img.shields.io/github/stars/jaywcjlove/tools)]() [![Docker Image Version (latest by date)](https://img.shields.io/docker/v/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools) [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools) [![Docker Pulls](https://img.shields.io/docker/pulls/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools)
+[![GitHub Repo Stars](https://img.shields.io/github/stars/jaywcjlove/tools)]() [![Docker Image Version (latest by date)](https://img.shields.io/docker/v/wcjiang/tools?logo=docker)](https://hub.docker.com/r/wcjiang/tools) [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/wcjiang/tools?logo=docker)](https://hub.docker.com/r/wcjiang/tools) [![Docker Pulls](https://img.shields.io/docker/pulls/wcjiang/tools?logo=docker)](https://hub.docker.com/r/wcjiang/tools)
 
 Some useful tools for developers. Online preview: https://jaywcjlove.github.io/tools
 
