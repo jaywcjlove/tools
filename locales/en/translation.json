@@ -116,6 +116,10 @@
       "about": "Online JSON Viewer, JSON Beautifier to beautify and tree view of JSON data ",
       "label": "JSON Viewer"
     },
+    "jspaint": {
+      "about": "A web-based MS Paint remake",
+      "label": "JS Paint"
+    },
     "KeycodeInfo": {
       "about": "A simple web page that responds to the pressed key and returns information about the JavaScript'on-key press' key.",
       "label": "Keycode Info"

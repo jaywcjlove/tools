@@ -112,6 +112,10 @@
       "about": "在线 JSON Viewer、JSON Beautifier 美化 JSON 数据和树形视图",
       "label": "JSON Viewer"
     },
+    "jspaint": {
+      "about": "基于 Web 的 MS Paint 重制版",
+      "label": "JS Paint"
+    },
     "KeycodeInfo": {
       "about": "简单的网页，响应按下的键并返回有关 JavaScript'on-key press' 键的信息",
       "label": "Keycode Info"
