@@ -61,6 +61,9 @@
     "/json-xml": {
       "label": "JSON/XML Converter"
     },
+    "/pdf-to-img": {
+      "label": "Convert PDF to Image"
+    },
     "Badgen": {
       "about": "Fast badge generating service",
       "label": "Badgen"

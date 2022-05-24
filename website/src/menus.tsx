@@ -84,6 +84,10 @@ export function useMenus() {
       label: t('menu./json-xml.label'),
     },
     {
+      href: '/pdf-to-img',
+      label: t('menu./pdf-to-img.label'),
+    },
+    {
       divider: true,
     },
     {

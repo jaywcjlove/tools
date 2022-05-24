@@ -39,6 +39,7 @@
     "@wcj/tools-react-text-case": "1.0.6",
     "@wcj/tools-react-toml-to-json": "1.0.6",
     "@wcj/tools-react-url-encode": "1.0.6",
+    "@wcj/tools-react-pdf-to-img": "1.0.6",
     "i18next": "^21.8.3",
     "i18next-browser-languagedetector": "^6.1.4",
     "i18next-http-backend": "^1.4.0",
@@ -46,7 +47,8 @@
     "react-dom": "^18.1.0",
     "react-i18next": "^11.16.9",
     "react-router-dom": "~6.3.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "worker-loader": "^3.0.8"
   },
   "devDependencies": {
     "@kkt/less-modules": "~7.1.1",

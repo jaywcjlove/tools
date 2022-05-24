@@ -25,7 +25,6 @@ export default function URLEncode(props: URLEncodeProps) {
     <Wrapper>
       <StyledLayout
         title="URL"
-        // extra={url && <CopyButton value={url} />}
         extra={
           <Fragment>
             {url && <CopyButton value={url} />}

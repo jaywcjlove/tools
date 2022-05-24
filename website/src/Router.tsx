@@ -51,6 +51,7 @@ const JWTDecoder = Loadable(lazy(() => import('@wcj/tools-react-jwt-decoder')));
 const JSON2Yaml = Loadable(lazy(() => import('@wcj/tools-react-json-yaml')));
 // @ts-ignore
 const JSON2XML = Loadable(lazy(() => import('@wcj/tools-react-json-xml')));
+const PDFToImg = Loadable(lazy(() => import('@wcj/tools-react-pdf-to-img')));
 
 export let routes: RouteObject[] = [
   {
@@ -136,6 +137,10 @@ export let routes: RouteObject[] = [
       {
         path: 'json-xml',
         element: <JSON2XML title="JSON/XML Converter Tool - Web Tools" />,
+      },
+      {
+        path: 'pdf-to-img',
+        element: <PDFToImg title="PDFToImg Tool - Web Tools" />,
       },
       { path: '*', element: <NoMatch /> },
     ],
