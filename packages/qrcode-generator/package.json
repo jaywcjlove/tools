@@ -1,6 +1,6 @@
 {
   "name": "@wcj/tools-react-qrcode-generator",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/qrcode": "^1.4.2",
-    "@wcj/tools-react-components": "1.1.0",
+    "@wcj/tools-react-components": "1.2.0",
     "qrcode": "^1.5.0"
   },
   "peerDependencies": {

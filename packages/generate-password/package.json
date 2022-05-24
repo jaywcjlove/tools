@@ -1,6 +1,6 @@
 {
   "name": "@wcj/tools-react-generate-password",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
@@ -16,7 +16,7 @@
   "author": "Kenny Wong <wowohoo@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "@wcj/tools-react-components": "1.1.0"
+    "@wcj/tools-react-components": "1.2.0"
   },
   "peerDependencies": {
     "react": ">=16.14.0",

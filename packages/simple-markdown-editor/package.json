@@ -1,6 +1,6 @@
 {
   "name": "@wcj/tools-react-simple-markdown-editor",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "@uiw/react-md-editor": "^3.13.0",
-    "@wcj/tools-react-components": "1.1.0"
+    "@wcj/tools-react-components": "1.2.0"
   },
   "peerDependencies": {
     "react": ">=16.14.0",
