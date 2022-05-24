@@ -303,5 +303,11 @@ export function useMenus() {
       about: t('menu.easings.about'),
       label: t('menu.easings.label'),
     },
+    {
+      href: 'https://jspaint.app',
+      'open-source': 'https://github.com/1j01/jspaint',
+      about: t('menu.jspaint.about'),
+      label: t('menu.jspaint.label'),
+    },
   ];
 }
