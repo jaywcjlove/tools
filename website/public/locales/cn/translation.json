@@ -61,6 +61,9 @@
     "/json-xml": {
       "label": "JSON/XML 转换器"
     },
+    "/json-ini": {
+      "label": "JSON/INI 转换器"
+    },
     "/pdf-to-img": {
       "label": "将 PDF 转换为图片"
     },

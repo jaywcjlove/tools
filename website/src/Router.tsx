@@ -53,6 +53,8 @@ const JSON2Yaml = Loadable(lazy(() => import('@wcj/tools-react-json-yaml')));
 const JSON2XML = Loadable(lazy(() => import('@wcj/tools-react-json-xml')));
 const PDFToImg = Loadable(lazy(() => import('@wcj/tools-react-pdf-to-img')));
 const ExifViewer = Loadable(lazy(() => import('@wcj/tools-react-exif-viewer')));
+// @ts-ignore
+const JSON2INI = Loadable(lazy(() => import('@wcj/tools-react-json-ini')));
 
 export let routes: RouteObject[] = [
   {
@@ -138,6 +140,10 @@ export let routes: RouteObject[] = [
       {
         path: 'json-xml',
         element: <JSON2XML title="JSON/XML Converter Tool - Web Tools" />,
+      },
+      {
+        path: 'json-ini',
+        element: <JSON2INI title="JSON/ini Converter Tool - Web Tools" />,
       },
       {
         path: 'pdf-to-img',

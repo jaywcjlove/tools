@@ -41,6 +41,7 @@
     "@wcj/tools-react-text-case": "1.2.0",
     "@wcj/tools-react-toml-to-json": "1.2.0",
     "@wcj/tools-react-url-encode": "1.2.0",
+    "@wcj/tools-react-json-ini": "1.2.0",
     "i18next": "^21.8.3",
     "i18next-browser-languagedetector": "^6.1.4",
     "i18next-http-backend": "^1.4.0",
