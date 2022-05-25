@@ -1,4 +1,4 @@
-export const JSON = `{
+export const json = `{
   "any_name": {
     "person": {
       "phone": [
@@ -27,7 +27,7 @@ export const JSON = `{
   }
 }`;
 
-export const XML = `<any_name>
+export const val = `<any_name>
   <person>
     <phone>+122233344550</phone>
     <name>Jack</name>
