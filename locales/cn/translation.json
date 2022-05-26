@@ -10,6 +10,9 @@
     "/json-format": {
       "label": "JSON 格式化"
     },
+    "/js-beautifier": {
+      "label": "JS 美化"
+    },
     "/text-case": {
       "label": "字母文本转换"
     },
