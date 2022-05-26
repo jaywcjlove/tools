@@ -21,6 +21,16 @@ export default function JSONFormat() {
       }
     }
   };
+  const handleMinify = () => {
+    try {
+      setError('');
+      setValue(JSON.stringify(JSON.parse(value)));
+    } catch (error) {
+      if (error instanceof Error) {
+        setError(error.message);
+      }
+    }
+  };
   return (
     <Wrapper>
       <StyledLayout
@@ -28,6 +38,7 @@ export default function JSONFormat() {
         extra={
           <Fragment>
             {value && <Button onClick={() => handleFormat()}>Format</Button>}
+            {value && <Button onClick={() => handleMinify()}>Minify</Button>}
             {value && (
               <select onChange={(evn) => setTabWidth(Number(evn.target.value))}>
                 <option value={2}>2 Tab Space</option>
