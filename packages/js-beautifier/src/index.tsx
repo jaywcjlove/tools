@@ -1,7 +1,8 @@
 import { Fragment, useRef, useState } from 'react';
 import { StyledLayout, CopyButton, CodeEditor, Button, Wrapper, ErrorLayout } from '@wcj/tools-react-components';
-import { json } from '@codemirror/lang-json';
+import { javascript } from '@codemirror/lang-javascript';
 import { ReactCodeMirrorRef } from '@uiw/react-codemirror';
+import { minify } from 'uglify-js-export';
 import prettier from 'prettier';
 import parserBabel from 'prettier/parser-babel';
 import * as sample from './sample';
@@ -14,7 +15,9 @@ export default function JSONFormat() {
   const handleFormat = () => {
     try {
       setError('');
-      setValue(prettier.format(value, { parser: 'json', tabWidth: tabWidth, printWidth: 30, plugins: [parserBabel] }));
+      setValue(
+        prettier.format(value, { parser: 'babel-ts', tabWidth: tabWidth, printWidth: 120, plugins: [parserBabel] }),
+      );
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);
@@ -24,7 +27,11 @@ export default function JSONFormat() {
   const handleMinify = () => {
     try {
       setError('');
-      setValue(JSON.stringify(JSON.parse(value)));
+      const data = minify(value);
+      if (data.error) {
+        throw new Error(data.error.message);
+      }
+      setValue(data.code);
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);
@@ -34,7 +41,7 @@ export default function JSONFormat() {
   return (
     <Wrapper>
       <StyledLayout
-        title="Input JSON"
+        title="JS Beautifier"
         extra={
           <Fragment>
             {value && <Button onClick={() => handleFormat()}>Format</Button>}
@@ -65,7 +72,7 @@ export default function JSONFormat() {
           value={value}
           ref={editor}
           height="calc(100vh - 87px)"
-          extensions={[json()]}
+          extensions={[javascript()]}
           onChange={(value) => {
             setValue(value);
           }}

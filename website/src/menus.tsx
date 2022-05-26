@@ -16,6 +16,10 @@ export function useMenus() {
       label: t('menu./json-format.label'),
     },
     {
+      href: '/js-beautifier',
+      label: t('menu./js-beautifier.label'),
+    },
+    {
       href: '/text-case',
       label: t('menu./text-case.label'),
     },

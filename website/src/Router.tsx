@@ -55,6 +55,7 @@ const PDFToImg = Loadable(lazy(() => import('@wcj/tools-react-pdf-to-img')));
 const ExifViewer = Loadable(lazy(() => import('@wcj/tools-react-exif-viewer')));
 // @ts-ignore
 const JSON2INI = Loadable(lazy(() => import('@wcj/tools-react-json-ini')));
+const JSBeautifier = Loadable(lazy(() => import('@wcj/tools-react-js-beautifier')));
 
 export let routes: RouteObject[] = [
   {
@@ -72,6 +73,10 @@ export let routes: RouteObject[] = [
       {
         path: 'json-format',
         element: <JSONFormat title="JSON Format - Web Tools" />,
+      },
+      {
+        path: 'js-beautifier',
+        element: <JSBeautifier title="JS Beautifier - Web Tools" />,
       },
       {
         path: 'text-case',

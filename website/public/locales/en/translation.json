@@ -10,6 +10,9 @@
     "/json-format": {
       "label": "JSON Format"
     },
+    "/js-beautifier": {
+      "label": "JS Beautifier"
+    },
     "/text-case": {
       "label": "Text Case"
     },
