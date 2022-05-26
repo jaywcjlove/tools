@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Wrapper, StyledLayout, CodeLineCopy, Button, Spacing } from '@wcj/tools-react-components';
 import styled from 'styled-components';
+import { generatePassword, validatePassword } from './utils';
 
 const Input = styled.input`
   border-radius: 6px;
@@ -30,42 +31,16 @@ const InputRange: React.FC<React.PropsWithChildren<InputRangeProps>> = (props) =
   );
 };
 
-const LOWERCASE = 'abcdefghijklmnopqrstuvwxyz';
-const UPPERCASE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-const NUMERIC = '0123456789';
-const SPECIAL_CHARACTER = '!@#$%^&*()_+~`|}{[]:;?><,./-=';
-
-function generatePassword(
-  len: number = 8,
-  lowerCase: boolean = true,
-  upperCase: boolean = true,
-  numeric: boolean = true,
-  special: boolean = true,
-) {
-  let password = '';
-  if (!lowerCase && !upperCase && !numeric && !special) {
-    return password;
-  }
-  while (password.length < len) {
-    const entity1 = Math.ceil(LOWERCASE.length * Math.random() * Math.random()) - 1;
-    const entity2 = Math.ceil(NUMERIC.length * Math.random() * Math.random()) - 1;
-    const entity3 = Math.ceil(SPECIAL_CHARACTER.length * Math.random() * Math.random()) - 1;
-    const entity4 = Math.ceil(UPPERCASE.length * Math.random() * Math.random()) - 1;
-    if (lowerCase && password.length < len) {
-      password += LOWERCASE.charAt(entity1);
-    }
-    if (upperCase && password.length < len) {
-      password += UPPERCASE.charAt(entity4);
-    }
-    if (numeric && password.length < len) {
-      password += NUMERIC.charAt(entity2);
-    }
-    if (special && password.length < len) {
-      password += SPECIAL_CHARACTER.charAt(entity3);
-    }
-  }
-  return password.trim();
-}
+const PasswordInfo = styled.span`
+  border-radius: 3px;
+  color: #fff;
+  font-size: 12px;
+  margin-right: 5px;
+  margin-left: 6px;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+`;
 
 export default function GeneratePassword() {
   const [range, setRange] = useState<number>(12);
@@ -97,7 +72,7 @@ export default function GeneratePassword() {
 
   return (
     <Wrapper>
-      <StyledLayout title="Generate Password - Setting">
+      <StyledLayout overflow="initial" title="Generate Password - Setting">
         <InputRange
           style={{ maxWidth: 630 }}
           range={range}
@@ -140,11 +115,18 @@ export default function GeneratePassword() {
         >
           Generate Password
         </Button>
+        <Spacing direction="row" items="center" gutter={0.1} style={{ marginTop: 10 }}>
+          <PasswordInfo style={{ backgroundColor: 'gray' }} /> <span>It's easy to crack!</span>
+          <PasswordInfo style={{ backgroundColor: 'red' }} /> <span>Very Weak! It's easy to crack!</span>
+          <PasswordInfo style={{ backgroundColor: 'orange' }} /> <span>Medium level. Enter more symbols!</span>
+          <PasswordInfo style={{ backgroundColor: 'green' }} /> <span>Strong :) Now it's safe!</span>
+        </Spacing>
         <Spacing style={{ paddingTop: 10 }}>
           {history.map((password, key) => {
+            const valida = validatePassword(password);
             return (
-              <CodeLineCopy label={`${key + 1}`} key={key}>
-                {password}
+              <CodeLineCopy copyText={password} label={`${key + 1}`} key={key}>
+                <PasswordInfo style={{ backgroundColor: valida.color }}></PasswordInfo> {password}
               </CodeLineCopy>
             );
           })}
