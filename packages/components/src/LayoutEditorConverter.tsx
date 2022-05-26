@@ -1,4 +1,4 @@
-import { Fragment, createContext, useContext, useReducer, useRef } from 'react';
+import { Fragment, createContext, useContext, useReducer, useRef, useCallback } from 'react';
 import { Wrapper, StyledLayout, CopyButton, Button, CodeEditor, ErrorLayout } from './';
 import { ReactCodeMirrorRef, ReactCodeMirrorProps } from '@uiw/react-codemirror';
 
@@ -16,6 +16,7 @@ interface InitialState {
     val?: string;
     json?: string;
   };
+  state?: InitialState;
 }
 const ValueContext = createContext<ValueContextData>({});
 const useValue = () => {
@@ -30,6 +31,7 @@ const reducer = (state: InitialState, action: InitialState) => {
 
 interface BaseProps {
   title?: string;
+  extra?: React.ReactNode;
 }
 
 interface LeftProps extends ReactCodeMirrorProps, BaseProps {
@@ -53,36 +55,40 @@ export interface LayoutEditorConverterProps {
 export function LayoutEditorConverter(props: LayoutEditorConverterProps) {
   const [state, dispatch] = useReducer(reducer, { val: '', json: '', ...props });
   return (
-    <ValueContext.Provider value={{ ...state, dispatch }}>
+    <ValueContext.Provider value={{ ...state, state, dispatch }}>
       <Wrapper>
         <LeftLayout />
         <RightLayout />
       </Wrapper>
-      <ErrorLayout>{state.error}</ErrorLayout>
+      {state.error && <ErrorLayout>{state.error}</ErrorLayout>}
     </ValueContext.Provider>
   );
 }
 
 function LeftLayout() {
-  const { json: jsonStr, leftProps, sample = {}, input, dispatch } = useValue();
-  const { title, onLeftInput, ...other } = leftProps || {};
+  const { json: jsonStr, leftProps, sample = {}, state, input, dispatch } = useValue();
+  const { title, extra, onLeftInput, ...other } = leftProps || {};
   const editor = useRef<ReactCodeMirrorRef>(null);
-  function handleInput(val: string) {
+
+  const leftInput = useCallback((val: string) => (onLeftInput ? onLeftInput(val, 'json') : ''), [state]);
+
+  const handleInput = (val: string) => {
     try {
-      const jsonTrans = onLeftInput ? onLeftInput(val, 'json') : '';
+      const jsonTrans = leftInput(val);
       dispatch!({ input: 'json', json: val, val: jsonTrans });
     } catch (err) {
       if (err instanceof Error) {
         dispatch!({ error: `${err.message}` });
       }
     }
-  }
+  };
 
   return (
     <StyledLayout
       title={title || 'JSON'}
       extra={
         <Fragment>
+          {extra}
           {jsonStr && <CopyButton value={jsonStr} />}
           {sample.json && (
             <Button
@@ -118,9 +124,9 @@ function LeftLayout() {
 
 function RightLayout() {
   const { val: valStr, rightProps, sample = {}, input, dispatch } = useValue();
-  const { title, onRightInput, ...other } = rightProps || {};
+  const { title, extra, onRightInput, ...other } = rightProps || {};
   const editor = useRef<ReactCodeMirrorRef>(null);
-  function handleInput(val: string) {
+  const handleInput = (val: string) => {
     try {
       const valTrans = onRightInput ? onRightInput(val, 'val') : '';
       dispatch!({ input: 'val', val: val, json: valTrans });
@@ -129,13 +135,14 @@ function RightLayout() {
         dispatch!({ error: `${err.message}` });
       }
     }
-  }
+  };
 
   return (
     <StyledLayout
       title={title || 'Value'}
       extra={
         <Fragment>
+          {extra}
           {valStr && <CopyButton value={valStr} />}
           {sample.val && (
             <Button
