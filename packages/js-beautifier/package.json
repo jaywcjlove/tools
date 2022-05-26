@@ -18,7 +18,7 @@
   "dependencies": {
     "@codemirror/lang-javascript": "^0.20.0",
     "@wcj/tools-react-components": "1.4.0",
-    "uglify-js-export": "^1.0.0"
+    "uglify-js-export": "^3.0.0"
   },
   "peerDependencies": {
     "react": ">=16.14.0",
