@@ -1,5 +1,13 @@
 import { Fragment, useCallback, useEffect, useState } from 'react';
-import { Wrapper, StyledLayout, CopyButton, InputButton, Spacing, CodeLineCopy } from '@wcj/tools-react-components';
+import {
+  Wrapper,
+  StyledLayout,
+  CopyButton,
+  Button,
+  InputButton,
+  Spacing,
+  CodeLineCopy,
+} from '@wcj/tools-react-components';
 import npmBadgen from './npm.badgen.json';
 import npmShields from './npm.shields.json';
 import githubBadgen from './github.badgen.json';
@@ -7,6 +15,7 @@ import githubShields from './github.shields.json';
 import githubOther from './github.other.json';
 import dockerBadgen from './docker.badgen.json';
 import dockerShields from './docker.shields.json';
+import { CustomBadge } from './CustomBadge';
 
 import { changeStyle } from './utils';
 
@@ -20,7 +29,7 @@ interface Data {
 type Category = 'github' | 'npm' | 'docker';
 export type Type = 'badgen' | 'shields';
 
-type ShieldsStyle = 'flat' | 'plastic' | 'flat-square' | 'for-the-badge' | 'social' | null;
+export type ShieldsStyle = 'flat' | 'plastic' | 'flat-square' | 'for-the-badge' | 'social' | null;
 type BadgenStyle = 'flat' | 'classic' | null;
 export type Style = ShieldsStyle | BadgenStyle;
 
@@ -34,6 +43,7 @@ export interface GenerateBadgesProps {}
 export default function GenerateBadges(props: GenerateBadgesProps) {
   const [value, setValue] = useState<string>('jaywcjlove/tools');
   const [style, setStyle] = useState<Style>();
+  const [custom, setCustom] = useState<boolean>(false);
   const [category, setCategory] = useState<Category>('github');
   const [type, setType] = useState<Type>('shields');
   const [result, setResult] = useState<Data[]>([]);
@@ -147,29 +157,42 @@ export default function GenerateBadges(props: GenerateBadgesProps) {
 
   return (
     <Wrapper>
-      <StyledLayout title="Github Badges" extra={value && <CopyButton value={value} />}>
-        <Spacing>
-          <InputButton
-            value={value}
-            placeholder={placeholder[category]}
-            extra={<ExtraLayout />}
-            onClick={handleInput}
-            onChange={(evn) => setValue(evn.target.value)}
-          >
-            Generate Badges
-          </InputButton>
-          {result &&
-            result.map((item, idx) => {
-              return (
-                <CodeLineCopy
-                  key={`${item.user}${item.repo || idx}${idx}`}
-                  label={<img src={item.url} alt={item.label} />}
-                >
-                  {`![${item.label}](${item.url})`}
-                </CodeLineCopy>
-              );
-            })}
-        </Spacing>
+      <StyledLayout
+        title="Generate Badges"
+        overflow="initial"
+        extra={
+          <Fragment>
+            <Button onClick={() => setCustom(!custom)}>{custom ? 'Default Badges' : 'Custom Badges'}</Button>
+            {value && <CopyButton value={value} />}
+          </Fragment>
+        }
+      >
+        {custom ? (
+          <CustomBadge />
+        ) : (
+          <Spacing>
+            <InputButton
+              value={value}
+              placeholder={placeholder[category]}
+              extra={<ExtraLayout />}
+              onClick={handleInput}
+              onChange={(evn) => setValue(evn.target.value)}
+            >
+              Generate Badges
+            </InputButton>
+            {result &&
+              result.map((item, idx) => {
+                return (
+                  <CodeLineCopy
+                    key={`${item.user}${item.repo || idx}${idx}`}
+                    label={<img src={item.url} alt={item.label} />}
+                  >
+                    {`![${item.label}](${item.url})`}
+                  </CodeLineCopy>
+                );
+              })}
+          </Spacing>
+        )}
       </StyledLayout>
     </Wrapper>
   );

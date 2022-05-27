@@ -28,6 +28,22 @@
     "label": "jsDelivr hits (npm)(day)"
   },
   {
+    "url": "https://img.shields.io/npm/hy/{{:pkg}}",
+    "label": "npm year"
+  },
+  {
+    "url": "https://img.shields.io/npm/hm/{{:pkg}}",
+    "label": "npm month"
+  },
+  {
+    "url": "https://img.shields.io/npm/hw/{{:pkg}}",
+    "label": "npm week"
+  },
+  {
+    "url": "https://img.shields.io/npm/hd/{{:pkg}}",
+    "label": "npm day"
+  },
+  {
     "url": "https://img.shields.io/npm/collaborators/{{:pkg}}",
     "label": "npm collaborators"
   },
