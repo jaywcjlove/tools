@@ -11,7 +11,10 @@
       "label": "JSON Format"
     },
     "/js-beautifier": {
-      "label": "JS Beautifier"
+      "label": "JS Beautifier/Minify"
+    },
+    "/css-formatter": {
+      "label": "CSS Formatter/Minify"
     },
     "/text-case": {
       "label": "Text Case"
