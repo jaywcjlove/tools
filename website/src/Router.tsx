@@ -56,6 +56,7 @@ const ExifViewer = Loadable(lazy(() => import('@wcj/tools-react-exif-viewer')));
 // @ts-ignore
 const JSON2INI = Loadable(lazy(() => import('@wcj/tools-react-json-ini')));
 const JSBeautifier = Loadable(lazy(() => import('@wcj/tools-react-js-beautifier')));
+const CSSFormatter = Loadable(lazy(() => import('@wcj/tools-react-css-formatter')));
 
 export let routes: RouteObject[] = [
   {
@@ -129,6 +130,10 @@ export let routes: RouteObject[] = [
       {
         path: 'css-easing-animation',
         element: <CSSEasingAnimation title="CSS Easing Animation Tool - Web Tools" />,
+      },
+      {
+        path: 'css-formatter',
+        element: <CSSFormatter title="CSS Formatter Tool - Web Tools" />,
       },
       {
         path: 'simple-markdown-editor',

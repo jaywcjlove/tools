@@ -23,6 +23,7 @@
     "@wcj/tools-react-base64-encoder": "1.4.2",
     "@wcj/tools-react-chinese-pinyin-conversion": "1.4.2",
     "@wcj/tools-react-css-easing-animation": "1.4.2",
+    "@wcj/tools-react-css-formatter": "1.4.2",
     "@wcj/tools-react-exif-viewer": "1.4.2",
     "@wcj/tools-react-generate-github-badges": "1.4.2",
     "@wcj/tools-react-generate-password": "1.4.2",

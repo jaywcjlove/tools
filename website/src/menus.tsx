@@ -72,6 +72,10 @@ export function useMenus() {
       label: t('menu./css-easing-animation.label'),
     },
     {
+      href: '/css-formatter',
+      label: t('menu./css-formatter.label'),
+    },
+    {
       href: '/simple-markdown-editor',
       label: t('menu./simple-markdown-editor.label'),
     },

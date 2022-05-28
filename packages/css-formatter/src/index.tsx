@@ -1,13 +1,12 @@
 import { Fragment, useRef, useState } from 'react';
 import { StyledLayout, CopyButton, CodeEditor, Button, Wrapper, ErrorLayout } from '@wcj/tools-react-components';
-import { javascript } from '@codemirror/lang-javascript';
+import { css } from '@codemirror/lang-css';
 import { ReactCodeMirrorRef } from '@uiw/react-codemirror';
-import { minify } from 'uglify-js-export';
 import prettier from 'prettier';
-import parserBabel from 'prettier/parser-babel';
+import parserPostcss from 'prettier/parser-postcss';
 import * as sample from './sample';
 
-export default function JSONFormat() {
+export default function CSSFormatter() {
   const editor = useRef<ReactCodeMirrorRef>(null);
   const [value, setValue] = useState('');
   const [error, setError] = useState('');
@@ -16,7 +15,7 @@ export default function JSONFormat() {
     try {
       setError('');
       setValue(
-        prettier.format(value, { parser: 'babel-ts', tabWidth: tabWidth, printWidth: 120, plugins: [parserBabel] }),
+        prettier.format(value, { parser: 'css', tabWidth: tabWidth, printWidth: 120, plugins: [parserPostcss] }),
       );
     } catch (error) {
       if (error instanceof Error) {
@@ -27,11 +26,14 @@ export default function JSONFormat() {
   const handleMinify = () => {
     try {
       setError('');
-      const data = minify(value);
-      if (data.error) {
-        throw new Error(data.error.message);
-      }
-      setValue(data.code);
+      const val = prettier.format(value, {
+        parser: 'css',
+        tabWidth: 0,
+        useTabs: false,
+        printWidth: 0,
+        plugins: [parserPostcss],
+      });
+      setValue((val || '').replace(/\n/g, ''));
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);
@@ -41,7 +43,7 @@ export default function JSONFormat() {
   return (
     <Wrapper>
       <StyledLayout
-        title="JS Beautifier/Minify"
+        title="CSS Formatter/Minify"
         extra={
           <Fragment>
             {value && <Button onClick={() => handleFormat()}>Format</Button>}
@@ -55,11 +57,11 @@ export default function JSONFormat() {
               </select>
             )}
             {value && <CopyButton value={value} />}
-            {sample.json && (
+            {sample.css && (
               <Button
                 onClick={() => {
                   editor.current?.view?.focus();
-                  setValue(sample.json);
+                  setValue(sample.css);
                 }}
               >
                 Sample
@@ -72,7 +74,7 @@ export default function JSONFormat() {
           value={value}
           ref={editor}
           height="calc(100vh - 87px)"
-          extensions={[javascript()]}
+          extensions={[css()]}
           onChange={(value) => {
             setValue(value);
           }}

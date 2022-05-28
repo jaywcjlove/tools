@@ -11,4 +11,6 @@ export const ErrorLayout = styled.pre`
   word-break: break-all;
   padding: 10px;
   border-radius: 4px;
+  max-height: 230px;
+  overflow: auto;
 `;

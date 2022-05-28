@@ -1,0 +1,3 @@
+export const css = `/*! @uiw/reset.css v1.0.4 | MIT (c) 2021  |  */
+article,aside,blockquote,body,dd,details,dl,dt,fieldset,figcaption,figure,footer,h1,h2,h3,h4,h5,h6,header,hgroup,hr,html,iframe,legend,li,menu,nav,ol,p,pre,section,textarea,ul{padding:0;margin:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}ul{list-style:none}button,input,select{margin:0}html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}embed,iframe,object,video{height:auto;max-width:100%}audio{max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0;text-align:left}`;
+export const val = ``;
