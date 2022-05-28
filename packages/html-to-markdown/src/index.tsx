@@ -21,6 +21,7 @@ export default function Html2Markdown() {
     <Wrapper>
       <StyledLayout
         title="Input HTML"
+        // overflow="hidden"
         extra={
           <Fragment>
             {html && <CopyButton value={html} />}

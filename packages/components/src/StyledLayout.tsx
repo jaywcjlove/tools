@@ -46,7 +46,11 @@ export const StyledLayout = styled(Layout)`
   flex-direction: column;
   justify-content: space-around;
   flex: 1;
-  ${(props) => css`
-    overflow: ${props.overflow || 'hidden'};
-  `}
+  flex: 1;
+  width: 0;
+  ${(props) =>
+    props.overflow &&
+    css`
+      overflow: ${props.overflow};
+    `}
 `;
