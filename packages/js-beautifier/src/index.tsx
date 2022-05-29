@@ -682,7 +682,7 @@ export default function JSONFormat() {
                   {t('compress.passes')}{' '}
                   <input
                     type="number"
-                    value={(options.compress || {}).passes}
+                    value={(options.compress || {}).passes || 1}
                     onChange={({ target }) =>
                       setOptions({
                         ...options,
