@@ -11,7 +11,7 @@
       "label": "JSON Format"
     },
     "/js-beautifier": {
-      "label": "JS Beautifier/Minify"
+      "label": "JS Beautifier/Uglify"
     },
     "/css-formatter": {
       "label": "CSS Formatter/Minify"
@@ -33,6 +33,9 @@
     },
     "/markdown-to-html": {
       "label": "Markdown To HTML"
+    },
+    "/html-formatter": {
+      "label": "HTML Formatter/Minify"
     },
     "/html-escape": {
       "label": "HTML Escape/Unescape"
