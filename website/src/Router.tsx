@@ -171,4 +171,5 @@ export let routes: RouteObject[] = [
       { path: '*', element: <NoMatch /> },
     ],
   },
+  { path: '*', element: <NoMatch /> },
 ];

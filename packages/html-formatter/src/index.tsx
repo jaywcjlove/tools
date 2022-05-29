@@ -12,6 +12,7 @@ import {
 import { html } from '@codemirror/lang-html';
 import { minify, Options } from 'html-minifier';
 import { ReactCodeMirrorRef } from '@uiw/react-codemirror';
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import prettier from 'prettier';
 import parserHTML from 'prettier/parser-html';
@@ -63,6 +64,7 @@ const allOptions: Options = {
 };
 
 export default function HTMLFormatter() {
+  const { t } = useTranslation('html-formatter');
   const editor = useRef<ReactCodeMirrorRef>(null);
   const [type, setType] = useState<Type>('minify');
   const [value, setValue] = useState('');
@@ -146,8 +148,8 @@ export default function HTMLFormatter() {
       </StyledLayout>
       {type === 'minify' && (
         <StyledLayout
-          title="Options"
-          style={{ maxWidth: 520 }}
+          title={t('Options')}
+          style={{ maxWidth: 420 }}
           extra={
             <Fragment>
               <Button onClick={() => setOptions(defaultOptions)}>Reset</Button>
@@ -164,8 +166,9 @@ export default function HTMLFormatter() {
                     type="checkbox"
                     checked={!!options.caseSensitive}
                     onChange={({ target }) => setOptions({ ...options, caseSensitive: target.checked })}
-                  />{' '}
-                  Case-sensitive <Info>Treat attributes in case sensitive manner (useful for custom HTML tags)</Info>
+                  />
+                  {t('Case-sensitive')}{' '}
+                  <Info>{t('Treat attributes in case sensitive manner (useful for custom HTML tags)')}</Info>
                 </span>
               </label>
               <label>
@@ -174,8 +177,8 @@ export default function HTMLFormatter() {
                     type="checkbox"
                     checked={!!options.collapseBooleanAttributes}
                     onChange={({ target }) => setOptions({ ...options, collapseBooleanAttributes: target.checked })}
-                  />{' '}
-                  Collapse boolean attributes <Info>Omit attribute values from boolean attributes</Info>
+                  />
+                  {t('Collapse boolean attributes')} <Info>{t('Omit attribute values from boolean attributes')}</Info>
                 </span>
               </label>
               <label>
@@ -184,11 +187,12 @@ export default function HTMLFormatter() {
                     type="checkbox"
                     checked={!!options.collapseInlineTagWhitespace}
                     onChange={({ target }) => setOptions({ ...options, collapseInlineTagWhitespace: target.checked })}
-                  />{' '}
-                  <Danger>Collapse inline tag whitespace</Danger>{' '}
+                  />
+                  <Danger>{t('Collapse inline tag whitespace')}</Danger>{' '}
                   <Info>
-                    Don't leave any spaces between display:inline; elements when collapsing. Must be used in conjunction
-                    with collapseWhitespace=true
+                    {t(
+                      `Don't leave any spaces between display:inline; elements when collapsing. Must be used in conjunction with collapseWhitespace=true`,
+                    )}
                   </Info>
                 </span>
               </label>
@@ -198,9 +202,9 @@ export default function HTMLFormatter() {
                     type="checkbox"
                     checked={!!options.collapseWhitespace}
                     onChange={({ target }) => setOptions({ ...options, collapseWhitespace: target.checked })}
-                  />{' '}
-                  Collapse whitespace{' '}
-                  <Info>Collapse white space that contributes to text nodes in a document tree</Info>
+                  />
+                  {t('Collapse whitespace')}{' '}
+                  <Info>{t(`Collapse white space that contributes to text nodes in a document tree`)}</Info>
                 </span>
               </label>
               <label>
@@ -210,10 +214,11 @@ export default function HTMLFormatter() {
                     checked={!!options.conservativeCollapse}
                     onChange={({ target }) => setOptions({ ...options, conservativeCollapse: target.checked })}
                   />
-                  Conservative collapse{' '}
+                  {t('Conservative collapse')}{' '}
                   <Info>
-                    Always collapse to 1 space (never remove it entirely). Must be used in conjunction with
-                    collapseWhitespace=true
+                    {t(
+                      `Always collapse to 1 space (never remove it entirely). Must be used in conjunction with collapseWhitespace=true`,
+                    )}
                   </Info>
                 </span>
               </label>
@@ -224,7 +229,7 @@ export default function HTMLFormatter() {
                     checked={!!options.decodeEntities}
                     onChange={({ target }) => setOptions({ ...options, decodeEntities: target.checked })}
                   />
-                  Decode Entity Characters <Info>Use direct Unicode characters whenever possible</Info>
+                  {t('Decode Entity Characters')} <Info>{t('Use direct Unicode characters whenever possible')}</Info>
                 </span>
               </label>
               <label>
@@ -234,7 +239,7 @@ export default function HTMLFormatter() {
                     checked={!!options.html5}
                     onChange={({ target }) => setOptions({ ...options, html5: target.checked })}
                   />
-                  HTML5 <Info>Parse input according to HTML5 specifications</Info>
+                  HTML5 <Info>{t('Parse input according to HTML5 specifications')}</Info>
                 </span>
               </label>
               <label>
@@ -244,7 +249,7 @@ export default function HTMLFormatter() {
                     checked={!!options.includeAutoGeneratedTags}
                     onChange={({ target }) => setOptions({ ...options, includeAutoGeneratedTags: target.checked })}
                   />
-                  Include auto-generated tags <Info>Insert tags generated by HTML parser</Info>
+                  {t('Include auto-generated tags')} <Info>{t('Insert tags generated by HTML parser')}</Info>
                 </span>
               </label>
               <label>
@@ -254,7 +259,7 @@ export default function HTMLFormatter() {
                     checked={!!options.keepClosingSlash}
                     onChange={({ target }) => setOptions({ ...options, keepClosingSlash: target.checked })}
                   />
-                  Keep closing slash <Info>Keep the trailing slash on singleton elements</Info>
+                  {t('Keep closing slash')} <Info>{t('Keep the trailing slash on singleton elements')}</Info>
                 </span>
               </label>
               <label>
@@ -268,8 +273,9 @@ export default function HTMLFormatter() {
                     }
                   />
                   <Info>
-                    Specify a maximum line length. Compressed output will be split by newlines at valid HTML
-                    split-points
+                    {t(
+                      'Specify a maximum line length. Compressed output will be split by newlines at valid HTML split-points',
+                    )}
                   </Info>
                 </span>
               </label>
@@ -280,9 +286,9 @@ export default function HTMLFormatter() {
                     checked={!!options.minifyCSS}
                     onChange={({ target }) => setOptions({ ...options, minifyCSS: target.checked })}
                   />
-                  Minify CSS{' '}
+                  {t('Minify CSS')}{' '}
                   <Info>
-                    Minify CSS in style elements and style attributes (uses{' '}
+                    {t('Minify CSS in style elements and style attributes (uses')}{' '}
                     <a href="https://github.com/jakubpawlowicz/clean-css" target="_blank">
                       clean-css
                     </a>
@@ -297,9 +303,9 @@ export default function HTMLFormatter() {
                     checked={!!options.minifyJS}
                     onChange={({ target }) => setOptions({ ...options, minifyJS: target.checked })}
                   />
-                  Minify JavaScript{' '}
+                  {t('Minify JavaScript')}{' '}
                   <Info>
-                    Minify JavaScript in script elements and event attributes (uses{' '}
+                    {t('Minify JavaScript in script elements and event attributes (uses')}{' '}
                     <a href="https://github.com/jaywcjlove/uglify-js-export" target="_blank">
                       UglifyJS
                     </a>
@@ -309,7 +315,7 @@ export default function HTMLFormatter() {
               </label>
               <label>
                 <span>
-                  Minify URLs
+                  {t('Minify URLs')}{' '}
                   <input
                     type="number"
                     value={options.minifyURLs as string}
@@ -333,7 +339,7 @@ export default function HTMLFormatter() {
                     checked={!!options.preserveLineBreaks}
                     onChange={({ target }) => setOptions({ ...options, preserveLineBreaks: target.checked })}
                   />
-                  Preserve line-breaks{' '}
+                  {t('Preserve line-breaks')}
                   <Info>
                     Always collapse to 1 line break (never remove it entirely) when whitespace between tags include a
                     line break. Must be used in conjunction with collapseWhitespace=true
@@ -347,7 +353,7 @@ export default function HTMLFormatter() {
                     checked={!!options.preventAttributesEscaping}
                     onChange={({ target }) => setOptions({ ...options, preventAttributesEscaping: target.checked })}
                   />
-                  <Danger>Prevent attributes escaping</Danger>{' '}
+                  <Danger>{t('Prevent attributes escaping')}</Danger>{' '}
                   <Info>Prevents the escaping of the values of attributes</Info>
                 </span>
               </label>
@@ -358,12 +364,13 @@ export default function HTMLFormatter() {
                     checked={!!options.processConditionalComments}
                     onChange={({ target }) => setOptions({ ...options, processConditionalComments: target.checked })}
                   />
-                  Process conditional comments <Info>Process contents of conditional comments through minifier</Info>
+                  {t('Process conditional comments')}{' '}
+                  <Info>Process contents of conditional comments through minifier</Info>
                 </span>
               </label>
               <label>
                 <span>
-                  Process scripts
+                  {t('Process scripts')}{' '}
                   <input
                     type="text"
                     value={options.processScripts || ''}
@@ -379,7 +386,7 @@ export default function HTMLFormatter() {
               </label>
               <label>
                 <span>
-                  Quote character
+                  {t('Quote character')}
                   <input
                     type="text"
                     value={options.quoteCharacter || ''}
@@ -395,7 +402,7 @@ export default function HTMLFormatter() {
                     checked={!!options.removeAttributeQuotes}
                     onChange={({ target }) => setOptions({ ...options, removeAttributeQuotes: target.checked })}
                   />
-                  Remove attribute quotes <Info>Remove quotes around attributes when possible</Info>
+                  {t('Remove attribute quotes')} <Info>Remove quotes around attributes when possible</Info>
                 </span>
               </label>
               <label>
@@ -405,7 +412,7 @@ export default function HTMLFormatter() {
                     checked={!!options.removeComments}
                     onChange={({ target }) => setOptions({ ...options, removeComments: target.checked })}
                   />
-                  Remove comments <Info>Strip HTML comments</Info>
+                  {t('Remove comments')} <Info>Strip HTML comments</Info>
                 </span>
               </label>
               <label>
@@ -415,7 +422,7 @@ export default function HTMLFormatter() {
                     checked={!!options.removeEmptyAttributes}
                     onChange={({ target }) => setOptions({ ...options, removeEmptyAttributes: target.checked })}
                   />
-                  Remove empty attributes <Info>Remove all attributes with whitespace-only values</Info>
+                  {t('Remove empty attributes')} <Info>Remove all attributes with whitespace-only values</Info>
                 </span>
               </label>
               <label>
@@ -425,7 +432,7 @@ export default function HTMLFormatter() {
                     checked={!!options.removeEmptyElements}
                     onChange={({ target }) => setOptions({ ...options, removeEmptyElements: target.checked })}
                   />
-                  <Danger>Remove empty elements</Danger> <Info>Remove all elements with empty contents</Info>
+                  <Danger>{t('Remove empty elements')}</Danger> <Info>Remove all elements with empty contents</Info>
                 </span>
               </label>
               <label>
@@ -435,7 +442,7 @@ export default function HTMLFormatter() {
                     checked={!!options.removeOptionalTags}
                     onChange={({ target }) => setOptions({ ...options, removeOptionalTags: target.checked })}
                   />
-                  Remove optional tags
+                  {t('Remove optional tags')}
                 </span>
               </label>
               <label>
@@ -445,7 +452,7 @@ export default function HTMLFormatter() {
                     checked={!!options.removeRedundantAttributes}
                     onChange={({ target }) => setOptions({ ...options, removeRedundantAttributes: target.checked })}
                   />
-                  Remove redundant attributes <Info>Remove attributes when value matches default.</Info>
+                  {t('Remove redundant attributes')} <Info>{t('Remove attributes when value matches default.')}</Info>
                 </span>
               </label>
               <label>
@@ -455,7 +462,7 @@ export default function HTMLFormatter() {
                     checked={!!options.removeScriptTypeAttributes}
                     onChange={({ target }) => setOptions({ ...options, removeScriptTypeAttributes: target.checked })}
                   />
-                  Remove script type attributes{' '}
+                  {t('Remove script type attributes')}{' '}
                   <Info>
                     Remove type="text/javascript" from script tags. Other type attribute values are left intact
                   </Info>
@@ -468,7 +475,7 @@ export default function HTMLFormatter() {
                     checked={!!options.removeStyleLinkTypeAttributes}
                     onChange={({ target }) => setOptions({ ...options, removeStyleLinkTypeAttributes: target.checked })}
                   />
-                  Remove style link type attributes{' '}
+                  {t('Remove style link type attributes')}{' '}
                   <Info>
                     Remove type="text/css" from style and link tags. Other type attribute values are left intact
                   </Info>
@@ -481,7 +488,7 @@ export default function HTMLFormatter() {
                     checked={!!options.removeTagWhitespace}
                     onChange={({ target }) => setOptions({ ...options, removeTagWhitespace: target.checked })}
                   />
-                  <Danger>Remove tag whitespace</Danger>{' '}
+                  <Danger>{t('Remove tag whitespace')}</Danger>{' '}
                   <Info>
                     Remove space between attributes whenever possible. Note that this will result in invalid HTML!
                   </Info>
@@ -494,7 +501,7 @@ export default function HTMLFormatter() {
                     checked={!!options.sortAttributes}
                     onChange={({ target }) => setOptions({ ...options, sortAttributes: target.checked })}
                   />
-                  <Danger>Sort attributes</Danger> <Info>Sort attributes by frequency</Info>
+                  <Danger>{t('Sort attributes')}</Danger> <Info>{t('Sort attributes by frequency')}</Info>
                 </span>
               </label>
               <label>
@@ -504,7 +511,7 @@ export default function HTMLFormatter() {
                     checked={!!options.sortClassName}
                     onChange={({ target }) => setOptions({ ...options, sortClassName: target.checked })}
                   />
-                  <Danger>Sort class name</Danger> <Info>Sort style classes by frequency</Info>
+                  <Danger>{t('Sort class name')}</Danger> <Info>{t('Sort style classes by frequency')}</Info>
                 </span>
               </label>
               <label>
@@ -514,7 +521,8 @@ export default function HTMLFormatter() {
                     checked={!!options.trimCustomFragments}
                     onChange={({ target }) => setOptions({ ...options, trimCustomFragments: target.checked })}
                   />
-                  Trim white space around custom fragments <Info>Trim white space around ignoreCustomFragments.</Info>
+                  {t('Trim white space around custom fragments')}{' '}
+                  <Info>Trim white space around ignoreCustomFragments.</Info>
                 </span>
               </label>
               <label>
@@ -524,7 +532,7 @@ export default function HTMLFormatter() {
                     checked={!!options.useShortDoctype}
                     onChange={({ target }) => setOptions({ ...options, useShortDoctype: target.checked })}
                   />
-                  Use short doctype <Info>Replaces the doctype with the short (HTML5) doctype</Info>
+                  {t('Use short doctype')} <Info>Replaces the doctype with the short (HTML5) doctype</Info>
                 </span>
               </label>
             </Spacing>
