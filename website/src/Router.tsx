@@ -57,6 +57,7 @@ const ExifViewer = Loadable(lazy(() => import('@wcj/tools-react-exif-viewer')));
 const JSON2INI = Loadable(lazy(() => import('@wcj/tools-react-json-ini')));
 const JSBeautifier = Loadable(lazy(() => import('@wcj/tools-react-js-beautifier')));
 const CSSFormatter = Loadable(lazy(() => import('@wcj/tools-react-css-formatter')));
+const HTMLFormatter = Loadable(lazy(() => import('@wcj/tools-react-html-formatter')));
 
 export let routes: RouteObject[] = [
   {
@@ -77,7 +78,7 @@ export let routes: RouteObject[] = [
       },
       {
         path: 'js-beautifier',
-        element: <JSBeautifier title="JS Beautifier - Web Tools" />,
+        element: <JSBeautifier title="JS Beautifier/Uglify - Web Tools" />,
       },
       {
         path: 'text-case',
@@ -96,16 +97,20 @@ export let routes: RouteObject[] = [
         element: <GeneratePassword title="Generate Password - Web Tools" />,
       },
       {
+        path: 'html-formatter',
+        element: <HTMLFormatter title="HTML Formatter/Minify - Web Tools" />,
+      },
+      {
+        path: 'html-escape',
+        element: <HTMLEscape title="HTML Escape/Unescape - Web Tools" />,
+      },
+      {
         path: 'html-to-markdown',
         element: <HtmlToMarkdown title="HTML To Markdown - Web Tools" />,
       },
       {
         path: 'markdown-to-html',
         element: <MarkdownToHtml title="Markdown To HTML - Web Tools" />,
-      },
-      {
-        path: 'html-escape',
-        element: <HTMLEscape title="HTML Escape/Unescape - Web Tools" />,
       },
       {
         path: 'base64-encoder',
@@ -133,7 +138,7 @@ export let routes: RouteObject[] = [
       },
       {
         path: 'css-formatter',
-        element: <CSSFormatter title="CSS Formatter Tool - Web Tools" />,
+        element: <CSSFormatter title="CSS Formatter/Minify Tool - Web Tools" />,
       },
       {
         path: 'simple-markdown-editor',

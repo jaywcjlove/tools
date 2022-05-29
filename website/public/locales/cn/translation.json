@@ -28,6 +28,9 @@
     "/generate-password": {
       "label": "生成密码"
     },
+    "/html-formatter": {
+      "label": "HTML 格式化/压缩"
+    },
     "/html-to-markdown": {
       "label": "HTML 转换 Markdown"
     },

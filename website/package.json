@@ -28,6 +28,7 @@
     "@wcj/tools-react-generate-github-badges": "1.4.2",
     "@wcj/tools-react-generate-password": "1.4.2",
     "@wcj/tools-react-hash": "1.4.2",
+    "@wcj/tools-react-html-formatter": "1.4.2",
     "@wcj/tools-react-html-escape": "1.4.2",
     "@wcj/tools-react-html-to-markdown": "1.4.2",
     "@wcj/tools-react-image-to-base64": "1.4.2",
@@ -61,6 +62,10 @@
     "@types/styled-components": "^5.1.25",
     "@types/webpack-bundle-analyzer": "^4.4.1",
     "kkt": "~7.1.5",
+    "process": "^0.11.10",
+    "path": "^0.12.7",
+    "path-browserify": "^1.0.1",
+    "uglify-js-export": "^3.0.0",
     "webpack-bundle-analyzer": "^4.5.0"
   },
   "eslintConfig": {
@@ -68,6 +73,12 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "browser": {
+    "fs": false,
+    "url": false,
+    "path": false,
+    "os": false
   },
   "browserslist": {
     "production": [

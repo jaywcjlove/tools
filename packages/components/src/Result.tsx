@@ -25,6 +25,9 @@ export interface ResultProps
   title?: React.ReactNode;
   className?: string;
   extra?: React.ReactNode;
+  codeProps?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLPreElement>, HTMLPreElement> & {
+    ref?: React.RefObject<HTMLPreElement>;
+  };
 }
 
 export const ResultCode: React.FC<PropsWithChildren<ResultProps>> = ({
@@ -32,6 +35,7 @@ export const ResultCode: React.FC<PropsWithChildren<ResultProps>> = ({
   children,
   title,
   extra,
+  codeProps,
   ...other
 }) => (
   <div className={className} {...other}>
@@ -40,6 +44,6 @@ export const ResultCode: React.FC<PropsWithChildren<ResultProps>> = ({
       <span>{title}</span>
       {extra}
     </Title>
-    <Code>{children}</Code>
+    <Code {...codeProps}>{children}</Code>
   </div>
 );

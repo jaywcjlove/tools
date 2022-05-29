@@ -41,7 +41,7 @@ export default function JSONFormat() {
   return (
     <Wrapper>
       <StyledLayout
-        title="JS Beautifier/Minify"
+        title="JS Beautifier/Uglify"
         extra={
           <Fragment>
             {value && <Button onClick={() => handleFormat()}>Format</Button>}

@@ -1,7 +1,7 @@
 import webpack, { Configuration } from 'webpack';
 import lessModules from '@kkt/less-modules';
 import { LoaderConfOptions } from 'kkt';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+// import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import pkg from './package.json';
 
 export default (conf: Configuration, env: 'development' | 'production', options: LoaderConfOptions) => {
@@ -28,8 +28,29 @@ export default (conf: Configuration, env: 'development' | 'production', options:
     }),
   );
   if (env === 'development') {
-    conf.plugins!.push(new BundleAnalyzerPlugin());
+    // conf.plugins!.push(new BundleAnalyzerPlugin());
   }
+  conf.plugins!.push(
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+    }),
+  );
+  conf.resolve!.alias = {
+    ...conf.resolve!.alias,
+    process: 'process/browser',
+    path: 'path',
+    // path: 'path-browserify',
+    'uglify-js': 'uglify-js-export',
+  };
+  conf.resolve!.fallback = {
+    fs: false,
+    url: false,
+    path: false,
+    http: false,
+    https: false,
+    process: false,
+    os: false,
+  };
   if (env === 'production') {
     conf.output = { ...conf.output, publicPath: './' };
     conf.optimization = {

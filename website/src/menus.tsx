@@ -36,16 +36,20 @@ export function useMenus() {
       label: t('menu./generate-password.label'),
     },
     {
+      href: '/html-formatter',
+      label: t('menu./html-formatter.label'),
+    },
+    {
+      href: '/html-escape',
+      label: t('menu./html-escape.label'),
+    },
+    {
       href: '/html-to-markdown',
       label: t('menu./html-to-markdown.label'),
     },
     {
       href: '/markdown-to-html',
       label: t('menu./markdown-to-html.label'),
-    },
-    {
-      href: '/html-escape',
-      label: t('menu./html-escape.label'),
     },
     {
       href: '/base64-encoder',
