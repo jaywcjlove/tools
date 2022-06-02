@@ -9,6 +9,7 @@ import { ReactComponent as ShareIcon } from '../assets/share.svg';
 import { ReactComponent as LogoIcon } from '../assets/logo.svg';
 import { useMenus } from '../menus';
 import { TransSelect } from '../components/TransSelect';
+import { LogoIcon as Logo } from '../components/Logo';
 
 const Sup = styled.sup`
   position: absolute;
@@ -20,6 +21,21 @@ const Sup = styled.sup`
 const HeaderRight = styled.div`
   display: flex;
   align-items: center;
+`;
+
+const Label = styled.span`
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  -webkit-line-clamp: 1;
+`;
+
+const LabelText = styled.span`
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
 
 export default function Layout() {
@@ -54,14 +70,23 @@ export default function Layout() {
               }
               if (/https?:/.test(item.href || '')) {
                 return (
-                  <a key={idx} href={item.href} target="_blank" rel="noreferrer">
-                    <span>{item.label}</span>
+                  <a key={idx} href={item.href} target="_blank" rel="noreferrer" title={item.label}>
+                    <Label>
+                      <Logo
+                        size="14px"
+                        padding="0"
+                        style={{ backgroundColor: 'transparent' }}
+                        src={item.logo || `${item.label.toLocaleLowerCase().replace(/\s/g, '-')}.svg`}
+                        alt={item.label}
+                      />
+                      <LabelText>{item.label}</LabelText>
+                    </Label>
                     <ShareIcon height={18} />
                   </a>
                 );
               }
               return (
-                <NavLink key={idx} to={item.href || ''}>
+                <NavLink key={idx} to={item.href || ''} title={item.label}>
                   {item.label}
                 </NavLink>
               );

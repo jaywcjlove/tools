@@ -129,6 +129,7 @@ export function useMenus() {
     },
     {
       href: 'https://chalk.ist/',
+      logo: 'chalk.ist.png',
       'open-source': 'https://github.com/Idered/chalk.ist',
       about: t('menu.Chalkist.about'),
       label: t('menu.Chalkist.label'),
@@ -210,6 +211,7 @@ export function useMenus() {
     },
     {
       href: 'https://www.pixelartcss.com/',
+      logo: 'pixel-art-to-css.png',
       'open-source': 'https://github.com/jvalen/pixel-art-react',
       about: t('menu.PixelArttoCSS.about'),
       label: t('menu.PixelArttoCSS.label'),
@@ -232,12 +234,14 @@ export function useMenus() {
     },
     {
       href: 'https://jex.im/regulex/',
+      logo: 'regulex.png',
       'open-source': 'https://github.com/CJex/regulex',
       about: t('menu.Regulex.about'),
       label: t('menu.Regulex.label'),
     },
     {
       href: 'https://regex101.com/',
+      logo: 'regex101.png',
       'open-source': 'https://github.com/firasdib/Regex101',
       about: t('menu.Regex101.about'),
       label: t('menu.Regex101.label'),
@@ -249,6 +253,7 @@ export function useMenus() {
     },
     {
       href: 'https://rubular.com/',
+      logo: 'rubular.png',
       about: t('menu.Rubular.about'),
       label: t('menu.Rubular.label'),
     },
@@ -277,6 +282,7 @@ export function useMenus() {
     },
     {
       href: 'https://ray.so/',
+      logo: 'ray.so.png',
       about: t('menu.Rayso.about'),
       label: t('menu.Rayso.label'),
     },
@@ -293,12 +299,14 @@ export function useMenus() {
     },
     {
       href: 'https://shields.io/',
+      logo: 'shields.io.png',
       'open-source': 'https://github.com/badges/shields',
       about: t('menu.Shields.about'),
       label: t('menu.Shields.label'),
     },
     {
       href: 'https://stackblitz.com',
+      logo: 'stackblitz.png',
       about: t('menu.StackBlitz.about'),
       label: t('menu.StackBlitz.label'),
     },
@@ -326,6 +334,7 @@ export function useMenus() {
     {
       href: 'https://jspaint.app',
       'open-source': 'https://github.com/1j01/jspaint',
+      logo: 'jspaint.png',
       about: t('menu.jspaint.about'),
       label: t('menu.jspaint.label'),
     },

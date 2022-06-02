@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useMenus } from '../menus';
+import { LogoIcon } from '../components/Logo';
 
 const Warpper = styled.div`
   padding: 25px;
@@ -58,7 +59,17 @@ export default function HomePage() {
       <MenuItem>
         {thirdParty.map((item, key) => {
           return (
-            <a key={key} href={item.href!} target="_blank" rel="noreferrer">
+            <a
+              key={key}
+              href={item.href!}
+              target="_blank"
+              rel="noreferrer"
+              data-logo={item.logo || `${item.label.toLocaleLowerCase().replace(/\s/g, '-')}.svg`}
+            >
+              <LogoIcon
+                src={item.logo || `${item.label.toLocaleLowerCase().replace(/\s/g, '-')}.svg`}
+                alt={item.label}
+              />
               <span>{item.label}</span>
               <span className="detail">{item.about}</span>
             </a>
