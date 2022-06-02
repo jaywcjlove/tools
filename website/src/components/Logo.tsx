@@ -42,6 +42,7 @@ const Span = styled.span<SpanProps>`
     height: -webkit-fill-available;
     fill: currentColor;
     opacity: 1 !important;
+    display: block;
   }
 `;
 
