@@ -103,10 +103,6 @@
       "about": "Virtual whiteboard for sketching hand-drawn like diagrams",
       "label": "Excalidraw"
     },
-    "easings": {
-      "about": "Easing functions specify the rate of change of a parameter over time.",
-      "label": "Easing Functions Cheat Sheet"
-    },
     "GithubButtons": {
       "about": "Unofficial github:buttons.",
       "label": "Github Buttons"
@@ -238,6 +234,14 @@
     "UIColor": {
       "about": "Converting HEX & RGB colors to UIColor/NSColor/Color for both Objective C & Swift.",
       "label": "UI Color"
+    },
+    "easings": {
+      "about": "Easing functions specify the rate of change of a parameter over time.",
+      "label": "Easing Functions Cheat Sheet"
+    },
+    "compat-table": {
+      "about": "ECMAScript 5/6/7 compatibility tables",
+      "label": "ECMAScript 6 compatibility table"
     }
   },
   "loading": "Loading...",

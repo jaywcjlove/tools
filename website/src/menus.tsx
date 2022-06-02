@@ -329,5 +329,11 @@ export function useMenus() {
       about: t('menu.jspaint.about'),
       label: t('menu.jspaint.label'),
     },
+    {
+      href: 'https://kangax.github.io/compat-table/es6/',
+      'open-source': 'https://github.com/kangax/compat-table',
+      about: t('menu.compat-table.about'),
+      label: t('menu.compat-table.label'),
+    },
   ];
 }

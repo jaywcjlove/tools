@@ -238,6 +238,10 @@
     "easings": {
       "about": "缓动函数 自定义参数随时间变化的速率",
       "label": "缓动函数速查表"
+    },
+    "compat-table": {
+      "about": "ECMAScript 5/6/7 兼容性表",
+      "label": "ECMAScript 6 兼容性表"
     }
   },
   "loading": "加载中...",
