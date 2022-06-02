@@ -75,7 +75,7 @@ export default function Layout() {
                       <Logo
                         size="14px"
                         padding="0"
-                        style={{ backgroundColor: 'transparent' }}
+                        style={{ backgroundColor: 'transparent', borderRadius: 0 }}
                         src={item.logo || `${item.label.toLocaleLowerCase().replace(/\s/g, '-')}.svg`}
                         alt={item.label}
                       />
@@ -87,7 +87,16 @@ export default function Layout() {
               }
               return (
                 <NavLink key={idx} to={item.href || ''} title={item.label}>
-                  {item.label}
+                  <Label>
+                    <Logo
+                      size="14px"
+                      padding="0"
+                      style={{ backgroundColor: 'transparent', borderRadius: 0 }}
+                      src={item.logo}
+                      alt={item.label}
+                    />
+                    <span>{item.label}</span>
+                  </Label>
                 </NavLink>
               );
             })}

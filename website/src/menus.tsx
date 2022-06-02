@@ -5,106 +5,132 @@ export function useMenus() {
   return [
     {
       href: '/',
+      logo: 'home',
       label: t('menu./.label'),
     },
     {
       href: '/url-encode',
+      logo: 'url',
       label: t('menu./url-encode.label'),
     },
     {
       href: '/json-format',
+      logo: 'json',
       label: t('menu./json-format.label'),
     },
     {
       href: '/js-beautifier',
+      logo: 'js',
       label: t('menu./js-beautifier.label'),
     },
     {
       href: '/text-case',
+      logo: 'text',
       label: t('menu./text-case.label'),
     },
     {
       href: '/image-to-base64',
+      logo: 'image',
       label: t('menu./image-to-base64.label'),
     },
     {
       href: '/hash',
+      logo: 'hash',
       label: t('menu./hash.label'),
     },
     {
       href: '/generate-password',
+      logo: 'password',
       label: t('menu./generate-password.label'),
     },
     {
       href: '/html-formatter',
+      logo: 'html5',
       label: t('menu./html-formatter.label'),
     },
     {
       href: '/html-escape',
+      logo: 'html5',
       label: t('menu./html-escape.label'),
     },
     {
       href: '/html-to-markdown',
+      logo: 'markdown',
       label: t('menu./html-to-markdown.label'),
     },
     {
       href: '/markdown-to-html',
+      logo: 'html5',
       label: t('menu./markdown-to-html.label'),
     },
     {
       href: '/base64-encoder',
+      logo: 'base64',
       label: t('menu./base64-encoder.label'),
     },
     {
       href: '/qrcode-generator',
+      logo: 'qrcode',
       label: t('menu./qrcode-generator.label'),
     },
     {
       href: '/chinese-pinyin-conversion',
+      logo: 'pinyin',
       label: t('menu./chinese-pinyin-conversion.label'),
     },
     {
       href: '/generate-github-badges',
+      logo: 'github',
       label: t('menu./generate-github-badges.label'),
     },
     {
       href: '/toml-to-json',
+      logo: 'toml',
       label: t('menu./toml-to-json.label'),
     },
     {
       href: '/css-easing-animation',
+      logo: 'css3',
       label: t('menu./css-easing-animation.label'),
     },
     {
       href: '/css-formatter',
+      logo: 'css3',
       label: t('menu./css-formatter.label'),
     },
     {
       href: '/simple-markdown-editor',
+      logo: 'markdown',
       label: t('menu./simple-markdown-editor.label'),
     },
     {
       href: '/jwt-decoder',
+      logo: 'jwt',
       label: t('menu./jwt-decoder.label'),
     },
     {
       href: '/json-yaml',
+      logo: 'yaml',
       label: t('menu./json-yaml.label'),
     },
     {
       href: '/json-xml',
+      logo: 'xml',
       label: t('menu./json-xml.label'),
     },
     {
       href: '/json-ini',
+      logo: 'ini',
       label: t('menu./json-ini.label'),
     },
     {
       href: '/pdf-to-img',
+      logo: 'pdf',
       label: t('menu./pdf-to-img.label'),
     },
     {
       href: '/exif-viewer',
+      logo: 'image',
       label: t('menu./exif-viewer.label'),
     },
     {
@@ -144,6 +170,17 @@ export function useMenus() {
       'open-source': 'https://github.com/excalidraw/excalidraw',
       about: t('menu.Excalidraw.about'),
       label: t('menu.Excalidraw.label'),
+    },
+    {
+      href: 'https://easings.net',
+      about: t('menu.easings.about'),
+      label: t('menu.easings.label'),
+    },
+    {
+      href: 'https://kangax.github.io/compat-table/es6/',
+      'open-source': 'https://github.com/kangax/compat-table',
+      about: t('menu.compat-table.about'),
+      label: t('menu.compat-table.label'),
     },
     {
       href: 'https://buttons.github.io',
@@ -327,22 +364,11 @@ export function useMenus() {
       label: t('menu.UIColor.label'),
     },
     {
-      href: 'https://easings.net',
-      about: t('menu.easings.about'),
-      label: t('menu.easings.label'),
-    },
-    {
       href: 'https://jspaint.app',
       'open-source': 'https://github.com/1j01/jspaint',
       logo: 'jspaint.png',
       about: t('menu.jspaint.about'),
       label: t('menu.jspaint.label'),
-    },
-    {
-      href: 'https://kangax.github.io/compat-table/es6/',
-      'open-source': 'https://github.com/kangax/compat-table',
-      about: t('menu.compat-table.about'),
-      label: t('menu.compat-table.label'),
     },
   ];
 }

@@ -48,8 +48,10 @@ export default function HomePage() {
       <Title>{t('tools')}</Title>
       <MenuItem>
         {tools.map((item, key) => {
+          console.log('item.logo::', item.logo);
           return (
             <Link key={key} to={item.href || ''}>
+              <LogoIcon src={item.logo} alt={item.label} />
               {item.label}
             </Link>
           );
@@ -59,17 +61,8 @@ export default function HomePage() {
       <MenuItem>
         {thirdParty.map((item, key) => {
           return (
-            <a
-              key={key}
-              href={item.href!}
-              target="_blank"
-              rel="noreferrer"
-              data-logo={item.logo || `${item.label.toLocaleLowerCase().replace(/\s/g, '-')}.svg`}
-            >
-              <LogoIcon
-                src={item.logo || `${item.label.toLocaleLowerCase().replace(/\s/g, '-')}.svg`}
-                alt={item.label}
-              />
+            <a key={key} href={item.href!} target="_blank" rel="noreferrer">
+              <LogoIcon src={item.logo || `${item.label.toLocaleLowerCase().replace(/\s/g, '-')}`} alt={item.label} />
               <span>{item.label}</span>
               <span className="detail">{item.about}</span>
             </a>

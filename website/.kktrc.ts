@@ -1,6 +1,8 @@
 import webpack, { Configuration } from 'webpack';
 import lessModules from '@kkt/less-modules';
+import scopePluginOptions from '@kkt/scope-plugin-options';
 import { LoaderConfOptions } from 'kkt';
+import path from 'path';
 // import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import pkg from './package.json';
 
@@ -9,6 +11,10 @@ export default (conf: Configuration, env: 'development' | 'production', options:
   if (process.env.DOCKER === 'true') {
     LOADPATH = '';
   }
+  conf = scopePluginOptions(conf, env, {
+    ...options,
+    allowedFiles: [path.resolve('./public'), path.resolve('./src'), path.resolve(process.cwd(), 'README.md')],
+  });
   conf = lessModules(conf, env, options);
   // Get the project version.
   conf.plugins!.push(
