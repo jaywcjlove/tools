@@ -56,11 +56,11 @@ export const LogoIcon: FC<LogoIconProps> = (props) => {
   // @ts-ignore
   const loadPath = LOADPATH;
   let src = `${loadPath}/logo/${props.src}`;
-  if (!/(png|jpg|svg)$/g.test(src)) {
+  if (!/\.(png|jpg|svg)$/g.test(src)) {
     src = `${src}.svg`;
   }
   useEffect(() => {
-    if (/svg$/.test(src)) {
+    if (/\.svg$/.test(src)) {
       fetch(src)
         .then((response) => response.text())
         .then((data) => {
@@ -76,6 +76,8 @@ export const LogoIcon: FC<LogoIconProps> = (props) => {
           setVisible(false);
           setSvg('');
         });
+    } else {
+      setVisible(true);
     }
   }, [src]);
 
@@ -85,7 +87,12 @@ export const LogoIcon: FC<LogoIconProps> = (props) => {
       {svg ? (
         <Span dangerouslySetInnerHTML={{ __html: svg || '' }} {...props} />
       ) : (
-        <Image alt="logo" onError={() => setVisible(false)} {...props} src={src} />
+        <Image
+          alt="logo"
+          // onError={() => setVisible(false)}
+          {...props}
+          src={src}
+        />
       )}
     </Fragment>
   );

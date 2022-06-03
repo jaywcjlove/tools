@@ -134,6 +134,11 @@ export function useMenus() {
       label: t('menu./exif-viewer.label'),
     },
     {
+      href: '/svg-optimizer',
+      logo: 'svg',
+      label: t('menu./svg-optimizer.label'),
+    },
+    {
       divider: true,
     },
     {
@@ -331,12 +336,14 @@ export function useMenus() {
     },
     {
       href: 'https://unpkg.com/svgedit@7.1.3/dist/editor/index.html',
+      logo: 'svg-edit',
       'open-source': 'https://github.com/SVG-Edit/svgedit',
       about: t('menu.SVGEdit.about'),
       label: t('menu.SVGEdit.label'),
     },
     {
       href: 'https://yqnn.github.io/svg-path-editor/',
+      logo: 'svg-edit',
       about: t('menu.SVGPathEditor.about'),
       label: t('menu.SVGPathEditor.label'),
     },

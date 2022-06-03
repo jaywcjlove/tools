@@ -40,6 +40,7 @@
     "@wcj/tools-react-jwt-decoder": "1.5.2",
     "@wcj/tools-react-markdown-to-html": "1.5.2",
     "@wcj/tools-react-pdf-to-img": "1.5.2",
+    "@wcj/tools-react-svg-optimizer": "1.5.2",
     "@wcj/tools-react-qrcode-generator": "1.5.2",
     "@wcj/tools-react-simple-markdown-editor": "1.5.2",
     "@wcj/tools-react-text-case": "1.5.2",

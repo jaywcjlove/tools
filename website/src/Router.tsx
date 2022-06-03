@@ -58,6 +58,7 @@ const JSON2INI = Loadable(lazy(() => import('@wcj/tools-react-json-ini')));
 const JSBeautifier = Loadable(lazy(() => import('@wcj/tools-react-js-beautifier')));
 const CSSFormatter = Loadable(lazy(() => import('@wcj/tools-react-css-formatter')));
 const HTMLFormatter = Loadable(lazy(() => import('@wcj/tools-react-html-formatter')));
+const SVGOptimizer = Loadable(lazy(() => import('@wcj/tools-react-svg-optimizer')));
 
 export let routes: RouteObject[] = [
   {
@@ -167,6 +168,10 @@ export let routes: RouteObject[] = [
       {
         path: 'exif-viewer',
         element: <ExifViewer title="Exif Viewer Tool - Web Tools" />,
+      },
+      {
+        path: 'svg-optimizer',
+        element: <SVGOptimizer title="SVG Optimizer Tool - Web Tools" />,
       },
       { path: '*', element: <NoMatch /> },
     ],

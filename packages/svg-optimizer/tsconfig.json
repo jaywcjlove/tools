@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig",
+  "include": ["src", "src/global.d.ts"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "cjs",
+    "noEmit": false
+  }
+}

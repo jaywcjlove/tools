@@ -9,7 +9,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "importHelpers": true,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "resolveJsonModule": true,
     "sourceMap": true,
     "lib": ["dom", "dom.iterable", "esnext"],
