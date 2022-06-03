@@ -1,6 +1,6 @@
 {
   "name": "@wcj/tools-react-pdf-to-img",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
@@ -16,7 +16,7 @@
   "author": "Kenny Wong <wowohoo@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "@wcj/tools-react-components": "1.5.1",
+    "@wcj/tools-react-components": "1.5.2",
     "pdfjs-dist": "^2.14.305"
   },
   "peerDependencies": {

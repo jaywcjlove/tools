@@ -1,6 +1,6 @@
 {
   "name": "@wcj/tools-react-json-ini",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
@@ -19,7 +19,7 @@
     "@codemirror/lang-json": "^0.20.0",
     "@codemirror/legacy-modes": "^0.20.0",
     "@types/ini": "^1.3.31",
-    "@wcj/tools-react-components": "1.5.1",
+    "@wcj/tools-react-components": "1.5.2",
     "ini": "^3.0.0"
   },
   "peerDependencies": {

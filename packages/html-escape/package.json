@@ -1,6 +1,6 @@
 {
   "name": "@wcj/tools-react-html-escape",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "@codemirror/lang-html": "^0.20.0",
-    "@wcj/tools-react-components": "1.5.1"
+    "@wcj/tools-react-components": "1.5.2"
   },
   "peerDependencies": {
     "react": ">=16.14.0",
