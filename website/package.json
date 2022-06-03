@@ -20,6 +20,7 @@
     "@uiw/react-copy-to-clipboard": "~4.21.0",
     "@uiw/react-github-corners": "~1.5.3",
     "@wcj/dark-mode": "^1.0.14",
+    "@wcj/tools-react-amount-in-rmb": "1.6.0",
     "@wcj/tools-react-base64-encoder": "1.6.0",
     "@wcj/tools-react-chinese-pinyin-conversion": "1.6.0",
     "@wcj/tools-react-css-easing-animation": "1.6.0",

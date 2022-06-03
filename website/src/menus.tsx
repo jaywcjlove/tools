@@ -139,6 +139,11 @@ export function useMenus() {
       label: t('menu./svg-optimizer.label'),
     },
     {
+      href: '/amount-in-rmb',
+      logo: 'rmb',
+      label: t('menu./amount-in-rmb.label'),
+    },
+    {
       divider: true,
     },
     {

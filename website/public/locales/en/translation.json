@@ -82,6 +82,9 @@
     "/svg-optimizer": {
       "label": "SVG Optimizer"
     },
+    "/amount-in-rmb": {
+      "label": "Amount In RMB"
+    },
     "Badgen": {
       "about": "Fast badge generating service",
       "label": "Badgen"
