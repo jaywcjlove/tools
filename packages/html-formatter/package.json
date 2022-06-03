@@ -1,6 +1,6 @@
 {
   "name": "@wcj/tools-react-html-formatter",
-  "version": "1.5.2",
+  "version": "1.6.0",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   "dependencies": {
     "@codemirror/lang-html": "^0.20.0",
     "@types/html-minifier": "^4.0.2",
-    "@wcj/tools-react-components": "1.5.2",
+    "@wcj/tools-react-components": "1.6.0",
     "html-minifier": "^4.0.0",
     "react-i18next": "^11.16.9"
   },

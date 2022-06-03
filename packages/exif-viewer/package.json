@@ -1,6 +1,6 @@
 {
   "name": "@wcj/tools-react-exif-viewer",
-  "version": "1.5.2",
+  "version": "1.6.0",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   "dependencies": {
     "@codemirror/lang-json": "^0.20.0",
     "@codemirror/lang-markdown": "^0.20.1",
-    "@wcj/tools-react-components": "1.5.2",
+    "@wcj/tools-react-components": "1.6.0",
     "exifreader": "^4.5.0"
   },
   "peerDependencies": {
