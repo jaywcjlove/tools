@@ -79,6 +79,9 @@
     "/exif-viewer": {
       "label": "Exif Viewer"
     },
+    "/svg-optimizer": {
+      "label": "SVG Optimizer"
+    },
     "Badgen": {
       "about": "Fast badge generating service",
       "label": "Badgen"
