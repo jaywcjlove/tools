@@ -76,7 +76,7 @@ export default function TOMLToJSON(props: TOMLToJSONProps) {
       <StyledLayout title={'Result JSON'} extra={json && <CopyButton value={json} />}>
         <CodeEditor height="calc(100vh - 87px)" extensions={[jsonLang()]} readOnly value={json} />
       </StyledLayout>
-      <ErrorLayout>{error}</ErrorLayout>
+      {error && <ErrorLayout>{error}</ErrorLayout>}
     </Wrapper>
   );
 }
