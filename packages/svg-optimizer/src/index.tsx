@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Wrapper, StyledLayout, CopyButton, ResultCode, Spacing } from '@wcj/tools-react-components';
+import { useEffect, useState, Fragment } from 'react';
+import { Wrapper, StyledLayout, CopyButton, ResultCode, Spacing, Button } from '@wcj/tools-react-components';
 import styled, { css } from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import { Plugin } from 'svgo/dist/svgo.browser';
@@ -312,7 +312,7 @@ export default function SVGOptimizer() {
   return (
     <Wrapper>
       <StyledLayout
-        title="SVG Image"
+        title={t(`SVG Optimizer`)}
         extra={<InputFile type="file" accept="image/svg+xml" multiple onChange={handleChange} />}
       >
         <ResultCode
@@ -365,7 +365,15 @@ export default function SVGOptimizer() {
         </ResultCode>
       </StyledLayout>
       {imageData && imageData.length > 0 && (
-        <StyledLayout title="Options" style={{ maxWidth: 420 }}>
+        <StyledLayout
+          title={t(`Options`, { ns: 'common' })}
+          style={{ maxWidth: 420 }}
+          extra={
+            <Fragment>
+              <Button onClick={() => setOptions(defaultOptions)}>Reset</Button>
+            </Fragment>
+          }
+        >
           <ResultCode codeProps={{ style: { height: 'calc(100vh - 87px)', overflow: 'auto', margin: 0 } }}>
             <Spacing>
               <Checkbox

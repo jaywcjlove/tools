@@ -1,4 +1,5 @@
 {
+  "SVG Optimizer": "SVG 压缩优化",
   "Pass over SVGs multiple times to ensure all optimizations are applied": "多次传递 SVG 以确保应用所有优化",
   "Precision of floating point numbers. Will be passed to each plugin that suppors this param.": "浮点数的精度。将传递给支持此参数的每个插件。",
   "Prettify markup": "美化标记",
