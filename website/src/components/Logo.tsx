@@ -51,7 +51,7 @@ interface LogoIconProps extends ImageProps {
 }
 
 export const LogoIcon: FC<LogoIconProps> = (props) => {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
   const [svg, setSvg] = useState<string>();
   // @ts-ignore
   const loadPath = LOADPATH;
@@ -64,7 +64,17 @@ export const LogoIcon: FC<LogoIconProps> = (props) => {
       fetch(src)
         .then((response) => response.text())
         .then((data) => {
-          setSvg(data);
+          if (data.indexOf('<svg') > -1) {
+            setSvg(data);
+            setVisible(true);
+          } else {
+            setVisible(false);
+            setSvg('');
+          }
+        })
+        .catch(() => {
+          setVisible(false);
+          setSvg('');
         });
     }
   }, [src]);

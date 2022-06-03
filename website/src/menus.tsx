@@ -139,12 +139,14 @@ export function useMenus() {
     {
       href: 'https://badgen.net/',
       'open-source': 'https://github.com/badgen/badgen.net',
+      logo: 'badgen',
       about: t('menu.Badgen.about'),
       label: t('menu.Badgen.label'),
     },
     {
       href: 'https://codesandbox.io',
       'open-source': 'https://github.com/codesandbox/codesandbox-client',
+      logo: 'codesandbox',
       about: t('menu.CodeSandbox.about'),
       label: t('menu.CodeSandbox.label'),
     },
@@ -162,6 +164,7 @@ export function useMenus() {
     },
     {
       href: 'https://codepen.io',
+      logo: 'codepen',
       about: t('menu.CodePen.about'),
       label: t('menu.CodePen.label'),
     },
@@ -173,12 +176,14 @@ export function useMenus() {
     },
     {
       href: 'https://easings.net',
+      logo: 'easing-functions-cheat-sheet',
       about: t('menu.easings.about'),
       label: t('menu.easings.label'),
     },
     {
       href: 'https://kangax.github.io/compat-table/es6/',
       'open-source': 'https://github.com/kangax/compat-table',
+      logo: 'ecmascript-6-compatibility-table',
       about: t('menu.compat-table.about'),
       label: t('menu.compat-table.label'),
     },
@@ -243,6 +248,7 @@ export function useMenus() {
     },
     {
       href: 'https://jaywcjlove.github.io/nginx-editor/',
+      logo: 'nginx',
       about: t('menu.NginxEditor.about'),
       label: t('menu.NginxEditor.label'),
     },
