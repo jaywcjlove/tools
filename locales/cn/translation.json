@@ -237,6 +237,10 @@
       "about": "随着时间的推移绘制您的 git 存储库星星",
       "label": "Star Chart"
     },
+    "sketchpad": {
+      "about": "Free online drawing application",
+      "label": "Sketchpad"
+    },
     "UIColor": {
       "about": "将 HEX 和 RGB 颜色转换为 Objective C 和 Swift 的 UIColor/NSColor/Color。",
       "label": "UI Color"
