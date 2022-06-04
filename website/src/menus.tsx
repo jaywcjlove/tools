@@ -377,6 +377,12 @@ export function useMenus() {
       label: t('menu.StarChart.label'),
     },
     {
+      href: 'https://sketchpad.app/',
+      logo: 'sketchpad.png',
+      about: t('menu.sketchpad.about'),
+      label: t('menu.sketchpad.label'),
+    },
+    {
       href: 'https://uiwjs.github.io/ui-color/',
       about: t('menu.UIColor.about'),
       label: t('menu.UIColor.label'),

@@ -237,6 +237,10 @@
       "about": "Plot your repository stars over time.",
       "label": "Star Chart"
     },
+    "sketchpad": {
+      "about": "Free online drawing application",
+      "label": "Sketchpad"
+    },
     "UIColor": {
       "about": "Converting HEX & RGB colors to UIColor/NSColor/Color for both Objective C & Swift.",
       "label": "UI Color"
