@@ -85,6 +85,9 @@
     "/amount-in-rmb": {
       "label": "人民币大写转换"
     },
+    "/standard-chinese-characters": {
+      "label": "通用规范汉字表"
+    },
     "Badgen": {
       "about": "快速徽章生成服务",
       "label": "Badgen 徽章"
