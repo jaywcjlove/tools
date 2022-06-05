@@ -1,6 +1,6 @@
 {
   "name": "@wcj/tools-react-markdown-to-html",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   "dependencies": {
     "@codemirror/lang-html": "^0.20.0",
     "@codemirror/lang-markdown": "^0.20.1",
-    "@wcj/tools-react-components": "1.8.0",
+    "@wcj/tools-react-components": "1.8.1",
     "rehype": "^12.0.1",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-format": "^4.0.1",

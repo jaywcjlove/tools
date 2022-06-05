@@ -1,6 +1,6 @@
 {
   "name": "@wcj/tools-react-js-beautifier",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "@codemirror/lang-javascript": "^0.20.0",
-    "@wcj/tools-react-components": "1.8.0",
+    "@wcj/tools-react-components": "1.8.1",
     "uglify-js-export": "^3.0.0"
   },
   "peerDependencies": {
