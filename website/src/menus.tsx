@@ -144,6 +144,11 @@ export function useMenus() {
       label: t('menu./amount-in-rmb.label'),
     },
     {
+      href: '/standard-chinese-characters',
+      logo: 'pinyin',
+      label: t('menu./standard-chinese-characters.label'),
+    },
+    {
       divider: true,
     },
     {

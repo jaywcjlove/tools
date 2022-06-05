@@ -1,0 +1,26 @@
+{
+  "name": "@wcj/tools-react-standard-chinese-characters",
+  "version": "1.7.0",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "scripts": {
+    "build": "tsbb build",
+    "watch": "tsbb watch"
+  },
+  "keywords": [],
+  "files": [
+    "cjs",
+    "esm",
+    "src"
+  ],
+  "author": "Kenny Wong <wowohoo@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@wcj/tools-react-components": "1.7.0",
+    "togscc": "^1.2.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.14.0",
+    "react-dom": ">=16.14.0"
+  }
+}

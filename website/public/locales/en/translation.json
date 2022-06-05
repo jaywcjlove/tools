@@ -85,6 +85,9 @@
     "/amount-in-rmb": {
       "label": "Amount In RMB"
     },
+    "/standard-chinese-characters": {
+      "label": "Table of General Standard Chinese Characters"
+    },
     "Badgen": {
       "about": "Fast badge generating service",
       "label": "Badgen"

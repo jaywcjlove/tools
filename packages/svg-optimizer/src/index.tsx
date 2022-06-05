@@ -150,7 +150,6 @@ export default function SVGOptimizer() {
       const data: ImageData[] = [];
       imageData.forEach((item) => {
         const d = compress(item.raw || '', options);
-        console.log('>w>>>', d.error);
         data.push({ ...item, dimensions: d.dimensions, tiny: d.data, error: d.error });
       });
       setImageData(data);

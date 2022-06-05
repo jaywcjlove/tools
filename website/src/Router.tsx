@@ -60,6 +60,7 @@ const CSSFormatter = Loadable(lazy(() => import('@wcj/tools-react-css-formatter'
 const HTMLFormatter = Loadable(lazy(() => import('@wcj/tools-react-html-formatter')));
 const SVGOptimizer = Loadable(lazy(() => import('@wcj/tools-react-svg-optimizer')));
 const AmountInRMB = Loadable(lazy(() => import('@wcj/tools-react-amount-in-rmb')));
+const StandardChineseCharactersRMB = Loadable(lazy(() => import('@wcj/tools-react-standard-chinese-characters')));
 
 export let routes: RouteObject[] = [
   {
@@ -177,6 +178,10 @@ export let routes: RouteObject[] = [
       {
         path: 'amount-in-rmb',
         element: <AmountInRMB title="Amount In RMB Tool - Web Tools" />,
+      },
+      {
+        path: 'standard-chinese-characters',
+        element: <StandardChineseCharactersRMB title="Table of General Standard Chinese Characters - Web Tools" />,
       },
       { path: '*', element: <NoMatch /> },
     ],
