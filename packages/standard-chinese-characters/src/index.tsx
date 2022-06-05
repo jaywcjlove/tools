@@ -7,18 +7,26 @@ import { HansIcon } from './Icon';
 
 const HansWarpper = styled.div`
   width: 42px;
-  height: 42px;
   border-radius: 2px;
+  display: initial;
 `;
 
 const HansInner = styled.div`
   height: 100%;
   width: 100%;
+  height: 42px;
 `;
 
-const Hans = memo<React.PropsWithChildren<any>>(({ children }) => {
+const HansPinyin = styled.div`
+  font-size: 14px;
+  text-align: center;
+  padding-bottom: 6px;
+`;
+
+const Hans = memo<React.PropsWithChildren<{ pinyin: string | string[] }>>(({ children, pinyin }) => {
   return (
     <HansWarpper>
+      <HansPinyin>{Array.isArray(pinyin) ? pinyin.join(',') : pinyin}</HansPinyin>
       <HansInner>{children}</HansInner>
     </HansWarpper>
   );
@@ -30,10 +38,10 @@ export default function AmountInRMB() {
   return (
     <Wrapper>
       <StyledLayout overflow="initial" title={t('Table of General Standard Chinese Characters', {})}>
-        <Spacing style={{ paddingTop: 10, flexWrap: 'wrap', flexDirection: 'row' }}>
+        <Spacing style={{ flexWrap: 'wrap', flexDirection: 'row', gap: '10px 61px', paddingBottom: 120 }}>
           {Object.keys(characters).map((keyname, idx) => {
             return (
-              <Hans key={idx}>
+              <Hans key={idx} pinyin={characters[keyname]}>
                 <HansIcon>{keyname}</HansIcon>
               </Hans>
             );
