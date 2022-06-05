@@ -145,7 +145,7 @@ export function useMenus() {
     },
     {
       href: '/standard-chinese-characters',
-      logo: 'pinyin',
+      logo: 'hans',
       label: t('menu./standard-chinese-characters.label'),
     },
     {
