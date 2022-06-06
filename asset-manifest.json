@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.71319e62.css",
-    "main.js": "/static/js/main.9c4e505f.js",
-    "static/js/702.b2bd1ac5.chunk.js": "/static/js/702.b2bd1ac5.chunk.js",
+    "main.css": "/static/css/main.03c9d6e4.css",
+    "main.js": "/static/js/main.7d4e7b8d.js",
+    "static/js/702.01a0ba06.chunk.js": "/static/js/702.01a0ba06.chunk.js",
     "static/js/9066.7db849a4.chunk.js": "/static/js/9066.7db849a4.chunk.js",
     "static/js/3273.422c2cb9.chunk.js": "/static/js/3273.422c2cb9.chunk.js",
     "static/js/1008.9b93e15e.chunk.js": "/static/js/1008.9b93e15e.chunk.js",
@@ -14,7 +14,7 @@
     "static/js/5296.70830478.chunk.js": "/static/js/5296.70830478.chunk.js",
     "static/js/4634.e53a05b9.chunk.js": "/static/js/4634.e53a05b9.chunk.js",
     "static/js/6122.96bd8a7e.chunk.js": "/static/js/6122.96bd8a7e.chunk.js",
-    "static/js/8935.92581cce.chunk.js": "/static/js/8935.92581cce.chunk.js",
+    "static/js/8935.b8b85dfe.chunk.js": "/static/js/8935.b8b85dfe.chunk.js",
     "static/js/675.651b7738.chunk.js": "/static/js/675.651b7738.chunk.js",
     "static/js/3245.9040ac5d.chunk.js": "/static/js/3245.9040ac5d.chunk.js",
     "static/js/2820.b3efcf66.chunk.js": "/static/js/2820.b3efcf66.chunk.js",
@@ -30,7 +30,7 @@
     "static/js/5581.a75eb691.chunk.js": "/static/js/5581.a75eb691.chunk.js",
     "static/js/2064.fd83d28e.chunk.js": "/static/js/2064.fd83d28e.chunk.js",
     "static/js/7438.bde4221c.chunk.js": "/static/js/7438.bde4221c.chunk.js",
-    "static/js/3680.fd6169c4.chunk.js": "/static/js/3680.fd6169c4.chunk.js",
+    "static/js/3680.d85d681c.chunk.js": "/static/js/3680.d85d681c.chunk.js",
     "static/js/5327.67471b9e.chunk.js": "/static/js/5327.67471b9e.chunk.js",
     "react-vendor.js": "/static/js/react-vendor.b472f904.js",
     "static/js/7772.e835312d.chunk.js": "/static/js/7772.e835312d.chunk.js",
@@ -66,9 +66,9 @@
     "static/media/logo.svg": "/static/media/logo.65075c5f3bfb65e935720fcf03e7548b.svg",
     "static/media/share.svg": "/static/media/share.fd52901139450ef4090dbeb80cd1e9af.svg",
     "static/media/getFetch.cjs": "/static/media/getFetch.c780682470504fffbd04.cjs",
-    "main.71319e62.css.map": "/static/css/main.71319e62.css.map",
-    "main.9c4e505f.js.map": "/static/js/main.9c4e505f.js.map",
-    "702.b2bd1ac5.chunk.js.map": "/static/js/702.b2bd1ac5.chunk.js.map",
+    "main.03c9d6e4.css.map": "/static/css/main.03c9d6e4.css.map",
+    "main.7d4e7b8d.js.map": "/static/js/main.7d4e7b8d.js.map",
+    "702.01a0ba06.chunk.js.map": "/static/js/702.01a0ba06.chunk.js.map",
     "9066.7db849a4.chunk.js.map": "/static/js/9066.7db849a4.chunk.js.map",
     "3273.422c2cb9.chunk.js.map": "/static/js/3273.422c2cb9.chunk.js.map",
     "1008.9b93e15e.chunk.js.map": "/static/js/1008.9b93e15e.chunk.js.map",
@@ -80,7 +80,7 @@
     "5296.70830478.chunk.js.map": "/static/js/5296.70830478.chunk.js.map",
     "4634.e53a05b9.chunk.js.map": "/static/js/4634.e53a05b9.chunk.js.map",
     "6122.96bd8a7e.chunk.js.map": "/static/js/6122.96bd8a7e.chunk.js.map",
-    "8935.92581cce.chunk.js.map": "/static/js/8935.92581cce.chunk.js.map",
+    "8935.b8b85dfe.chunk.js.map": "/static/js/8935.b8b85dfe.chunk.js.map",
     "675.651b7738.chunk.js.map": "/static/js/675.651b7738.chunk.js.map",
     "3245.9040ac5d.chunk.js.map": "/static/js/3245.9040ac5d.chunk.js.map",
     "2820.b3efcf66.chunk.js.map": "/static/js/2820.b3efcf66.chunk.js.map",
@@ -96,7 +96,7 @@
     "5581.a75eb691.chunk.js.map": "/static/js/5581.a75eb691.chunk.js.map",
     "2064.fd83d28e.chunk.js.map": "/static/js/2064.fd83d28e.chunk.js.map",
     "7438.bde4221c.chunk.js.map": "/static/js/7438.bde4221c.chunk.js.map",
-    "3680.fd6169c4.chunk.js.map": "/static/js/3680.fd6169c4.chunk.js.map",
+    "3680.d85d681c.chunk.js.map": "/static/js/3680.d85d681c.chunk.js.map",
     "5327.67471b9e.chunk.js.map": "/static/js/5327.67471b9e.chunk.js.map",
     "react-vendor.b472f904.js.map": "/static/js/react-vendor.b472f904.js.map",
     "7772.e835312d.chunk.js.map": "/static/js/7772.e835312d.chunk.js.map",
@@ -131,7 +131,7 @@
   },
   "entrypoints": [
     "static/js/react-vendor.b472f904.js",
-    "static/css/main.71319e62.css",
-    "static/js/main.9c4e505f.js"
+    "static/css/main.03c9d6e4.css",
+    "static/js/main.7d4e7b8d.js"
   ]
 }
