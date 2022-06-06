@@ -1,6 +1,7 @@
 import { Fragment, useState } from 'react';
 import { Wrapper, StyledLayout, CodeLineCopy, Button, Spacing, Textarea } from '@wcj/tools-react-components';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import nzh from 'nzh/cn';
 
 const Input = styled.input`
@@ -43,6 +44,7 @@ type Data = {
 };
 
 export default function AmountInRMB() {
+  const { t } = useTranslation();
   const [range, setRange] = useState<number>(0);
   const [history, setHistory] = useState<Data[]>([]);
 
@@ -54,7 +56,7 @@ export default function AmountInRMB() {
 
   return (
     <Wrapper>
-      <StyledLayout overflow="initial" title="Input Number">
+      <StyledLayout overflow="initial" title={t('menu./amount-in-rmb.label')}>
         <InputRange
           style={{ minWidth: 320, padding: '6px 5px' }}
           type="number"

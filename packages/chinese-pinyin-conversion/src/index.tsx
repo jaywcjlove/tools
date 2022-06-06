@@ -1,6 +1,7 @@
 import { Fragment, InputHTMLAttributes, useEffect, useState } from 'react';
 import { Wrapper, Textarea, StyledLayout, CopyButton, ResultCode, Button } from '@wcj/tools-react-components';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 // @ts-ignore
 import pinyin from 'pinyin/lib/web-pinyin';
 // import { IPinyinStyle } from 'pinyin';
@@ -56,6 +57,7 @@ const InputRadio: React.FC<React.PropsWithChildren<InputRadioProps>> = ({ style,
 );
 
 export default function ChinesePinyinConversion() {
+  const { t } = useTranslation();
   const [value, setValue] = useState<string>();
   const [style, setStyle] = useState<IPinyinStyle>('TONE');
   const [result, setResult] = useState<string>();
@@ -107,7 +109,7 @@ export default function ChinesePinyinConversion() {
   return (
     <Wrapper>
       <StyledLayout
-        title="Input Chinese Characters"
+        title={t('menu./chinese-pinyin-conversion.label')}
         extra={
           <Fragment>
             <Button onClick={() => setValue(sample)}>Sample</Button>

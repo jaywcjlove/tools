@@ -11,6 +11,10 @@ import { useMenus } from '../menus';
 import { TransSelect } from '../components/TransSelect';
 import { LogoIcon as Logo } from '../components/Logo';
 
+const Divider = styled.div`
+  border-top: 1px solid var(--color-border-muted);
+`;
+
 const Sup = styled.sup`
   position: absolute;
   font-weight: normal;
@@ -36,6 +40,11 @@ const Label = styled.span`
 const LabelText = styled.span`
   text-overflow: ellipsis;
   overflow: hidden;
+`;
+
+const Article = styled.article`
+  overflow: auto;
+  flex: 1;
 `;
 
 export default function Layout() {
@@ -66,7 +75,7 @@ export default function Layout() {
           <nav>
             {menus.map((item, idx) => {
               if (item.divider) {
-                return <div key={idx} className={styles.divider}></div>;
+                return <Divider key={idx}></Divider>;
               }
               if (/https?:/.test(item.href || '')) {
                 return (
@@ -102,9 +111,9 @@ export default function Layout() {
             })}
           </nav>
         </aside>
-        <article>
+        <Article>
           <Outlet />
-        </article>
+        </Article>
       </div>
     </Fragment>
   );

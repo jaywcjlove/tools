@@ -50,7 +50,7 @@ export default function HomePage() {
         {tools.map((item, key) => {
           return (
             <Link key={key} to={item.href || ''}>
-              <LogoIcon src={item.logo} alt={item.label} />
+              <LogoIcon size="38px" src={item.logo} alt={item.label} />
               {item.label}
             </Link>
           );
