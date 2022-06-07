@@ -88,6 +88,9 @@
     "/standard-chinese-characters": {
       "label": "Table of General Standard Chinese Characters"
     },
+    "/simplified-traditional-chinese": {
+      "label": "Simplified Traditional Chinese Converter"
+    },
     "Badgen": {
       "about": "Fast badge generating service",
       "label": "Badgen"

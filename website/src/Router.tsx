@@ -53,13 +53,13 @@ const JSON2Yaml = Loadable(lazy(() => import('@wcj/tools-react-json-yaml')));
 const JSON2XML = Loadable(lazy(() => import('@wcj/tools-react-json-xml')));
 const PDFToImg = Loadable(lazy(() => import('@wcj/tools-react-pdf-to-img')));
 const ExifViewer = Loadable(lazy(() => import('@wcj/tools-react-exif-viewer')));
-// @ts-ignore
 const JSON2INI = Loadable(lazy(() => import('@wcj/tools-react-json-ini')));
 const JSBeautifier = Loadable(lazy(() => import('@wcj/tools-react-js-beautifier')));
 const CSSFormatter = Loadable(lazy(() => import('@wcj/tools-react-css-formatter')));
 const HTMLFormatter = Loadable(lazy(() => import('@wcj/tools-react-html-formatter')));
 const SVGOptimizer = Loadable(lazy(() => import('@wcj/tools-react-svg-optimizer')));
 const AmountInRMB = Loadable(lazy(() => import('@wcj/tools-react-amount-in-rmb')));
+const SimplifiedTraditionalChinese = Loadable(lazy(() => import('@wcj/tools-react-simplified-traditional-chinese')));
 const StandardChineseCharactersRMB = Loadable(lazy(() => import('@wcj/tools-react-standard-chinese-characters')));
 
 export let routes: RouteObject[] = [
@@ -182,6 +182,10 @@ export let routes: RouteObject[] = [
       {
         path: 'standard-chinese-characters',
         element: <StandardChineseCharactersRMB title="Table of General Standard Chinese Characters - Web Tools" />,
+      },
+      {
+        path: 'simplified-traditional-chinese',
+        element: <SimplifiedTraditionalChinese title="Simplified Traditional Chinese Converter - Web Tools" />,
       },
       { path: '*', element: <NoMatch /> },
     ],

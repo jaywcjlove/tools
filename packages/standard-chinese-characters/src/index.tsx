@@ -32,7 +32,7 @@ const Hans = memo<React.PropsWithChildren<{ pinyin: string | string[] }>>(({ chi
   );
 });
 
-export default function AmountInRMB() {
+export default function StandardChineseCharacters() {
   const { t } = useTranslation(['standard-chinese-characters', 'common']);
 
   return (

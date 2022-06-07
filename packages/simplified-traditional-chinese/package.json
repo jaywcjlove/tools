@@ -1,5 +1,5 @@
 {
-  "name": "@wcj/tools-react-standard-chinese-characters",
+  "name": "@wcj/tools-react-simplified-traditional-chinese",
   "version": "1.8.2",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",

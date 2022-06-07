@@ -149,6 +149,11 @@ export function useMenus() {
       label: t('menu./standard-chinese-characters.label'),
     },
     {
+      href: '/simplified-traditional-chinese',
+      logo: 'hans',
+      label: t('menu./simplified-traditional-chinese.label'),
+    },
+    {
       divider: true,
     },
     {

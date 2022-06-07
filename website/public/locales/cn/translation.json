@@ -88,6 +88,9 @@
     "/standard-chinese-characters": {
       "label": "通用规范汉字表"
     },
+    "/simplified-traditional-chinese": {
+      "label": "繁体简体转换"
+    },
     "Badgen": {
       "about": "快速徽章生成服务",
       "label": "Badgen 徽章"
