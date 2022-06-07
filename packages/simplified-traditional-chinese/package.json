@@ -1,6 +1,6 @@
 {
   "name": "@wcj/tools-react-simplified-traditional-chinese",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
@@ -16,7 +16,7 @@
   "author": "Kenny Wong <wowohoo@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "@wcj/tools-react-components": "1.9.0",
+    "@wcj/tools-react-components": "1.9.1",
     "togscc": "^1.3.1"
   },
   "peerDependencies": {
