@@ -150,7 +150,7 @@ export function useMenus() {
     },
     {
       href: '/simplified-traditional-chinese',
-      logo: 'hans',
+      logo: 'traditional-chinese',
       label: t('menu./simplified-traditional-chinese.label'),
     },
     {
