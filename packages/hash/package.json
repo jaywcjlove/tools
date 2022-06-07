@@ -1,6 +1,6 @@
 {
   "name": "@wcj/tools-react-hash",
-  "version": "1.8.2",
+  "version": "1.9.0",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/crypto-js": "^4.1.1",
-    "@wcj/tools-react-components": "1.8.2",
+    "@wcj/tools-react-components": "1.9.0",
     "crypto-js": "^4.1.1"
   },
   "peerDependencies": {
