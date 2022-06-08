@@ -1,6 +1,6 @@
 {
   "name": "@wcj/tools-react-json-format",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "@codemirror/lang-json": "^0.20.0",
-    "@wcj/tools-react-components": "1.9.1",
+    "@wcj/tools-react-components": "1.9.2",
     "prettier": "^2.6.2"
   },
   "peerDependencies": {
