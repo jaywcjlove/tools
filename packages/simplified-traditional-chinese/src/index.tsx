@@ -16,7 +16,12 @@ export default function SimplifiedTraditionalChinese() {
     setSimplified(
       (traditional || '')
         .split('')
-        .map((str) => traditionalChinese[str] || str)
+        .map((str) => {
+          if (/(瞭|乾|藉|麽)/.test(str)) {
+            return str;
+          }
+          return traditionalChinese[str] || str;
+        })
         .join(''),
     );
   }, [traditional]);
@@ -26,10 +31,11 @@ export default function SimplifiedTraditionalChinese() {
       (simplified || '')
         .split('')
         .map((str) => {
-          if (Array.isArray(simplifiedChinese[str])) {
-            return simplifiedChinese[str][0];
+          let cur = Array.isArray(simplifiedChinese[str]) ? simplifiedChinese[str][0] : simplifiedChinese[str];
+          if (/(瞭|乾|藉|麽)/.test(str)) {
+            return str;
           }
-          return simplifiedChinese[str] || str;
+          return cur || str;
         })
         .join(''),
     );
