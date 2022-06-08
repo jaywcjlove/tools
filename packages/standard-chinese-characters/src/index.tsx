@@ -23,6 +23,11 @@ const HansPinyin = styled.div`
   padding-bottom: 6px;
 `;
 
+const HansContent = styled.div`
+  text-align: center;
+  color: var(--color-border-default);
+`;
+
 const Hans = memo<React.PropsWithChildren<{ pinyin: string | string[] }>>(({ children, pinyin }) => {
   return (
     <HansWarpper>
@@ -38,11 +43,12 @@ export default function StandardChineseCharacters() {
   return (
     <Wrapper>
       <StyledLayout overflow="initial" title={t('Table of General Standard Chinese Characters', {})}>
-        <Spacing style={{ flexWrap: 'wrap', flexDirection: 'row', gap: '10px 61px', paddingBottom: 120 }}>
+        <Spacing style={{ flexWrap: 'wrap', flexDirection: 'row', gap: '40px 61px', paddingBottom: 120 }}>
           {Object.keys(characters).map((keyname, idx) => {
             return (
               <Hans key={idx} pinyin={characters[keyname]}>
                 <HansIcon>{keyname}</HansIcon>
+                <HansContent>{idx + 1}</HansContent>
               </Hans>
             );
           })}
