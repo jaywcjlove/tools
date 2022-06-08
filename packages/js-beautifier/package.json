@@ -16,7 +16,7 @@
   "author": "Kenny Wong <wowohoo@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "@codemirror/lang-javascript": "^0.20.0",
+    "@codemirror/lang-javascript": "^6.0.0",
     "@wcj/tools-react-components": "1.9.3",
     "uglify-js-export": "^3.0.0"
   },
