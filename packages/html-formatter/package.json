@@ -16,7 +16,7 @@
   "author": "Kenny Wong <wowohoo@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "@codemirror/lang-html": "^0.20.0",
+    "@codemirror/lang-html": "^6.0.0",
     "@types/html-minifier": "^4.0.2",
     "@wcj/tools-react-components": "1.9.3",
     "html-minifier": "^4.0.0",
