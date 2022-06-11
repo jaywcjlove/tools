@@ -17,7 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "@uiw/copy-to-clipboard": "^1.0.12",
-    "@uiw/react-codemirror": "^4.7.0",
+    "@uiw/react-codemirror": "^4.8.1",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
