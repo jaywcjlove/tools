@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Wrapper, StyledLayout, CodeLineCopy, Button, Spacing } from '@wcj/tools-react-components';
 import styled from 'styled-components';
-import { generatePassword, validatePassword } from './utils';
+import { validatePassword } from './utils';
+import { generate } from '@wcj/generate-password';
 
 const Input = styled.input`
   border-radius: 6px;
@@ -55,18 +56,16 @@ export default function GeneratePassword() {
     setHistory(data.slice(0, 20));
   };
   useEffect(() => {
-    const password = generatePassword(range, lowerCase, upperCase, numeric, special);
+    const password = generate({ length: range, lowerCase, upperCase, numeric, special });
     addHistory(password);
   }, [range, lowerCase, upperCase, numeric, special]);
 
   useEffect(() => {
     const data = [...history];
-    {
-      [...Array(5)].map(() => {
-        const password = generatePassword(range, lowerCase, upperCase, numeric, special);
-        data.unshift(password);
-      });
-    }
+    [...Array(5)].map(() => {
+      const password = generate({ length: range, lowerCase, upperCase, numeric, special });
+      data.unshift(password);
+    });
     setHistory(data.slice(0, 20));
   }, []);
 
@@ -109,8 +108,7 @@ export default function GeneratePassword() {
         <Button
           style={{ marginTop: 10 }}
           onClick={() => {
-            const password = generatePassword(range, lowerCase, upperCase, numeric, special);
-            addHistory(password);
+            addHistory(generate({ length: range, lowerCase, upperCase, numeric, special }));
           }}
         >
           Generate Password
