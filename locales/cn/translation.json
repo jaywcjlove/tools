@@ -22,6 +22,9 @@
     "/image-to-base64": {
       "label": "图片转换 Base64"
     },
+    "/image-editor": {
+      "label": "图片编辑器"
+    },
     "/hash": {
       "label": "哈希 Hash"
     },
