@@ -61,6 +61,7 @@ const SVGOptimizer = Loadable(lazy(() => import('@wcj/tools-react-svg-optimizer'
 const AmountInRMB = Loadable(lazy(() => import('@wcj/tools-react-amount-in-rmb')));
 const SimplifiedTraditionalChinese = Loadable(lazy(() => import('@wcj/tools-react-simplified-traditional-chinese')));
 const StandardChineseCharactersRMB = Loadable(lazy(() => import('@wcj/tools-react-standard-chinese-characters')));
+const ImageEditor = Loadable(lazy(() => import('@wcj/tools-react-image-editor')));
 
 export let routes: RouteObject[] = [
   {
@@ -90,6 +91,10 @@ export let routes: RouteObject[] = [
       {
         path: 'image-to-base64',
         element: <ImageToBase64 title="Image To Base64 - Web Tools" />,
+      },
+      {
+        path: 'image-editor',
+        element: <ImageEditor title="Image Editor - Web Tools" />,
       },
       {
         path: 'hash',

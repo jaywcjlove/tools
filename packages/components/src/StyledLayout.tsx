@@ -9,7 +9,6 @@ export interface LayoutProps extends React.DetailedHTMLProps<React.HTMLAttribute
 }
 
 export const Context = styled.div`
-  padding-top: 10px;
   flex: 1;
   font-weight: normal;
 `;
@@ -46,6 +45,7 @@ export const StyledLayout = styled(Layout)`
   flex-direction: column;
   justify-content: space-around;
   flex: 1;
+  gap: 10px;
   width: 0;
   ${(props) =>
     props.overflow &&

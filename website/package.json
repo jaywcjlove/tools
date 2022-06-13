@@ -33,6 +33,7 @@
     "@wcj/tools-react-html-formatter": "1.9.3",
     "@wcj/tools-react-html-to-markdown": "1.9.3",
     "@wcj/tools-react-image-to-base64": "1.9.3",
+    "@wcj/tools-react-image-editor": "1.9.3",
     "@wcj/tools-react-js-beautifier": "1.9.3",
     "@wcj/tools-react-json-format": "1.9.3",
     "@wcj/tools-react-json-ini": "1.9.3",
