@@ -1,0 +1,23 @@
+{
+  "name": "@wcj/tools-app",
+  "version": "1.9.3",
+  "main": "./main.js",
+  "private": true,
+  "scripts": {
+    "start": "NODE_ENV=development ELECTRON_DISABLE_SECURITY_WARNINGS=true electron .",
+    "start:production": "NODE_ENV=production ELECTRON_DISABLE_SECURITY_WARNINGS=true electron .",
+    "dist-win32": "electron-builder --win --ia32 --config config.json",
+    "dist-win64": "electron-builder --win --x64 --config config.json",
+    "dist-mac": "electron-builder --mac --config config.json",
+    "dist-linux": "electron-builder --linux --config config.json",
+    "build": "electron ."
+  },
+  "dependencies": {
+    "@wcj/tools-app-main": "1.9.3",
+    "website": "1.9.3"
+  },
+  "devDependencies": {
+    "electron": "19.0.3",
+    "electron-builder": "23.0.3"
+  }
+}

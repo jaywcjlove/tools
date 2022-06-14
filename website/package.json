@@ -16,6 +16,7 @@
   "keywords": [],
   "author": "jaywcjlove",
   "license": "MIT",
+  "files": ["build"],
   "dependencies": {
     "@uiw/react-copy-to-clipboard": "~4.21.0",
     "@uiw/react-github-corners": "~1.5.3",

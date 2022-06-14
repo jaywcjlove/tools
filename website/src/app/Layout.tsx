@@ -56,7 +56,7 @@ export default function Layout() {
     <Fragment>
       <GitHubCorners size={36} href="https://github.com/jaywcjlove/tools" />
       <div className={styles.warpper}>
-        <aside>
+        <aside className="siderbar">
           <header>
             <h1>
               <Link to="/">
@@ -111,7 +111,7 @@ export default function Layout() {
             })}
           </nav>
         </aside>
-        <Article>
+        <Article className="content">
           <Outlet />
         </Article>
       </div>

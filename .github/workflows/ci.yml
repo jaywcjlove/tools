@@ -18,6 +18,10 @@ jobs:
       - run: npm run build
       - run: npm run doc
 
+      - name: Create Linux App
+        working-directory: electron/app
+        run: npm run dist-linux
+
       - name: Create Tag
         id: create_tag
         uses: jaywcjlove/create-tag-action@v1.3.6
@@ -26,7 +30,7 @@ jobs:
 
       - name: get tag version
         id: tag_version
-        uses: jaywcjlove/changelog-generator@v1.5.3
+        uses: jaywcjlove/changelog-generator@v1.5.7
 
       - name: Deploy Website
         uses: peaceiris/actions-gh-pages@v3
@@ -39,7 +43,7 @@ jobs:
 
       - name: Generate Changelog
         id: changelog
-        uses: jaywcjlove/changelog-generator@v1.5.3
+        uses: jaywcjlove/changelog-generator@v1.5.7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           filter-author: (jaywcjlove|小弟调调™|dependabot\[bot\]|Renovate Bot)

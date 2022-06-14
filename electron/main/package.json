@@ -1,0 +1,19 @@
+{
+  "name": "@wcj/tools-app-main",
+  "version": "1.9.3",
+  "main": "./lib/index.js",
+  "private": true,
+  "scripts": {
+    "build": "tsbb build --no-esm --no-source-maps",
+    "watch": "tsbb watch --no-esm --no-source-maps"
+  },
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "website": "1.9.3"
+  },
+  "devDependencies": {
+    "electron": "19.0.3"
+  }
+}
