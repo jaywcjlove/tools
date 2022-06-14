@@ -17,8 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "@wcj/tools-react-components": "1.9.3",
-    "tui-image-editor": "^3.15.3",
-    "react-filerobot-image-editor": "4.1.1"
+    "tui-image-editor": "^3.15.3"
   },
   "peerDependencies": {
     "react": ">=16.14.0",

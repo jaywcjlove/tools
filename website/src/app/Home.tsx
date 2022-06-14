@@ -59,7 +59,6 @@ export default function HomePage() {
       <Title>{t('ThirdPartyTools')}</Title>
       <MenuItem>
         {thirdParty.map((item, key) => {
-          console.log('itemlogo::', item);
           return (
             <a key={key} href={item.href!} target="_blank" rel="noreferrer">
               <LogoIcon src={item.logo || `${item.label.toLocaleLowerCase().replace(/\s/g, '-')}`} alt={item.label} />
