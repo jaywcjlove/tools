@@ -14,6 +14,6 @@
     "website": "1.9.3"
   },
   "devDependencies": {
-    "electron": "19.0.3"
+    "electron": "19.0.4"
   }
 }
