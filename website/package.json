@@ -67,7 +67,7 @@
     "@types/react-dom": "^18.0.3",
     "@types/styled-components": "^5.1.25",
     "@types/webpack-bundle-analyzer": "^4.4.1",
-    "kkt": "~7.1.5",
+    "kkt": "~7.2.0",
     "path": "^0.12.7",
     "path-browserify": "^1.0.1",
     "process": "^0.11.10",
