@@ -131,12 +131,10 @@ jobs:
         with:
           node-version: 16
 
-      - run: | 
-          npm install --build-from-resource
-          npm install -g node-gyp@latest
-          npm prefix -g --location=global | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
-
+      - run: npm install --location=global node-gyp@latest
+      - run: npm prefix --location=global | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
       - run: npm install
+      - run: npm install --location=global --build-from-resource
       - run: npm run hoist
 
       - run: npm run build
