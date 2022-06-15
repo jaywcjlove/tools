@@ -1,8 +1,7 @@
 import webpack, { Configuration } from 'webpack';
 import lessModules from '@kkt/less-modules';
-import scopePluginOptions from '@kkt/scope-plugin-options';
+import { disableScopePlugin } from '@kkt/scope-plugin-options';
 import { LoaderConfOptions } from 'kkt';
-import path from 'path';
 // import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import pkg from './package.json';
 
@@ -11,10 +10,7 @@ export default (conf: Configuration, env: 'development' | 'production', options:
   if (process.env.DOCKER === 'true') {
     LOADPATH = '';
   }
-  conf = scopePluginOptions(conf, env, {
-    ...options,
-    allowedFiles: [path.resolve('./public'), path.resolve('./src'), path.resolve(process.cwd(), 'README.md')],
-  });
+  conf = disableScopePlugin(conf);
   conf = lessModules(conf, env, options);
   // Get the project version.
   conf.plugins!.push(
@@ -31,6 +27,8 @@ export default (conf: Configuration, env: 'development' | 'production', options:
        */
       LOADPATH: JSON.stringify(LOADPATH),
       DEBUG: JSON.stringify(LOADPATH),
+      /** ⚠️ Solve the problem of internationalization of app development. */
+      ELECTRON: JSON.stringify(process.env.ELECTRON),
     }),
   );
   if (env === 'development') {

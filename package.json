@@ -12,6 +12,7 @@
     "dist-mac": "npm run-script dist-mac --workspace @wcj/tools-app",
     "start": "npm run-script start --workspace website",
     "docker": "npm run-script build:docker --workspace website",
+    "electron": "npm run-script build:electron --workspace website",
     "⬆️⬆️⬆️⬆️⬆️ package ⬆️⬆️⬆️⬆️⬆️": "▲▲▲▲▲ package ▲▲▲▲▲",
     "prepare": "husky install",
     "version": "lerna version --exact --force-publish --no-push --no-git-tag-version",

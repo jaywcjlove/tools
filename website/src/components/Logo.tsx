@@ -55,7 +55,7 @@ export const LogoIcon: FC<LogoIconProps> = (props) => {
   const [svg, setSvg] = useState<string>();
   // @ts-ignore
   const loadPath = LOADPATH;
-  let src = `${loadPath}/logo/${props.src}`;
+  let src = `${loadPath ? `${loadPath}/` : ''}logo/${props.src}`;
   if (!/\.(png|jpg|svg)$/g.test(src)) {
     src = `${src}.svg`;
   }
