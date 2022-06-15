@@ -1,5 +1,5 @@
 {
-  "name": "@wcj/tools-app",
+  "name": "web-tools",
   "description": "Many many useful Web Online Tools For Web Developers & Programmers.",
   "version": "1.9.3",
   "main": "./main.js",

@@ -2,7 +2,7 @@
   "name": "tools",
   "private": true,
   "scripts": {
-    "build": "lerna exec --scope @wcj/* --ignore @wcj/tools-app -- npm run build",
+    "build": "lerna exec --scope @wcj/* --ignore web-tools -- npm run build",
     "⬇️⬇️⬇️⬇️⬇️ package ⬇️⬇️⬇️⬇️⬇️": "▼▼▼▼▼ package ▼▼▼▼▼",
     "build:image-to-base64": "npm run-script build --workspace @wcj/tools-react-image-to-base64",
     "build:url-encode": "npm run-script build --workspace @wcj/tools-react-url-encode",
@@ -12,7 +12,7 @@
     "start": "npm run-script start --workspace website",
     "docker": "npm run-script build:docker --workspace website",
     "electron": "npm run-script build:electron --workspace website",
-    "build:app": "npm run-script build --workspace @wcj/tools-app",
+    "build:app": "npm run-script build --workspace web-tools",
     "⬆️⬆️⬆️⬆️⬆️ package ⬆️⬆️⬆️⬆️⬆️": "▲▲▲▲▲ package ▲▲▲▲▲",
     "prepare": "husky install",
     "version": "lerna version --exact --force-publish --no-push --no-git-tag-version",
