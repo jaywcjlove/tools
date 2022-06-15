@@ -6,9 +6,9 @@
   "scripts": {
     "start": "kkt start",
     "build": "kkt build",
-    "build:docker": "DOCKER=true kkt build",
-    "start:electron": "ELECTRON=true DOCKER=true kkt start",
-    "build:electron": "ELECTRON=true DOCKER=true kkt build",
+    "build:docker": "cross-env DOCKER=true kkt build",
+    "start:electron": "cross-env ELECTRON=true DOCKER=true kkt start",
+    "build:electron": "cross-env ELECTRON=true DOCKER=true kkt build",
     "map": "source-map-explorer build/static/js/*.js --html build/result.html"
   },
   "repository": {
