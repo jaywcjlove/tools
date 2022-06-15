@@ -131,6 +131,10 @@ jobs:
         with:
           node-version: 16
 
+      - run: | 
+          npm install -g node-gyp@latest
+          npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
+
       - run: npm install
       - run: npm run hoist
 
