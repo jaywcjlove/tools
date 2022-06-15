@@ -147,6 +147,7 @@ jobs:
         with:
           node-version: 16
 
+      - run: npm install
       - run: npm run build
       - run: npm run electron
       - run: npm run build:app
@@ -156,6 +157,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
+      - run: npm install
       - run: npm run build
       - run: npm run electron
       - run: npm run build:app
