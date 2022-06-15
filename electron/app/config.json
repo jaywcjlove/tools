@@ -1,9 +1,6 @@
 {
   "productName": "Web Tools",
   "appId": "com.wangchujiang.tools",
-  "electronDownload": {
-    "mirror": "https://npm.taobao.org/mirrors/electron/"
-  },
   "directories": {
     "output": "dist"
   },

@@ -1,7 +1,9 @@
 {
   "name": "@wcj/tools-app",
+  "description": "Many many useful Web Online Tools For Web Developers & Programmers.",
   "version": "1.9.3",
   "main": "./main.js",
+  "author": "Kenny Wong <398188662@qq.com>",
   "private": true,
   "scripts": {
     "start": "NODE_ENV=development ELECTRON_DISABLE_SECURITY_WARNINGS=true electron .",
@@ -17,7 +19,7 @@
     "website": "1.9.3"
   },
   "devDependencies": {
-    "electron": "19.0.3",
+    "electron": "19.0.4",
     "electron-builder": "23.0.3"
   }
 }

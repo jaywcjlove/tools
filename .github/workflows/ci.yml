@@ -132,6 +132,7 @@ jobs:
           node-version: 16
 
       - run: npm install
+      - run: npm run hoist
 
       - run: npm run build
       - run: npm run electron
@@ -148,6 +149,7 @@ jobs:
           node-version: 16
 
       - run: npm install
+      - run: npm run hoist
       - run: npm run build
       - run: npm run electron
       - run: npm run build:app
@@ -163,6 +165,7 @@ jobs:
           node-version: 16
       - run: npm install
       - run: npm run build
+      - run: npm run hoist
       - run: npm run electron
       - run: npm run build:app
 
