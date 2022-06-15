@@ -186,8 +186,10 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
       - uses: dev-drprasad/delete-tag-and-release@v0.2.0
+        if: needs.create_tag.outputs.successful
         with:
           delete_release: true
+          repo: jaywcjlove/tools
           tag_name: '${{ needs.create_tag.outputs.version }}'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
