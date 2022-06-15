@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -136,3 +136,42 @@ jobs:
       - run: npm run build
       - run: npm run electron
       - run: npm run build:app
+
+  build_macos:
+    needs: [build]
+    runs-on: macos-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - run: npm run build
+      - run: npm run electron
+      - run: npm run build:app
+
+  build_linux:
+    needs: [build]
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - run: npm run build
+      - run: npm run electron
+      - run: npm run build:app
+
+  roll_back:
+    if: failure()
+    needs: [build, build_windows, build_macos, build_linux]
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+      - uses: dev-drprasad/delete-tag-and-release@v0.2.0
+        with:
+          delete_release: true
+          tag_name: '${{ needs.create_tag.outputs.version }}'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
