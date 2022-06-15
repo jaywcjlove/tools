@@ -10,7 +10,7 @@
     "dist-win64": "electron-builder --win --x64 --config config.json",
     "dist-mac": "electron-builder --mac --config config.json",
     "dist-linux": "electron-builder --linux --config config.json",
-    "build": "electron ."
+    "build": "electron-builder build --publish=never --config config.json"
   },
   "dependencies": {
     "@wcj/tools-app-main": "1.9.3",
