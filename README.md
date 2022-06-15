@@ -29,10 +29,10 @@ http://localhost:9666/
 ## Development
 
 ```bash
-npm install              # Install dependencies
-npm install --workspaces # Install sub packages dependencies
+npm install       # Install dependencies
+npm run hoist     # Packaged apps require it.
 
-npm run build            # Build packages
+npm run build     # Build packages
 npm run start
 ```
 
