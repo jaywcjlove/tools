@@ -148,6 +148,7 @@ jobs:
         with:
           node-version: 16
 
+      - run: brew install pkg-config cairo pango libpng jpeg giflib librsvg
       - run: npm install
       - run: npm run hoist
       - run: npm run build
