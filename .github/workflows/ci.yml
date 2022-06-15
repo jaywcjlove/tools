@@ -18,9 +18,9 @@ jobs:
       - run: npm run build
       - run: npm run doc
 
-      - name: Create Linux App
-        working-directory: electron/app
-        run: npm run dist-linux
+      # - name: Create Linux App
+      #   working-directory: electron/app
+      #   run: npm run dist-linux
 
       - name: Create Tag
         id: create_tag
@@ -102,3 +102,21 @@ jobs:
           docker tag tools ${{ secrets.DOCKER_USER }}/tools:latest
           docker push ${{ secrets.DOCKER_USER }}/tools:${{steps.changelog.outputs.version}}
           docker push ${{ secrets.DOCKER_USER }}/tools:latest
+
+      # Create Docker Image in Github
+      - name: Login to GitHub registry
+        run: echo ${{ github.token }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Build docker image
+        run: docker build -t ghcr.io/jaywcjlove/tools:main .
+
+      - name: Publish to GitHub registry
+        run: docker push ghcr.io/jaywcjlove/tools:main
+
+
+      - name: Tag docker image (beta) and publish to GitHub registry
+        if: steps.create_tag.outputs.successful
+        run: |
+            echo "version: v${{ steps.changelog.outputs.version }}"
+            docker tag ghcr.io/jaywcjlove/tools:main ghcr.io/jaywcjlove/tools:${{steps.changelog.outputs.version}}
+            docker push ghcr.io/jaywcjlove/tools:${{steps.changelog.outputs.version}}
