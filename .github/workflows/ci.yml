@@ -49,38 +49,6 @@ jobs:
           filter-author: (jaywcjlove|小弟调调™|dependabot\[bot\]|Renovate Bot)
           filter: (^[\s]+?[R|r]elease)|(^[R|r]elease)
 
-      - name: Create Release
-        uses: ncipollo/release-action@v1
-        if: steps.create_tag.outputs.successful
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          name: ${{ steps.create_tag.outputs.version }}
-          tag: ${{ steps.create_tag.outputs.version }}
-          body: |
-            [![Docker Image Version (latest by date)](https://img.shields.io/docker/v/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools) [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools) [![Docker Pulls](https://img.shields.io/docker/pulls/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools)
-            
-            Documentation ${{ steps.changelog.outputs.tag }}: https://raw.githack.com/jaywcjlove/tools/${{ steps.changelog.outputs.gh-pages-short-hash }}/index.html  
-            
-            Comparing Changes: ${{ steps.changelog.outputs.compareurl }}  
-
-            ${{ steps.changelog.outputs.changelog }}
-
-            ```bash
-            docker pull wcjiang/tools:${{steps.changelog.outputs.version}}
-            ```
-
-            ```bash
-            docker run --name tools --rm -d -p 9666:80 wcjiang/tools:${{steps.changelog.outputs.version}}
-            # Or
-            docker run --name tools -itd -p 9666:80 wcjiang/tools:${{steps.changelog.outputs.version}}
-            ```
-
-            Visit the following URL in your browser
-
-            ```bash
-            http://localhost:9666/
-            ```
-
       # Create Docker Image
       - name: Create docker-compliant static resources.
         if: steps.create_tag.outputs.successful
@@ -123,8 +91,7 @@ jobs:
 
   build_windows: 
     needs: [build]
-    # runs-on: windows-latest
-    runs-on: windows-2019
+    runs-on: windows-latest
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v3
@@ -132,14 +99,6 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install Dependencies
-        run: |
-          Invoke-WebRequest "https://ftp-osl.osuosl.org/pub/gnome/binaries/win64/gtk+/2.22/gtk+-bundle_2.22.1-20101229_win64.zip" -OutFile "gtk.zip"
-          Expand-Archive gtk.zip -DestinationPath "C:\GTK"
-          Invoke-WebRequest "https://downloads.sourceforge.net/project/libjpeg-turbo/2.0.4/libjpeg-turbo-2.0.4-vc64.exe" -OutFile "libjpeg.exe" -UserAgent NativeHost
-          .\libjpeg.exe /S
-          npm install -g node-gyp@latest
-          npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
       - name: Install
         run: npm install --build-from-source
 
@@ -159,12 +118,16 @@ jobs:
         with:
           node-version: 16
 
-      - run: brew install pkg-config cairo pango libpng jpeg giflib librsvg
       - run: npm install
       - run: npm run hoist
       - run: npm run build
       - run: npm run electron
       - run: npm run build:app
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: tools-macos
+          path: electron/app/dist/Web Tools-${{needs.changelog.outputs.version}}-mac.zip
 
   build_linux:
     needs: [build]
@@ -175,12 +138,53 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
       - run: npm install
       - run: npm run hoist
       - run: npm run build
       - run: npm run electron
       - run: npm run build:app
+
+  create_release:
+    needs: [build, build_windows, build_macos, build_linux]
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        if: needs.create_tag.outputs.successful
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: ${{ needs.create_tag.outputs.version }}
+          tag: ${{ needs.create_tag.outputs.version }}
+          body: |
+            [![Docker Image Version (latest by date)](https://img.shields.io/docker/v/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools) [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools) [![Docker Pulls](https://img.shields.io/docker/pulls/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools)
+            
+            Documentation ${{ needs.changelog.outputs.tag }}: https://raw.githack.com/jaywcjlove/tools/${{ needs.changelog.outputs.gh-pages-short-hash }}/index.html  
+            
+            Comparing Changes: ${{ needs.changelog.outputs.compareurl }}  
+
+            ${{ needs.changelog.outputs.changelog }}
+
+            ```bash
+            docker pull wcjiang/tools:${{needs.changelog.outputs.version}}
+            ```
+
+            ```bash
+            docker run --name tools --rm -d -p 9666:80 wcjiang/tools:${{needs.changelog.outputs.version}}
+            # Or
+            docker run --name tools -itd -p 9666:80 wcjiang/tools:${{needs.changelog.outputs.version}}
+            ```
+
+            Visit the following URL in your browser
+
+            ```bash
+            http://localhost:9666/
+            ```
 
   roll_back:
     if: failure()
