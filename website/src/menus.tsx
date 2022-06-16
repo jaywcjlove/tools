@@ -34,11 +34,6 @@ export function useMenus() {
       label: t('menu./image-to-base64.label'),
     },
     {
-      href: '/image-editor',
-      logo: 'image',
-      label: t('menu./image-editor.label'),
-    },
-    {
       href: '/hash',
       logo: 'hash',
       label: t('menu./hash.label'),
