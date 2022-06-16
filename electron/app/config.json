@@ -8,12 +8,9 @@
     "icon": "tools.icns"
   },
   "linux": {
-    "category": "Utility",
     "icon": "tools.icns",
-    "description": "An Open Source Launcher for GOG and Epic Games",
-    "desktop": {
-      "Name": "Heroic Games Launcher",
-      "Comment[de]": "Ein Open Source Spielelauncher for GOG und Epic Games"
-    }
+    "description": "Many many useful Web Online Tools For Web Developers & Programmers.",
+    "category": "Development",
+    "target": ["deb", "rpm", "snap"]
   }
 }
