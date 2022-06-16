@@ -49,26 +49,35 @@ jobs:
           filter-author: (jaywcjlove|小弟调调™|dependabot\[bot\]|Renovate Bot)
           filter: (^[\s]+?[R|r]elease)|(^[R|r]elease)
 
+  docker: 
+    if: needs.create_tag.outputs.successful
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - run: npm install
+      - run: npm run build
+
       # Create Docker Image
       - name: Create docker-compliant static resources.
-        if: steps.create_tag.outputs.successful
         run: npm run docker
 
       - name: Docker login
-        if: steps.create_tag.outputs.successful
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build docs image
-        if: steps.create_tag.outputs.successful
         run: docker image build -t tools .
 
       - name: Tags & Push image
-        if: steps.create_tag.outputs.successful
         run: |
-          echo "outputs.tag - ${{ steps.changelog.outputs.version }}"
-          docker tag tools ${{ secrets.DOCKER_USER }}/tools:${{steps.changelog.outputs.version}}
+          echo "outputs.tag - ${{ needs.changelog.outputs.version }}"
+          docker tag tools ${{ secrets.DOCKER_USER }}/tools:${{needs.changelog.outputs.version}}
           docker tag tools ${{ secrets.DOCKER_USER }}/tools:latest
-          docker push ${{ secrets.DOCKER_USER }}/tools:${{steps.changelog.outputs.version}}
+          docker push ${{ secrets.DOCKER_USER }}/tools:${{needs.changelog.outputs.version}}
           docker push ${{ secrets.DOCKER_USER }}/tools:latest
 
       # Create Docker Image in Github
@@ -81,13 +90,12 @@ jobs:
       - name: Publish to GitHub registry
         run: docker push ghcr.io/jaywcjlove/tools:main
 
-
       - name: Tag docker image (beta) and publish to GitHub registry
-        if: steps.create_tag.outputs.successful
         run: |
-            echo "version: v${{ steps.changelog.outputs.version }}"
-            docker tag ghcr.io/jaywcjlove/tools:main ghcr.io/jaywcjlove/tools:${{steps.changelog.outputs.version}}
-            docker push ghcr.io/jaywcjlove/tools:${{steps.changelog.outputs.version}}
+            echo "version: v${{ needs.changelog.outputs.version }}"
+            docker tag ghcr.io/jaywcjlove/tools:main ghcr.io/jaywcjlove/tools:${{needs.changelog.outputs.version}}
+            docker push ghcr.io/jaywcjlove/tools:${{needs.changelog.outputs.version}}
+
 
   build_windows: 
     needs: [build]
@@ -125,9 +133,12 @@ jobs:
       - run: npm run build:app
 
       - uses: actions/upload-artifact@v3
+        if: failure()
         with:
           name: tools-macos
-          path: electron/app/dist/Web Tools-${{needs.changelog.outputs.version}}-mac.zip
+          path: |
+            electron/app/dist/*.zip
+            electron/app/dist/*.mac
 
   build_linux:
     needs: [build]
@@ -146,6 +157,7 @@ jobs:
 
   create_release:
     needs: [build, build_windows, build_macos, build_linux]
+    if: needs.create_tag.outputs.successful
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -156,7 +168,6 @@ jobs:
 
       - name: Create Release
         uses: ncipollo/release-action@v1
-        if: needs.create_tag.outputs.successful
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           name: ${{ needs.create_tag.outputs.version }}
