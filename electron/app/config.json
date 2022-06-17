@@ -11,6 +11,9 @@
     "icon": "tools.icns",
     "description": "Many many useful Web Online Tools For Web Developers & Programmers.",
     "category": "Development",
-    "target": ["deb", "rpm", "snap"]
+    "target": ["deb", "rpm"],
+    "desktop": {
+      "Name": "Web Tools"
+    }
   }
 }
