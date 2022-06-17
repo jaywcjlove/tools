@@ -120,7 +120,7 @@ jobs:
         with:
           name: tools-windows
           path: |
-            electron\app\dist\*.deb
+            electron\app\dist\*.exe
 
   build_macos:
     needs: [build]
