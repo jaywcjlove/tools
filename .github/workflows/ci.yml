@@ -116,6 +116,12 @@ jobs:
       - run: npm run electron
       - run: npm run build:app
 
+      - uses: actions/upload-artifact@v3
+        with:
+          name: tools-macos
+          path: |
+            electron\app\dist\*.deb
+
   build_macos:
     needs: [build]
     runs-on: macos-latest
@@ -133,7 +139,6 @@ jobs:
       - run: npm run build:app
 
       - uses: actions/upload-artifact@v3
-        if: failure()
         with:
           name: tools-macos
           path: |
@@ -154,6 +159,13 @@ jobs:
       - run: npm run build
       - run: npm run electron
       - run: npm run build:app
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: tools-macos
+          path: |
+            electron/app/dist/*.deb
+            electron/app/dist/*.rpm
 
   create_release:
     needs: [build, build_windows, build_macos, build_linux]
@@ -199,13 +211,14 @@ jobs:
 
   roll_back:
     if: failure()
-    needs: [build, build_windows, build_macos, build_linux]
+    needs: [create_release]
     runs-on: ubuntu-latest
     timeout-minutes: 4
     steps:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
+
       - uses: dev-drprasad/delete-tag-and-release@v0.2.0
         if: needs.create_tag.outputs.successful
         with:
