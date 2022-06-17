@@ -118,7 +118,7 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          name: tools-macos
+          name: tools-windows
           path: |
             electron\app\dist\*.deb
 
@@ -162,7 +162,7 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          name: tools-macos
+          name: tools-linux
           path: |
             electron/app/dist/*.deb
             electron/app/dist/*.rpm
