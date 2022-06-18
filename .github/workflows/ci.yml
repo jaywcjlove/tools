@@ -143,7 +143,7 @@ jobs:
           name: tools-macos
           path: |
             electron/app/dist/*.zip
-            electron/app/dist/*.mac
+            electron/app/dist/*.dmg
 
   build_linux:
     needs: [build]
