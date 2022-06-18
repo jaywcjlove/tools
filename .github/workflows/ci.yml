@@ -167,6 +167,35 @@ jobs:
             electron/app/dist/*.deb
             electron/app/dist/*.rpm
 
+  download:
+    needs: [build, build_windows, build_macos, build_linux]
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: tools-linux
+          path: dist/linux
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: tools-macos
+          path: dist/macos
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: tools-windows
+          path: dist/windows
+
+      - name: Display structure of downloaded files
+        working-directory: dist
+        run: ls -R
+
   create_release:
     needs: [build, build_windows, build_macos, build_linux]
     if: needs.create_tag.outputs.successful
