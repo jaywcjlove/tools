@@ -1,6 +1,9 @@
 import { app, BrowserWindow } from 'electron';
 
-export interface Options extends Electron.BrowserWindowConstructorOptions {}
+export interface Options extends Electron.BrowserWindowConstructorOptions {
+  preload?: string;
+  webpath?: string;
+}
 
 export class App {
   app = app;
@@ -23,7 +26,7 @@ export class App {
         nodeIntegrationInWorker: true,
         nodeIntegration: true,
         contextIsolation: false,
-        preload: require.resolve('@wcj/tools-app-preload'),
+        preload: options.preload,
       },
       ...options,
     });
@@ -32,7 +35,7 @@ export class App {
       // 打开开发者工具，默认不打开
       this.win.webContents.openDevTools();
     } else {
-      this.win.loadFile(require.resolve('website/build/index.html'));
+      this.win.loadFile(options.webpath);
     }
     return this.win;
   }

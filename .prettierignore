@@ -10,6 +10,7 @@ dist
 build
 lib
 test
+electron/app/website
 
 package.json
 coverage

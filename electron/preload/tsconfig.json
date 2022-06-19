@@ -1,23 +1,27 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
-    "rootDir": ".",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "declaration": true,
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "sourceMap": false,
-    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": false,
-    "declaration": true,
-    "noEmit": true
+    "outDir": "lib",
+    "baseUrl": "."
+    // "esModuleInterop": true,
+    // "allowSyntheticDefaultImports": true,
+    // "forceConsistentCasingInFileNames": true,
+    // "noFallthroughCasesInSwitch": true,
+    // "isolatedModules": false,
   },
   "include": ["src"]
 }

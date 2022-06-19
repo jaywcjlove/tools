@@ -3,24 +3,28 @@
   "description": "Many many useful Web Online Tools For Web Developers & Programmers.",
   "homepage": "https://github.com/jaywcjlove/tools.git",
   "version": "1.9.3",
-  "main": "./main.js",
+  "main": "main.js",
   "author": "Kenny Wong <398188662@qq.com>",
   "private": true,
   "scripts": {
+    "postinstall": "electron-builder install-app-deps",
     "start": "cross-env NODE_ENV=development ELECTRON_DISABLE_SECURITY_WARNINGS=true electron .",
     "start:production": "cross-env NODE_ENV=production ELECTRON_DISABLE_SECURITY_WARNINGS=true electron .",
     "dist-win32": "electron-builder --win --ia32 --config config.json",
     "dist-win64": "electron-builder --win --x64 --config config.json",
-    "dist-mac": "electron-builder --mac --config config.json",
+    "dist-mac": "electron-builder --mac --universal --config config.json",
     "dist-linux": "electron-builder --linux --config config.json",
-    "build": "electron-builder build --publish=never --config config.json"
+    "dist": "electron-builder --mac",
+    "copy": "cpy '../preload/lib/*.js' '../../website/build/**' website/",
+    "build": "npm run copy && cross-env NODE_ENV=production electron-builder build --universal --publish=never --config config.json"
   },
   "dependencies": {
-    "@wcj/tools-app-main": "1.9.3",
-    "website": "1.9.3"
+    "@wcj/tools-app-main": "1.9.3"
   },
   "devDependencies": {
+    "cpy-cli": "^4.1.0",
     "electron": "19.0.4",
-    "electron-builder": "23.0.3"
+    "electron-builder": "23.0.3",
+    "website": "1.9.3"
   }
 }

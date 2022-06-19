@@ -1,11 +1,22 @@
 {
   "productName": "Web Tools",
   "appId": "com.wangchujiang.tools",
+  "asar": true,
   "directories": {
     "output": "dist"
   },
   "mac": {
-    "icon": "tools.icns"
+    "icon": "tools.icns",
+    "target": {
+      "target": "default",
+      "arch": ["arm64", "x64"]
+    },
+    "category": "public.app-category.productivity",
+    "type": "distribution",
+    "entitlements": "assets/entitlements.mac.plist",
+    "entitlementsInherit": "assets/entitlements.mac.plist",
+    "hardenedRuntime": true,
+    "gatekeeperAssess": false
   },
   "linux": {
     "icon": "tools.icns",
