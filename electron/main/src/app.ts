@@ -12,7 +12,7 @@ export class App {
   /** 创建主进程窗口 */
   async createWindow(options: Options = {}, loadURL?: string) {
     await app.whenReady();
-    this.win = new BrowserWindow({
+    const opts: Options = {
       titleBarStyle: 'hidden', // 无标题栏
       frame: false, // 创建无边窗口
       width: 800,
@@ -26,10 +26,14 @@ export class App {
         nodeIntegrationInWorker: true,
         nodeIntegration: true,
         contextIsolation: false,
-        preload: options.preload,
       },
       ...options,
-    });
+    };
+    if (options.preload) {
+      opts.webPreferences.preload = options.preload;
+    }
+
+    this.win = new BrowserWindow(opts);
     if (process.env.NODE_ENV === 'development') {
       this.win.loadURL(loadURL || 'http://localhost:3000/');
       // 打开开发者工具，默认不打开
