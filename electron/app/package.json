@@ -24,7 +24,7 @@
     "@wcj/tools-app-preload": "1.9.3",
     "cpy-cli": "^4.1.0",
     "electron": "19.0.4",
-    "electron-builder": "23.0.3",
+    "electron-builder": "23.1.0",
     "website": "1.9.3"
   }
 }
