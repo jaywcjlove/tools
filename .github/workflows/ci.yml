@@ -114,6 +114,11 @@ jobs:
 
       - run: npm run build
       - run: npm run electron
+
+      - name: electron-builder install-app-deps
+        working-directory: electron/app
+        run: npm run pinstall
+
       - run: npm run build:app
 
       - uses: actions/upload-artifact@v3
@@ -136,6 +141,11 @@ jobs:
       - run: npm run hoist
       - run: npm run build
       - run: npm run electron
+
+      - name: electron-builder install-app-deps
+        working-directory: electron/app
+        run: npm run pinstall
+
       - run: npm run build:app
 
       - uses: actions/upload-artifact@v3
@@ -158,6 +168,11 @@ jobs:
       - run: npm run hoist
       - run: npm run build
       - run: npm run electron
+
+      - name: electron-builder install-app-deps
+        working-directory: electron/app
+        run: npm run pinstall
+
       - run: npm run build:app
 
       - uses: actions/upload-artifact@v3
