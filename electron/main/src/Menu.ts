@@ -20,6 +20,7 @@ const template = [
         },
       ]
     : []),
+  { role: 'editMenu' },
   {
     label: 'Window',
     submenu: [

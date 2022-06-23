@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron';
+import { app, shell, BrowserWindow } from 'electron';
 import './Menu';
 
 export interface Options extends Electron.BrowserWindowConstructorOptions {
@@ -42,6 +42,18 @@ export class App {
     } else {
       this.win.loadFile(options.webpath);
     }
+    this.win.webContents.setWindowOpenHandler(({ url }) => {
+      if (/^https?:\/\//.test(url)) {
+        shell.openExternal(url);
+        return { action: 'deny' };
+      }
+      return {
+        action: 'allow',
+        overrideBrowserWindowOptions: {
+          modal: true,
+        },
+      };
+    });
     return this.win;
   }
 }
