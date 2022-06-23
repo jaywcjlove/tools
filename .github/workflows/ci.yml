@@ -49,6 +49,16 @@ jobs:
           filter-author: (jaywcjlove|小弟调调™|dependabot\[bot\]|Renovate Bot)
           filter: (^[\s]+?[R|r]elease)|(^[R|r]elease)
 
+      # Create Docker Image
+      - name: Create docker-compliant static resources.
+        run: npm run docker
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: webiste
+          path: |
+            website/build/**
+
   docker: 
     if: needs.create_tag.outputs.successful
     runs-on: ubuntu-latest
@@ -65,12 +75,6 @@ jobs:
       # Create Docker Image
       - name: Create docker-compliant static resources.
         run: npm run docker
-
-      - uses: actions/upload-artifact@v3
-        with:
-          name: webiste
-          path: |
-            website/build/**
 
       - name: Docker login
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
