@@ -11,7 +11,7 @@
       "target": "default",
       "arch": ["arm64", "x64"]
     },
-    "category": "public.app-category.productivity",
+    "category": "public.app-category.developer-tools",
     "type": "distribution",
     "entitlements": "assets/entitlements.mac.plist",
     "entitlementsInherit": "assets/entitlements.mac.plist"
