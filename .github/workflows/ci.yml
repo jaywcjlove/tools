@@ -58,9 +58,16 @@ jobs:
           name: webiste
           path: |
             website/build/**
+    outputs:
+      version: ${{ steps.changelog.outputs.version }}
+      compareurl: ${{ steps.changelog.outputs.compareurl }}
+      changelog: ${{ steps.changelog.outputs.changelog }}
+      tag: ${{ steps.changelog.outputs.tag }}
+      successful: ${{steps.create_tag.outputs.successful }}
+      gh-pages-short-hash: ${{ needs.build.changelog.outputs.gh-pages-short-hash }}
 
   docker: 
-    if: needs.create_tag.outputs.successful
+    if: needs.build.outputs.successful
     runs-on: ubuntu-latest
     needs: [build]
     steps:
@@ -84,10 +91,10 @@ jobs:
 
       - name: Tags & Push image
         run: |
-          echo "outputs.tag - ${{ needs.changelog.outputs.version }}"
-          docker tag tools ${{ secrets.DOCKER_USER }}/tools:${{needs.changelog.outputs.version}}
+          echo "outputs.tag - ${{ needs.build.outputs.version }}"
+          docker tag tools ${{ secrets.DOCKER_USER }}/tools:${{needs.build.outputs.version}}
           docker tag tools ${{ secrets.DOCKER_USER }}/tools:latest
-          docker push ${{ secrets.DOCKER_USER }}/tools:${{needs.changelog.outputs.version}}
+          docker push ${{ secrets.DOCKER_USER }}/tools:${{needs.build.outputs.version}}
           docker push ${{ secrets.DOCKER_USER }}/tools:latest
 
       # Create Docker Image in Github
@@ -102,9 +109,9 @@ jobs:
 
       - name: Tag docker image (beta) and publish to GitHub registry
         run: |
-            echo "version: v${{ needs.changelog.outputs.version }}"
-            docker tag ghcr.io/jaywcjlove/tools:main ghcr.io/jaywcjlove/tools:${{needs.changelog.outputs.version}}
-            docker push ghcr.io/jaywcjlove/tools:${{needs.changelog.outputs.version}}
+            echo "version: v${{ needs.build.outputs.version }}"
+            docker tag ghcr.io/jaywcjlove/tools:main ghcr.io/jaywcjlove/tools:${{needs.build.outputs.version}}
+            docker push ghcr.io/jaywcjlove/tools:${{needs.build.outputs.version}}
 
 
   build_windows: 
@@ -244,7 +251,7 @@ jobs:
 
   create_release:
     needs: [build, build_windows, build_macos, build_linux]
-    if: needs.create_tag.outputs.successful
+    if: needs.build.outputs.successful
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -276,26 +283,26 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          name: ${{ needs.create_tag.outputs.version }}
-          tag: ${{ needs.create_tag.outputs.version }}
+          name: ${{ needs.build.outputs.version }}
+          tag: ${{ needs.build.outputs.version }}
           artifacts: "linux/*.rpm,linux/*.deb,macos/*.zip,macos/*.dmg,windows/*.exe"
           body: |
             [![Docker Image Version (latest by date)](https://img.shields.io/docker/v/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools) [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools) [![Docker Pulls](https://img.shields.io/docker/pulls/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools)
             
-            Documentation ${{ needs.changelog.outputs.tag }}: https://raw.githack.com/jaywcjlove/tools/${{ needs.changelog.outputs.gh-pages-short-hash }}/index.html  
+            Documentation ${{ needs.build.outputs.tag }}: https://raw.githack.com/jaywcjlove/tools/${{ needs.build.outputs.gh-pages-short-hash }}/index.html  
             
-            Comparing Changes: ${{ needs.changelog.outputs.compareurl }}  
+            Comparing Changes: ${{ needs.build.outputs.compareurl }}  
 
-            ${{ needs.changelog.outputs.changelog }}
+            ${{ needs.build.outputs.changelog }}
 
             ```bash
-            docker pull wcjiang/tools:${{needs.changelog.outputs.version}}
+            docker pull wcjiang/tools:${{needs.build.outputs.version}}
             ```
 
             ```bash
-            docker run --name tools --rm -d -p 9666:80 wcjiang/tools:${{needs.changelog.outputs.version}}
+            docker run --name tools --rm -d -p 9666:80 wcjiang/tools:${{ needs.build.outputs.version }}
             # Or
-            docker run --name tools -itd -p 9666:80 wcjiang/tools:${{needs.changelog.outputs.version}}
+            docker run --name tools -itd -p 9666:80 wcjiang/tools:${{ needs.build.outputs.version }}
             ```
 
             Visit the following URL in your browser
@@ -315,10 +322,10 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - uses: dev-drprasad/delete-tag-and-release@v0.2.0
-        if: needs.create_tag.outputs.successful
+        if: needs.build.outputs.successful
         with:
           delete_release: true
           repo: jaywcjlove/tools
-          tag_name: '${{ needs.create_tag.outputs.version }}'
+          tag_name: '${{ needs.build.outputs.version }}'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
