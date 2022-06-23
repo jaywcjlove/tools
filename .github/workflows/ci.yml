@@ -66,6 +66,12 @@ jobs:
       - name: Create docker-compliant static resources.
         run: npm run docker
 
+      - uses: actions/upload-artifact@v3
+        with:
+          name: webiste
+          path: |
+            website/build/**
+
       - name: Docker login
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
@@ -113,7 +119,12 @@ jobs:
       - run: npm run hoist
 
       - run: npm run build
-      - run: npm run electron
+      # - run: npm run electron
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: webiste
+          path: website/build
 
       - name: electron-builder install-app-deps
         working-directory: electron/app
@@ -140,7 +151,12 @@ jobs:
       - run: npm install
       - run: npm run hoist
       - run: npm run build
-      - run: npm run electron
+      # - run: npm run electron
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: webiste
+          path: website/build
 
       - name: electron-builder install-app-deps
         working-directory: electron/app
@@ -173,7 +189,12 @@ jobs:
       - run: npm install
       - run: npm run hoist
       - run: npm run build
-      - run: npm run electron
+      # - run: npm run electron
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: webiste
+          path: website/build
 
       - name: electron-builder install-app-deps
         working-directory: electron/app
