@@ -50,8 +50,8 @@ jobs:
           filter: (^[\s]+?[R|r]elease)|(^[R|r]elease)
 
       # Create Docker Image
-      - name: Create docker-compliant static resources.
-        run: npm run docker
+      - name: Create electron-compliant static resources.
+        run: npm run electron
 
       - uses: actions/upload-artifact@v3
         with:
