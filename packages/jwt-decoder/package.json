@@ -1,6 +1,6 @@
 {
   "name": "@wcj/tools-react-jwt-decoder",
-  "version": "1.9.3",
+  "version": "1.9.4",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "@uiw/react-markdown-preview": "^4.0.9",
-    "@wcj/tools-react-components": "1.9.3",
+    "@wcj/tools-react-components": "1.9.4",
     "jwt-decode": "^3.1.2"
   },
   "peerDependencies": {
