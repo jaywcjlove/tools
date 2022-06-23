@@ -117,7 +117,7 @@ jobs:
 
       - name: electron-builder install-app-deps
         working-directory: electron/app
-        run: npm run pinstall
+        run: npm run deps
 
       - run: npm run build:app
 
@@ -144,7 +144,7 @@ jobs:
 
       - name: electron-builder install-app-deps
         working-directory: electron/app
-        run: npm run pinstall
+        run: npm run deps
 
       - run: npm run build:app
 
@@ -171,7 +171,7 @@ jobs:
 
       - name: electron-builder install-app-deps
         working-directory: electron/app
-        run: npm run pinstall
+        run: npm run deps
 
       - run: npm run build:app
 
