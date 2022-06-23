@@ -14,7 +14,7 @@
     "dist-win64": "electron-builder --win --x64 --config config.json",
     "dist-mac": "electron-builder --mac --universal --config config.json",
     "dist-linux": "electron-builder --linux --config config.json",
-    "copy": "cpy '../preload/lib/*.js' '../../website/build/**' website/",
+    "copy": "cpy './node_modules/@wcj/tools-app-preload/lib/*.js' './node_modules/website/build/**' website",
     "build": "npm run copy && cross-env NODE_ENV=production electron-builder build --publish=never --config config.json"
   },
   "dependencies": {

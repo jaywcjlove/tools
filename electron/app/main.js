@@ -8,7 +8,7 @@ const { App } = require('@wcj/tools-app-main');
     options.webpath = require.resolve('website/build/index.html');
   } else {
     options.preload = path.resolve(__dirname, 'website/index.js');
-    options.webpath = 'website/build/index.html';
+    options.webpath = 'website/index.html';
   }
   const app = new App();
   await app.createWindow(options);

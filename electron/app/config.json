@@ -1,7 +1,7 @@
 {
   "productName": "Web Tools",
   "appId": "com.wangchujiang.tools",
-  "asar": true,
+  "asar": false,
   "directories": {
     "output": "dist"
   },
