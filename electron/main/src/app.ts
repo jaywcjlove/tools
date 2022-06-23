@@ -1,4 +1,5 @@
 import { app, BrowserWindow } from 'electron';
+import './Menu';
 
 export interface Options extends Electron.BrowserWindowConstructorOptions {
   preload?: string;

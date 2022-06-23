@@ -1,7 +1,7 @@
 const styleStr = `.siderbar {
   -webkit-app-region: drag;
 }
-.siderbar header h1 a {
+.siderbar header h1 a, github-corners {
   display: none;
 }
 article.content:before {
