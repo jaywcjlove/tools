@@ -15,7 +15,7 @@
     "dist-mac": "electron-builder --mac --universal --config config.json",
     "dist-linux": "electron-builder --linux --config config.json",
     "copy": "cpy '../preload/lib/*.js' '../../website/build/**' website/",
-    "build": "npm run copy && cross-env NODE_ENV=production electron-builder build --universal --publish=never --config config.json"
+    "build": "npm run copy && cross-env NODE_ENV=production electron-builder build --publish=never --config config.json"
   },
   "dependencies": {
     "@wcj/tools-app-main": "1.9.3"
