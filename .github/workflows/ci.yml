@@ -222,12 +222,32 @@ jobs:
         with:
           node-version: 16
 
+      - uses: actions/download-artifact@v3
+        with:
+          name: tools-linux
+          path: dist/linux
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: tools-macos
+          path: dist/macos
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: tools-windows
+          path: dist/windows
+
+      - name: Display structure of downloaded files
+        working-directory: dist
+        run: ls -R
+
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           name: ${{ needs.create_tag.outputs.version }}
           tag: ${{ needs.create_tag.outputs.version }}
+          artifacts: "linux/*.rpm,linux/*.deb,macos/*.zip,macos/*.dmg,windows/*.exe"
           body: |
             [![Docker Image Version (latest by date)](https://img.shields.io/docker/v/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools) [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools) [![Docker Pulls](https://img.shields.io/docker/pulls/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools)
             

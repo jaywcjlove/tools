@@ -14,9 +14,7 @@
     "category": "public.app-category.productivity",
     "type": "distribution",
     "entitlements": "assets/entitlements.mac.plist",
-    "entitlementsInherit": "assets/entitlements.mac.plist",
-    "hardenedRuntime": true,
-    "gatekeeperAssess": false
+    "entitlementsInherit": "assets/entitlements.mac.plist"
   },
   "linux": {
     "icon": "tools.icns",
@@ -25,6 +23,13 @@
     "target": ["deb", "rpm"],
     "desktop": {
       "Name": "Web Tools"
+    }
+  },
+  "win": {
+    "icon": "tools.ico",
+    "target": {
+      "target": "nsis",
+      "arch": ["x64", "ia32"]
     }
   }
 }
