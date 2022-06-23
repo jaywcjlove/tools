@@ -155,6 +155,12 @@ jobs:
             electron/app/dist/*.zip
             electron/app/dist/*.dmg
 
+      - uses: actions/upload-artifact@v3
+        with:
+          name: tools-macos-zip
+          path: |
+            electron/app/dist/*.zip
+
   build_linux:
     needs: [build]
     runs-on: ubuntu-latest
