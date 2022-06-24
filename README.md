@@ -21,9 +21,11 @@ docker pull wcjiang/tools
 ```
 
 ```bash
-docker run --name tools --rm -d -p 9666:80 wcjiang/tools:latest
+docker run --name tools --rm -d -p 9666:3000 wcjiang/tools:latest
 # Or
-docker run --name tools -itd -p 9666:80 wcjiang/tools:latest
+docker run --name tools -itd -p 9666:3000 wcjiang/tools:latest
+# Or
+docker run --name tools -it --rm -p 3000:3000 wcjiang/tools:latest
 ```
 
 Visit the following URL in your browser
