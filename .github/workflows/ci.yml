@@ -49,7 +49,7 @@ jobs:
           filter-author: (jaywcjlove|小弟调调™|dependabot\[bot\]|Renovate Bot)
           filter: (^[\s]+?[R|r]elease)|(^[R|r]elease)
 
-      # Create Docker Image
+      # Create electron static page
       - name: Create electron-compliant static resources.
         run: npm run electron
 
@@ -82,6 +82,7 @@ jobs:
       - run: echo "outputs.create_tag_version - ${{ needs.build.outputs.create_tag_version }}"
       - run: echo "outputs.create_tag_versionNumber - ${{ needs.build.outputs.create_tag_versionNumber }}"
       - run: echo "outputs.tag - ${{ needs.build.outputs.tag }}"
+      - run: echo "outputs.changelog - ${{ needs.build.outputs.changelog }}"
 
       - run: npm install
       - run: npm run build
