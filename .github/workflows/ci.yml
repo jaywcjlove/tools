@@ -62,8 +62,6 @@ jobs:
       version: ${{ steps.changelog.outputs.version }}
       create_tag_version: ${{ steps.create_tag.outputs.version }}
       create_tag_versionNumber: ${{ steps.create_tag.outputs.versionNumber }}
-      compareurl: ${{ steps.changelog.outputs.compareurl }}
-      changelog: ${{ steps.changelog.outputs.changelog }}
       tag: ${{ steps.changelog.outputs.tag }}
       successful: ${{steps.create_tag.outputs.successful }}
       gh-pages-short-hash: ${{ steps.changelog.outputs.gh-pages-short-hash }}
@@ -82,7 +80,6 @@ jobs:
       - run: echo "outputs.create_tag_version - ${{ needs.build.outputs.create_tag_version }}"
       - run: echo "outputs.create_tag_versionNumber - ${{ needs.build.outputs.create_tag_versionNumber }}"
       - run: echo "outputs.tag - ${{ needs.build.outputs.tag }}"
-      - run: echo "outputs.changelog - ${{ needs.build.outputs.changelog }}"
 
       - run: npm install
       - run: npm run build
@@ -287,6 +284,14 @@ jobs:
         working-directory: dist
         run: ls -R
 
+      - name: Generate Changelog
+        id: changelog
+        uses: jaywcjlove/changelog-generator@v1.5.7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          filter-author: (jaywcjlove|小弟调调™|dependabot\[bot\]|Renovate Bot)
+          filter: (^[\s]+?[R|r]elease)|(^[R|r]elease)
+
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
@@ -299,18 +304,18 @@ jobs:
             
             Documentation ${{ needs.build.outputs.create_tag_version }}: https://raw.githack.com/jaywcjlove/tools/${{ needs.build.outputs.gh-pages-short-hash }}/index.html  
             
-            Comparing Changes: ${{ needs.build.outputs.compareurl }}  
+            Comparing Changes: ${{ steps.changelog.outputs.compareurl }}  
 
-            ${{ needs.build.outputs.changelog }}
+            ${{ steps.changelog.outputs.changelog }}
 
             ```bash
             docker pull wcjiang/tools:${{needs.build.outputs.create_tag_versionNumber}}
             ```
 
             ```bash
-            docker run --name tools --rm -d -p 9666:80 wcjiang/tools:${{ needs.build.outputs.create_tag_versionNumber }}
+            docker run --name tools --rm -d -p 9666:3000 wcjiang/tools:${{ needs.build.outputs.create_tag_versionNumber }}
             # Or
-            docker run --name tools -itd -p 9666:80 wcjiang/tools:${{ needs.build.outputs.create_tag_versionNumber }}
+            docker run --name tools -itd -p 9666:3000 wcjiang/tools:${{ needs.build.outputs.create_tag_versionNumber }}
             ```
 
             Visit the following URL in your browser
