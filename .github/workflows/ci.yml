@@ -60,11 +60,13 @@ jobs:
             website/build/**
     outputs:
       version: ${{ steps.changelog.outputs.version }}
+      create_tag_version: ${{ steps.create_tag.outputs.version }}
+      create_tag_versionNumber: ${{ steps.create_tag.outputs.versionNumber }}
       compareurl: ${{ steps.changelog.outputs.compareurl }}
       changelog: ${{ steps.changelog.outputs.changelog }}
       tag: ${{ steps.changelog.outputs.tag }}
       successful: ${{steps.create_tag.outputs.successful }}
-      gh-pages-short-hash: ${{ needs.build.changelog.outputs.gh-pages-short-hash }}
+      gh-pages-short-hash: ${{ steps.changelog.outputs.gh-pages-short-hash }}
 
   docker: 
     if: needs.build.outputs.successful
@@ -283,26 +285,26 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          name: ${{ needs.build.outputs.version }}
-          tag: ${{ needs.build.outputs.version }}
-          artifacts: "linux/*.rpm,linux/*.deb,macos/*.zip,macos/*.dmg,windows/*.exe"
+          name: ${{ needs.build.outputs.create_tag_version }}
+          tag: ${{ needs.build.outputs.create_tag_version }}
+          artifacts: "dist/linux/*.rpm,dist/linux/*.deb,dist/macos/*.zip,dist/macos/*.dmg,dist/windows/*.exe"
           body: |
             [![Docker Image Version (latest by date)](https://img.shields.io/docker/v/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools) [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools) [![Docker Pulls](https://img.shields.io/docker/pulls/wcjiang/tools)](https://hub.docker.com/r/wcjiang/tools)
             
-            Documentation ${{ needs.build.outputs.tag }}: https://raw.githack.com/jaywcjlove/tools/${{ needs.build.outputs.gh-pages-short-hash }}/index.html  
+            Documentation ${{ needs.build.outputs.create_tag_version }}: https://raw.githack.com/jaywcjlove/tools/${{ needs.build.outputs.gh-pages-short-hash }}/index.html  
             
             Comparing Changes: ${{ needs.build.outputs.compareurl }}  
 
             ${{ needs.build.outputs.changelog }}
 
             ```bash
-            docker pull wcjiang/tools:${{needs.build.outputs.version}}
+            docker pull wcjiang/tools:${{needs.build.outputs.create_tag_versionNumber}}
             ```
 
             ```bash
-            docker run --name tools --rm -d -p 9666:80 wcjiang/tools:${{ needs.build.outputs.version }}
+            docker run --name tools --rm -d -p 9666:80 wcjiang/tools:${{ needs.build.outputs.create_tag_versionNumber }}
             # Or
-            docker run --name tools -itd -p 9666:80 wcjiang/tools:${{ needs.build.outputs.version }}
+            docker run --name tools -itd -p 9666:80 wcjiang/tools:${{ needs.build.outputs.create_tag_versionNumber }}
             ```
 
             Visit the following URL in your browser
@@ -326,6 +328,6 @@ jobs:
         with:
           delete_release: true
           repo: jaywcjlove/tools
-          tag_name: '${{ needs.build.outputs.version }}'
+          tag_name: '${{ needs.build.outputs.create_tag_version }}'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
