@@ -78,6 +78,11 @@ jobs:
         with:
           node-version: 16
 
+      - run: echo "outputs.version - ${{ needs.build.outputs.version }}"
+      - run: echo "outputs.create_tag_version - ${{ needs.build.outputs.create_tag_version }}"
+      - run: echo "outputs.create_tag_versionNumber - ${{ needs.build.outputs.create_tag_versionNumber }}"
+      - run: echo "outputs.tag - ${{ needs.build.outputs.tag }}"
+
       - run: npm install
       - run: npm run build
 
