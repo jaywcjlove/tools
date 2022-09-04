@@ -219,6 +219,10 @@
       "about": "为您的代码创建漂亮的图像",
       "label": "Ray.so"
     },
+    "redketchup": {
+      "about": "在线创建和编辑 ICO 文件",
+      "label": "Icon Editor"
+    },
     "SVGEdit": {
       "about": "适用于您的浏览器的强大 SVG 编辑器",
       "label": "SVG 编辑器"

@@ -350,6 +350,12 @@ export function useMenus() {
       label: t('menu.Rayso.label'),
     },
     {
+      href: 'https://redketchup.io/icon-editor',
+      logo: 'redketchup.io.png',
+      about: t('menu.redketchup.about'),
+      label: t('menu.redketchup.label'),
+    },
+    {
       href: 'https://unpkg.com/svgedit@7.1.3/dist/editor/index.html',
       logo: 'svg-edit',
       'open-source': 'https://github.com/SVG-Edit/svgedit',
