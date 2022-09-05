@@ -71,16 +71,19 @@ jobs:
     needs: [build]
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - run: npm install
+
+      - run: npm run build
+      - run: npm run doc
 
       - run: echo "outputs.version - ${{ needs.build.outputs.version }}"
       - run: echo "outputs.create_tag_version - ${{ needs.build.outputs.create_tag_version }}"
       - run: echo "outputs.create_tag_versionNumber - ${{ needs.build.outputs.create_tag_versionNumber }}"
       - run: echo "outputs.tag - ${{ needs.build.outputs.tag }}"
-
-      - uses: actions/download-artifact@v3
-        with:
-          name: webiste
-          path: website/build
 
       # Create Docker Image
       - name: Create docker-compliant static resources.
@@ -330,7 +333,7 @@ jobs:
 
   roll_back:
     if: failure()
-    needs: [create_release]
+    needs: [build, create_release]
     runs-on: ubuntu-latest
     timeout-minutes: 4
     steps:
