@@ -1,0 +1,28 @@
+{
+  "name": "@wcj/tools-react-code-to-image",
+  "version": "1.9.4",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "scripts": {
+    "build": "tsbb build",
+    "watch": "tsbb watch"
+  },
+  "keywords": [],
+  "files": [
+    "cjs",
+    "esm",
+    "src"
+  ],
+  "author": "Kenny Wong <wowohoo@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@uiw/codemirror-extensions-langs": "^4.12.2",
+    "@uiw/codemirror-themes-all": "^4.12.1",
+    "@wcj/tools-react-components": "1.9.4",
+    "dom-to-image-more": "^2.6.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.14.0",
+    "react-dom": ">=16.14.0"
+  }
+}

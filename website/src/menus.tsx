@@ -34,6 +34,11 @@ export function useMenus() {
       label: t('menu./image-to-base64.label'),
     },
     {
+      href: '/code-to-image',
+      logo: 'code-image',
+      label: t('menu./code-to-image.label'),
+    },
+    {
       href: '/hash',
       logo: 'hash',
       label: t('menu./hash.label'),

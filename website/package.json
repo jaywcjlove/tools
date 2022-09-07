@@ -28,6 +28,7 @@
     "@wcj/tools-react-amount-in-rmb": "1.9.4",
     "@wcj/tools-react-base64-encoder": "1.9.4",
     "@wcj/tools-react-chinese-pinyin-conversion": "1.9.4",
+    "@wcj/tools-react-code-to-image": "1.9.4",
     "@wcj/tools-react-css-easing-animation": "1.9.4",
     "@wcj/tools-react-css-formatter": "1.9.4",
     "@wcj/tools-react-exif-viewer": "1.9.4",

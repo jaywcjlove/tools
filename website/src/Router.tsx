@@ -37,6 +37,7 @@ const HTMLEscape = Loadable(lazy(() => import('@wcj/tools-react-html-escape')));
 const Base64Encoder = Loadable(lazy(() => import('@wcj/tools-react-base64-encoder')));
 const QRCodeGenerator = Loadable(lazy(() => import('@wcj/tools-react-qrcode-generator')));
 const ChinesePinyinConversion = Loadable(lazy(() => import('@wcj/tools-react-chinese-pinyin-conversion')));
+const CodeToImage = Loadable(lazy(() => import('@wcj/tools-react-code-to-image')));
 // @ts-ignore
 const GenerateGithubBadges = Loadable(lazy(() => import('@wcj/tools-react-generate-github-badges')));
 // @ts-ignore
@@ -90,6 +91,10 @@ export let routes: RouteObject[] = [
       {
         path: 'image-to-base64',
         element: <ImageToBase64 title="Image To Base64 - Web Tools" />,
+      },
+      {
+        path: 'code-to-image',
+        element: <CodeToImage title="Code To Image - Web Tools" />,
       },
       {
         path: 'hash',
