@@ -24,13 +24,13 @@ jobs:
 
       - name: Create Tag
         id: create_tag
-        uses: jaywcjlove/create-tag-action@v1.3.6
+        uses: jaywcjlove/create-tag-action@main
         with:
           package-path: ./website/package.json
 
       - name: get tag version
         id: tag_version
-        uses: jaywcjlove/changelog-generator@v1.5.7
+        uses: jaywcjlove/changelog-generator@main
 
       - name: Deploy Website
         uses: peaceiris/actions-gh-pages@v3
@@ -43,7 +43,7 @@ jobs:
 
       - name: Generate Changelog
         id: changelog
-        uses: jaywcjlove/changelog-generator@v1.5.7
+        uses: jaywcjlove/changelog-generator@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           filter-author: (jaywcjlove|小弟调调™|dependabot\[bot\]|Renovate Bot)
@@ -113,16 +113,16 @@ jobs:
         run: echo ${{ github.token }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: Build docker image
-        run: docker build -t ghcr.io/jaywcjlove/tools:main .
+        run: docker build -t ghcr.io/jaywcjlove/tools:latest .
 
       - name: Publish to GitHub registry
-        run: docker push ghcr.io/jaywcjlove/tools:main
+        run: docker push ghcr.io/jaywcjlove/tools:latest
 
       - name: Tag docker image (beta) and publish to GitHub registry
         if: needs.build.outputs.successful
         run: |
             echo "version: v${{ needs.build.outputs.version }}"
-            docker tag ghcr.io/jaywcjlove/tools:main ghcr.io/jaywcjlove/tools:${{needs.build.outputs.version}}
+            docker tag ghcr.io/jaywcjlove/tools:latest ghcr.io/jaywcjlove/tools:${{needs.build.outputs.version}}
             docker push ghcr.io/jaywcjlove/tools:${{needs.build.outputs.version}}
 
 
@@ -293,7 +293,7 @@ jobs:
 
       - name: Generate Changelog
         id: changelog
-        uses: jaywcjlove/changelog-generator@v1.5.7
+        uses: jaywcjlove/changelog-generator@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           filter-author: (jaywcjlove|小弟调调™|dependabot\[bot\]|Renovate Bot)
