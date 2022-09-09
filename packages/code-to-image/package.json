@@ -16,10 +16,7 @@
   "author": "Kenny Wong <wowohoo@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "@uiw/codemirror-extensions-langs": "^4.12.2",
-    "@uiw/codemirror-themes-all": "^4.12.1",
-    "@wcj/tools-react-components": "1.9.4",
-    "dom-to-image-more": "^2.6.0"
+    "@wcj/code-image": "^1.0.4"
   },
   "peerDependencies": {
     "react": ">=16.14.0",

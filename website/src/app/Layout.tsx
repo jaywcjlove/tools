@@ -25,6 +25,11 @@ const Sup = styled.sup`
 const HeaderRight = styled.div`
   display: flex;
   align-items: center;
+  padding-right: 8px;
+  dark-mode {
+    font-size: 14px;
+    line-height: 12px;
+  }
 `;
 
 const Label = styled.span`
