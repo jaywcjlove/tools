@@ -1,0 +1,2 @@
+(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[8097],{6812:function(e,t,n){"use strict";n.r(t),n.d(t,{default:function(){return r}});n(70430);var i=n(4478),s=n(91121),u={position:"relative",height:"100%"};function r(){return(0,s.jsx)("div",{style:u,children:(0,s.jsx)(i.C,{})})}},44106:function(){}}]);
+//# sourceMappingURL=8097.085c4fa4.chunk.js.map
