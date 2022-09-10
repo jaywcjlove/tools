@@ -22,6 +22,9 @@
     "/image-to-base64": {
       "label": "Image to Base64"
     },
+    "/code-to-image": {
+      "label": "Code to Image"
+    },
     "/hash": {
       "label": "Hash"
     },
