@@ -48,11 +48,11 @@ npm run start
 
 As always, thanks to our amazing contributors!
 
-<a href="https://github.com/jaywcjlove/html-tutorial/graphs/contributors">
-  <img src="https://jaywcjlove.github.io/html-tutorial/CONTRIBUTORS.svg" />
+<a href="https://github.com/jaywcjlove/tools/graphs/contributors">
+  <img src="https://jaywcjlove.github.io/tools/CONTRIBUTORS.svg" />
 </a>
 
-Made with [action-contributors](https://github.com/jaywcjlove/github-action-contributors).
+Made with [contributors](https://github.com/jaywcjlove/github-action-contributors).
 
 ## License
 
