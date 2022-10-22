@@ -55,7 +55,6 @@ const Article = styled.article`
 export default function Layout() {
   const menus = useMenus();
   const { t } = useTranslation();
-  // @ts-ignore
   const version = VERSION;
   return (
     <Fragment>
@@ -67,7 +66,7 @@ export default function Layout() {
               <Link to="/">
                 <LogoIcon width={21} />
                 <span>
-                  {t('title')}
+                  {t<string>('title')}
                   <Sup>{version}</Sup>
                 </span>
               </Link>

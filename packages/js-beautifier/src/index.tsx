@@ -176,15 +176,15 @@ export default function JSONFormat() {
         extra={
           <Fragment>
             {type === 'formatter' && value && (
-              <Button onClick={() => handleFormat()}>{t('Formatter', { ns: 'common' })}</Button>
+              <Button onClick={() => handleFormat()}>{t<string>('Formatter', { ns: 'common' })}</Button>
             )}
             {type === 'minify' && value && (
-              <Button onClick={() => handleMinify()}>{t('Minify', { ns: 'common' })}</Button>
+              <Button onClick={() => handleMinify()}>{t<string>('Minify', { ns: 'common' })}</Button>
             )}
             {value && (
               <select value={type} onChange={(evn) => setType(evn.target.value as Type)}>
-                <option value="formatter">{t('Formatter', { ns: 'common' })}</option>
-                <option value="minify">{t('Minify', { ns: 'common' })}</option>
+                <option value="formatter">{t<string>('Formatter', { ns: 'common' })}</option>
+                <option value="minify">{t<string>('Minify', { ns: 'common' })}</option>
               </select>
             )}
             {value && type === 'formatter' && (
@@ -207,7 +207,7 @@ export default function JSONFormat() {
                 }
               }}
             >
-              {t('Sample', { ns: 'common' })}
+              {t('Sample', { ns: 'common' }).toString()}
             </Button>
           </Fragment>
         }
@@ -224,7 +224,7 @@ export default function JSONFormat() {
       </StyledLayout>
       {type === 'minify' && value && (
         <StyledLayout
-          title={t('Options', { ns: 'common' })}
+          title={t('Options', { ns: 'common' }).toString()}
           style={{ maxWidth: 420 }}
           extra={
             <Fragment>
@@ -242,7 +242,7 @@ export default function JSONFormat() {
                     checked={!!options.mangle}
                     onChange={({ target }) => setOptions({ ...options, mangle: target.checked })}
                   />
-                  {t('mangle')} <Info>{t('Pass `false` to skip mangling names')}</Info>
+                  {t('mangle').toString()} <Info>{t('Pass `false` to skip mangling names').toString()}</Info>
                 </span>
               </label>
               <label>
@@ -252,11 +252,11 @@ export default function JSONFormat() {
                     checked={!!options.toplevel}
                     onChange={({ target }) => setOptions({ ...options, toplevel: target.checked })}
                   />
-                  {t('toplevel')}{' '}
+                  {t('toplevel').toString()}{' '}
                   <Info>
                     {t(
                       'Set to `true` if you wish to enable top level variable and function name mangling and to drop unused variables and functions.',
-                    )}
+                    ).toString()}
                   </Info>
                 </span>
               </label>
@@ -267,7 +267,7 @@ export default function JSONFormat() {
                     checked={!!options.ie8}
                     onChange={({ target }) => setOptions({ ...options, ie8: target.checked })}
                   />
-                  {t('ie8')} <Info>{t('Set to true to support IE8')}</Info>
+                  {t('ie8').toString()} <Info>{t('Set to true to support IE8').toString()}</Info>
                 </span>
               </label>
               <label>
@@ -277,11 +277,11 @@ export default function JSONFormat() {
                     checked={!!options.keep_fnames}
                     onChange={({ target }) => setOptions({ ...options, keep_fnames: target.checked })}
                   />
-                  {t('keep_fnames')}{' '}
+                  {t('keep_fnames').toString()}{' '}
                   <Info>
                     {t(
                       'Pass true to prevent discarding or mangling of function names. Useful for code relying on Function.prototype.name.',
-                    )}
+                    ).toString()}
                   </Info>
                 </span>
               </label>
@@ -294,7 +294,8 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ parse: { ...options.parse, bare_returns: target.checked } } })
                     }
                   />
-                  {t('parse.bare_returns')} <Info>{t('Support top level `return` statements')}</Info>
+                  {t('parse.bare_returns').toString()}{' '}
+                  <Info>{t('Support top level `return` statements').toString()}</Info>
                 </span>
               </label>
               <label>
@@ -306,7 +307,7 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ parse: { ...options.parse, html5_comments: target.checked } } })
                     }
                   />
-                  {t('parse.html5_comments')}
+                  {t('parse.html5_comments').toString()}
                 </span>
               </label>
               <label>
@@ -318,7 +319,7 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ parse: { ...options.parse, shebang: target.checked } } })
                     }
                   />
-                  {t('parse.shebang')} <Info>{t('Support `#!command` as the first line')}</Info>
+                  {t('parse.shebang').toString()} <Info>{t('Support `#!command` as the first line').toString()}</Info>
                 </span>
               </label>
               <label>
@@ -330,8 +331,10 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ compress: { ...options.compress, arguments: target.checked } } })
                     }
                   />
-                  {t('compress.arguments')}{' '}
-                  <Info>{t('Replace `arguments[index]` with function parameter name whenever possible.')}</Info>
+                  {t('compress.arguments').toString()}{' '}
+                  <Info>
+                    {t('Replace `arguments[index]` with function parameter name whenever possible.').toString()}
+                  </Info>
                 </span>
               </label>
               <label>
@@ -343,7 +346,8 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ compress: { ...options.compress, assignments: target.checked } } })
                     }
                   />
-                  {t('compress.assignments')} <Info>{t('Apply optimizations to assignment expressions')}</Info>
+                  {t('compress.assignments').toString()}{' '}
+                  <Info>{t('Apply optimizations to assignment expressions').toString()}</Info>
                 </span>
               </label>
               <label>
@@ -355,8 +359,10 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ compress: { ...options.compress, booleans: target.checked } } })
                     }
                   />
-                  {t('compress.booleans')}{' '}
-                  <Info>{t('Various optimizations for boolean context, for example `!!a ? b : c → a ? b : c`')}</Info>
+                  {t('compress.booleans').toString()}{' '}
+                  <Info>
+                    {t('Various optimizations for boolean context, for example `!!a ? b : c → a ? b : c`').toString()}
+                  </Info>
                 </span>
               </label>
               <label>
@@ -371,9 +377,9 @@ export default function JSONFormat() {
                       })
                     }
                   />
-                  {t('compress.collapse_vars')}{' '}
+                  {t<string>('compress.collapse_vars')}{' '}
                   <Info>
-                    {t(
+                    {t<string>(
                       'Apply certain optimizations to binary nodes, e.g. `!(a <= b) → a > b,` attempts to negate binary nodes, e.g. `a = !b && !c && !d && !e → a=!(b||c||d||e)` etc',
                     )}
                   </Info>
@@ -388,8 +394,8 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ compress: { ...options.compress, conditionals: target.checked } } })
                     }
                   />
-                  {t('compress.conditionals')}{' '}
-                  <Info>{t('Apply optimizations for `if-s` and conditional expressions.')}</Info>
+                  {t<string>('compress.conditionals')}{' '}
+                  <Info>{t<string>('Apply optimizations for `if-s` and conditional expressions.')}</Info>
                 </span>
               </label>
               <label>
@@ -401,7 +407,7 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ compress: { ...options.compress, dead_code: target.checked } } })
                     }
                   />
-                  {t('compress.dead_code')} <Info>{t('Remove unreachable code')}</Info>
+                  {t<string>('compress.dead_code')} <Info>{t<string>('Remove unreachable code')}</Info>
                 </span>
               </label>
               <label>
@@ -413,7 +419,8 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ compress: { ...options.compress, directives: target.checked } } })
                     }
                   />
-                  {t('compress.directives')} <Info>{t('remove redundant or non-standard directives')}</Info>
+                  {t<string>('compress.directives')}{' '}
+                  <Info>{t<string>('remove redundant or non-standard directives')}</Info>
                 </span>
               </label>
               <label>
@@ -425,7 +432,8 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ compress: { ...options.compress, drop_console: target.checked } } })
                     }
                   />
-                  {t('compress.drop_console')} <Info>{t('Pass `true` to discard calls to console.* functions.')}</Info>
+                  {t<string>('compress.drop_console')}{' '}
+                  <Info>{t<string>('Pass `true` to discard calls to console.* functions.')}</Info>
                 </span>
               </label>
               <label>
@@ -440,7 +448,7 @@ export default function JSONFormat() {
                       })
                     }
                   />
-                  {t('compress.drop_debugger')} <Info>{t('Remove `debugger;` statements')}</Info>
+                  {t<string>('compress.drop_debugger')} <Info>{t<string>('Remove `debugger;` statements')}</Info>
                 </span>
               </label>
               <label>
@@ -452,7 +460,7 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ compress: { ...options.compress, evaluate: target.checked } } })
                     }
                   />
-                  {t('compress.evaluate')} <Info>{t('Attempt to evaluate constant expressions')}</Info>
+                  {t<string>('compress.evaluate')} <Info>{t<string>('Attempt to evaluate constant expressions')}</Info>
                 </span>
               </label>
               <label>
@@ -464,9 +472,9 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ compress: { ...options.compress, expression: target.checked } } })
                     }
                   />
-                  {t('compress.expression')}{' '}
+                  {t<string>('compress.expression')}{' '}
                   <Info>
-                    {t(
+                    {t<string>(
                       'Pass `true` to preserve completion values from terminal statements without `return`, e.g. in bookmarklets.',
                     )}
                   </Info>
@@ -481,8 +489,8 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ compress: { ...options.compress, functions: target.checked } } })
                     }
                   />
-                  {t('compress.functions')}{' '}
-                  <Info>{t('convert declarations from varto function whenever possible')}</Info>
+                  {t<string>('compress.functions')}{' '}
+                  <Info>{t<string>('convert declarations from varto function whenever possible')}</Info>
                 </span>
               </label>
               <label>
@@ -497,9 +505,11 @@ export default function JSONFormat() {
                       })
                     }
                   />
-                  {t('compress.hoist_exports')}{' '}
+                  {t<string>('compress.hoist_exports')}{' '}
                   <Info>
-                    {t('hoist `export` statements to facilitate various `compress` and `mangle` optimizations.')}
+                    {t<string>(
+                      'hoist `export` statements to facilitate various `compress` and `mangle` optimizations.',
+                    )}
                   </Info>
                 </span>
               </label>
@@ -512,7 +522,7 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ compress: { ...options.compress, hoist_funs: target.checked } } })
                     }
                   />
-                  {t('compress.hoist_funs')}
+                  {t<string>('compress.hoist_funs')}
                 </span>
               </label>
               <label>
@@ -524,9 +534,9 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ compress: { ...options.compress, hoist_props: target.checked } } })
                     }
                   />
-                  {t('compress.hoist_props')}{' '}
+                  {t<string>('compress.hoist_props')}{' '}
                   <Info>
-                    {t(
+                    {t<string>(
                       'Hoist properties from constant object and array literals into regular variables subject to a set of constraints.',
                     )}
                   </Info>
@@ -541,9 +551,9 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ compress: { ...options.compress, hoist_vars: target.checked } } })
                     }
                   />
-                  {t('compress.hoist_vars')}{' '}
+                  {t<string>('compress.hoist_vars')}{' '}
                   <Info>
-                    {t(
+                    {t<string>(
                       'Hoist var declarations (this is `false` by default because it seems to increase the size of the output in general)',
                     )}
                   </Info>
@@ -558,7 +568,8 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ compress: { ...options.compress, if_return: target.checked } } })
                     }
                   />
-                  {t('compress.if_return')} <Info>{t('Optimizations for if/return and if/continue')}</Info>
+                  {t<string>('compress.if_return')}{' '}
+                  <Info>{t<string>('Optimizations for if/return and if/continue')}</Info>
                 </span>
               </label>
               <label>
@@ -570,7 +581,8 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ compress: { ...options.compress, imports: target.checked } } })
                     }
                   />
-                  {t('compress.imports')} <Info>{t('drop unreferenced import symbols when used with `unused`')}</Info>
+                  {t<string>('compress.imports')}{' '}
+                  <Info>{t<string>('drop unreferenced import symbols when used with `unused`')}</Info>
                 </span>
               </label>
               <label>
@@ -582,7 +594,8 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ compress: { ...options.compress, inline: target.checked } } })
                     }
                   />
-                  {t('compress.inline')} <Info>{t('Inline calls to function with simple/return statement')}</Info>
+                  {t<string>('compress.inline')}{' '}
+                  <Info>{t<string>('Inline calls to function with simple/return statement')}</Info>
                 </span>
               </label>
               <label>
@@ -594,7 +607,7 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ compress: { ...options.compress, join_vars: target.checked } } })
                     }
                   />
-                  {t('compress.join_vars')} <Info>{t('join consecutive `var` statements')}</Info>
+                  {t<string>('compress.join_vars')} <Info>{t<string>('join consecutive `var` statements')}</Info>
                 </span>
               </label>
               <label>
@@ -606,8 +619,8 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ compress: { ...options.compress, keep_fnames: target.checked } } })
                     }
                   />
-                  {t('compress.keep_fnames')}{' '}
-                  <Info>{t('Pass true to prevent the compressor from discarding function names.')}</Info>
+                  {t<string>('compress.keep_fnames')}{' '}
+                  <Info>{t<string>('Pass true to prevent the compressor from discarding function names.')}</Info>
                 </span>
               </label>
               <label>
@@ -619,9 +632,9 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ compress: { ...options.compress, keep_fnames: target.checked } } })
                     }
                   />
-                  {t('compress.keep_fnames')}{' '}
+                  {t<string>('compress.keep_fnames')}{' '}
                   <Info>
-                    {t(
+                    {t<string>(
                       'Pass true to prevent Infinity from being compressed into `1/0`, which may cause performance issues on `Chrome`',
                     )}
                   </Info>
@@ -636,9 +649,9 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ compress: { ...options.compress, loops: target.checked } } })
                     }
                   />
-                  {t('compress.loops')}{' '}
+                  {t<string>('compress.loops')}{' '}
                   <Info>
-                    {t(
+                    {t<string>(
                       'Optimizations for `do`, `while` and `for` loops when we can statically determine the condition.',
                     )}
                   </Info>
@@ -653,7 +666,7 @@ export default function JSONFormat() {
                       setOptions({ ...options, ...{ compress: { ...options.compress, merge_vars: target.checked } } })
                     }
                   />
-                  {t('compress.merge_vars')} <Info>{t('combine and reuse variables.')}</Info>
+                  {t<string>('compress.merge_vars')} <Info>{t<string>('combine and reuse variables.')}</Info>
                 </span>
               </label>
               <Checkbox
@@ -662,9 +675,9 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, negate_iife: target.checked } } })
                 }
               >
-                {t('compress.negate_iife')}{' '}
+                {t<string>('compress.negate_iife')}{' '}
                 <Info>
-                  {t(
+                  {t<string>(
                     'negate `Immediately-Called Function Expressions` where the return value is discarded, to avoid the parens that the code generator would insert.',
                   )}
                 </Info>
@@ -675,11 +688,11 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, objects: target.checked } } })
                 }
               >
-                {t('compress.objects')} <Info>{t('compact duplicate keys in object literals')}</Info>
+                {t<string>('compress.objects')} <Info>{t<string>('compact duplicate keys in object literals')}</Info>
               </Checkbox>
               <label>
                 <span>
-                  {t('compress.passes')}{' '}
+                  {t<string>('compress.passes')}{' '}
                   <input
                     type="number"
                     value={(options.compress || {}).passes || 1}
@@ -690,7 +703,7 @@ export default function JSONFormat() {
                       })
                     }
                   />
-                  <Info>{t('The maximum number of times to run compress.')}</Info>
+                  <Info>{t<string>('The maximum number of times to run compress.')}</Info>
                 </span>
               </label>
               <Checkbox
@@ -699,9 +712,9 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, properties: target.checked } } })
                 }
               >
-                {t('compress.properties')}{' '}
+                {t<string>('compress.properties')}{' '}
                 <Info>
-                  {t('Rewrite property access using the dot notation, for example `foo["bar"]` to `foo.bar`')}
+                  {t<string>('Rewrite property access using the dot notation, for example `foo["bar"]` to `foo.bar`')}
                 </Info>
               </Checkbox>
               <Checkbox
@@ -710,9 +723,9 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, reduce_funcs: target.checked } } })
                 }
               >
-                {t('compress.reduce_funcs')}{' '}
+                {t<string>('compress.reduce_funcs')}{' '}
                 <Info>
-                  {t(
+                  {t<string>(
                     'Allows single-use functions to be inlined as function expressions when permissible allowing further optimization.',
                   )}
                 </Info>
@@ -723,8 +736,8 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, reduce_vars: target.checked } } })
                 }
               >
-                {t('compress.reduce_vars')}{' '}
-                <Info>{t('Improve optimization on variables assigned with and used as constant values.')}</Info>
+                {t<string>('compress.reduce_vars')}{' '}
+                <Info>{t<string>('Improve optimization on variables assigned with and used as constant values.')}</Info>
               </Checkbox>
               <Checkbox
                 checked={!!(options.compress || {}).sequences}
@@ -732,8 +745,8 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, sequences: target.checked } } })
                 }
               >
-                {t('compress.sequences')}{' '}
-                <Info>{t('join consecutive simple statements using the comma operator.')}</Info>
+                {t<string>('compress.sequences')}{' '}
+                <Info>{t<string>('join consecutive simple statements using the comma operator.')}</Info>
               </Checkbox>
               <Checkbox
                 checked={!!(options.compress || {}).side_effects}
@@ -741,8 +754,8 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, side_effects: target.checked } } })
                 }
               >
-                {t('compress.side_effects')}{' '}
-                <Info>{t('Pass false to disable potentially dropping functions marked as "pure".')}</Info>
+                {t<string>('compress.side_effects')}{' '}
+                <Info>{t<string>('Pass false to disable potentially dropping functions marked as "pure".')}</Info>
               </Checkbox>
               <Checkbox
                 checked={!!(options.compress || {}).strings}
@@ -750,7 +763,7 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, strings: target.checked } } })
                 }
               >
-                {t('compress.strings')} <Info>{t('compact string concatenations')}</Info>
+                {t<string>('compress.strings')} <Info>{t<string>('compact string concatenations')}</Info>
               </Checkbox>
               <Checkbox
                 checked={!!(options.compress || {}).switches}
@@ -758,7 +771,8 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, switches: target.checked } } })
                 }
               >
-                {t('compress.switches')} <Info>{t('De-duplicate and remove unreachable `switch` branches.')}</Info>
+                {t<string>('compress.switches')}{' '}
+                <Info>{t<string>('De-duplicate and remove unreachable `switch` branches.')}</Info>
               </Checkbox>
               <Checkbox
                 checked={!!(options.compress || {}).templates}
@@ -766,9 +780,9 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, templates: target.checked } } })
                 }
               >
-                {t('compress.templates')}{' '}
+                {t<string>('compress.templates')}{' '}
                 <Info>
-                  {t(
+                  {t<string>(
                     'Compact template literals by embedding expressions and/or converting to string literals, e.g. `foo ${42}` → "foo 42"',
                   )}
                 </Info>
@@ -779,7 +793,7 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, unsafe: target.checked } } })
                 }
               >
-                {t('compress.unsafe')} <Info>{t('apply "unsafe" transformations')}</Info>
+                {t<string>('compress.unsafe')} <Info>{t<string>('apply "unsafe" transformations')}</Info>
               </Checkbox>
               <Checkbox
                 checked={!!(options.compress || {}).toplevel}
@@ -787,9 +801,9 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, toplevel: target.checked } } })
                 }
               >
-                {t('compress.toplevel')}{' '}
+                {t<string>('compress.toplevel')}{' '}
                 <Info>
-                  {t(
+                  {t<string>(
                     'Drop unreferenced functions ("funcs") and/or variables ("vars") in the top level scope (false by default, true to drop both unreferenced functions and variables)',
                   )}
                 </Info>
@@ -800,9 +814,9 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, top_retain: target.checked } } })
                 }
               >
-                {t('compress.top_retain')}{' '}
+                {t<string>('compress.top_retain')}{' '}
                 <Info>
-                  {t(
+                  {t<string>(
                     'Prevent specific toplevel functions and variables from unused removal (can be array, comma-separated, RegExp or function. Implies toplevel)',
                   )}
                 </Info>
@@ -813,7 +827,8 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, typeofs: target.checked } } })
                 }
               >
-                {t('compress.typeofs')} <Info>{t('Transforms typeof foo == "undefined" into foo === void 0.')}</Info>
+                {t<string>('compress.typeofs')}{' '}
+                <Info>{t<string>('Transforms typeof foo == "undefined" into foo === void 0.')}</Info>
               </Checkbox>
               <Checkbox
                 checked={!!(options.compress || {}).unsafe_comps}
@@ -821,9 +836,11 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, unsafe_comps: target.checked } } })
                 }
               >
-                {t('compress.unsafe_comps')}{' '}
+                {t<string>('compress.unsafe_comps')}{' '}
                 <Info>
-                  {t('Compress expressions like a `<= b` assuming none of the operands can be (coerced to) `NaN`.')}
+                  {t<string>(
+                    'Compress expressions like a `<= b` assuming none of the operands can be (coerced to) `NaN`.',
+                  )}
                 </Info>
               </Checkbox>
               <Checkbox
@@ -832,9 +849,9 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, unsafe_Function: target.checked } } })
                 }
               >
-                {t('compress.unsafe_Function')}{' '}
+                {t<string>('compress.unsafe_Function')}{' '}
                 <Info>
-                  {t('Compress and mangle `Function(args, code)` when both args and code are string literals.')}
+                  {t<string>('Compress and mangle `Function(args, code)` when both args and code are string literals.')}
                 </Info>
               </Checkbox>
               <Checkbox
@@ -843,9 +860,9 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, unsafe_math: target.checked } } })
                 }
               >
-                {t('compress.unsafe_math')}{' '}
+                {t<string>('compress.unsafe_math')}{' '}
                 <Info>
-                  {t(
+                  {t<string>(
                     'Optimize numerical expressions like `2 * x * 3` into `6 * x`, which may give imprecise floating point results.',
                   )}
                 </Info>
@@ -856,8 +873,10 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, unsafe_proto: target.checked } } })
                 }
               >
-                {t('compress.unsafe_proto')}{' '}
-                <Info>{t('Optimize expressions like `Array.prototype.slice.call(a)` into `[].slice.call(a)`')}</Info>
+                {t<string>('compress.unsafe_proto')}{' '}
+                <Info>
+                  {t<string>('Optimize expressions like `Array.prototype.slice.call(a)` into `[].slice.call(a)`')}
+                </Info>
               </Checkbox>
               <Checkbox
                 checked={!!(options.compress || {}).unsafe_regexp}
@@ -865,9 +884,11 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, unsafe_regexp: target.checked } } })
                 }
               >
-                {t('compress.unsafe_regexp')}{' '}
+                {t<string>('compress.unsafe_regexp')}{' '}
                 <Info>
-                  {t('Enable substitutions of variables with `RegExp` values the same way as if they are constants.')}
+                  {t<string>(
+                    'Enable substitutions of variables with `RegExp` values the same way as if they are constants.',
+                  )}
                 </Info>
               </Checkbox>
               <Checkbox
@@ -876,8 +897,8 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, unsafe_undefined: target.checked } } })
                 }
               >
-                {t('compress.unsafe_undefined')}{' '}
-                <Info>{t('substitute void 0 if there is a variable named undefined in scope')}</Info>
+                {t<string>('compress.unsafe_undefined')}{' '}
+                <Info>{t<string>('substitute void 0 if there is a variable named undefined in scope')}</Info>
               </Checkbox>
               <Checkbox
                 checked={!!(options.compress || {}).unused}
@@ -885,7 +906,7 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, unused: target.checked } } })
                 }
               >
-                {t('compress.unused')} <Info>{t('drop unreferenced functions and variables')}</Info>
+                {t<string>('compress.unused')} <Info>{t<string>('drop unreferenced functions and variables')}</Info>
               </Checkbox>
               <Checkbox
                 checked={!!(options.compress || {}).varify}
@@ -893,8 +914,8 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, varify: target.checked } } })
                 }
               >
-                {t('compress.varify')}{' '}
-                <Info>{t('convert block-scoped declaractions into `var` whenever safe to do so')}</Info>
+                {t<string>('compress.varify')}{' '}
+                <Info>{t<string>('convert block-scoped declaractions into `var` whenever safe to do so')}</Info>
               </Checkbox>
               <Checkbox
                 checked={!!(options.compress || {}).webkit}
@@ -902,7 +923,7 @@ export default function JSONFormat() {
                   setOptions({ ...options, ...{ compress: { ...options.compress, webkit: target.checked } } })
                 }
               >
-                {t('compress.webkit')} <Info>{t('Support non-standard Safari/Webkit.')}</Info>
+                {t<string>('compress.webkit')} <Info>{t<string>('Support non-standard Safari/Webkit.')}</Info>
               </Checkbox>
             </Spacing>
           </ResultCode>
