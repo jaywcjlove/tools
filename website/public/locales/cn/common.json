@@ -1,6 +1,8 @@
 {
   "Formatter": "格式化",
   "Minify": "压缩",
+  "Reset": "重置",
+  "None": "清空",
   "Options": "选项",
   "Copy": "复制",
   "Copied": "已复制",

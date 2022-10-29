@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export * from './Document';
+export * from './Divider';
 export * from './Result';
 export * from './Button';
 export * from './CodeLineCopy';
