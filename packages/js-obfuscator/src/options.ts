@@ -134,11 +134,30 @@ export const allOptions: ObfuscatorOptions = {
   sourceMapFileName: '',
   // sourceMapMode: TTypeFromEnum<typeof SourceMapMode>;
   // sourceMapSourcesMode: TTypeFromEnum<typeof SourceMapSourcesMode>;
-  // splitStrings: boolean;
-  // splitStringsChunkLength: number;
-  // stringArray: boolean;
-  // stringArrayCallsTransform: boolean;
-  // stringArrayCallsTransformThreshold: number;
+  /**
+   * Splits literal strings into chunks with length of `splitStringsChunkLength` option value.
+   */
+  splitStrings: false,
+  /** Sets chunk length of splitStrings option. */
+  splitStringsChunkLength: 10,
+  /**
+   * Removes string literals and place them in a special array.
+   * For instance, the string "Hello World" in var m = "Hello World";
+   * will be replaced with something like var m = _0x12c456[0x1];
+   */
+  stringArray: true,
+  /**
+   * ⚠️ `stringArray` option must be enabled.
+   * Enables the transformation of calls to the stringArray.
+   * All arguments of these calls may be extracted to a different object depending on stringArrayCallsTransformThreshold value. So it makes it even harder to automatically find calls to the string array.
+   */
+  stringArrayCallsTransform: false,
+  /**
+   * ⚠️ `stringArray` and `stringArrayCallsTransformThreshold` options must be enabled
+   *
+   * You can use this setting to adjust the probability (from 0 to 1) that calls to the string array will be transformed.
+   */
+  stringArrayCallsTransformThreshold: 0.5,
   // stringArrayEncoding: TStringArrayEncoding[];
   // stringArrayIndexesType: TStringArrayIndexesType[];
   // stringArrayIndexShift: boolean;

@@ -4,6 +4,11 @@ export const Label = styled.label`
   font-family: monospace;
   input {
     vertical-align: middle;
+    margin-right: 6px;
+  }
+  input:disabled {
+    cursor: not-allowed;
+    color: var(--color-fg-subtle);
   }
   > span * {
     vertical-align: middle;

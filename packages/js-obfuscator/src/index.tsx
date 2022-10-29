@@ -327,7 +327,8 @@ export default function JSObfuscator() {
       value: options.sourceMapBaseUrl,
       children: (
         <Fragment>
-          sourceMapBaseUrl <Info>{t<string>('sourceMapBaseUrl')}</Info>
+          sourceMapBaseUrl <br />
+          <Info>{t<string>('sourceMapBaseUrl')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -354,6 +355,73 @@ export default function JSObfuscator() {
       ),
       onChange: ({ target }) => {
         setOptions({ ...options, ...{ unicodeEscapeSequence: target.checked } });
+      },
+    },
+    {
+      checked: !!options.splitStrings,
+      children: (
+        <Fragment>
+          splitStrings <Info>{t<string>('splitStrings')}</Info>
+        </Fragment>
+      ),
+      onChange: ({ target }) => {
+        setOptions({ ...options, ...{ splitStrings: target.checked } });
+      },
+    },
+    {
+      type: 'number',
+      disabled: !options.splitStrings,
+      value: options.splitStringsChunkLength,
+      children: (
+        <Fragment>
+          splitStringsChunkLength <br />
+          <Info>{t<string>('splitStringsChunkLength')}</Info>
+        </Fragment>
+      ),
+      onChange: ({ target }) => {
+        setOptions({ ...options, ...{ splitStringsChunkLength: Number(target.value) } });
+      },
+    },
+    {
+      checked: !!options.stringArray,
+      children: (
+        <Fragment>
+          stringArray <Info>{t<string>('stringArray')}</Info>
+        </Fragment>
+      ),
+      onChange: ({ target }) => {
+        setOptions({ ...options, ...{ stringArray: target.checked } });
+      },
+    },
+    {
+      disabled: !options.stringArray,
+      checked: !!options.stringArrayCallsTransform,
+      children: (
+        <Fragment>
+          stringArrayCallsTransform <br />
+          <Info>{t<string>('stringArrayCallsTransform')}</Info>
+        </Fragment>
+      ),
+      onChange: ({ target }) => {
+        setOptions({ ...options, ...{ stringArrayCallsTransform: target.checked } });
+      },
+    },
+    {
+      type: 'range',
+      max: '1',
+      min: '0',
+      step: '0.1',
+      disabled: !options.stringArray,
+      value: options.stringArrayCallsTransformThreshold,
+      children: (
+        <Fragment>
+          {options.stringArrayCallsTransformThreshold} <br />
+          stringArrayCallsTransformThreshold
+          <Info>{t<string>('stringArrayCallsTransformThreshold')}</Info>
+        </Fragment>
+      ),
+      onChange: ({ target }) => {
+        setOptions({ ...options, ...{ stringArrayCallsTransformThreshold: Number(target.value) } });
       },
     },
   ];
