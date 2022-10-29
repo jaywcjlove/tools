@@ -1,3 +1,17 @@
 {
-  "Obfuscator": "Obfuscator"
+  "Obfuscator": "Obfuscator",
+  "highOption": "High obfuscation, low performance",
+  "highOptionDes": "The performance will be much slower than without obfuscation",
+  "mediumOption": "Medium obfuscation, optimal performance",
+  "mediumOptionDes": "The performance will be slower than without obfuscation",
+  "lowOption": "Low obfuscation, High performance",
+  "lowOptionDes": "The performance will be at a relatively normal level",
+  "defaultOption": "Default preset, High performance",
+  "controlFlowFlattening": "⚠️ This option greatly affects the performance up to 1.5x slower runtime speed. Use controlFlowFlatteningThreshold to set percentage of nodes that will affected by control flow flattening.",
+  "controlFlowFlatteningThreshold": "The probability that the controlFlowFlattening transformation will be applied to any given node. This setting is especially useful for large code size because large amounts of control flow transformations can slow down your code and increase code size. controlFlowFlatteningThreshold: 0 equals to controlFlowFlattening: false.",
+  "deadCodeInjection": "Dramatically increases size of obfuscated code (up to 200%), use only if size of obfuscated code doesn't matter. Use deadCodeInjectionThreshold to set percentage of nodes that will affected by dead code injection.\n⚠️ This option forcibly enables stringArray option.With this option, random blocks of dead code will be added to the obfuscated code.",
+  "deadCodeInjectionThreshold": "Allows to set percentage of nodes that will affected by deadCodeInjection.",
+  "debugProtection": "⚠️ Can freeze your browser if you open the Developer Tools. This option makes it almost impossible to use the debugger function of the Developer Tools (both on WebKit-based and Mozilla Firefox).",
+  "debugProtectionInterval": "⚠️ Can freeze your browser! Use at own risk. If set, an interval in milliseconds is used to force the debug mode on the Console tab, making it harder to use other features of the Developer Tools. Works if debugProtection is enabled. Recommended value is between 2000 and 4000 milliseconds.",
+  "disableConsoleOutput": "⚠️ This option disables console calls globally for all scripts Disables the use of console.log, console.info, console.error, console.warn, console.debug, console.exception and console.trace by replacing them with empty functions. This makes the use of the debugger harder."
 }
