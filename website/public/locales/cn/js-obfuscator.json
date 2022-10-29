@@ -32,5 +32,7 @@
   "sourceMapBaseUrl": "当sourceMapMode:“separate”时，将基url设置为源映射导入url",
   "sourceMapFileName": "当sourceMapMode:“separate”时，设置输出源映射的文件名。",
 
-  "target": "允许为模糊代码设置目标环境。可用值：`browser`，`browser-no-eval`，`node`。当前 `browser` 和`node`目标的输出代码是相同的，但某些特定于`browser`的选项不允许与`node`目标一起使用。`browser-no-eval`目标的输出代码未使用eval。"
+  "target": "允许为模糊代码设置目标环境。可用值：`browser`，`browser-no-eval`，`node`。当前 `browser` 和`node`目标的输出代码是相同的，但某些特定于`browser`的选项不允许与`node`目标一起使用。`browser-no-eval`目标的输出代码未使用eval。",
+  "transformObjectKeys": "启用对象关键点的变换。",
+  "unicodeEscapeSequence": "允许启用/禁用字符串转换为unicode转义序列。Unicode转义序列大大增加了代码大小，字符串可以很容易地恢复到原始视图。建议仅对小型源代码启用此选项。"
 }

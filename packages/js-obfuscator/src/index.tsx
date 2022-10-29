@@ -49,6 +49,10 @@ export default function JSObfuscator() {
   const resultProps: ResultProps['codeProps'] = {
     style: { height: 'calc(100vh - 87px)', overflow: 'auto', margin: 0 },
   };
+  const resetHandle = () => {
+    setPreset('allOptions');
+    setOptions({ ...allOptions });
+  };
   const presetData: CheckboxOptionProps[] = [
     {
       type: 'radio',
@@ -107,10 +111,7 @@ export default function JSObfuscator() {
       name: 'options',
       checked: preset === 'allOptions',
       children: <Fragment>{t<string>('allOptions')}</Fragment>,
-      onChange: ({ target }) => {
-        setPreset('allOptions');
-        setOptions({ ...allOptions });
-      },
+      onChange: resetHandle,
     },
   ];
   const optionsElement = [
@@ -333,6 +334,28 @@ export default function JSObfuscator() {
         setOptions({ ...options, ...{ sourceMapBaseUrl: target.value } });
       },
     },
+    {
+      checked: !!options.transformObjectKeys,
+      children: (
+        <Fragment>
+          transformObjectKeys <Info>{t<string>('transformObjectKeys')}</Info>
+        </Fragment>
+      ),
+      onChange: ({ target }) => {
+        setOptions({ ...options, ...{ transformObjectKeys: target.checked } });
+      },
+    },
+    {
+      checked: !!options.unicodeEscapeSequence,
+      children: (
+        <Fragment>
+          unicodeEscapeSequence <Info>{t<string>('unicodeEscapeSequence')}</Info>
+        </Fragment>
+      ),
+      onChange: ({ target }) => {
+        setOptions({ ...options, ...{ unicodeEscapeSequence: target.checked } });
+      },
+    },
   ];
   return (
     <Wrapper>
@@ -371,7 +394,7 @@ export default function JSObfuscator() {
         style={{ maxWidth: 420 }}
         extra={
           <Fragment>
-            <Button onClick={() => setOptions(allOptions)}>{t<string>('Reset', { ns: 'common' })}</Button>
+            <Button onClick={resetHandle}>{t<string>('Reset', { ns: 'common' })}</Button>
             <Button onClick={() => setOptions({})}>{t<string>('None', { ns: 'common' })}</Button>
           </Fragment>
         }

@@ -31,5 +31,7 @@
   "sourceMapBaseUrl": "Sets base url to the source map import url when sourceMapMode: 'separate'.",
   "sourceMapFileName": "Sets file name for output source map when sourceMapMode: 'separate'.",
 
-  "target": "Allows to set target environment for obfuscated code. Available values: `browser` `browser-no-eval` `node`. Currently output code for browser and node targets is identical, but some browser-specific options are not allowed to use with node target. Output code for browser-no-eval target is not using eval."
+  "target": "Allows to set target environment for obfuscated code. Available values: `browser` `browser-no-eval` `node`. Currently output code for browser and node targets is identical, but some browser-specific options are not allowed to use with node target. Output code for browser-no-eval target is not using eval.",
+  "transformObjectKeys": "Enables transformation of object keys.",
+  "unicodeEscapeSequence": "Allows to enable/disable string conversion to unicode escape sequence. Unicode escape sequence increases code size greatly and strings easily can be reverted to their original view. Recommended to enable this option only for small source code."
 }

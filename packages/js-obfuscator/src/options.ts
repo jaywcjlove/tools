@@ -151,8 +151,19 @@ export const allOptions: ObfuscatorOptions = {
   // stringArrayThreshold: number;
   target: 'browser',
   // target: TTypeFromEnum<typeof ObfuscationTarget>;
-  // transformObjectKeys: boolean;
-  // unicodeEscapeSequence: boolean;
+  /**
+   * Default: false
+   *
+   * Enables transformation of object keys.
+   */
+  transformObjectKeys: false,
+  /**
+   * Default: false
+   *
+   * Allows to enable/disable string conversion to unicode escape sequence.
+   * Unicode escape sequence increases code size greatly and strings easily can be reverted to their original view. Recommended to enable this option only for small source code.
+   */
+  unicodeEscapeSequence: false,
 };
 
 /**
