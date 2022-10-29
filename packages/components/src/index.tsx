@@ -7,6 +7,7 @@ export * from './Button';
 export * from './CodeLineCopy';
 export * from './CheckboxOption';
 export * from './Spacing';
+export * from './Select';
 export * from './Input';
 export * from './StyledLayout';
 export * from './Textarea';

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Label = styled.label`
+export const Label = styled.label`
   font-family: monospace;
   input {
     vertical-align: middle;
@@ -10,7 +10,7 @@ const Label = styled.label`
   }
 `;
 
-interface CheckboxOptionProps
+export interface CheckboxOptionProps
   extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {}
 export const CheckboxOption: React.FC<React.PropsWithChildren<CheckboxOptionProps>> = ({ children, ...other }) => (
   <Label>

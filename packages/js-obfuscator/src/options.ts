@@ -39,29 +39,99 @@ export const allOptions: ObfuscatorOptions = {
    * Disables the use of console.log, console.info, console.error, console.warn, console.debug, console.exception and console.trace by replacing them with empty functions. This makes the use of the debugger harder.
    */
   disableConsoleOutput: false,
-  // domainLock: string[],
+  /**
+   * ⚠️ This option does not work with target: 'node'
+   * Allows to run the obfuscated source code only on specific domains and/or sub-domains. This makes really hard for someone to just copy and paste your source code and run it elsewhere.
+   * If the source code isn't run on the domains specified by this option, the browser will be redirected to a passed to the domainLockRedirectUrl option URL.
+   *
+   * It's possible to lock your code to more than one domain or sub-domain. For instance, to lock it so the code only runs on www.example.com add www.example.com. To make it work on the root domain including any sub-domains (example.com, sub.example.com), use .example.com.
+   */
+  // domainLock: [],
   // domainLockRedirectUrl: string,
   // forceTransformStrings: string[],
   // identifierNamesCache: TIdentifierNamesCache,
   // identifierNamesGenerator: TTypeFromEnum<typeof IdentifierNamesGenerator>,
   // identifiersDictionary: string[],
   // identifiersPrefix: string,
-  // ignoreImports: boolean,
-  // inputFileName: string,
-  // log: boolean,
-  // numbersToExpressions: boolean,
+  /**
+   * Default: false
+   * Prevents obfuscation of require imports. Could be helpful in some cases when for some reason runtime environment requires these imports with static strings only.
+   */
+  ignoreImports: false,
+  /**
+   * Allows to set name of the input file with source code. This name will be used internally for source map generation. Required when using NodeJS API and sourceMapSourcesMode option has sources value`.
+   */
+  inputFileName: '',
+  /**
+   * Enables logging of the information to the console.
+   */
+  log: false,
+  /**
+   * Enables numbers conversion to expressions
+   */
+  numbersToExpressions: false,
   // optionsPreset: TOptionsPreset,
-  // renameGlobals: boolean,
-  // renameProperties: boolean,
-  // renamePropertiesMode: TRenamePropertiesMode;
-  // reservedNames: string[];
-  // reservedStrings: string[];
-  // seed: string | number;
-  // selfDefending: boolean;
-  // simplify: boolean;
-  // sourceMap: boolean;
-  // sourceMapBaseUrl: string;
-  // sourceMapFileName: string;
+  /**
+   * ⚠️ this option can break your code. Enable it only if you know what it does!
+   * Enables obfuscation of global variable and function names with declaration.
+   *
+   * To switch between safe and unsafe modes of this option use `renamePropertiesMode` option.
+   *
+   * To set format of renamed property names use `identifierNamesGenerator` option.
+   *
+   * To control which properties will be renamed use `reservedNames` option.
+   */
+  renameGlobals: false,
+  /**
+   *  Default: false
+   *
+   * ⚠️ this option MAY break your code. Enable it only if you know what it does!
+   * Enables renaming of property names. All built-in DOM properties and properties in core JavaScript classes will be ignored.
+   *
+   * To switch between safe and unsafe modes of this option use renamePropertiesMode option.
+   *
+   * To set format of renamed property names use identifierNamesGenerator option.
+   *
+   * To control which properties will be renamed use reservedNames option.
+   */
+  renameProperties: false,
+  // renamePropertiesMode: TRenamePropertiesMode,
+  // reservedNames: string[],
+  // reservedStrings: string[],
+  // seed: string | number,
+  /**
+   * Default: false
+   *
+   * ⚠️ Don't change obfuscated code in any way after obfuscation with this option, because any change like uglifying of code can trigger self defending and code wont work anymore!
+   *
+   * ⚠️ This option forcibly sets compact value to true
+   *
+   * This option makes the output code resilient against formatting and variable renaming. If one tries to use a JavaScript beautifier on the obfuscated code, the code won't work anymore, making it harder to understand and modify it.
+   */
+  selfDefending: false,
+  /**
+   * Default: true
+   *
+   * Enables additional code obfuscation through simplification.
+   * ⚠️ in future releases obfuscation of boolean literals (true => !![]) will be moved under this option.
+   */
+  simplify: true,
+  /**
+   * Default: false
+   *
+   * Enables source map generation for obfuscated code.
+   *
+   * Source maps can be useful to help you debug your obfuscated JavaScript source code. If you want or need to debug in production, you can upload the separate source map file to a secret location and then point your browser there.
+   */
+  sourceMap: false,
+  /**
+   * Sets base url to the source map import url when sourceMapMode: 'separate'.
+   */
+  sourceMapBaseUrl: '',
+  /**
+   * Sets file name for output source map when sourceMapMode: 'separate'.
+   */
+  sourceMapFileName: '',
   // sourceMapMode: TTypeFromEnum<typeof SourceMapMode>;
   // sourceMapSourcesMode: TTypeFromEnum<typeof SourceMapSourcesMode>;
   // splitStrings: boolean;
@@ -79,6 +149,7 @@ export const allOptions: ObfuscatorOptions = {
   // stringArrayWrappersParametersMaxCount: number;
   // stringArrayWrappersType: TStringArrayWrappersType;
   // stringArrayThreshold: number;
+  target: 'browser',
   // target: TTypeFromEnum<typeof ObfuscationTarget>;
   // transformObjectKeys: boolean;
   // unicodeEscapeSequence: boolean;
@@ -88,7 +159,7 @@ export const allOptions: ObfuscatorOptions = {
  * High obfuscation, low performance
  * The performance will be much slower than without obfuscation
  */
-export const highOption = {
+export const highOption: ObfuscatorOptions = {
   compact: true,
   controlFlowFlattening: true,
   controlFlowFlatteningThreshold: 1,
@@ -124,7 +195,7 @@ export const highOption = {
  * Medium obfuscation, optimal performance
  * The performance will be slower than without obfuscation
  */
-export const mediumOption = {
+export const mediumOption: ObfuscatorOptions = {
   compact: true,
   controlFlowFlattening: true,
   controlFlowFlatteningThreshold: 0.75,
@@ -161,7 +232,7 @@ export const mediumOption = {
  * Low obfuscation, High performance
  * The performance will be at a relatively normal level
  */
-export const lowOption = {
+export const lowOption: ObfuscatorOptions = {
   compact: true,
   controlFlowFlattening: false,
   deadCodeInjection: false,
@@ -191,7 +262,7 @@ export const lowOption = {
 /**
  * Default preset, High performance
  */
-export const defaultOption = {
+export const defaultOption: ObfuscatorOptions = {
   compact: true,
   controlFlowFlattening: false,
   deadCodeInjection: false,

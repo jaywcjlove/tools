@@ -7,11 +7,29 @@
   "lowOption": "Low obfuscation, High performance",
   "lowOptionDes": "The performance will be at a relatively normal level",
   "defaultOption": "Default preset, High performance",
+  "allOptions": "Default all presets, High performance",
+
+  "compact": "Compact code output on one line.",
   "controlFlowFlattening": "⚠️ This option greatly affects the performance up to 1.5x slower runtime speed. Use controlFlowFlatteningThreshold to set percentage of nodes that will affected by control flow flattening.",
   "controlFlowFlatteningThreshold": "The probability that the controlFlowFlattening transformation will be applied to any given node. This setting is especially useful for large code size because large amounts of control flow transformations can slow down your code and increase code size. controlFlowFlatteningThreshold: 0 equals to controlFlowFlattening: false.",
   "deadCodeInjection": "Dramatically increases size of obfuscated code (up to 200%), use only if size of obfuscated code doesn't matter. Use deadCodeInjectionThreshold to set percentage of nodes that will affected by dead code injection.\n⚠️ This option forcibly enables stringArray option.With this option, random blocks of dead code will be added to the obfuscated code.",
   "deadCodeInjectionThreshold": "Allows to set percentage of nodes that will affected by deadCodeInjection.",
   "debugProtection": "⚠️ Can freeze your browser if you open the Developer Tools. This option makes it almost impossible to use the debugger function of the Developer Tools (both on WebKit-based and Mozilla Firefox).",
   "debugProtectionInterval": "⚠️ Can freeze your browser! Use at own risk. If set, an interval in milliseconds is used to force the debug mode on the Console tab, making it harder to use other features of the Developer Tools. Works if debugProtection is enabled. Recommended value is between 2000 and 4000 milliseconds.",
-  "disableConsoleOutput": "⚠️ This option disables console calls globally for all scripts Disables the use of console.log, console.info, console.error, console.warn, console.debug, console.exception and console.trace by replacing them with empty functions. This makes the use of the debugger harder."
+  "disableConsoleOutput": "⚠️ This option disables console calls globally for all scripts Disables the use of console.log, console.info, console.error, console.warn, console.debug, console.exception and console.trace by replacing them with empty functions. This makes the use of the debugger harder.",
+
+  "ignoreImports": "Prevents obfuscation of require imports. Could be helpful in some cases when for some reason runtime environment requires these imports with static strings only.",
+  "inputFileName": "Allows to set name of the input file with source code. This name will be used internally for source map generation. Required when using NodeJS API and sourceMapSourcesMode option has sources value.",
+  "log": "Enables logging of the information to the console.",
+  "numbersToExpressions": "Enables numbers conversion to expressions",
+  "renameGlobals": "⚠️ this option can break your code. Enable it only if you know what it does! Enables obfuscation of global variable and function names with declaration.",
+  "renameProperties": "⚠️ this option MAY break your code. Enable it only if you know what it does! Enables renaming of property names. All built-in DOM properties and properties in core JavaScript classes will be ignored. To switch between safe and unsafe modes of this option use `renamePropertiesMode` option. To set format of renamed property names use `identifierNamesGenerator` option. To control which properties will be renamed use `reservedNames` option.",
+
+  "selfDefending": "⚠️ Don't change obfuscated code in any way after obfuscation with this option, because any change like uglifying of code can trigger self defending and code wont work anymore! ⚠️ This option forcibly sets compact value to true This option makes the output code resilient against formatting and variable renaming. If one tries to use a JavaScript beautifier on the obfuscated code, the code won't work anymore, making it harder to understand and modify it.",
+  "simplify": "Enables additional code obfuscation through simplification. ⚠️ in future releases obfuscation of boolean literals (true => !![]) will be moved under this option.",
+  "sourceMap": "Enables source map generation for obfuscated code. Source maps can be useful to help you debug your obfuscated JavaScript source code. If you want or need to debug in production, you can upload the separate source map file to a secret location and then point your browser there.",
+  "sourceMapBaseUrl": "Sets base url to the source map import url when sourceMapMode: 'separate'.",
+  "sourceMapFileName": "Sets file name for output source map when sourceMapMode: 'separate'.",
+
+  "target": "Allows to set target environment for obfuscated code. Available values: `browser` `browser-no-eval` `node`. Currently output code for browser and node targets is identical, but some browser-specific options are not allowed to use with node target. Output code for browser-no-eval target is not using eval."
 }
