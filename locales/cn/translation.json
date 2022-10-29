@@ -13,6 +13,9 @@
     "/js-beautifier": {
       "label": "JS 美化/压缩"
     },
+    "/js-obfuscator": {
+      "label": "JS 混淆器"
+    },
     "/css-formatter": {
       "label": "CSS 格式化/压缩"
     },
