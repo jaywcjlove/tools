@@ -1,6 +1,6 @@
 {
   "name": "@wcj/tools-app-main",
-  "version": "1.9.4",
+  "version": "1.10.0",
   "main": "./lib/index.js",
   "private": true,
   "scripts": {

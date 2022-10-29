@@ -2,7 +2,7 @@
   "name": "web-tools",
   "description": "Many many useful Web Online Tools For Web Developers & Programmers.",
   "homepage": "https://github.com/jaywcjlove/tools.git",
-  "version": "1.9.4",
+  "version": "1.10.0",
   "main": "main.js",
   "author": "Kenny Wong <398188662@qq.com>",
   "private": true,
@@ -18,13 +18,13 @@
     "build": "npm run copy && cross-env NODE_ENV=production electron-builder build --publish=never --config config.json"
   },
   "dependencies": {
-    "@wcj/tools-app-main": "1.9.4"
+    "@wcj/tools-app-main": "1.10.0"
   },
   "devDependencies": {
-    "@wcj/tools-app-preload": "1.9.4",
+    "@wcj/tools-app-preload": "1.10.0",
     "cpy-cli": "4.2.0",
     "electron": "20.0.0",
     "electron-builder": "23.1.0",
-    "website": "1.9.4"
+    "website": "1.10.0"
   }
 }

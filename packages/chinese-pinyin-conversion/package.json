@@ -1,6 +1,6 @@
 {
   "name": "@wcj/tools-react-chinese-pinyin-conversion",
-  "version": "1.9.4",
+  "version": "1.10.0",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
@@ -16,7 +16,7 @@
   "author": "Kenny Wong <wowohoo@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "@wcj/tools-react-components": "1.9.4",
+    "@wcj/tools-react-components": "1.10.0",
     "pinyin": "^2.11.2"
   },
   "peerDependencies": {
