@@ -19,13 +19,18 @@
   "debugProtectionInterval": "⚠️ 可以冻结您的浏览器！使用风险自负。 如果设置，则会使用以毫秒为单位的间隔来强制 Console 选项卡上的调试模式，从而更难使用开发人员工具的其他功能。如果启用了debugProtection，则有效。建议值介于2000和4000毫秒之间",
   "disableConsoleOutput": "⚠️ 此选项全局禁用所有脚本的控制台调用禁用控制台的使用。console.log, console.info, console.error, console.warn, console.debug, console.exception和 console.trace。通过将它们替换为空函数进行跟踪。这使得调试器的使用更加困难",
 
+  "identifierNamesGenerator": "设置标识符名称生成器。可用值：\n`dictionary`：identifiersDictionary列表中的标识符名称。\n`hexadecimal`：标识符名称，如_0xabc123。\n`mangled`：短标识符名称，例如a、b、c。\n`mangled shuffled`：与mangled相同，但字母表有乱序",
+
+  "identifiersPrefix": "为所有全局标识符设置前缀。当您想混淆多个文件时，请使用此选项。此选项有助于避免这些文件的全局标识符之间的冲突。每个文件的前缀应该不同",
   "ignoreImports": "防止 require 导入的混淆。在某些情况下，由于某些原因，运行时环境只需要静态字符串的这些导入可能会有所帮助",
   "inputFileName": "允许使用源代码设置输入文件的名称。此名称将在内部用于源映射生成。当使用 NodeJS API 且 sourceMapSourcesMode 选项具有 sources 值时是必需的",
   "log": "启用将信息记录到控制台",
   "numbersToExpressions": "启用数字转换为表达式",
+  "optionsPreset": "允许设置选项预设。可用值：“default”、“low obfuscation”、“medium obfuscaation”、“high obfuscaion”。所有添加选项将与选定的选项预设合并",
   "renameGlobals": "⚠️ 此选项可能会破坏您的代码。只有当你知道它的作用时才启用它！使用声明启用全局变量和函数名称的模糊处理",
   "renameProperties": "⚠️ 此选项可能会破坏您的代码。只有当你知道它的作用时才启用它！启用属性名称的重命名。所有内置DOM属性和核心JavaScript类中的属性都将被忽略。要在该选项的安全和不安全模式之间切换，请使用“renamePropertiesMode”选项。要设置重命名属性名称的格式，请使用“identifierNamesGenerator”选项。要控制要重命名的属性，请使用“reservedNames”选项",
 
+  "seed": "此选项设置随机生成器的种子。这对于创建可重复的结果很有用。如果种子为0，随机生成器将在没有种子的情况下工作",
   "selfDefending": "⚠️ 使用此选项混淆后，不要以任何方式更改混淆代码，因为任何更改（如代码丑化）都会触发自我保护，代码将不再工作！⚠️ 此选项强制将压缩值设置为true。此选项使输出代码对格式化和变量重命名具有弹性。如果有人试图在混淆的代码上使用JavaScript美化器，那么代码将不再工作，这会使理解和修改变得更加困难",
   "simplify": "通过简化启用其他代码混淆。 ⚠️ 在未来的版本中，布尔文字 (true => !![]) 的模糊处理将在此选项下移动",
   "sourceMap": "启用模糊代码的源映射生成。 源映射可以帮助您调试混淆的JavaScript源代码。如果您想要或需要在生产中调试，可以将单独的源映射文件上载到一个秘密位置，然后将浏览器指向那里",
@@ -38,11 +43,13 @@
   "stringArrayCallsTransform": "⚠️ 必须启用stringArray选项启用对stringArray的调用转换。根据stringArrayCallsTransformThreshold值，可以将这些调用的所有参数提取到不同的对象。因此，自动查找对字符串数组的调用变得更加困难",
   "stringArrayCallsTransformThreshold": " ⚠️ 必须启用stringArray和stringArrayCallsTransformThreshold选项您可以使用此设置调整对字符串数组的调用将被转换的概率（从0到1）",
 
-  "stringArrayRotate": "⚠️ 必须启用stringArray。将 stringArray 数组移位固定和随机（在代码混淆时生成）位置。这使得很难将移除的字符串的顺序与其原始位置相匹配",
-  "stringArrayShuffle": "⚠️ 必须启用stringArray。随机移动 stringArray 数组项",
+  "stringArrayIndexShift": "⚠️ 必须启用 stringArray 选项。为所有字符串数组调用启用额外的索引移位",
+  "stringArrayRotate": "⚠️ 必须启用 stringArray 选项。将 stringArray 数组移位固定和随机（在代码混淆时生成）位置。这使得很难将移除的字符串的顺序与其原始位置相匹配",
+  "stringArrayShuffle": "⚠️ 必须启用stringArray 选项。随机移动 stringArray 数组项",
   "stringArrayWrappersChainedCalls": "⚠️ 必须启用stringArray和stringArrayWrappersCount选项。启用字符串数组包装器之间的链接调用",
   "stringArrayWrappersCount": "⚠️ 必须启用stringArray选项。设置每个根或函数范围内字符串数组的包装器计数。每个作用域内包装器的实际数量受此作用域内文本节点的数量限制",
   "stringArrayWrappersParametersMaxCount": "⚠️ 必须启用stringArray选项。⚠️ 当前，此选项仅影响stringArrayWrappersType函数选项值添加的包装器。允许控制字符串数组包装器参数的最大数量。默认值和最小值为2。建议值介于2和5之间",
+  "stringArrayThreshold": "⚠️ 必须启用stringArray选项。您可以使用此设置来调整字符串文本插入stringArray的概率（从0到1）。此设置对于较大的代码大小特别有用，因为它会重复调用字符串数组，并且会降低代码速度。stringArrayThreshold：0等于stringArray：false",
 
   "target": "允许为模糊代码设置目标环境。可用值：`browser`，`browser-no-eval`，`node`。当前 `browser` 和`node`目标的输出代码是相同的，但某些特定于`browser`的选项不允许与`node`目标一起使用。`browser-no-eval`目标的输出代码未使用eval",
   "transformObjectKeys": "启用对象关键点的变换",
