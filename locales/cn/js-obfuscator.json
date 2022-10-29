@@ -35,8 +35,14 @@
   "splitStrings": "将文字字符串拆分为长度为 splitStringsChunkLength 选项值的块",
   "splitStringsChunkLength": "设置 splitStrings 选项的块长度",
   "stringArray": "删除字符串文字并将其放置在特殊数组中。例如，var m=“Hello World”中的字符串“Hello World”；将替换为类似var m=_0x12c456[0x1]的内容；",
-  "stringArrayCallsTransform": "⚠️ 必须启用stringArray选项启用对stringArray的调用转换。根据stringArrayCallsTransformThreshold值，可以将这些调用的所有参数提取到不同的对象。因此，自动查找对字符串数组的调用变得更加困难。",
-  "stringArrayCallsTransformThreshold": " ⚠️ 必须启用stringArray和stringArrayCallsTransformThreshold选项您可以使用此设置调整对字符串数组的调用将被转换的概率（从0到1）。",
+  "stringArrayCallsTransform": "⚠️ 必须启用stringArray选项启用对stringArray的调用转换。根据stringArrayCallsTransformThreshold值，可以将这些调用的所有参数提取到不同的对象。因此，自动查找对字符串数组的调用变得更加困难",
+  "stringArrayCallsTransformThreshold": " ⚠️ 必须启用stringArray和stringArrayCallsTransformThreshold选项您可以使用此设置调整对字符串数组的调用将被转换的概率（从0到1）",
+
+  "stringArrayRotate": "⚠️ 必须启用stringArray。将 stringArray 数组移位固定和随机（在代码混淆时生成）位置。这使得很难将移除的字符串的顺序与其原始位置相匹配",
+  "stringArrayShuffle": "⚠️ 必须启用stringArray。随机移动 stringArray 数组项",
+  "stringArrayWrappersChainedCalls": "⚠️ 必须启用stringArray和stringArrayWrappersCount选项。启用字符串数组包装器之间的链接调用",
+  "stringArrayWrappersCount": "⚠️ 必须启用stringArray选项。设置每个根或函数范围内字符串数组的包装器计数。每个作用域内包装器的实际数量受此作用域内文本节点的数量限制",
+  "stringArrayWrappersParametersMaxCount": "⚠️ 必须启用stringArray选项。⚠️ 当前，此选项仅影响stringArrayWrappersType函数选项值添加的包装器。允许控制字符串数组包装器参数的最大数量。默认值和最小值为2。建议值介于2和5之间",
 
   "target": "允许为模糊代码设置目标环境。可用值：`browser`，`browser-no-eval`，`node`。当前 `browser` 和`node`目标的输出代码是相同的，但某些特定于`browser`的选项不允许与`node`目标一起使用。`browser-no-eval`目标的输出代码未使用eval",
   "transformObjectKeys": "启用对象关键点的变换",

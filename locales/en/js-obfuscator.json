@@ -37,6 +37,12 @@
   "stringArrayCallsTransform": "⚠️ stringArray option must be enabled Enables the transformation of calls to the stringArray. All arguments of these calls may be extracted to a different object depending on stringArrayCallsTransformThreshold value. So it makes it even harder to automatically find calls to the string array.",
   "stringArrayCallsTransformThreshold": "⚠️ stringArray and stringArrayCallsTransformThreshold options must be enabled You can use this setting to adjust the probability (from 0 to 1) that calls to the string array will be transformed.",
 
+  "stringArrayRotate": "⚠️ stringArray must be enabled. Shift the stringArray array by a fixed and random (generated at the code obfuscation) places. This makes it harder to match the order of the removed strings to their original place.",
+  "stringArrayShuffle": "⚠️ stringArray must be enabled. Randomly shuffles the stringArray array items.",
+  "stringArrayWrappersChainedCalls": "⚠️ stringArray and stringArrayWrappersCount options must be enabled. Enables the chained calls between string array wrappers.",
+  "stringArrayWrappersCount": "⚠️ stringArray option must be enabled. Sets the count of wrappers for the string array inside each root or function scope. The actual count of wrappers inside each scope is limited by a count of literal nodes within this scope.",
+  "stringArrayWrappersParametersMaxCount": "⚠️ stringArray option must be enabled. ⚠️ Currently this option affects only wrappers added by stringArrayWrappersType function option value. Allows to control the maximum number of string array wrappers parameters. Default and minimum value is 2. Recommended value between 2 and 5.",
+
   "target": "Allows to set target environment for obfuscated code. Available values: `browser` `browser-no-eval` `node`. Currently output code for browser and node targets is identical, but some browser-specific options are not allowed to use with node target. Output code for browser-no-eval target is not using eval.",
   "transformObjectKeys": "Enables transformation of object keys.",
   "unicodeEscapeSequence": "Allows to enable/disable string conversion to unicode escape sequence. Unicode escape sequence increases code size greatly and strings easily can be reverted to their original view. Recommended to enable this option only for small source code."
