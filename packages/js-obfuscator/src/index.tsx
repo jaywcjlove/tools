@@ -407,6 +407,77 @@ export default function JSObfuscator() {
       },
     },
     {
+      disabled: !options.stringArray,
+      checked: !!options.stringArrayRotate,
+      children: (
+        <Fragment>
+          stringArrayRotate <br />
+          <Info>{t<string>('stringArrayRotate')}</Info>
+        </Fragment>
+      ),
+      onChange: ({ target }) => {
+        setOptions({ ...options, ...{ stringArrayRotate: target.checked } });
+      },
+    },
+    {
+      disabled: !options.stringArray,
+      checked: !!options.stringArrayShuffle,
+      children: (
+        <Fragment>
+          stringArrayShuffle <br />
+          <Info>{t<string>('stringArrayShuffle')}</Info>
+        </Fragment>
+      ),
+      onChange: ({ target }) => {
+        setOptions({ ...options, ...{ stringArrayShuffle: target.checked } });
+      },
+    },
+    {
+      disabled: !options.stringArray && !options.stringArrayWrappersCount,
+      checked: !!options.stringArrayWrappersChainedCalls,
+      children: (
+        <Fragment>
+          stringArrayWrappersChainedCalls <br />
+          <Info>{t<string>('stringArrayWrappersChainedCalls')}</Info>
+        </Fragment>
+      ),
+      onChange: ({ target }) => {
+        setOptions({ ...options, ...{ stringArrayWrappersChainedCalls: target.checked } });
+      },
+    },
+    {
+      disabled: !options.stringArray,
+      type: 'number',
+      value: options.stringArrayWrappersCount,
+      children: (
+        <Fragment>
+          stringArrayWrappersCount <br />
+          <Info>{t<string>('stringArrayWrappersCount')}</Info>
+        </Fragment>
+      ),
+      onChange: ({ target }) => {
+        setOptions({ ...options, ...{ stringArrayWrappersCount: target.checked } });
+      },
+    },
+    {
+      type: 'range',
+      max: '5',
+      min: '2',
+      step: '1',
+      disabled: !options.stringArray,
+      value: options.stringArrayWrappersParametersMaxCount,
+      children: (
+        <Fragment>
+          {options.stringArrayWrappersParametersMaxCount} <br />
+          stringArrayWrappersParametersMaxCount <br />
+          <Info>{t<string>('stringArrayWrappersParametersMaxCount')}</Info>
+        </Fragment>
+      ),
+      onChange: ({ target }) => {
+        setOptions({ ...options, ...{ stringArrayWrappersParametersMaxCount: Number(target.value) } });
+      },
+    },
+    {
       type: 'range',
       max: '1',
       min: '0',
@@ -416,7 +487,7 @@ export default function JSObfuscator() {
       children: (
         <Fragment>
           {options.stringArrayCallsTransformThreshold} <br />
-          stringArrayCallsTransformThreshold
+          stringArrayCallsTransformThreshold <br />
           <Info>{t<string>('stringArrayCallsTransformThreshold')}</Info>
         </Fragment>
       ),

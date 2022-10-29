@@ -161,11 +161,35 @@ export const allOptions: ObfuscatorOptions = {
   // stringArrayEncoding: TStringArrayEncoding[];
   // stringArrayIndexesType: TStringArrayIndexesType[];
   // stringArrayIndexShift: boolean;
-  // stringArrayRotate: boolean;
-  // stringArrayShuffle: boolean;
-  // stringArrayWrappersChainedCalls: boolean;
-  // stringArrayWrappersCount: number;
-  // stringArrayWrappersParametersMaxCount: number;
+  /**
+   * ⚠️ stringArray must be enabled
+   * Shift the stringArray array by a fixed and random (generated at the code obfuscation) places. This makes it harder to match the order of the removed strings to their original place.
+   */
+  stringArrayRotate: true,
+  /**
+   * ⚠️ stringArray must be enabled
+   *
+   * Shift the stringArray array by a fixed and random (generated at the code obfuscation) places. This makes it harder to match the order of the removed strings to their original place.
+   */
+  stringArrayShuffle: true,
+  /**
+   * ⚠️ stringArray and stringArrayWrappersCount options must be enabled
+   *
+   * Enables the chained calls between string array wrappers.
+   */
+  stringArrayWrappersChainedCalls: true,
+  /**
+   * ⚠️ stringArray option must be enabled
+   *
+   * Sets the count of wrappers for the string array inside each root or function scope. The actual count of wrappers inside each scope is limited by a count of literal nodes within this scope.
+   */
+  stringArrayWrappersCount: 1,
+  /**
+   * ⚠️ stringArray option must be enabled
+   * ⚠️ Currently this option affects only wrappers added by stringArrayWrappersType function option value
+   * Allows to control the maximum number of string array wrappers parameters. Default and minimum value is 2. Recommended value between 2 and 5.
+   */
+  stringArrayWrappersParametersMaxCount: 2,
   // stringArrayWrappersType: TStringArrayWrappersType;
   // stringArrayThreshold: number;
   target: 'browser',
