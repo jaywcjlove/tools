@@ -62,6 +62,7 @@ const SVGOptimizer = Loadable(lazy(() => import('@wcj/tools-react-svg-optimizer'
 const AmountInRMB = Loadable(lazy(() => import('@wcj/tools-react-amount-in-rmb')));
 const SimplifiedTraditionalChinese = Loadable(lazy(() => import('@wcj/tools-react-simplified-traditional-chinese')));
 const StandardChineseCharactersRMB = Loadable(lazy(() => import('@wcj/tools-react-standard-chinese-characters')));
+const JSObfuscator = Loadable(lazy(() => import('@wcj/tools-react-js-obfuscator')));
 
 export let routes: RouteObject[] = [
   {
@@ -70,6 +71,10 @@ export let routes: RouteObject[] = [
     children: [
       {
         index: true,
+        element: <HomePage title="Home - Web Tools" />,
+      },
+      {
+        path: 'home',
         element: <HomePage title="Home - Web Tools" />,
       },
       {
@@ -83,6 +88,10 @@ export let routes: RouteObject[] = [
       {
         path: 'js-beautifier',
         element: <JSBeautifier title="JS Beautifier/Uglify - Web Tools" />,
+      },
+      {
+        path: 'js-obfuscator',
+        element: <JSObfuscator title="JS Obfuscator - Web Tools" />,
       },
       {
         path: 'text-case',

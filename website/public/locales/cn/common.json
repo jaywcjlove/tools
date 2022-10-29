@@ -2,5 +2,7 @@
   "Formatter": "格式化",
   "Minify": "压缩",
   "Options": "选项",
+  "Copy": "复制",
+  "Copied": "已复制",
   "Sample": "示例"
 }

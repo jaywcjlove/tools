@@ -40,6 +40,7 @@
     "@wcj/tools-react-html-to-markdown": "1.9.4",
     "@wcj/tools-react-image-to-base64": "1.9.4",
     "@wcj/tools-react-js-beautifier": "1.9.4",
+    "@wcj/tools-react-js-obfuscator": "1.9.4",
     "@wcj/tools-react-json-format": "1.9.4",
     "@wcj/tools-react-json-ini": "1.9.4",
     "@wcj/tools-react-json-xml": "1.9.4",

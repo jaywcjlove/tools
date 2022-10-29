@@ -135,7 +135,7 @@ const Checkbox: React.FC<React.PropsWithChildren<CheckboxProps>> = ({ children, 
   );
 };
 
-export default function JSONFormat() {
+export default function JSBeautifier() {
   const { t } = useTranslation(['js-beautifier', 'common']);
   const editor = useRef<ReactCodeMirrorRef>(null);
   const [type, setType] = useState<Type>('minify');

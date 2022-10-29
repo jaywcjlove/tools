@@ -1,6 +1,7 @@
 import { Fragment, PropsWithChildren, useState } from 'react';
 import styled, { css, createGlobalStyle } from 'styled-components';
 import copyTextToClipboard from '@uiw/copy-to-clipboard';
+import { useTranslation } from 'react-i18next';
 import { CopyIcon } from './Icon';
 
 const GlobalStyle = createGlobalStyle`
@@ -54,15 +55,16 @@ export interface ButtonProps
 }
 
 export const CopyButton: React.FC<PropsWithChildren<ButtonProps>> = ({ children, ...other }) => {
+  const { t } = useTranslation(['common']);
   const [success, setSuccess] = useState(false);
-  const [child, setChild] = useState('Copy');
+  const [type, setType] = useState<'copy' | 'copied'>('copy');
   function handleClick(evn: React.MouseEvent<HTMLButtonElement>) {
     copyTextToClipboard(`${other.value}`, (isCopy) => {
       setSuccess(true);
-      setChild('Copied!');
+      setType('copied');
       const timer = setTimeout(() => {
         setSuccess(false);
-        setChild('Copy');
+        setType('copy');
         clearTimeout(timer);
       }, 2000);
     });
@@ -70,7 +72,7 @@ export const CopyButton: React.FC<PropsWithChildren<ButtonProps>> = ({ children,
   return (
     <Button {...other} success={success} className={success ? 'active' : ''} onClick={handleClick}>
       <CopyIcon style={{ marginRight: 2 }} />
-      <span>{child}</span>
+      <span>{type === 'copy' ? t<string>('Copy', { ns: 'common' }) : t<string>('Copied', { ns: 'common' })}</span>
     </Button>
   );
 };

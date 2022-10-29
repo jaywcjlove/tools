@@ -4,6 +4,7 @@ export * from './Document';
 export * from './Result';
 export * from './Button';
 export * from './CodeLineCopy';
+export * from './CheckboxOption';
 export * from './Spacing';
 export * from './Input';
 export * from './StyledLayout';

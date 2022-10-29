@@ -13,6 +13,9 @@
     "/js-beautifier": {
       "label": "JS Beautifier/Uglify"
     },
+    "/js-obfuscator": {
+      "label": "JS Obfuscator"
+    },
     "/css-formatter": {
       "label": "CSS Formatter/Minify"
     },

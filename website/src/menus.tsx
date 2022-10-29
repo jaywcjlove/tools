@@ -24,6 +24,11 @@ export function useMenus() {
       label: t('menu./js-beautifier.label'),
     },
     {
+      href: '/js-obfuscator',
+      logo: 'js',
+      label: t('menu./js-obfuscator.label'),
+    },
+    {
       href: '/text-case',
       logo: 'text',
       label: t('menu./text-case.label'),
