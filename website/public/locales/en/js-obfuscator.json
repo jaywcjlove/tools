@@ -18,13 +18,18 @@
   "debugProtectionInterval": "⚠️ Can freeze your browser! Use at own risk. If set, an interval in milliseconds is used to force the debug mode on the Console tab, making it harder to use other features of the Developer Tools. Works if debugProtection is enabled. Recommended value is between 2000 and 4000 milliseconds.",
   "disableConsoleOutput": "⚠️ This option disables console calls globally for all scripts Disables the use of console.log, console.info, console.error, console.warn, console.debug, console.exception and console.trace by replacing them with empty functions. This makes the use of the debugger harder.",
 
+  "identifierNamesGenerator": "Sets identifier names generator. Available values:\n `dictionary`: identifier names from identifiersDictionary list.\n `hexadecimal`: identifier names like _0xabc123.\n `mangled`: short identifier names like a, b, c.\n `mangled-shuffled`: same as mangled but with shuffled alphabet.",
+
+  "identifiersPrefix": "Sets prefix for all global identifiers. Use this option when you want to obfuscate multiple files. This option helps to avoid conflicts between global identifiers of these files. Prefix should be different for every file.",
   "ignoreImports": "Prevents obfuscation of require imports. Could be helpful in some cases when for some reason runtime environment requires these imports with static strings only.",
   "inputFileName": "Allows to set name of the input file with source code. This name will be used internally for source map generation. Required when using NodeJS API and sourceMapSourcesMode option has sources value.",
   "log": "Enables logging of the information to the console.",
   "numbersToExpressions": "Enables numbers conversion to expressions",
+  "optionsPreset": "Allows to set options preset. Available values: `default`, `low-obfuscation`, `medium-obfuscation`, `high-obfuscation`. All addition options will be merged with selected options preset.",
   "renameGlobals": "⚠️ this option can break your code. Enable it only if you know what it does! Enables obfuscation of global variable and function names with declaration.",
   "renameProperties": "⚠️ this option MAY break your code. Enable it only if you know what it does! Enables renaming of property names. All built-in DOM properties and properties in core JavaScript classes will be ignored. To switch between safe and unsafe modes of this option use `renamePropertiesMode` option. To set format of renamed property names use `identifierNamesGenerator` option. To control which properties will be renamed use `reservedNames` option.",
 
+  "seed": "This option sets seed for random generator. This is useful for creating repeatable results. If seed is 0 - random generator will work without seed.",
   "selfDefending": "⚠️ Don't change obfuscated code in any way after obfuscation with this option, because any change like uglifying of code can trigger self defending and code wont work anymore! ⚠️ This option forcibly sets compact value to true This option makes the output code resilient against formatting and variable renaming. If one tries to use a JavaScript beautifier on the obfuscated code, the code won't work anymore, making it harder to understand and modify it.",
   "simplify": "Enables additional code obfuscation through simplification. ⚠️ in future releases obfuscation of boolean literals (true => !![]) will be moved under this option.",
   "sourceMap": "Enables source map generation for obfuscated code. Source maps can be useful to help you debug your obfuscated JavaScript source code. If you want or need to debug in production, you can upload the separate source map file to a secret location and then point your browser there.",
@@ -37,11 +42,13 @@
   "stringArrayCallsTransform": "⚠️ stringArray option must be enabled Enables the transformation of calls to the stringArray. All arguments of these calls may be extracted to a different object depending on stringArrayCallsTransformThreshold value. So it makes it even harder to automatically find calls to the string array.",
   "stringArrayCallsTransformThreshold": "⚠️ stringArray and stringArrayCallsTransformThreshold options must be enabled You can use this setting to adjust the probability (from 0 to 1) that calls to the string array will be transformed.",
 
+  "stringArrayIndexShift": "⚠️ stringArray option must be enabled. Enables additional index shift for all string array calls",
   "stringArrayRotate": "⚠️ stringArray must be enabled. Shift the stringArray array by a fixed and random (generated at the code obfuscation) places. This makes it harder to match the order of the removed strings to their original place.",
   "stringArrayShuffle": "⚠️ stringArray must be enabled. Randomly shuffles the stringArray array items.",
   "stringArrayWrappersChainedCalls": "⚠️ stringArray and stringArrayWrappersCount options must be enabled. Enables the chained calls between string array wrappers.",
   "stringArrayWrappersCount": "⚠️ stringArray option must be enabled. Sets the count of wrappers for the string array inside each root or function scope. The actual count of wrappers inside each scope is limited by a count of literal nodes within this scope.",
   "stringArrayWrappersParametersMaxCount": "⚠️ stringArray option must be enabled. ⚠️ Currently this option affects only wrappers added by stringArrayWrappersType function option value. Allows to control the maximum number of string array wrappers parameters. Default and minimum value is 2. Recommended value between 2 and 5.",
+  "stringArrayThreshold": "⚠️ stringArray option must be enabled. You can use this setting to adjust the probability (from 0 to 1) that a string literal will be inserted into the stringArray. This setting is especially useful for large code size because it repeatedly calls to the string array and can slow down your code. stringArrayThreshold: 0 equals to stringArray: false.",
 
   "target": "Allows to set target environment for obfuscated code. Available values: `browser` `browser-no-eval` `node`. Currently output code for browser and node targets is identical, but some browser-specific options are not allowed to use with node target. Output code for browser-no-eval target is not using eval.",
   "transformObjectKeys": "Enables transformation of object keys.",

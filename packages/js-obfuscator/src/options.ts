@@ -50,9 +50,24 @@ export const allOptions: ObfuscatorOptions = {
   // domainLockRedirectUrl: string,
   // forceTransformStrings: string[],
   // identifierNamesCache: TIdentifierNamesCache,
+  /**
+   * Sets identifier names generator.
+   *
+   * Available values:
+   *
+   * dictionary: identifier names from identifiersDictionary list
+   * hexadecimal: identifier names like _0xabc123
+   * mangled: short identifier names like a, b, c
+   * mangled-shuffled: same as mangled but with shuffled alphabet
+   */
+  identifierNamesGenerator: 'hexadecimal',
   // identifierNamesGenerator: TTypeFromEnum<typeof IdentifierNamesGenerator>,
   // identifiersDictionary: string[],
-  // identifiersPrefix: string,
+  /**
+   * Sets prefix for all global identifiers.
+   * Use this option when you want to obfuscate multiple files. This option helps to avoid conflicts between global identifiers of these files. Prefix should be different for every file.
+   */
+  identifiersPrefix: '',
   /**
    * Default: false
    * Prevents obfuscation of require imports. Could be helpful in some cases when for some reason runtime environment requires these imports with static strings only.
@@ -70,7 +85,16 @@ export const allOptions: ObfuscatorOptions = {
    * Enables numbers conversion to expressions
    */
   numbersToExpressions: false,
-  // optionsPreset: TOptionsPreset,
+  /**
+   * Allows to set options preset.
+   * Available values:
+   * - `default`
+   * - `low-obfuscation`
+   * - `medium-obfuscation`
+   * - `high-obfuscation`
+   * All addition options will be merged with selected options preset.
+   */
+  optionsPreset: 'default',
   /**
    * ⚠️ this option can break your code. Enable it only if you know what it does!
    * Enables obfuscation of global variable and function names with declaration.
@@ -98,7 +122,11 @@ export const allOptions: ObfuscatorOptions = {
   // renamePropertiesMode: TRenamePropertiesMode,
   // reservedNames: string[],
   // reservedStrings: string[],
-  // seed: string | number,
+  /**
+   * This option sets seed for random generator. This is useful for creating repeatable results.
+   * If seed is 0 - random generator will work without seed.
+   */
+  seed: 0,
   /**
    * Default: false
    *
@@ -160,7 +188,11 @@ export const allOptions: ObfuscatorOptions = {
   stringArrayCallsTransformThreshold: 0.5,
   // stringArrayEncoding: TStringArrayEncoding[];
   // stringArrayIndexesType: TStringArrayIndexesType[];
-  // stringArrayIndexShift: boolean;
+  /**
+   * ⚠️ stringArray option must be enabled
+   * Enables additional index shift for all string array calls
+   */
+  stringArrayIndexShift: true,
   /**
    * ⚠️ stringArray must be enabled
    * Shift the stringArray array by a fixed and random (generated at the code obfuscation) places. This makes it harder to match the order of the removed strings to their original place.
@@ -191,9 +223,25 @@ export const allOptions: ObfuscatorOptions = {
    */
   stringArrayWrappersParametersMaxCount: 2,
   // stringArrayWrappersType: TStringArrayWrappersType;
-  // stringArrayThreshold: number;
+  /**
+   * ⚠️ stringArray option must be enabled
+   *
+   * You can use this setting to adjust the probability (from 0 to 1) that a string literal will be inserted into the stringArray.
+   * This setting is especially useful for large code size because it repeatedly calls to the string array and can slow down your code.
+   * stringArrayThreshold: 0 equals to stringArray: false.
+   */
+  stringArrayThreshold: 0.8,
+  /**
+   * Allows to set target environment for obfuscated code.
+   *
+   * Available values:
+   * `browser`
+   * `browser-no-eval`
+   * `node`
+   *
+   * Currently output code for browser and node targets is identical, but some browser-specific options are not allowed to use with node target. Output code for browser-no-eval target is not using eval.
+   */
   target: 'browser',
-  // target: TTypeFromEnum<typeof ObfuscationTarget>;
   /**
    * Default: false
    *

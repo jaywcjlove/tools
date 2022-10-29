@@ -21,6 +21,7 @@ import { ReactCodeMirrorRef } from '@uiw/react-codemirror';
 import { obfuscate, ObfuscatorOptions } from 'javascript-obfuscator';
 import * as sample from './sample';
 import { allOptions, defaultOption, highOption, mediumOption, lowOption } from './options';
+import * as conf from './options';
 
 const Info = styled.span`
   color: var(--color-fg-subtle);
@@ -31,9 +32,7 @@ export default function JSObfuscator() {
   const { t } = useTranslation(['js-obfuscator', 'common']);
   const editor = useRef<ReactCodeMirrorRef>(null);
   const [type, setType] = useState<'raw' | 'obfuscator'>('raw');
-  const [preset, setPreset] = useState<'highOption' | 'mediumOption' | 'lowOption' | 'defaultOption' | 'allOptions'>(
-    'allOptions',
-  );
+  const [preset, setPreset] = useState<keyof typeof conf>('allOptions');
   const [value, setValue] = useState(sample.val || '');
   const [valueObfuscate, setValueObfuscate] = useState('');
   const [error, setError] = useState('');
@@ -49,9 +48,12 @@ export default function JSObfuscator() {
   const resultProps: ResultProps['codeProps'] = {
     style: { height: 'calc(100vh - 87px)', overflow: 'auto', margin: 0 },
   };
-  const resetHandle = () => {
-    setPreset('allOptions');
-    setOptions({ ...allOptions });
+  const resetHandle = () => optionsHandle('allOptions');
+  const optionsHandle = (key: keyof typeof conf) => {
+    setPreset(key);
+    if (conf[key]) {
+      setOptions({ ...conf[key] });
+    }
   };
   const presetData: CheckboxOptionProps[] = [
     {
@@ -64,8 +66,7 @@ export default function JSObfuscator() {
         </Fragment>
       ),
       onChange: ({ target }) => {
-        setPreset('highOption');
-        setOptions({ ...highOption });
+        optionsHandle('highOption');
       },
     },
     {
@@ -78,8 +79,7 @@ export default function JSObfuscator() {
         </Fragment>
       ),
       onChange: ({ target }) => {
-        setPreset('mediumOption');
-        setOptions({ ...mediumOption });
+        optionsHandle('mediumOption');
       },
     },
     {
@@ -92,8 +92,7 @@ export default function JSObfuscator() {
         </Fragment>
       ),
       onChange: ({ target }) => {
-        setPreset('lowOption');
-        setOptions({ ...lowOption });
+        optionsHandle('lowOption');
       },
     },
     {
@@ -102,8 +101,7 @@ export default function JSObfuscator() {
       checked: preset === 'defaultOption',
       children: <Fragment>{t<string>('defaultOption')}</Fragment>,
       onChange: ({ target }) => {
-        setPreset('defaultOption');
-        setOptions({ ...defaultOption });
+        optionsHandle('defaultOption');
       },
     },
     {
@@ -130,7 +128,8 @@ export default function JSObfuscator() {
       checked: !!options.controlFlowFlattening,
       children: (
         <Fragment>
-          controlFlowFlattening <Info>{t<string>('controlFlowFlattening')}</Info>
+          controlFlowFlattening <br />
+          <Info>{t<string>('controlFlowFlattening')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -147,7 +146,8 @@ export default function JSObfuscator() {
       children: (
         <Fragment>
           {options.controlFlowFlatteningThreshold} <br />
-          controlFlowFlatteningThreshold <Info>{t<string>('controlFlowFlatteningThreshold')}</Info>
+          controlFlowFlatteningThreshold <br />
+          <Info>{t<string>('controlFlowFlatteningThreshold')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -174,7 +174,8 @@ export default function JSObfuscator() {
       value: options.deadCodeInjectionThreshold,
       children: (
         <Fragment>
-          {options.deadCodeInjectionThreshold} <br /> deadCodeInjectionThreshold{' '}
+          {options.deadCodeInjectionThreshold} <br />
+          deadCodeInjectionThreshold
           <Info>{t<string>('deadCodeInjectionThreshold')}</Info>
         </Fragment>
       ),
@@ -234,6 +235,35 @@ export default function JSObfuscator() {
       },
     },
     {
+      value: options.identifierNamesGenerator,
+      options: ['dictionary', 'hexadecimal', 'mangled', 'mangled-shuffled'],
+      children: (
+        <Fragment>
+          identifierNamesGenerator <br />
+          <Info>{t<string>('identifierNamesGenerator')}</Info>
+        </Fragment>
+      ),
+      onChange: ({ target }) => {
+        setOptions({
+          ...options,
+          ...{ identifierNamesGenerator: target.value as ObfuscatorOptions['identifierNamesGenerator'] },
+        });
+      },
+    },
+    {
+      type: 'text',
+      value: options.identifiersPrefix,
+      children: (
+        <Fragment>
+          identifiersPrefix <br />
+          <Info>{t<string>('identifiersPrefix')}</Info>
+        </Fragment>
+      ),
+      onChange: ({ target }) => {
+        setOptions({ ...options, ...{ identifiersPrefix: target.value } });
+      },
+    },
+    {
       checked: !!options.ignoreImports,
       children: (
         <Fragment>
@@ -279,6 +309,36 @@ export default function JSObfuscator() {
       },
     },
     {
+      value: options.optionsPreset,
+      options: ['default', 'low-obfuscation', 'medium-obfuscation', 'high-obfuscation'],
+      children: (
+        <Fragment>
+          optionsPreset <Info>{t<string>('optionsPreset')}</Info>
+        </Fragment>
+      ),
+      onChange: ({ target }) => {
+        const val = target.value as ObfuscatorOptions['optionsPreset'];
+        switch (val) {
+          case 'default':
+            optionsHandle('defaultOption');
+            break;
+          case 'high-obfuscation':
+            optionsHandle('highOption');
+            break;
+          case 'low-obfuscation':
+            optionsHandle('lowOption');
+            break;
+          case 'medium-obfuscation':
+            optionsHandle('mediumOption');
+            break;
+          default:
+            optionsHandle('allOptions');
+            break;
+        }
+        setOptions({ ...options, ...{ optionsPreset: val } });
+      },
+    },
+    {
       checked: !!options.renameGlobals,
       children: (
         <Fragment>
@@ -287,6 +347,19 @@ export default function JSObfuscator() {
       ),
       onChange: ({ target }) => {
         setOptions({ ...options, ...{ renameGlobals: target.checked } });
+      },
+    },
+    {
+      type: 'number',
+      value: options.seed,
+      children: (
+        <Fragment>
+          seed <br />
+          <Info>{t<string>('seed')}</Info>
+        </Fragment>
+      ),
+      onChange: ({ target }) => {
+        setOptions({ ...options, ...{ seed: Number(target.value) } });
       },
     },
     {
@@ -408,6 +481,19 @@ export default function JSObfuscator() {
     },
     {
       disabled: !options.stringArray,
+      checked: !!options.stringArrayIndexShift,
+      children: (
+        <Fragment>
+          stringArrayIndexShift <br />
+          <Info>{t<string>('stringArrayIndexShift')}</Info>
+        </Fragment>
+      ),
+      onChange: ({ target }) => {
+        setOptions({ ...options, ...{ stringArrayIndexShift: target.checked } });
+      },
+    },
+    {
+      disabled: !options.stringArray,
       checked: !!options.stringArrayRotate,
       children: (
         <Fragment>
@@ -433,7 +519,7 @@ export default function JSObfuscator() {
       },
     },
     {
-      disabled: !options.stringArray && !options.stringArrayWrappersCount,
+      disabled: !options.stringArray || !options.stringArrayWrappersCount,
       checked: !!options.stringArrayWrappersChainedCalls,
       children: (
         <Fragment>
@@ -483,11 +569,29 @@ export default function JSObfuscator() {
       min: '0',
       step: '0.1',
       disabled: !options.stringArray,
+      value: options.stringArrayThreshold,
+      children: (
+        <Fragment>
+          {options.stringArrayThreshold} <br />
+          stringArrayThreshold <br />
+          <Info>{t<string>('stringArrayThreshold')}</Info>
+        </Fragment>
+      ),
+      onChange: ({ target }) => {
+        setOptions({ ...options, ...{ stringArrayThreshold: Number(target.value) } });
+      },
+    },
+    {
+      type: 'range',
+      max: '1',
+      min: '0',
+      step: '0.1',
+      disabled: !options.stringArray,
       value: options.stringArrayCallsTransformThreshold,
       children: (
         <Fragment>
           {options.stringArrayCallsTransformThreshold} <br />
-          stringArrayCallsTransformThreshold <br />
+          stringArrayCallsTransformThreshold
           <Info>{t<string>('stringArrayCallsTransformThreshold')}</Info>
         </Fragment>
       ),
@@ -534,7 +638,6 @@ export default function JSObfuscator() {
         extra={
           <Fragment>
             <Button onClick={resetHandle}>{t<string>('Reset', { ns: 'common' })}</Button>
-            <Button onClick={() => setOptions({})}>{t<string>('None', { ns: 'common' })}</Button>
           </Fragment>
         }
       >
@@ -546,7 +649,7 @@ export default function JSObfuscator() {
             <Divider />
             <Spacing>👆👆👆以上是预设的默认配置👆👆👆</Spacing>
             {optionsElement.map((item, idx) => {
-              if (/(range|text)/.test(item.type || '') && item.value === undefined) {
+              if (/(range|text|number)/.test(item.type || '') && item.value === undefined) {
                 return <Fragment key={idx} />;
               }
               if (item.options && Array.isArray(item.options)) {
