@@ -17,7 +17,7 @@ export default function JSON2XML() {
         },
       }}
       rightProps={{
-        title: 'XML',
+        title: 'YAML',
         extensions: [StreamLanguage.define(yaml)],
         onRightInput: (val) => {
           return JSON.stringify(parse(val), null, 2);
