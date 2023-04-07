@@ -12,6 +12,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+          registry-url: 'https://registry.npmjs.org'
 
       - run: npm install
 
@@ -111,12 +112,12 @@ jobs:
 
       - name: Build and push image:tags
         uses: docker/build-push-action@v3
-        if: steps.create_tag.outputs.successful
+        if: needs.build.outputs.successful
         with:
           push: true
           context: .
           platforms: linux/amd64,linux/arm64
-          tags: ${{ secrets.DOCKER_USER }}/tools:${{steps.changelog.outputs.version}}
+          tags: ${{ secrets.DOCKER_USER }}/tools:${{needs.build.outputs.create_tag_versionNumber}}
 
       # Create Docker Image in Github
       - name: Login to the GitHub Container Registry
@@ -136,12 +137,12 @@ jobs:
 
       - name: Build and push image:tags
         uses: docker/build-push-action@v3
-        if: steps.create_tag.outputs.successful
+        if: needs.build.outputs.successful
         with:
           push: true
           context: .
           platforms: linux/amd64,linux/arm64
-          tags: ghcr.io/jaywcjlove/tools:${{steps.changelog.outputs.version}}
+          tags: ghcr.io/jaywcjlove/tools:${{needs.build.outputs.create_tag_versionNumber}}
 
 
 
@@ -401,11 +402,10 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
-      - uses: dev-drprasad/delete-tag-and-release@v0.2.0
+      - uses: dev-drprasad/delete-tag-and-release@v1.0
         if: needs.build.outputs.successful
         with:
           delete_release: true
           repo: jaywcjlove/tools
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           tag_name: '${{ needs.build.outputs.create_tag_version }}'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
