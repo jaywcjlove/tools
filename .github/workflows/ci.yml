@@ -198,7 +198,8 @@ jobs:
           node-version: 16
 
       - name: Install
-        run: npm install --build-from-source
+        # run: npm install --build-from-source
+        run: npm install
 
       - run: npm run hoist
 
