@@ -62,7 +62,7 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-i18next": "^12.0.0",
-    "react-router-dom": "~6.4.0",
+    "react-router-dom": "~6.10.0",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
