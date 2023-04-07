@@ -4,8 +4,8 @@
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
-    "build": "tsbb build",
-    "watch": "tsbb watch"
+    "build": "tsbb build src/*.tsx --use-babel --bail",
+    "watch": "tsbb watch src/*.tsx --use-babel --bail"
   },
   "keywords": [],
   "files": [
