@@ -148,7 +148,7 @@ export default function HTMLFormatter() {
       </StyledLayout>
       {type === 'minify' && (
         <StyledLayout
-          title={t('Options')}
+          title={t('Options').toString()}
           style={{ maxWidth: 420 }}
           extra={
             <Fragment>

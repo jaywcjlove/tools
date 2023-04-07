@@ -109,7 +109,7 @@ export default function ChinesePinyinConversion() {
   return (
     <Wrapper>
       <StyledLayout
-        title={t('menu./chinese-pinyin-conversion.label')}
+        title={t('menu./chinese-pinyin-conversion.label').toString()}
         extra={
           <Fragment>
             <Button onClick={() => setValue(sample)}>Sample</Button>

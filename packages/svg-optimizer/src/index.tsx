@@ -311,7 +311,7 @@ export default function SVGOptimizer() {
   return (
     <Wrapper>
       <StyledLayout
-        title={t(`SVG Optimizer`)}
+        title={t(`SVG Optimizer`).toString()}
         extra={<InputFile type="file" accept="image/svg+xml" multiple onChange={handleChange} />}
       >
         <ResultCode
@@ -365,7 +365,7 @@ export default function SVGOptimizer() {
       </StyledLayout>
       {imageData && imageData.length > 0 && (
         <StyledLayout
-          title={t(`Options`, { ns: 'common' })}
+          title={t(`Options`, { ns: 'common' }).toString()}
           style={{ maxWidth: 420 }}
           extra={
             <Fragment>

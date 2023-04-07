@@ -15,10 +15,6 @@ const Label = styled.label`
   gap: 10px;
 `;
 
-const SubTitle = styled.span`
-  font-size: 12px;
-  font-weight: normal;
-`;
 export interface InputRangeProps
   extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
   ref?: any;
@@ -56,7 +52,7 @@ export default function AmountInRMB() {
 
   return (
     <Wrapper>
-      <StyledLayout overflow="initial" title={t('menu./amount-in-rmb.label')}>
+      <StyledLayout overflow="initial" title={t('menu./amount-in-rmb.label').toString()}>
         <InputRange
           style={{ minWidth: 320, padding: '6px 5px' }}
           type="number"
