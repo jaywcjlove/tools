@@ -18,7 +18,7 @@
   "dependencies": {
     "@uiw/copy-to-clipboard": "^1.0.12",
     "@uiw/react-codemirror": "^4.8.1",
-    "styled-components": "^5.3.5"
+    "styled-components": "^6.0.0"
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.25"
