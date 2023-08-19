@@ -1,10 +1,10 @@
-import styled, { css, CSSProperties } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export interface TextareaProps
   extends React.DetailedHTMLProps<React.TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> {
   error?: boolean;
   ref?: React.RefObject<HTMLTextAreaElement>;
-  resize?: CSSProperties['resize'];
+  resize?: React.CSSProperties['resize'];
 }
 
 export const Textarea = styled.textarea<TextareaProps>`
