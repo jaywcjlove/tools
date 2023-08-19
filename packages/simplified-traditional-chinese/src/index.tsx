@@ -44,7 +44,7 @@ export default function SimplifiedTraditionalChinese() {
   return (
     <Wrapper>
       <StyledLayout
-        title={t<string>('Traditional Chinese')}
+        title={t('Traditional Chinese')}
         extra={
           <Fragment>
             {traditional && <CopyButton value={traditional} />}
@@ -54,7 +54,7 @@ export default function SimplifiedTraditionalChinese() {
                 setType('traditional');
               }}
             >
-              {t<string>('Sample', { ns: 'common' })}
+              {t('Sample', { ns: 'common' })}
             </Button>
           </Fragment>
         }
@@ -71,7 +71,7 @@ export default function SimplifiedTraditionalChinese() {
         />
       </StyledLayout>
       <StyledLayout
-        title={t<string>('Simplified Chinese')}
+        title={t('Simplified Chinese')}
         extra={
           <Fragment>
             {simplified && <CopyButton value={simplified} />}
@@ -80,7 +80,7 @@ export default function SimplifiedTraditionalChinese() {
                 setSimplified(sample.simplified);
               }}
             >
-              {t<string>('Sample', { ns: 'common' })}
+              {t('Sample', { ns: 'common' })}
             </Button>
           </Fragment>
         }

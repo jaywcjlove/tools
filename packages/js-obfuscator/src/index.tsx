@@ -62,7 +62,7 @@ export default function JSObfuscator() {
       checked: preset === 'highOption',
       children: (
         <Fragment>
-          {t<string>('highOption')} <Info>{t<string>('highOptionDes')}</Info>
+          {t('highOption')} <Info>{t('highOptionDes')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -75,7 +75,7 @@ export default function JSObfuscator() {
       checked: preset === 'mediumOption',
       children: (
         <Fragment>
-          {t<string>('mediumOption')} <Info>{t<string>('mediumOptionDes')}</Info>
+          {t('mediumOption')} <Info>{t('mediumOptionDes')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -88,7 +88,7 @@ export default function JSObfuscator() {
       checked: preset === 'lowOption',
       children: (
         <Fragment>
-          {t<string>('lowOption')} <Info>{t<string>('lowOptionDes')}</Info>
+          {t('lowOption')} <Info>{t('lowOptionDes')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -99,7 +99,7 @@ export default function JSObfuscator() {
       type: 'radio',
       name: 'options',
       checked: preset === 'defaultOption',
-      children: <Fragment>{t<string>('defaultOption')}</Fragment>,
+      children: <Fragment>{t('defaultOption')}</Fragment>,
       onChange: ({ target }) => {
         optionsHandle('defaultOption');
       },
@@ -108,7 +108,7 @@ export default function JSObfuscator() {
       type: 'radio',
       name: 'options',
       checked: preset === 'allOptions',
-      children: <Fragment>{t<string>('allOptions')}</Fragment>,
+      children: <Fragment>{t('allOptions')}</Fragment>,
       onChange: resetHandle,
     },
   ];
@@ -117,7 +117,7 @@ export default function JSObfuscator() {
       checked: !!options.compact,
       children: (
         <Fragment>
-          compact <Info>{t<string>('compact')}</Info>
+          compact <Info>{t('compact')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -129,7 +129,7 @@ export default function JSObfuscator() {
       children: (
         <Fragment>
           controlFlowFlattening <br />
-          <Info>{t<string>('controlFlowFlattening')}</Info>
+          <Info>{t('controlFlowFlattening')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -147,7 +147,7 @@ export default function JSObfuscator() {
         <Fragment>
           {options.controlFlowFlatteningThreshold} <br />
           controlFlowFlatteningThreshold <br />
-          <Info>{t<string>('controlFlowFlatteningThreshold')}</Info>
+          <Info>{t('controlFlowFlatteningThreshold')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -158,7 +158,7 @@ export default function JSObfuscator() {
       checked: !!options.deadCodeInjection,
       children: (
         <Fragment>
-          deadCodeInjection <Info>{t<string>('deadCodeInjection')}</Info>
+          deadCodeInjection <Info>{t('deadCodeInjection')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -176,7 +176,7 @@ export default function JSObfuscator() {
         <Fragment>
           {options.deadCodeInjectionThreshold} <br />
           deadCodeInjectionThreshold
-          <Info>{t<string>('deadCodeInjectionThreshold')}</Info>
+          <Info>{t('deadCodeInjectionThreshold')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -187,7 +187,7 @@ export default function JSObfuscator() {
       checked: !!options.debugProtection,
       children: (
         <Fragment>
-          debugProtection <Info>{t<string>('debugProtection')}</Info>
+          debugProtection <Info>{t('debugProtection')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -203,8 +203,7 @@ export default function JSObfuscator() {
       value: options.debugProtectionInterval,
       children: (
         <Fragment>
-          {options.debugProtectionInterval} <br /> debugProtectionInterval{' '}
-          <Info>{t<string>('debugProtectionInterval')}</Info>
+          {options.debugProtectionInterval} <br /> debugProtectionInterval <Info>{t('debugProtectionInterval')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -215,7 +214,7 @@ export default function JSObfuscator() {
       checked: !!options.disableConsoleOutput,
       children: (
         <Fragment>
-          disableConsoleOutput <Info>{t<string>('disableConsoleOutput')}</Info>
+          disableConsoleOutput <Info>{t('disableConsoleOutput')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -227,7 +226,7 @@ export default function JSObfuscator() {
       options: [`browser`, `browser-no-eval`, `node`],
       children: (
         <Fragment>
-          target <Info>{t<string>('target')}</Info>
+          target <Info>{t('target')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -240,7 +239,7 @@ export default function JSObfuscator() {
       children: (
         <Fragment>
           identifierNamesGenerator <br />
-          <Info>{t<string>('identifierNamesGenerator')}</Info>
+          <Info>{t('identifierNamesGenerator')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -256,7 +255,7 @@ export default function JSObfuscator() {
       children: (
         <Fragment>
           identifiersPrefix <br />
-          <Info>{t<string>('identifiersPrefix')}</Info>
+          <Info>{t('identifiersPrefix')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -267,7 +266,7 @@ export default function JSObfuscator() {
       checked: !!options.ignoreImports,
       children: (
         <Fragment>
-          ignoreImports <Info>{t<string>('ignoreImports')}</Info>
+          ignoreImports <Info>{t('ignoreImports')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -279,7 +278,7 @@ export default function JSObfuscator() {
       value: options.inputFileName,
       children: (
         <Fragment>
-          inputFileName <Info>{t<string>('inputFileName')}</Info>
+          inputFileName <Info>{t('inputFileName')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -290,7 +289,7 @@ export default function JSObfuscator() {
       checked: !!options.log,
       children: (
         <Fragment>
-          log <Info>{t<string>('log')}</Info>
+          log <Info>{t('log')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -301,7 +300,7 @@ export default function JSObfuscator() {
       checked: !!options.numbersToExpressions,
       children: (
         <Fragment>
-          numbersToExpressions <Info>{t<string>('numbersToExpressions')}</Info>
+          numbersToExpressions <Info>{t('numbersToExpressions')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -313,7 +312,7 @@ export default function JSObfuscator() {
       options: ['default', 'low-obfuscation', 'medium-obfuscation', 'high-obfuscation'],
       children: (
         <Fragment>
-          optionsPreset <Info>{t<string>('optionsPreset')}</Info>
+          optionsPreset <Info>{t('optionsPreset')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -342,7 +341,7 @@ export default function JSObfuscator() {
       checked: !!options.renameGlobals,
       children: (
         <Fragment>
-          renameGlobals <Info>{t<string>('renameGlobals')}</Info>
+          renameGlobals <Info>{t('renameGlobals')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -355,7 +354,7 @@ export default function JSObfuscator() {
       children: (
         <Fragment>
           seed <br />
-          <Info>{t<string>('seed')}</Info>
+          <Info>{t('seed')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -366,7 +365,7 @@ export default function JSObfuscator() {
       checked: !!options.selfDefending,
       children: (
         <Fragment>
-          selfDefending <Info>{t<string>('selfDefending')}</Info>
+          selfDefending <Info>{t('selfDefending')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -377,7 +376,7 @@ export default function JSObfuscator() {
       checked: !!options.simplify,
       children: (
         <Fragment>
-          simplify <Info>{t<string>('simplify')}</Info>
+          simplify <Info>{t('simplify')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -388,7 +387,7 @@ export default function JSObfuscator() {
       checked: !!options.sourceMap,
       children: (
         <Fragment>
-          sourceMap <Info>{t<string>('sourceMap')}</Info>
+          sourceMap <Info>{t('sourceMap')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -401,7 +400,7 @@ export default function JSObfuscator() {
       children: (
         <Fragment>
           sourceMapBaseUrl <br />
-          <Info>{t<string>('sourceMapBaseUrl')}</Info>
+          <Info>{t('sourceMapBaseUrl')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -412,7 +411,7 @@ export default function JSObfuscator() {
       checked: !!options.transformObjectKeys,
       children: (
         <Fragment>
-          transformObjectKeys <Info>{t<string>('transformObjectKeys')}</Info>
+          transformObjectKeys <Info>{t('transformObjectKeys')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -423,7 +422,7 @@ export default function JSObfuscator() {
       checked: !!options.unicodeEscapeSequence,
       children: (
         <Fragment>
-          unicodeEscapeSequence <Info>{t<string>('unicodeEscapeSequence')}</Info>
+          unicodeEscapeSequence <Info>{t('unicodeEscapeSequence')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -434,7 +433,7 @@ export default function JSObfuscator() {
       checked: !!options.splitStrings,
       children: (
         <Fragment>
-          splitStrings <Info>{t<string>('splitStrings')}</Info>
+          splitStrings <Info>{t('splitStrings')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -448,7 +447,7 @@ export default function JSObfuscator() {
       children: (
         <Fragment>
           splitStringsChunkLength <br />
-          <Info>{t<string>('splitStringsChunkLength')}</Info>
+          <Info>{t('splitStringsChunkLength')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -459,7 +458,7 @@ export default function JSObfuscator() {
       checked: !!options.stringArray,
       children: (
         <Fragment>
-          stringArray <Info>{t<string>('stringArray')}</Info>
+          stringArray <Info>{t('stringArray')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -472,7 +471,7 @@ export default function JSObfuscator() {
       children: (
         <Fragment>
           stringArrayCallsTransform <br />
-          <Info>{t<string>('stringArrayCallsTransform')}</Info>
+          <Info>{t('stringArrayCallsTransform')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -485,7 +484,7 @@ export default function JSObfuscator() {
       children: (
         <Fragment>
           stringArrayIndexShift <br />
-          <Info>{t<string>('stringArrayIndexShift')}</Info>
+          <Info>{t('stringArrayIndexShift')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -498,7 +497,7 @@ export default function JSObfuscator() {
       children: (
         <Fragment>
           stringArrayRotate <br />
-          <Info>{t<string>('stringArrayRotate')}</Info>
+          <Info>{t('stringArrayRotate')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -511,7 +510,7 @@ export default function JSObfuscator() {
       children: (
         <Fragment>
           stringArrayShuffle <br />
-          <Info>{t<string>('stringArrayShuffle')}</Info>
+          <Info>{t('stringArrayShuffle')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -524,7 +523,7 @@ export default function JSObfuscator() {
       children: (
         <Fragment>
           stringArrayWrappersChainedCalls <br />
-          <Info>{t<string>('stringArrayWrappersChainedCalls')}</Info>
+          <Info>{t('stringArrayWrappersChainedCalls')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -538,7 +537,7 @@ export default function JSObfuscator() {
       children: (
         <Fragment>
           stringArrayWrappersCount <br />
-          <Info>{t<string>('stringArrayWrappersCount')}</Info>
+          <Info>{t('stringArrayWrappersCount')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -556,7 +555,7 @@ export default function JSObfuscator() {
         <Fragment>
           {options.stringArrayWrappersParametersMaxCount} <br />
           stringArrayWrappersParametersMaxCount <br />
-          <Info>{t<string>('stringArrayWrappersParametersMaxCount')}</Info>
+          <Info>{t('stringArrayWrappersParametersMaxCount')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -574,7 +573,7 @@ export default function JSObfuscator() {
         <Fragment>
           {options.stringArrayThreshold} <br />
           stringArrayThreshold <br />
-          <Info>{t<string>('stringArrayThreshold')}</Info>
+          <Info>{t('stringArrayThreshold')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -592,7 +591,7 @@ export default function JSObfuscator() {
         <Fragment>
           {options.stringArrayCallsTransformThreshold} <br />
           stringArrayCallsTransformThreshold
-          <Info>{t<string>('stringArrayCallsTransformThreshold')}</Info>
+          <Info>{t('stringArrayCallsTransformThreshold')}</Info>
         </Fragment>
       ),
       onChange: ({ target }) => {
@@ -606,9 +605,7 @@ export default function JSObfuscator() {
         title="JavaScript Obfuscator"
         extra={
           <Fragment>
-            <Button onClick={() => handleObfuscate()}>
-              {type === 'raw' ? t<string>('Obfuscator') : t<string>('Raw Code')}
-            </Button>
+            <Button onClick={() => handleObfuscate()}>{type === 'raw' ? t('Obfuscator') : t('Raw Code')}</Button>
             {codeSource && <CopyButton value={codeSource} />}
             <Button
               onClick={() => {
@@ -617,7 +614,7 @@ export default function JSObfuscator() {
                 setType('raw');
               }}
             >
-              {t<string>('Sample', { ns: 'common' })}
+              {t('Sample', { ns: 'common' })}
             </Button>
           </Fragment>
         }
@@ -633,11 +630,11 @@ export default function JSObfuscator() {
         />
       </StyledLayout>
       <StyledLayout
-        title={t<string>('Options', { ns: 'common' })}
+        title={t('Options', { ns: 'common' })}
         style={{ maxWidth: 420 }}
         extra={
           <Fragment>
-            <Button onClick={resetHandle}>{t<string>('Reset', { ns: 'common' })}</Button>
+            <Button onClick={resetHandle}>{t('Reset', { ns: 'common' })}</Button>
           </Fragment>
         }
       >

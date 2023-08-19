@@ -7,5 +7,5 @@ const Warpper = styled.div`
 
 export const Loading = () => {
   const { t } = useTranslation();
-  return <Warpper>{t<string>('loading')}</Warpper>;
+  return <Warpper>{t('loading')}</Warpper>;
 };

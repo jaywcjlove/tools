@@ -45,7 +45,7 @@ export default function HomePage() {
   const thirdParty = menus.filter((item) => /^https?:/i.test(item.href || ''));
   return (
     <Warpper>
-      <Title>{t<string>('tools')}</Title>
+      <Title>{t('tools')}</Title>
       <MenuItem>
         {tools.map((item, key) => {
           return (
@@ -56,7 +56,7 @@ export default function HomePage() {
           );
         })}
       </MenuItem>
-      <Title>{t<string>('ThirdPartyTools')}</Title>
+      <Title>{t('ThirdPartyTools')}</Title>
       <MenuItem>
         {thirdParty.map((item, key) => {
           return (

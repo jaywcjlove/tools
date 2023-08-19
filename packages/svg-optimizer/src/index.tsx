@@ -379,14 +379,14 @@ export default function SVGOptimizer() {
                 checked={!!options.pretty}
                 onChange={({ target }) => setOptions({ ...options, pretty: target.checked })}
               >
-                Prettify markup <Info>{t<string>('Prettify markup')}</Info>
+                Prettify markup <Info>{t('Prettify markup')}</Info>
               </Checkbox>
               <Checkbox
                 checked={!!options.multipass}
                 onChange={({ target }) => setOptions({ ...options, multipass: target.checked })}
               >
-                {t<string>('multipass')}{' '}
-                <Info>{t<string>('Pass over SVGs multiple times to ensure all optimizations are applied')}</Info>
+                {t('multipass')}{' '}
+                <Info>{t('Pass over SVGs multiple times to ensure all optimizations are applied')}</Info>
               </Checkbox>
               <Checkbox
                 type="range"
@@ -396,11 +396,9 @@ export default function SVGOptimizer() {
                 value={options.floatPrecision}
                 onChange={({ target }) => setOptions({ ...options, floatPrecision: Number(target.value) })}
               >
-                {options.floatPrecision} {t<string>('Precision')}{' '}
+                {options.floatPrecision} {t('Precision')}{' '}
                 <Info>
-                  {t<string>(
-                    'Precision of floating point numbers. Will be passed to each plugin that suppors this param.',
-                  )}
+                  {t('Precision of floating point numbers. Will be passed to each plugin that suppors this param.')}
                 </Info>
               </Checkbox>
               {opts.map((item, key) => {
@@ -410,7 +408,7 @@ export default function SVGOptimizer() {
                     checked={includesPlugin(item.plugin, options.plugins)}
                     onChange={({ target }) => setOptions(settingPlugin(item.plugin, target.checked))}
                   >
-                    {t<string>(item.label)} <Info>{t<string>(item.content)}</Info>
+                    {t(item.label)} <Info>{t(item.content)}</Info>
                   </Checkbox>
                 );
               })}

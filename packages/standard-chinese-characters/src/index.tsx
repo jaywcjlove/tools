@@ -42,7 +42,7 @@ export default function StandardChineseCharacters() {
 
   return (
     <Wrapper>
-      <StyledLayout overflow="initial" title={t<string>('Table of General Standard Chinese Characters', {})}>
+      <StyledLayout overflow="initial" title={t('Table of General Standard Chinese Characters', {})}>
         <Spacing style={{ flexWrap: 'wrap', flexDirection: 'row', gap: '40px 61px', paddingBottom: 120 }}>
           {Object.keys(characters).map((keyname, idx) => {
             return (

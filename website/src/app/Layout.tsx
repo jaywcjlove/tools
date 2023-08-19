@@ -66,7 +66,7 @@ export default function Layout() {
               <Link to="/">
                 <LogoIcon width={21} />
                 <span>
-                  {t<string>('title')}
+                  {t('title')}
                   <Sup>{version}</Sup>
                 </span>
               </Link>
