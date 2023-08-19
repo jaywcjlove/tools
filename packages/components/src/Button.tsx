@@ -72,7 +72,7 @@ export const CopyButton: React.FC<PropsWithChildren<ButtonProps>> = ({ children,
   return (
     <Button {...other} success={success} className={success ? 'active' : ''} onClick={handleClick}>
       <CopyIcon style={{ marginRight: 2 }} />
-      <span>{type === 'copy' ? t<string>('Copy', { ns: 'common' }) : t<string>('Copied', { ns: 'common' })}</span>
+      <span>{type === 'copy' ? t('Copy', { ns: 'common' }) : t('Copied', { ns: 'common' })}</span>
     </Button>
   );
 };
