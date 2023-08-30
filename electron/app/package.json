@@ -23,7 +23,7 @@
   "devDependencies": {
     "@wcj/tools-app-preload": "1.10.0",
     "cpy-cli": "4.2.0",
-    "electron": "24.0.0",
+    "electron": "24.8.2",
     "electron-builder": "23.6.0",
     "website": "1.10.0"
   }

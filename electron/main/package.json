@@ -11,6 +11,6 @@
     "lib"
   ],
   "devDependencies": {
-    "electron": "24.0.0"
+    "electron": "24.8.2"
   }
 }
