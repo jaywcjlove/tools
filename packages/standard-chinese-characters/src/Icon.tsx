@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-export const HansIcon = memo<React.PropsWithChildren<any>>(({ children }) => {
+export const HansIcon = memo<React.PropsWithChildren<React.SVGProps<SVGSVGElement>>>(({ children }) => {
   return (
     <svg viewBox="0 0 46 46">
       <g fill="none" fillRule="evenodd">
