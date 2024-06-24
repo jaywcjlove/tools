@@ -113,7 +113,7 @@ jobs:
 
       - name: Build and push image:tags
         uses: docker/build-push-action@v6
-        if: needs.build.outputs.successful == "false"
+        if: needs.build.outputs.successful == true
         with:
           push: true
           context: .
