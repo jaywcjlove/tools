@@ -8,10 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
           registry-url: 'https://registry.npmjs.org'
 
       - run: npm install
@@ -41,7 +41,7 @@ jobs:
         uses: jaywcjlove/changelog-generator@main
 
       - name: Deploy Website
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
@@ -61,7 +61,7 @@ jobs:
       - name: Create electron-compliant static resources.
         run: npm run electron
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: webiste
           path: |
@@ -78,10 +78,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build]
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
 
       - run: npm install
 
@@ -95,15 +95,15 @@ jobs:
 
       # Create Docker Image
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
       - name: Login to Docker Hub
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build and push image:latest
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v6
         with:
           push: true
           context: .
@@ -111,7 +111,7 @@ jobs:
           tags: ${{ secrets.DOCKER_USER }}/tools:latest
 
       - name: Build and push image:tags
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v6
         if: needs.build.outputs.successful
         with:
           push: true
@@ -121,14 +121,14 @@ jobs:
 
       # Create Docker Image in Github
       - name: Login to the GitHub Container Registry
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push image:latest
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v6
         with:
           push: true
           context: .
@@ -136,7 +136,7 @@ jobs:
           tags: ghcr.io/jaywcjlove/tools:latest
 
       - name: Build and push image:tags
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v6
         if: needs.build.outputs.successful
         with:
           push: true
@@ -144,58 +144,15 @@ jobs:
           platforms: linux/amd64,linux/arm64
           tags: ghcr.io/jaywcjlove/tools:${{needs.build.outputs.create_tag_versionNumber}}
 
-
-
-      # # Create Docker Image
-      # - name: Create docker-compliant static resources.
-      #   run: npm run docker
-
-      # - name: Docker login
-      #   run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
-
-      # - name: Build docs image
-      #   run: docker image build -t tools .
-
-      # - name: Tags & Push image(latest)
-      #   run: |
-      #     echo "outputs.tag - ${{ needs.build.outputs.version }}"
-      #     docker tag tools ${{ secrets.DOCKER_USER }}/tools:latest
-      #     docker push ${{ secrets.DOCKER_USER }}/tools:latest
-
-      # - name: Tags & Push image(tag)
-      #   if: needs.build.outputs.successful
-      #   run: |
-      #     echo "outputs.tag - ${{ needs.build.outputs.version }}"
-      #     docker tag tools ${{ secrets.DOCKER_USER }}/tools:${{needs.build.outputs.version}}
-      #     docker push ${{ secrets.DOCKER_USER }}/tools:${{needs.build.outputs.version}}
-
-      # # Create Docker Image in Github
-      # - name: Login to GitHub registry
-      #   run: echo ${{ github.token }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-
-      # - name: Build docker image
-      #   run: docker build -t ghcr.io/jaywcjlove/tools:latest .
-
-      # - name: Publish to GitHub registry
-      #   run: docker push ghcr.io/jaywcjlove/tools:latest
-
-      # - name: Tag docker image (beta) and publish to GitHub registry
-      #   if: needs.build.outputs.successful
-      #   run: |
-      #       echo "version: v${{ needs.build.outputs.version }}"
-      #       docker tag ghcr.io/jaywcjlove/tools:latest ghcr.io/jaywcjlove/tools:${{needs.build.outputs.version}}
-      #       docker push ghcr.io/jaywcjlove/tools:${{needs.build.outputs.version}}
-
-
   build_windows: 
     needs: [build]
     runs-on: windows-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
 
       - name: Install
         # run: npm install --build-from-source
@@ -206,7 +163,7 @@ jobs:
       - run: npm run build
       # - run: npm run electron
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: webiste
           path: website/build
@@ -217,7 +174,7 @@ jobs:
 
       - run: npm run build:app
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: tools-windows
           path: |
@@ -228,17 +185,17 @@ jobs:
     runs-on: macos-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
 
       - run: npm install
       - run: npm run hoist
       - run: npm run build
       # - run: npm run electron
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: webiste
           path: website/build
@@ -249,14 +206,14 @@ jobs:
 
       - run: npm run build:app
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: tools-macos
           path: |
             electron/app/dist/*.zip
             electron/app/dist/*.dmg
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: tools-macos-zip
           path: |
@@ -267,8 +224,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 18
       - run: npm install
@@ -276,7 +233,7 @@ jobs:
       - run: npm run build
       # - run: npm run electron
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: webiste
           path: website/build
@@ -287,7 +244,7 @@ jobs:
 
       - run: npm run build:app
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: tools-linux
           path: |
@@ -304,17 +261,17 @@ jobs:
         with:
           node-version: 16
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: tools-linux
           path: dist/linux
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: tools-macos
           path: dist/macos
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: tools-windows
           path: dist/windows
@@ -329,22 +286,22 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: tools-linux
           path: dist/linux
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: tools-macos
           path: dist/macos
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: tools-windows
           path: dist/windows
@@ -364,6 +321,7 @@ jobs:
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
+          allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
           name: ${{ needs.build.outputs.create_tag_version }}
           tag: ${{ needs.build.outputs.create_tag_version }}
@@ -399,7 +357,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 4
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
 
