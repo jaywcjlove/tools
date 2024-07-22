@@ -18,7 +18,7 @@
   "dependencies": {
     "@codemirror/lang-javascript": "^6.0.0",
     "@wcj/tools-react-components": "1.10.0",
-    "javascript-obfuscator": "~4.0.0"
+    "javascript-obfuscator": "~4.1.0"
   },
   "peerDependencies": {
     "react": ">=16.14.0",
