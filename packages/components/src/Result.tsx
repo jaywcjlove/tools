@@ -9,7 +9,15 @@ const Code = styled.pre`
   padding: 10px 15px;
   border-radius: 6px;
   font-size: 14px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    Liberation Mono,
+    Courier New,
+    monospace;
   word-break: break-all;
   white-space: pre-wrap;
 `;

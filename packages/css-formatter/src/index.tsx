@@ -15,8 +15,8 @@ export default function CSSFormatter() {
   const handleFormat = async () => {
     try {
       setError('');
-      // @ts-ignore
       setValue(
+        // @ts-ignore
         await prettier.format(value, { parser: 'css', tabWidth: tabWidth, printWidth: 120, plugins: [parserPostcss] }),
       );
     } catch (error) {

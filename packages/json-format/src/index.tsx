@@ -14,8 +14,8 @@ export default function JSONFormat() {
   const handleFormat = async () => {
     try {
       setError('');
-      // @ts-ignore
       setValue(
+        // @ts-ignore
         await prettier.format(value, { parser: 'json', tabWidth: tabWidth, printWidth: 30, plugins: [parserBabel] }),
       );
     } catch (error) {

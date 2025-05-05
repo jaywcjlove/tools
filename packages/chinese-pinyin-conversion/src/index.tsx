@@ -69,7 +69,7 @@ export default function ChinesePinyinConversion() {
       .join(' ')
       .replace(
         /[。，（）]/g,
-        (c: string) => (({ '。': '.', '，': ',', '（': '(', '）': ')' } as Record<string, string>)[c]),
+        (c: string) => (({ '。': '.', '，': ',', '（': '(', '）': ')' }) as Record<string, string>)[c],
       );
     setResult(textPinyin);
 

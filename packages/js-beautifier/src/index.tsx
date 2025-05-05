@@ -146,12 +146,12 @@ export default function JSBeautifier() {
   const handleFormat = async () => {
     try {
       setError('');
-      // @ts-ignore
       setValue(
         await prettier.format(value, {
           parser: 'babel-ts',
           tabWidth: tabWidth,
           printWidth: 120,
+          // @ts-ignore
           plugins: [parserBabel],
         }),
       );

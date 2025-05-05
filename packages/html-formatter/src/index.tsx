@@ -74,8 +74,8 @@ export default function HTMLFormatter() {
   const handleFormat = async () => {
     try {
       setError('');
-      // @ts-ignore
       setValue(
+        // @ts-ignore
         await prettier.format(value, { parser: 'html', tabWidth: tabWidth, printWidth: 120, plugins: [parserHTML] }),
       );
     } catch (error) {
