@@ -86,7 +86,8 @@ jobs:
       - run: npm install
 
       - run: npm run build
-      - run: npm run doc
+      # - run: npm run doc
+      - run: npm run docker
 
       - run: echo "outputs.version - ${{ needs.build.outputs.version }}"
       - run: echo "outputs.create_tag_version - ${{ needs.build.outputs.create_tag_version }}"
