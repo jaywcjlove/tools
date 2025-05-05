@@ -1,9 +1,9 @@
-import styled, { css } from 'styled-components';
+import styled, { css, CSSProperties } from 'styled-components';
 
 export interface SpacingProps {
   gutter?: number;
-  direction?: React.CSSProperties['flexDirection'];
-  items?: React.CSSProperties['alignItems'];
+  direction?: CSSProperties['flexDirection'];
+  items?: CSSProperties['alignItems'];
 }
 
 export const Spacing = styled.div<SpacingProps>`

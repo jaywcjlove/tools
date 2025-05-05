@@ -29,8 +29,8 @@ export const ButtonBase = styled.button<ButtonProps>`
   & > * {
     vertical-align: middle;
   }
-  ${(props) =>
-    props.success &&
+  ${({ $success }) =>
+    $success == true &&
     css`
       background: #28a745;
       color: white;
@@ -51,7 +51,7 @@ export const ButtonBase = styled.button<ButtonProps>`
 export interface ButtonProps
   extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   ref?: any;
-  success?: boolean;
+  $success?: boolean;
 }
 
 export const CopyButton: React.FC<PropsWithChildren<ButtonProps>> = ({ children, ...other }) => {
@@ -70,7 +70,7 @@ export const CopyButton: React.FC<PropsWithChildren<ButtonProps>> = ({ children,
     });
   }
   return (
-    <Button {...other} success={success} className={success ? 'active' : ''} onClick={handleClick}>
+    <Button {...other} $success={success} className={success ? 'active' : ''} onClick={handleClick}>
       <CopyIcon style={{ marginRight: 2 }} />
       <span>{type === 'copy' ? t('Copy', { ns: 'common' }) : t('Copied', { ns: 'common' })}</span>
     </Button>

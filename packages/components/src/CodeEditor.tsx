@@ -14,7 +14,7 @@ export const CodeEditor = forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProps>((
       border: '1px solid var(--color-border-default)',
     },
   });
-  const { extensions = [], theme: pTheme } = props;
+  const { extensions = [], theme: pTheme = 'dark' } = props;
   const [theme, setTheme] = useState<Theme>(pTheme || defalutTheme);
   useEffect(() => {
     const val = document.documentElement.getAttribute('data-color-mode') as Theme;

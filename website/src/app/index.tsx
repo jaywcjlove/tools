@@ -4,5 +4,5 @@ import { routes } from '../Router';
 
 export default function App() {
   const element = useRoutes(routes);
-  return <Fragment>{element ? <>{element}</> : null}</Fragment>;
+  return <Fragment>{element}</Fragment>;
 }

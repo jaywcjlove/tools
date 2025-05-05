@@ -52,14 +52,14 @@ export default function TOMLToJSON(props: TOMLToJSONProps) {
 
   useEffect(() => {
     if (canvas.current) {
-      handle.current = new CubicBezier(canvas.current);
-      handle.current.updateDrawing();
-      handle.current.onChange = (point, isDrag) => {
+      (handle.current as CubicBezier | null) = new CubicBezier(canvas.current);
+      handle.current!.updateDrawing();
+      handle.current!.onChange = (point, isDrag) => {
         if (isDrag) {
           setCustomPoint(point);
         }
       };
-      handle.current.change(points);
+      handle.current!.change(points);
     }
   }, []);
 
