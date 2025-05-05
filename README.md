@@ -44,7 +44,6 @@ http://localhost:9666/
 
 ```bash
 npm install       # Install dependencies
-npm run hoist     # Packaged apps require it.
 
 npm run build     # Build packages
 npm run start

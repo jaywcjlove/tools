@@ -17,7 +17,6 @@
     "prepare": "husky install",
     "version": "lerna version --exact --force-publish --no-push --no-git-tag-version",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
-    "hoist": "lerna bootstrap --hoist",
     "clean": "lerna clean --yes"
   },
   "repository": {
@@ -30,13 +29,11 @@
   "engines": {
     "node": ">=16.0.0"
   },
-  "workspaces": {
-    "packages": [
-      "packages/**",
-      "electron/**",
-      "website"
-    ]
-  },
+  "workspaces": [
+    "packages/**",
+    "electron/**",
+    "website"
+  ],
   "lint-staged": {
     "*.{js,jsx,ts,tsx,less,md,json}": [
       "prettier --write"
