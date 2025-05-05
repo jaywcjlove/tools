@@ -11,10 +11,13 @@ export default function JSONFormat() {
   const [value, setValue] = useState('');
   const [error, setError] = useState('');
   const [tabWidth, setTabWidth] = useState(2);
-  const handleFormat = () => {
+  const handleFormat = async () => {
     try {
       setError('');
-      setValue(prettier.format(value, { parser: 'json', tabWidth: tabWidth, printWidth: 30, plugins: [parserBabel] }));
+      // @ts-ignore
+      setValue(
+        await prettier.format(value, { parser: 'json', tabWidth: tabWidth, printWidth: 30, plugins: [parserBabel] }),
+      );
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);

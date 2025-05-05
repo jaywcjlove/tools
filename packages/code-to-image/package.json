@@ -16,7 +16,7 @@
   "author": "Kenny Wong <wowohoo@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "@wcj/code-image": "^1.0.4"
+    "@wcj/code-image": "^1.0.8"
   },
   "peerDependencies": {
     "react": ">=16.14.0",

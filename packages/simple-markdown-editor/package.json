@@ -16,7 +16,7 @@
   "author": "Kenny Wong <wowohoo@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "@uiw/react-md-editor": "^3.13.0",
+    "@uiw/react-md-editor": "^4.0.6",
     "@wcj/tools-react-components": "1.10.0"
   },
   "peerDependencies": {

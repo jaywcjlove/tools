@@ -16,7 +16,7 @@
   "author": "Kenny Wong <wowohoo@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "@uiw/react-markdown-preview": "^4.0.9",
+    "@uiw/react-markdown-preview": "^5.1.4",
     "@wcj/tools-react-components": "1.10.0",
     "jwt-decode": "^3.1.2"
   },

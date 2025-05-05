@@ -143,11 +143,17 @@ export default function JSBeautifier() {
   const [value, setValue] = useState('');
   const [error, setError] = useState('');
   const [tabWidth, setTabWidth] = useState(2);
-  const handleFormat = () => {
+  const handleFormat = async () => {
     try {
       setError('');
+      // @ts-ignore
       setValue(
-        prettier.format(value, { parser: 'babel-ts', tabWidth: tabWidth, printWidth: 120, plugins: [parserBabel] }),
+        await prettier.format(value, {
+          parser: 'babel-ts',
+          tabWidth: tabWidth,
+          printWidth: 120,
+          plugins: [parserBabel],
+        }),
       );
     } catch (error) {
       if (error instanceof Error) {

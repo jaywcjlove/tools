@@ -18,6 +18,8 @@
   "dependencies": {
     "@uiw/copy-to-clipboard": "^1.0.12",
     "@uiw/react-codemirror": "^4.8.1",
+    "@codemirror/view": "^6.36.7",
+    "react-i18next": "^12.0.0",
     "styled-components": "^6.0.0"
   },
   "peerDependencies": {

@@ -71,10 +71,13 @@ export default function HTMLFormatter() {
   const [options, setOptions] = useState<Options>(defaultOptions);
   const [error, setError] = useState('');
   const [tabWidth, setTabWidth] = useState(2);
-  const handleFormat = () => {
+  const handleFormat = async () => {
     try {
       setError('');
-      setValue(prettier.format(value, { parser: 'html', tabWidth: tabWidth, printWidth: 120, plugins: [parserHTML] }));
+      // @ts-ignore
+      setValue(
+        await prettier.format(value, { parser: 'html', tabWidth: tabWidth, printWidth: 120, plugins: [parserHTML] }),
+      );
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);

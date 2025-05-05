@@ -3,6 +3,7 @@ import { StyledLayout, CopyButton, CodeEditor, Button, Wrapper, ErrorLayout } fr
 import { css } from '@codemirror/lang-css';
 import { ReactCodeMirrorRef } from '@uiw/react-codemirror';
 import prettier from 'prettier';
+
 import parserPostcss from 'prettier/parser-postcss';
 import * as sample from './sample';
 
@@ -11,11 +12,12 @@ export default function CSSFormatter() {
   const [value, setValue] = useState('');
   const [error, setError] = useState('');
   const [tabWidth, setTabWidth] = useState(2);
-  const handleFormat = () => {
+  const handleFormat = async () => {
     try {
       setError('');
+      // @ts-ignore
       setValue(
-        prettier.format(value, { parser: 'css', tabWidth: tabWidth, printWidth: 120, plugins: [parserPostcss] }),
+        await prettier.format(value, { parser: 'css', tabWidth: tabWidth, printWidth: 120, plugins: [parserPostcss] }),
       );
     } catch (error) {
       if (error instanceof Error) {
@@ -23,14 +25,15 @@ export default function CSSFormatter() {
       }
     }
   };
-  const handleMinify = () => {
+  const handleMinify = async () => {
     try {
       setError('');
-      const val = prettier.format(value, {
+      const val = await prettier.format(value, {
         parser: 'css',
         tabWidth: 0,
         useTabs: false,
         printWidth: 0,
+        // @ts-ignore
         plugins: [parserPostcss],
       });
       setValue((val || '').replace(/\n/g, ''));

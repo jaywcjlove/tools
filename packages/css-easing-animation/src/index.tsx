@@ -42,7 +42,7 @@ const CSSBlock = (props: CSSBlockProps) => {
 export interface TOMLToJSONProps {}
 export default function TOMLToJSON(props: TOMLToJSONProps) {
   const canvas = useRef<HTMLCanvasElement>(null);
-  const handle = useRef<CubicBezier>();
+  const handle = useRef<CubicBezier>(null);
   const [name, setName] = useState<string>(presetsData[0].label);
   const [points, setPoints] = useState<Points>(getPoint(presetsData[0].point));
   const [customPoint, setCustomPoint] = useState<Points>();
