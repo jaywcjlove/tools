@@ -39,7 +39,8 @@
 Web Tools
 ===
 
-[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
+[![Buy me a coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-ffdd00?logo=buy-me-a-coffee&logoColor=black)](https://jaywcjlove.github.io/#/sponsor)
+[![Follow On X](https://img.shields.io/badge/Follow%20on%20X-333333?logo=x&logoColor=white)](https://x.com/jaywcjlove)
 [![GitHub Repo Stars](https://img.shields.io/github/stars/jaywcjlove/tools)]()
 [![Docker Image Version (latest by date)](https://img.shields.io/docker/v/wcjiang/tools?logo=docker)](https://hub.docker.com/r/wcjiang/tools)
 [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/wcjiang/tools?logo=docker)](https://hub.docker.com/r/wcjiang/tools)
