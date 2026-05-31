@@ -49,7 +49,7 @@ Web Tools
 
 Many many useful Web Online Tools For Web Developers & Programmers. Online preview: https://jaywcjlove.github.io/tools
 
-[![Get it on macOS](http://jaywcjlove.github.io/sb/download/macos.svg)](https://apps.apple.com/app/devhub/id6476452351)
+[![Get it on macOS](http://jaywcjlove.github.io/sb/download/macos.svg)](https://jaywcjlove.github.io/maslink/?id=6476452351)
 
 [Docker](#docker) | [Desktop Application](#desktop-application)
 
