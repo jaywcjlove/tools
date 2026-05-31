@@ -3,7 +3,8 @@ import { StyledLayout, CopyButton, CodeEditor, Button, Wrapper, ErrorLayout } fr
 import { json } from '@codemirror/lang-json';
 import { ReactCodeMirrorRef } from '@uiw/react-codemirror';
 import prettier from 'prettier';
-import parserBabel from 'prettier/parser-babel';
+import * as parserBabel from 'prettier/plugins/babel';
+import * as parserEstree from 'prettier/plugins/estree';
 import * as sample from './sample';
 
 export default function JSONFormat() {
@@ -15,8 +16,12 @@ export default function JSONFormat() {
     try {
       setError('');
       setValue(
-        // @ts-ignore
-        await prettier.format(value, { parser: 'json', tabWidth: tabWidth, printWidth: 30, plugins: [parserBabel] }),
+        await prettier.format(value, {
+          parser: 'json',
+          tabWidth: tabWidth,
+          printWidth: 30,
+          plugins: [parserBabel, parserEstree],
+        }),
       );
     } catch (error) {
       if (error instanceof Error) {
