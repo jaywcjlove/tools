@@ -2,8 +2,11 @@
   "extends": "../../tsconfig",
   "include": ["src", "src/global.d.ts"],
   "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": "cjs",
-    "noEmit": false
+    "rootDir": "./src",
+    "outDir": "./cjs",
+    "noEmit": false,
+    "moduleResolution": "bundler",
+    "allowJs": false,
+    "declaration": true
   }
 }

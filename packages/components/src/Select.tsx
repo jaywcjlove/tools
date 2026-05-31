@@ -9,8 +9,9 @@ export const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({ childre
     <span>
       <select {...other}>
         {options.map((item, key) => {
-          const label = item?.label || item;
-          const value = item?.value || item;
+          const isObjectOption = typeof item === 'object' && item !== null;
+          const label = isObjectOption ? item.label : item;
+          const value = isObjectOption ? item.value : item;
           return (
             <option value={value} key={`${key} ${value || ''}`}>
               {label}

@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react';
 import { Wrapper, StyledLayout, CodeLineCopy, Button, Spacing, Textarea } from '@wcj/tools-react-components';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
-import nzh from 'nzh/cn';
+import nzh from 'nzh';
 
 const Input = styled.input`
   border-radius: 6px;
@@ -65,9 +65,9 @@ export default function AmountInRMB() {
           onClick={() => {
             addHistory({
               num: range.toString(),
-              lower: nzh.encodeS(range),
-              upper: nzh.encodeB(range),
-              money: nzh.toMoney(range),
+              lower: nzh.cn.encodeS(range),
+              upper: nzh.cn.encodeB(range),
+              money: nzh.cn.toMoney(range),
             });
           }}
         >

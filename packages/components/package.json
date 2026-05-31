@@ -20,7 +20,7 @@
     "@uiw/react-codemirror": "^4.8.1",
     "@codemirror/view": "^6.36.7",
     "react-i18next": "^12.0.0",
-    "styled-components": "^6.0.0"
+    "styled-components": "6.1.19"
   },
   "peerDependencies": {
     "react": ">=16.14.0",

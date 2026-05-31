@@ -65,7 +65,7 @@ export default function JSObfuscator() {
           {t('highOption')} <Info>{t('highOptionDes')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         optionsHandle('highOption');
       },
     },
@@ -78,7 +78,7 @@ export default function JSObfuscator() {
           {t('mediumOption')} <Info>{t('mediumOptionDes')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         optionsHandle('mediumOption');
       },
     },
@@ -91,7 +91,7 @@ export default function JSObfuscator() {
           {t('lowOption')} <Info>{t('lowOptionDes')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         optionsHandle('lowOption');
       },
     },
@@ -100,7 +100,7 @@ export default function JSObfuscator() {
       name: 'options',
       checked: preset === 'defaultOption',
       children: <Fragment>{t('defaultOption')}</Fragment>,
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         optionsHandle('defaultOption');
       },
     },
@@ -120,7 +120,7 @@ export default function JSObfuscator() {
           compact <Info>{t('compact')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ compact: target.checked } });
       },
     },
@@ -132,7 +132,7 @@ export default function JSObfuscator() {
           <Info>{t('controlFlowFlattening')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ controlFlowFlattening: target.checked } });
       },
     },
@@ -150,7 +150,7 @@ export default function JSObfuscator() {
           <Info>{t('controlFlowFlatteningThreshold')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ controlFlowFlatteningThreshold: Number(target.value) } });
       },
     },
@@ -161,7 +161,7 @@ export default function JSObfuscator() {
           deadCodeInjection <Info>{t('deadCodeInjection')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ deadCodeInjection: target.checked } });
       },
     },
@@ -179,7 +179,7 @@ export default function JSObfuscator() {
           <Info>{t('deadCodeInjectionThreshold')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ deadCodeInjectionThreshold: Number(target.value) } });
       },
     },
@@ -190,7 +190,7 @@ export default function JSObfuscator() {
           debugProtection <Info>{t('debugProtection')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ debugProtection: target.checked } });
       },
     },
@@ -206,7 +206,7 @@ export default function JSObfuscator() {
           {options.debugProtectionInterval} <br /> debugProtectionInterval <Info>{t('debugProtectionInterval')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ debugProtectionInterval: Number(target.value) } });
       },
     },
@@ -217,7 +217,7 @@ export default function JSObfuscator() {
           disableConsoleOutput <Info>{t('disableConsoleOutput')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ disableConsoleOutput: target.checked } });
       },
     },
@@ -229,7 +229,7 @@ export default function JSObfuscator() {
           target <Info>{t('target')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ target: target.value as ObfuscatorOptions['target'] } });
       },
     },
@@ -242,7 +242,7 @@ export default function JSObfuscator() {
           <Info>{t('identifierNamesGenerator')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({
           ...options,
           ...{ identifierNamesGenerator: target.value as ObfuscatorOptions['identifierNamesGenerator'] },
@@ -258,7 +258,7 @@ export default function JSObfuscator() {
           <Info>{t('identifiersPrefix')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ identifiersPrefix: target.value } });
       },
     },
@@ -269,7 +269,7 @@ export default function JSObfuscator() {
           ignoreImports <Info>{t('ignoreImports')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ ignoreImports: target.checked } });
       },
     },
@@ -281,7 +281,7 @@ export default function JSObfuscator() {
           inputFileName <Info>{t('inputFileName')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ inputFileName: target.value } });
       },
     },
@@ -292,7 +292,7 @@ export default function JSObfuscator() {
           log <Info>{t('log')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ log: target.checked } });
       },
     },
@@ -303,7 +303,7 @@ export default function JSObfuscator() {
           numbersToExpressions <Info>{t('numbersToExpressions')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ numbersToExpressions: target.checked } });
       },
     },
@@ -315,7 +315,7 @@ export default function JSObfuscator() {
           optionsPreset <Info>{t('optionsPreset')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         const val = target.value as ObfuscatorOptions['optionsPreset'];
         switch (val) {
           case 'default':
@@ -344,7 +344,7 @@ export default function JSObfuscator() {
           renameGlobals <Info>{t('renameGlobals')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ renameGlobals: target.checked } });
       },
     },
@@ -357,7 +357,7 @@ export default function JSObfuscator() {
           <Info>{t('seed')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ seed: Number(target.value) } });
       },
     },
@@ -368,7 +368,7 @@ export default function JSObfuscator() {
           selfDefending <Info>{t('selfDefending')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ selfDefending: target.checked } });
       },
     },
@@ -379,7 +379,7 @@ export default function JSObfuscator() {
           simplify <Info>{t('simplify')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ simplify: target.checked } });
       },
     },
@@ -390,7 +390,7 @@ export default function JSObfuscator() {
           sourceMap <Info>{t('sourceMap')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ sourceMap: target.checked } });
       },
     },
@@ -403,7 +403,7 @@ export default function JSObfuscator() {
           <Info>{t('sourceMapBaseUrl')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ sourceMapBaseUrl: target.value } });
       },
     },
@@ -414,7 +414,7 @@ export default function JSObfuscator() {
           transformObjectKeys <Info>{t('transformObjectKeys')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ transformObjectKeys: target.checked } });
       },
     },
@@ -425,7 +425,7 @@ export default function JSObfuscator() {
           unicodeEscapeSequence <Info>{t('unicodeEscapeSequence')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ unicodeEscapeSequence: target.checked } });
       },
     },
@@ -436,7 +436,7 @@ export default function JSObfuscator() {
           splitStrings <Info>{t('splitStrings')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ splitStrings: target.checked } });
       },
     },
@@ -450,7 +450,7 @@ export default function JSObfuscator() {
           <Info>{t('splitStringsChunkLength')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ splitStringsChunkLength: Number(target.value) } });
       },
     },
@@ -461,7 +461,7 @@ export default function JSObfuscator() {
           stringArray <Info>{t('stringArray')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ stringArray: target.checked } });
       },
     },
@@ -474,7 +474,7 @@ export default function JSObfuscator() {
           <Info>{t('stringArrayCallsTransform')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ stringArrayCallsTransform: target.checked } });
       },
     },
@@ -487,7 +487,7 @@ export default function JSObfuscator() {
           <Info>{t('stringArrayIndexShift')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ stringArrayIndexShift: target.checked } });
       },
     },
@@ -500,7 +500,7 @@ export default function JSObfuscator() {
           <Info>{t('stringArrayRotate')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ stringArrayRotate: target.checked } });
       },
     },
@@ -513,7 +513,7 @@ export default function JSObfuscator() {
           <Info>{t('stringArrayShuffle')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ stringArrayShuffle: target.checked } });
       },
     },
@@ -526,7 +526,7 @@ export default function JSObfuscator() {
           <Info>{t('stringArrayWrappersChainedCalls')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ stringArrayWrappersChainedCalls: target.checked } });
       },
     },
@@ -540,8 +540,8 @@ export default function JSObfuscator() {
           <Info>{t('stringArrayWrappersCount')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
-        setOptions({ ...options, ...{ stringArrayWrappersCount: target.checked } });
+      onChange: ({ target }: { target: any }) => {
+        setOptions({ ...options, ...{ stringArrayWrappersCount: Number(target.value) } });
       },
     },
     {
@@ -558,7 +558,7 @@ export default function JSObfuscator() {
           <Info>{t('stringArrayWrappersParametersMaxCount')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ stringArrayWrappersParametersMaxCount: Number(target.value) } });
       },
     },
@@ -576,7 +576,7 @@ export default function JSObfuscator() {
           <Info>{t('stringArrayThreshold')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ stringArrayThreshold: Number(target.value) } });
       },
     },
@@ -594,7 +594,7 @@ export default function JSObfuscator() {
           <Info>{t('stringArrayCallsTransformThreshold')}</Info>
         </Fragment>
       ),
-      onChange: ({ target }) => {
+      onChange: ({ target }: { target: any }) => {
         setOptions({ ...options, ...{ stringArrayCallsTransformThreshold: Number(target.value) } });
       },
     },

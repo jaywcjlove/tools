@@ -30,7 +30,7 @@ const createDimensionsExtractor: CreateDimensionsExtractor = () => {
       return {
         element: {
           // Node, parentNode
-          enter: ({ name, attributes }, { type }) => {
+          enter: ({ name, attributes }: any, { type }: any) => {
             if (name === 'svg' && type === 'root') {
               if (attributes.width !== undefined && attributes.height !== undefined) {
                 dimensions.width = Number.parseFloat(attributes.width);

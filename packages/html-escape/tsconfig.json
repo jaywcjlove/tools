@@ -4,6 +4,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "cjs",
-    "noEmit": false
+    "noEmit": false,
+    "declaration": true
   }
 }

@@ -6,6 +6,9 @@ import traditionalChinese from 'togscc/data/traditional.convert.json';
 
 import * as sample from './sample';
 
+const traditionalChineseMap = traditionalChinese as Record<string, string>;
+const simplifiedChineseMap = simplifiedChinese as Record<string, string | string[]>;
+
 export default function SimplifiedTraditionalChinese() {
   const { t } = useTranslation(['simplified-traditional-chinese', 'common']);
   const [traditional, setTraditional] = useState<string>();
@@ -20,7 +23,7 @@ export default function SimplifiedTraditionalChinese() {
           if (/(瞭|乾|藉|麽)/.test(str)) {
             return str;
           }
-          return traditionalChinese[str] || str;
+          return traditionalChineseMap[str] || str;
         })
         .join(''),
     );
@@ -31,7 +34,7 @@ export default function SimplifiedTraditionalChinese() {
       (simplified || '')
         .split('')
         .map((str) => {
-          let cur = Array.isArray(simplifiedChinese[str]) ? simplifiedChinese[str][0] : simplifiedChinese[str];
+          let cur = Array.isArray(simplifiedChineseMap[str]) ? simplifiedChineseMap[str][0] : simplifiedChineseMap[str];
           if (/(瞭|乾|藉|麽)/.test(str)) {
             return str;
           }
