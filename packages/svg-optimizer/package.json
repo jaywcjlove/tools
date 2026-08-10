@@ -18,11 +18,11 @@
   "dependencies": {
     "@wcj/tools-react-components": "1.10.0",
     "pako": "^2.0.4",
-    "svgo": "^2.8.0"
+    "svgo": "^3.0.0"
   },
   "peerDependencies": {
     "@types/pako": "^2.0.0",
-    "@types/svgo": "^2.6.3",
+    "@types/svgo": "^3.0.0",
     "react": ">=16.14.0",
     "react-dom": ">=16.14.0"
   }
